@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-15T06:41:53.349928+00:00",
+  "monotonic_ns": 1067849937628625,
+  "process_id": "2d43195eeb584d638e94e3465081df16",
+  "tables": {
+    "nodes": "7e5b70eb038d7f4d76b500c62e3aaeac687dd9359df6ac064c834611bab77fdb",
+    "sessions": "1430448de99a088a8f5e5f626194c33daec25d2dfd6b630349c5bdb3affe7c68",
+    "turns": "2bd681e7720bef6296d02940e90dccacc03fc3d26fb20b1582430010872cee81",
+    "rounds": "451cf5aeac718900e13c60245be0c646c4cde54ddd4e4f0a2b1dcd7201be74ca",
+    "parent_responses": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "approvals": "bd0b4b83df63820727762d859eb67f5bdf8a9d1276e6ae9e492093ae4221e17b"
+  },
+  "zero_bridge_work": true
+}

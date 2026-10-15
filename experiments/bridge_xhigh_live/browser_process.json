@@ -1,0 +1,24 @@
+{
+  "observed_at_utc": "2026-10-14T08:23:44.971579+00:00",
+  "process_collection": "ps -axo pid=,ppid=,lstart=,comm=; exact executable match only; arguments were not collected",
+  "main_chrome_process_count": 1,
+  "main_chrome_processes": [
+    {
+      "pid": 8492,
+      "ppid": 1,
+      "started_at_local": "Thu Oct 8 19:20:18 2026",
+      "executable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    }
+  ],
+  "bridge_health": {
+    "http_status": 200,
+    "ok": false,
+    "transport": "extension:disconnected",
+    "connected_client_count": 0,
+    "pending_request_count": 0,
+    "pending_command_count": 0,
+    "active_request_count": 0
+  },
+  "browser_actions_performed": false,
+  "prompts_sent": 0
+}

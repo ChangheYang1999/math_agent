@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-15T10:15:07.020864+00:00",
+  "classification": "LIVE_FAIL",
+  "scope": "Experiment-only deferred optional-section publication order; six mandatory pairs are intact",
+  "source_access": "READ_ONLY",
+  "nodes": [
+    {
+      "node_id": "root",
+      "latest_original_job_id": "parent:n-dab935ae44d1-r000003:section:0",
+      "latest_original_job_rowid": 14,
+      "latest_original_evidence": "n-dab935ae44d1-r000003; n-3790f8503746-r000003",
+      "published_version": 6,
+      "published_evidence": "n-3790f8503746-r000003",
+      "published_body_matches_latest": false
+    },
+    {
+      "node_id": "n-3790f8503746",
+      "latest_original_job_id": "finding:n-3790f8503746-r000003",
+      "latest_original_job_rowid": 11,
+      "latest_original_evidence": "n-3790f8503746-r000003",
+      "published_version": 3,
+      "published_evidence": "n-3790f8503746-r000003",
+      "published_body_matches_latest": true
+    },
+    {
+      "node_id": "n-dab935ae44d1",
+      "latest_original_job_id": "finding:n-dab935ae44d1-r000003",
+      "latest_original_job_rowid": 15,
+      "latest_original_evidence": "n-dab935ae44d1-r000003",
+      "published_version": 3,
+      "published_evidence": "n-dab935ae44d1-r000002",
+      "published_body_matches_latest": false
+    }
+  ],
+  "completed_pairs": 6,
+  "source_evidence_preserved": true,
+  "finding": "Final sections executed before older deferred sections; current report root and spectral sections are stale. Actual final payloads remain saved."
+}

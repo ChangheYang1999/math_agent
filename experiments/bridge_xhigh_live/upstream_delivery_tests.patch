@@ -1,0 +1,46 @@
+diff --git a/test/browserEffectReconciliationMatrix.test.js b/test/browserEffectReconciliationMatrix.test.js
+index 215a0d9..c6b868d 100644
+--- a/test/browserEffectReconciliationMatrix.test.js
++++ b/test/browserEffectReconciliationMatrix.test.js
+@@ -139,10 +139,10 @@ const cases = [
+     outcome: 'succeeded', reason: 'submitted_user_turn_observed',
+   },
+   {
+-    name: 'prompt submit is proved not started when exact text remains in composer',
++    name: 'prompt submit remains uncertain when exact text remains after a possible Send',
+     options: { composerText: 'hello' },
+     payload: { effectType: 'prompt.submit', evidence: { message: 'hello' } },
+-    outcome: 'not_started', reason: 'expected_prompt_still_in_composer',
++    outcome: 'uncertain', reason: 'expected_prompt_still_in_composer_submission_unknown',
+   },
+   {
+     name: 'prompt submit remains uncertain without a turn or composer proof',
+diff --git a/test/extensionInteractionRegression.test.js b/test/extensionInteractionRegression.test.js
+index 25e4cbf..8c688f0 100644
+--- a/test/extensionInteractionRegression.test.js
++++ b/test/extensionInteractionRegression.test.js
+@@ -501,7 +501,7 @@ test('prompt submission evidence accepts an attachment-prefixed turn only when i
+   assert.equal(evidence.turnKey, 'user-project');
+ });
+ 
+-test('a proven unsubmitted passive prompt is rolled back instead of poisoning the next request', async () => {
++test('a passive prompt retains its draft and uncertainty after a Send without confirmation', async () => {
+   const { sandbox } = await bootstrapExtensionContentRuntime();
+   sandbox.DataTransfer = class {
+     constructor() { this.value = ''; }
+@@ -576,11 +576,11 @@ test('a proven unsubmitted passive prompt is rolled back instead of poisoning th
+   await assert.rejects(
+     commands.enterPrompt('stale passive workflow prompt', { requestId: 'passive-stale', options: {} }, { kind: 'passive' }),
+     (error) => {
+-      assert.equal(error.code, 'PROMPT_SUBMIT_NOT_EXECUTED');
+-      assert.equal(error.provenNotExecuted, true);
++      assert.equal(error.code, 'PROMPT_SUBMIT_UNCERTAIN');
++      assert.notEqual(error.provenNotExecuted, true);
+       return true;
+     },
+   );
+-  assert.equal(composer.value, '');
+-  assert.equal(diagnostics.some((entry) => entry.name === 'prompt.submit.rolled_back'), true);
++  assert.equal(composer.value, 'stale passive workflow prompt');
++  assert.equal(diagnostics.some((entry) => entry.name === 'prompt.submit.rolled_back'), false);
+ });

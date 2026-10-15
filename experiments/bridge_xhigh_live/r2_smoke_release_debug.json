@@ -1,0 +1,51 @@
+{
+  "observed_at_utc": "2026-10-14T08:33:37.453841+00:00",
+  "own_client": {
+    "id": "extension:tab:1707788661",
+    "quarantined": true,
+    "quarantineReason": "release_cleanup_timeout",
+    "releasePending": false,
+    "releaseState": "quarantined",
+    "activeRequest": null,
+    "ready": true,
+    "compatible": true
+  },
+  "own_release_debug_events": [
+    {
+      "time": "2026-10-14T08:30:47.927Z",
+      "type": "diagnostic.request.released",
+      "level": "debug",
+      "requestId": "",
+      "clientId": "extension:tab:1707788661",
+      "data": {
+        "reason": "completed"
+      }
+    },
+    {
+      "time": "2026-10-14T08:30:55.944Z",
+      "type": "lease.quarantined",
+      "level": "debug",
+      "requestId": "mathagent_1781490cba095bc99c2d63f5198198d5",
+      "clientId": "extension:tab:1707788661",
+      "data": {
+        "commandId": "mv7uoaqw-8co0yj3g",
+        "code": "RELEASE_CLEANUP_TIMEOUT",
+        "message": "Content runtime did not prove request cleanup before the release deadline",
+        "reason": "release_cleanup_timeout"
+      }
+    },
+    {
+      "time": "2026-10-14T08:30:55.946Z",
+      "type": "request.state.runtime_error",
+      "level": "debug",
+      "requestId": "mathagent_1781490cba095bc99c2d63f5198198d5",
+      "clientId": "",
+      "data": {
+        "message": "Content runtime did not prove request cleanup before the release deadline"
+      }
+    }
+  ],
+  "event_source": "/debug/events?limit=250; own request/client and narrow time window only",
+  "prompts_sent": 0,
+  "browser_actions_performed": false
+}

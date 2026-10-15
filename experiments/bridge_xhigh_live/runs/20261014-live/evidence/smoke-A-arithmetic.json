@@ -1,0 +1,2492 @@
+{
+  "live_or_mock": "live",
+  "local_turn_id": "smoke-A-arithmetic",
+  "local_status": "ERROR",
+  "request_id": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+  "turn": {
+    "id": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+    "threadId": "thread_mv7ug1cy-f0ev6dud",
+    "idempotencyKey": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+    "status": "failed",
+    "createdAt": "2026-10-14T08:24:22.500Z",
+    "updatedAt": "2026-10-14T08:24:28.866Z",
+    "startedAt": "2026-10-14T08:24:22.503Z",
+    "completedAt": "2026-10-14T08:24:28.865Z",
+    "input": {
+      "input": [
+        {
+          "type": "text",
+          "text": "You are Session A. Your fixed marker is TREE-A-719. Calculate 37 * 43, explain in one or two sentences, and include your fixed marker in the final response."
+        }
+      ],
+      "message": "You are Session A. Your fixed marker is TREE-A-719. Calculate 37 * 43, explain in one or two sentences, and include your fixed marker in the final response.",
+      "cwd": "",
+      "model": "",
+      "effort": "",
+      "attachments": [],
+      "sessionId": "",
+      "sessionPolicy": "reuse",
+      "sourceClientId": "extension:tab:1707788658",
+      "project": null,
+      "output": {
+        "expected": "text",
+        "required": false
+      },
+      "metadata": {
+        "researchNodeId": "smoke-A",
+        "requiredModel": "model-gpt-6",
+        "requiredEffort": "xhigh"
+      }
+    },
+    "output": null,
+    "error": {
+      "code": "CANONICAL_CONVERSATION_CHANGED",
+      "message": "Bound ChatGPT conversation changed",
+      "recoverable": true
+    }
+  },
+  "events": [
+    {
+      "id": 1,
+      "time": "2026-10-14T08:24:22.501Z",
+      "type": "turn/queued",
+      "level": "info",
+      "data": {
+        "threadId": "thread_mv7ug1cy-f0ev6dud",
+        "turnId": "mathagent_de0287dba4305edd9418a7447a5da0f2"
+      }
+    },
+    {
+      "id": 2,
+      "time": "2026-10-14T08:24:22.505Z",
+      "type": "turn/started",
+      "level": "info",
+      "data": {
+        "threadId": "thread_mv7ug1cy-f0ev6dud",
+        "turnId": "mathagent_de0287dba4305edd9418a7447a5da0f2"
+      }
+    },
+    {
+      "id": 3,
+      "time": "2026-10-14T08:24:22.512Z",
+      "type": "client.target.resolved",
+      "level": "info",
+      "data": {
+        "type": "client.target.resolved",
+        "time": "2026-10-14T08:24:22.512Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "reason": "explicit_client",
+        "sessionSwitch": false,
+        "sourceUrl": "https://chatgpt.com/"
+      }
+    },
+    {
+      "id": 4,
+      "time": "2026-10-14T08:24:22.512Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:22.512Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "forced_snapshot:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966352511",
+        "kind": "forced_snapshot",
+        "dueAt": 1791966352511,
+        "scheduledRevision": 2
+      }
+    },
+    {
+      "id": 5,
+      "time": "2026-10-14T08:24:22.513Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:22.513Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "forced_snapshot:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966352512",
+        "kind": "forced_snapshot",
+        "dueAt": 1791966352512,
+        "scheduledRevision": 5
+      }
+    },
+    {
+      "id": 6,
+      "time": "2026-10-14T08:24:22.513Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:22.513Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "progress_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791967462512",
+        "kind": "progress_liveness",
+        "dueAt": 1791967462512,
+        "scheduledRevision": 5
+      }
+    },
+    {
+      "id": 7,
+      "time": "2026-10-14T08:24:22.513Z",
+      "type": "prompt.delivered",
+      "level": "info",
+      "data": {
+        "type": "prompt.delivered",
+        "time": "2026-10-14T08:24:22.513Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658"
+      }
+    },
+    {
+      "id": 8,
+      "time": "2026-10-14T08:24:22.512Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:22.512Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "progress_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791967462511",
+        "kind": "progress_liveness",
+        "dueAt": 1791967462511,
+        "scheduledRevision": 2
+      }
+    },
+    {
+      "id": 9,
+      "time": "2026-10-14T08:24:22.510Z",
+      "type": "request.started",
+      "level": "info",
+      "data": {
+        "type": "request.started",
+        "time": "2026-10-14T08:24:22.507Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "expectedOutput": {
+          "expected": "text",
+          "required": false
+        },
+        "attachments": []
+      }
+    },
+    {
+      "id": 10,
+      "time": "2026-10-14T08:24:22.512Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:22.512Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "forced_snapshot:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966352511",
+        "kind": "forced_snapshot",
+        "dueAt": 1791966352511,
+        "scheduledRevision": 4
+      }
+    },
+    {
+      "id": 11,
+      "time": "2026-10-14T08:24:22.525Z",
+      "type": "diagnostic.request.phase",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.request.phase",
+        "time": "2026-10-14T08:24:22.525Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "request.phase",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966262523,
+          "phase": "prompt_accepted_by_content_script",
+          "previousPhase": "created",
+          "meaningful": true,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "time": "2026-10-14T08:24:22.526Z",
+      "type": "diagnostic.chat.request.phase",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.request.phase",
+        "time": "2026-10-14T08:24:22.526Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.request.phase",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966262523,
+          "eventType": "request.phase",
+          "phase": "prompt_accepted_by_content_script",
+          "previousPhase": "created",
+          "meaningful": true,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 13,
+      "time": "2026-10-14T08:24:22.533Z",
+      "type": "diagnostic.prompt.accepted",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.prompt.accepted",
+        "time": "2026-10-14T08:24:22.533Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "prompt.accepted",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966262525,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "time": "2026-10-14T08:24:22.533Z",
+      "type": "diagnostic.chat.prompt.accepted",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.prompt.accepted",
+        "time": "2026-10-14T08:24:22.533Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.prompt.accepted",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966262525,
+          "eventType": "prompt.accepted",
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "time": "2026-10-14T08:24:22.535Z",
+      "type": "request.effect.started",
+      "level": "info",
+      "data": {
+        "type": "request.effect.started",
+        "time": "2026-10-14T08:24:22.535Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:page.ready.initial:attempt:1",
+        "effectType": "page.ready.initial",
+        "phase": "",
+        "evidence": null
+      }
+    },
+    {
+      "id": 16,
+      "time": "2026-10-14T08:24:22.535Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:22.535Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "progress_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791967462535",
+        "kind": "progress_liveness",
+        "dueAt": 1791967462535,
+        "scheduledRevision": 6
+      }
+    },
+    {
+      "id": 17,
+      "time": "2026-10-14T08:24:22.535Z",
+      "type": "prompt.accepted",
+      "level": "info",
+      "data": {
+        "type": "prompt.accepted",
+        "time": "2026-10-14T08:24:22.535Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "implicit": true,
+        "via": "request.effect.started"
+      }
+    },
+    {
+      "id": 18,
+      "time": "2026-10-14T08:24:22.535Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:22.535Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "forced_snapshot:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966352535",
+        "kind": "forced_snapshot",
+        "dueAt": 1791966352535,
+        "scheduledRevision": 6
+      }
+    },
+    {
+      "id": 19,
+      "time": "2026-10-14T08:24:22.537Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:22.537Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966322536",
+        "kind": "hard_liveness",
+        "dueAt": 1791966322536,
+        "scheduledRevision": 9
+      }
+    },
+    {
+      "id": 20,
+      "time": "2026-10-14T08:24:22.537Z",
+      "type": "prompt.reconcile_required_after_navigation",
+      "level": "info",
+      "data": {
+        "type": "prompt.reconcile_required_after_navigation",
+        "time": "2026-10-14T08:24:22.537Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:page.ready.initial:attempt:1"
+      }
+    },
+    {
+      "id": 21,
+      "time": "2026-10-14T08:24:22.537Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:22.537Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "recovery:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966292537",
+        "kind": "recovery",
+        "dueAt": 1791966292537,
+        "scheduledRevision": 0
+      }
+    },
+    {
+      "id": 22,
+      "time": "2026-10-14T08:24:22.544Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:22.544Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "progress_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791967462535",
+        "kind": "progress_liveness",
+        "dueAt": 1791967462535,
+        "scheduledRevision": 12
+      }
+    },
+    {
+      "id": 23,
+      "time": "2026-10-14T08:24:22.544Z",
+      "type": "diagnostic.chat.page.ready.wait",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.page.ready.wait",
+        "time": "2026-10-14T08:24:22.544Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.page.ready.wait",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966262534,
+          "eventType": "page.ready.wait",
+          "stage": "initial",
+          "timeoutMs": 45000,
+          "settleMs": 1000,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 24,
+      "time": "2026-10-14T08:24:22.544Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:22.544Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "forced_snapshot:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966352535",
+        "kind": "forced_snapshot",
+        "dueAt": 1791966352535,
+        "scheduledRevision": 12
+      }
+    },
+    {
+      "id": 25,
+      "time": "2026-10-14T08:24:22.544Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:22.543Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966322543",
+        "kind": "hard_liveness",
+        "dueAt": 1791966322543,
+        "scheduledRevision": 12
+      }
+    },
+    {
+      "id": 26,
+      "time": "2026-10-14T08:24:22.544Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:22.543Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "recovery:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966292535",
+        "kind": "recovery",
+        "dueAt": 1791966292535,
+        "scheduledRevision": 11
+      }
+    },
+    {
+      "id": 27,
+      "time": "2026-10-14T08:24:22.544Z",
+      "type": "diagnostic.browser.effect.started",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.browser.effect.started",
+        "time": "2026-10-14T08:24:22.544Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "browser.effect.started",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966262534,
+          "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+          "commandId": "4c8514c3-5118-491b-870d-45c15b887504",
+          "causationId": "4c8514c3-5118-491b-870d-45c15b887504",
+          "responseEpoch": 0,
+          "attempt": 1,
+          "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:page.ready.initial:attempt:1",
+          "effectType": "page.ready.initial",
+          "idempotencyKey": "mathagent_de0287dba4305edd9418a7447a5da0f2:page.ready.initial",
+          "phase": "prompt_accepted_by_content_script",
+          "retryPolicy": "always",
+          "preconditions": {
+            "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+            "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+            "responseEpoch": 0
+          },
+          "preconditionsHash": "aba0f51d38c78ff4c687e6ae2202ee5c2f20f38cc6566fe79accc38caa81609e",
+          "evidence": null,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 28,
+      "time": "2026-10-14T08:24:22.544Z",
+      "type": "diagnostic.page.ready.state",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.page.ready.state",
+        "time": "2026-10-14T08:24:22.544Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "page.ready.state",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966262534,
+          "stage": "initial",
+          "documentReadyState": "complete",
+          "chatMainReady": true,
+          "composerReady": true,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 29,
+      "time": "2026-10-14T08:24:23.287Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:23.287Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966323287",
+        "kind": "hard_liveness",
+        "dueAt": 1791966323287,
+        "scheduledRevision": 15
+      }
+    },
+    {
+      "id": 30,
+      "time": "2026-10-14T08:24:23.552Z",
+      "type": "diagnostic.page.ready",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.page.ready",
+        "time": "2026-10-14T08:24:23.551Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "page.ready",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966263546,
+          "stage": "initial",
+          "waitedMs": 1012,
+          "settleMs": 1000,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 31,
+      "time": "2026-10-14T08:24:23.554Z",
+      "type": "diagnostic.chat.page.ready",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.page.ready",
+        "time": "2026-10-14T08:24:23.554Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.page.ready",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966263546,
+          "eventType": "page.ready",
+          "stage": "initial",
+          "waitedMs": 1012,
+          "settleMs": 1000,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 32,
+      "time": "2026-10-14T08:24:23.569Z",
+      "type": "request.effect.succeeded",
+      "level": "info",
+      "data": {
+        "type": "request.effect.succeeded",
+        "time": "2026-10-14T08:24:23.568Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:page.ready.initial:attempt:1",
+        "effectType": "page.ready.initial",
+        "result": null,
+        "evidence": null,
+        "message": ""
+      }
+    },
+    {
+      "id": 33,
+      "time": "2026-10-14T08:24:23.570Z",
+      "type": "prompt.reconcile_required_after_navigation",
+      "level": "info",
+      "data": {
+        "type": "prompt.reconcile_required_after_navigation",
+        "time": "2026-10-14T08:24:23.570Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:prompt.submit:unconfirmed"
+      }
+    },
+    {
+      "id": 34,
+      "time": "2026-10-14T08:24:23.570Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:23.570Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966323570",
+        "kind": "hard_liveness",
+        "dueAt": 1791966323570,
+        "scheduledRevision": 18
+      }
+    },
+    {
+      "id": 35,
+      "time": "2026-10-14T08:24:23.570Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:23.570Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "recovery:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966293570",
+        "kind": "recovery",
+        "dueAt": 1791966293570,
+        "scheduledRevision": 0
+      }
+    },
+    {
+      "id": 36,
+      "time": "2026-10-14T08:24:23.569Z",
+      "type": "prompt.execution.step.dispatched",
+      "level": "info",
+      "data": {
+        "type": "prompt.execution.step.dispatched",
+        "time": "2026-10-14T08:24:23.569Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "startAtStepId": "session.apply",
+        "continuationOfEffectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:page.ready.initial:attempt:1",
+        "continuationReason": "effect_succeeded"
+      }
+    },
+    {
+      "id": 37,
+      "time": "2026-10-14T08:24:23.571Z",
+      "type": "diagnostic.request.effect.succeeded",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.request.effect.succeeded",
+        "time": "2026-10-14T08:24:23.571Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "request.effect.succeeded",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966263567,
+          "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+          "commandId": "4c8514c3-5118-491b-870d-45c15b887504",
+          "causationId": "4c8514c3-5118-491b-870d-45c15b887504",
+          "responseEpoch": 0,
+          "attempt": 1,
+          "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:page.ready.initial:attempt:1",
+          "effectType": "page.ready.initial",
+          "idempotencyKey": "mathagent_de0287dba4305edd9418a7447a5da0f2:page.ready.initial",
+          "phase": "prompt_accepted_by_content_script",
+          "retryPolicy": "always",
+          "preconditions": {
+            "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+            "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+            "responseEpoch": 0
+          },
+          "preconditionsHash": "aba0f51d38c78ff4c687e6ae2202ee5c2f20f38cc6566fe79accc38caa81609e",
+          "evidence": null,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 38,
+      "time": "2026-10-14T08:24:23.617Z",
+      "type": "diagnostic.prompt.execution.step",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.prompt.execution.step",
+        "time": "2026-10-14T08:24:23.617Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "prompt.execution.step",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966263577,
+          "commandId": "74a7850a-2b29-4486-95bd-0dcc41cfefbb",
+          "startAtStepId": "session.apply",
+          "continuationOfEffectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:page.ready.initial:attempt:1",
+          "continuationReason": "effect_succeeded",
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 39,
+      "time": "2026-10-14T08:24:23.617Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:23.617Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "recovery:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966292535",
+        "kind": "recovery",
+        "dueAt": 1791966292535,
+        "scheduledRevision": 20
+      }
+    },
+    {
+      "id": 40,
+      "time": "2026-10-14T08:24:23.618Z",
+      "type": "request.effect.started",
+      "level": "info",
+      "data": {
+        "type": "request.effect.started",
+        "time": "2026-10-14T08:24:23.617Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:session.apply:attempt:1",
+        "effectType": "session.apply",
+        "phase": "",
+        "evidence": null
+      }
+    },
+    {
+      "id": 41,
+      "time": "2026-10-14T08:24:23.618Z",
+      "type": "diagnostic.browser.effect.started",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.browser.effect.started",
+        "time": "2026-10-14T08:24:23.618Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "browser.effect.started",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966263617,
+          "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+          "commandId": "74a7850a-2b29-4486-95bd-0dcc41cfefbb",
+          "causationId": "74a7850a-2b29-4486-95bd-0dcc41cfefbb",
+          "responseEpoch": 0,
+          "attempt": 1,
+          "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:session.apply:attempt:1",
+          "effectType": "session.apply",
+          "idempotencyKey": "mathagent_de0287dba4305edd9418a7447a5da0f2:session.apply",
+          "phase": "prompt_accepted_by_content_script",
+          "retryPolicy": "if_unconfirmed",
+          "preconditions": {
+            "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+            "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+            "responseEpoch": 0,
+            "desiredSessionId": "",
+            "newSession": false
+          },
+          "preconditionsHash": "c78bcf77c86949e802f088d481a6ea44222ebfffde9d2561da3084f0e6119a99",
+          "evidence": {
+            "desiredSessionId": "",
+            "newSession": false,
+            "previousSessionId": "new"
+          },
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 42,
+      "time": "2026-10-14T08:24:23.621Z",
+      "type": "diagnostic.chat.page.ready.wait",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.page.ready.wait",
+        "time": "2026-10-14T08:24:23.621Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.page.ready.wait",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966263617,
+          "eventType": "page.ready.wait",
+          "stage": "session",
+          "timeoutMs": 45000,
+          "settleMs": 1000,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 43,
+      "time": "2026-10-14T08:24:23.622Z",
+      "type": "diagnostic.page.ready.state",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.page.ready.state",
+        "time": "2026-10-14T08:24:23.622Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "page.ready.state",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966263617,
+          "stage": "session",
+          "documentReadyState": "complete",
+          "chatMainReady": true,
+          "composerReady": true,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 44,
+      "time": "2026-10-14T08:24:23.624Z",
+      "type": "diagnostic.browser.effect.reconciled",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.browser.effect.reconciled",
+        "time": "2026-10-14T08:24:23.624Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "browser.effect.reconciled",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966263617,
+          "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:prompt.submit:unconfirmed",
+          "effectType": "prompt.submit",
+          "outcome": "uncertain",
+          "reason": "prompt_submission_not_provable",
+          "evidence": {
+            "effectType": "prompt.submit",
+            "activeRequestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+            "phase": "prompt_accepted_by_content_script",
+            "sessionId": "new",
+            "sentAt": 0,
+            "submittedUserTurnKey": "",
+            "responseEpoch": 0,
+            "expectedTextLength": 0,
+            "composerTextLength": 0,
+            "targetResponseEpoch": 0,
+            "pendingBaselineCount": 0,
+            "submittedTurnIsNew": false
+          },
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 45,
+      "time": "2026-10-14T08:24:24.448Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:24.448Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966324448",
+        "kind": "hard_liveness",
+        "dueAt": 1791966324448,
+        "scheduledRevision": 21
+      }
+    },
+    {
+      "id": 46,
+      "time": "2026-10-14T08:24:24.449Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:24.448Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "progress_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791967462535",
+        "kind": "progress_liveness",
+        "dueAt": 1791967462535,
+        "scheduledRevision": 21
+      }
+    },
+    {
+      "id": 47,
+      "time": "2026-10-14T08:24:24.537Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:24.537Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966324537",
+        "kind": "hard_liveness",
+        "dueAt": 1791966324537,
+        "scheduledRevision": 23
+      }
+    },
+    {
+      "id": 48,
+      "time": "2026-10-14T08:24:24.633Z",
+      "type": "diagnostic.page.ready",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.page.ready",
+        "time": "2026-10-14T08:24:24.633Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "page.ready",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966264629,
+          "stage": "session",
+          "waitedMs": 1012,
+          "settleMs": 1000,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 49,
+      "time": "2026-10-14T08:24:24.634Z",
+      "type": "diagnostic.chat.page.ready",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.page.ready",
+        "time": "2026-10-14T08:24:24.634Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.page.ready",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966264629,
+          "eventType": "page.ready",
+          "stage": "session",
+          "waitedMs": 1012,
+          "settleMs": 1000,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 50,
+      "time": "2026-10-14T08:24:24.648Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:24.648Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "forced_snapshot:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966352535",
+        "kind": "forced_snapshot",
+        "dueAt": 1791966352535,
+        "scheduledRevision": 24
+      }
+    },
+    {
+      "id": 51,
+      "time": "2026-10-14T08:24:24.651Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:24.650Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "recovery:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966294650",
+        "kind": "recovery",
+        "dueAt": 1791966294650,
+        "scheduledRevision": 0
+      }
+    },
+    {
+      "id": 52,
+      "time": "2026-10-14T08:24:24.651Z",
+      "type": "prompt.reconcile_required_after_navigation",
+      "level": "info",
+      "data": {
+        "type": "prompt.reconcile_required_after_navigation",
+        "time": "2026-10-14T08:24:24.651Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:prompt.submit:unconfirmed"
+      }
+    },
+    {
+      "id": 53,
+      "time": "2026-10-14T08:24:24.649Z",
+      "type": "request.effect.succeeded",
+      "level": "info",
+      "data": {
+        "type": "request.effect.succeeded",
+        "time": "2026-10-14T08:24:24.648Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:session.apply:attempt:1",
+        "effectType": "session.apply",
+        "result": null,
+        "evidence": null,
+        "message": ""
+      }
+    },
+    {
+      "id": 54,
+      "time": "2026-10-14T08:24:24.649Z",
+      "type": "prompt.execution.step.dispatched",
+      "level": "info",
+      "data": {
+        "type": "prompt.execution.step.dispatched",
+        "time": "2026-10-14T08:24:24.649Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "startAtStepId": "model.apply",
+        "continuationOfEffectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:session.apply:attempt:1",
+        "continuationReason": "effect_succeeded"
+      }
+    },
+    {
+      "id": 55,
+      "time": "2026-10-14T08:24:24.650Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:24.650Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966324650",
+        "kind": "hard_liveness",
+        "dueAt": 1791966324650,
+        "scheduledRevision": 26
+      }
+    },
+    {
+      "id": 56,
+      "time": "2026-10-14T08:24:24.652Z",
+      "type": "diagnostic.request.effect.succeeded",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.request.effect.succeeded",
+        "time": "2026-10-14T08:24:24.652Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "request.effect.succeeded",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966264648,
+          "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+          "commandId": "74a7850a-2b29-4486-95bd-0dcc41cfefbb",
+          "causationId": "74a7850a-2b29-4486-95bd-0dcc41cfefbb",
+          "responseEpoch": 0,
+          "attempt": 1,
+          "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:session.apply:attempt:1",
+          "effectType": "session.apply",
+          "idempotencyKey": "mathagent_de0287dba4305edd9418a7447a5da0f2:session.apply",
+          "phase": "prompt_accepted_by_content_script",
+          "retryPolicy": "if_unconfirmed",
+          "preconditions": {
+            "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+            "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+            "responseEpoch": 0,
+            "desiredSessionId": "",
+            "newSession": false
+          },
+          "preconditionsHash": "c78bcf77c86949e802f088d481a6ea44222ebfffde9d2561da3084f0e6119a99",
+          "evidence": {
+            "desiredSessionId": "",
+            "newSession": false,
+            "previousSessionId": "new"
+          },
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 57,
+      "time": "2026-10-14T08:24:24.684Z",
+      "type": "diagnostic.prompt.execution.step",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.prompt.execution.step",
+        "time": "2026-10-14T08:24:24.684Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "prompt.execution.step",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966264661,
+          "commandId": "015f8171-24e1-4560-9859-f42685c87b9c",
+          "startAtStepId": "model.apply",
+          "continuationOfEffectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:session.apply:attempt:1",
+          "continuationReason": "effect_succeeded",
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 58,
+      "time": "2026-10-14T08:24:24.685Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:24.685Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "recovery:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966292535",
+        "kind": "recovery",
+        "dueAt": 1791966292535,
+        "scheduledRevision": 28
+      }
+    },
+    {
+      "id": 59,
+      "time": "2026-10-14T08:24:24.685Z",
+      "type": "request.effect.started",
+      "level": "info",
+      "data": {
+        "type": "request.effect.started",
+        "time": "2026-10-14T08:24:24.685Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:model.apply:attempt:1",
+        "effectType": "model.apply",
+        "phase": "",
+        "evidence": null
+      }
+    },
+    {
+      "id": 60,
+      "time": "2026-10-14T08:24:24.685Z",
+      "type": "model.apply.started",
+      "level": "info",
+      "data": {
+        "type": "model.apply.started",
+        "time": "2026-10-14T08:24:24.685Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:model.apply:attempt:1",
+        "model": "",
+        "effort": ""
+      }
+    },
+    {
+      "id": 61,
+      "time": "2026-10-14T08:24:24.688Z",
+      "type": "diagnostic.browser.effect.started",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.browser.effect.started",
+        "time": "2026-10-14T08:24:24.688Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "browser.effect.started",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966264684,
+          "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+          "commandId": "015f8171-24e1-4560-9859-f42685c87b9c",
+          "causationId": "015f8171-24e1-4560-9859-f42685c87b9c",
+          "responseEpoch": 0,
+          "attempt": 1,
+          "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:model.apply:attempt:1",
+          "effectType": "model.apply",
+          "idempotencyKey": "mathagent_de0287dba4305edd9418a7447a5da0f2:model.apply",
+          "phase": "prompt_accepted_by_content_script",
+          "retryPolicy": "if_unconfirmed",
+          "preconditions": {
+            "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+            "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+            "responseEpoch": 0,
+            "model": "",
+            "effort": ""
+          },
+          "preconditionsHash": "ee1a9138af19e524d64e31df87f6964ce7f6b7e87f823a227c6b384c732e0a75",
+          "evidence": {
+            "model": "",
+            "effort": ""
+          },
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 62,
+      "time": "2026-10-14T08:24:24.689Z",
+      "type": "diagnostic.chat.page.ready.wait",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.page.ready.wait",
+        "time": "2026-10-14T08:24:24.689Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.page.ready.wait",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966264685,
+          "eventType": "page.ready.wait",
+          "stage": "model",
+          "timeoutMs": 45000,
+          "settleMs": 400,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 63,
+      "time": "2026-10-14T08:24:24.692Z",
+      "type": "diagnostic.page.ready.state",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.page.ready.state",
+        "time": "2026-10-14T08:24:24.692Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "page.ready.state",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966264685,
+          "stage": "model",
+          "documentReadyState": "complete",
+          "chatMainReady": true,
+          "composerReady": true,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 64,
+      "time": "2026-10-14T08:24:25.095Z",
+      "type": "diagnostic.page.ready",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.page.ready",
+        "time": "2026-10-14T08:24:25.095Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "page.ready",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265089,
+          "stage": "model",
+          "waitedMs": 404,
+          "settleMs": 400,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 65,
+      "time": "2026-10-14T08:24:25.099Z",
+      "type": "diagnostic.chat.page.ready",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.page.ready",
+        "time": "2026-10-14T08:24:25.098Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.page.ready",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265090,
+          "eventType": "page.ready",
+          "stage": "model",
+          "waitedMs": 405,
+          "settleMs": 400,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 66,
+      "time": "2026-10-14T08:24:25.115Z",
+      "type": "request.effect.succeeded",
+      "level": "info",
+      "data": {
+        "type": "request.effect.succeeded",
+        "time": "2026-10-14T08:24:25.114Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:model.apply:attempt:1",
+        "effectType": "model.apply",
+        "result": null,
+        "evidence": null,
+        "message": ""
+      }
+    },
+    {
+      "id": 67,
+      "time": "2026-10-14T08:24:25.115Z",
+      "type": "model.apply.done",
+      "level": "info",
+      "data": {
+        "type": "model.apply.done",
+        "time": "2026-10-14T08:24:25.114Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:model.apply:attempt:1"
+      }
+    },
+    {
+      "id": 68,
+      "time": "2026-10-14T08:24:25.115Z",
+      "type": "prompt.execution.step.dispatched",
+      "level": "info",
+      "data": {
+        "type": "prompt.execution.step.dispatched",
+        "time": "2026-10-14T08:24:25.115Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "startAtStepId": "prompt.submit",
+        "continuationOfEffectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:model.apply:attempt:1",
+        "continuationReason": "effect_succeeded"
+      }
+    },
+    {
+      "id": 69,
+      "time": "2026-10-14T08:24:25.116Z",
+      "type": "diagnostic.request.effect.succeeded",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.request.effect.succeeded",
+        "time": "2026-10-14T08:24:25.116Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "request.effect.succeeded",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265113,
+          "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+          "commandId": "015f8171-24e1-4560-9859-f42685c87b9c",
+          "causationId": "015f8171-24e1-4560-9859-f42685c87b9c",
+          "responseEpoch": 0,
+          "attempt": 1,
+          "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:model.apply:attempt:1",
+          "effectType": "model.apply",
+          "idempotencyKey": "mathagent_de0287dba4305edd9418a7447a5da0f2:model.apply",
+          "phase": "prompt_accepted_by_content_script",
+          "retryPolicy": "if_unconfirmed",
+          "preconditions": {
+            "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+            "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+            "responseEpoch": 0,
+            "model": "",
+            "effort": ""
+          },
+          "preconditionsHash": "ee1a9138af19e524d64e31df87f6964ce7f6b7e87f823a227c6b384c732e0a75",
+          "evidence": {
+            "model": "",
+            "effort": ""
+          },
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 70,
+      "time": "2026-10-14T08:24:25.144Z",
+      "type": "diagnostic.prompt.execution.step",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.prompt.execution.step",
+        "time": "2026-10-14T08:24:25.144Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "prompt.execution.step",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265125,
+          "commandId": "0fed039e-aacf-4f78-a287-6fee9ffb8238",
+          "startAtStepId": "prompt.submit",
+          "continuationOfEffectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:model.apply:attempt:1",
+          "continuationReason": "effect_succeeded",
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 71,
+      "time": "2026-10-14T08:24:25.144Z",
+      "type": "diagnostic.dom_monitor.shared_kernel_attached",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.dom_monitor.shared_kernel_attached",
+        "time": "2026-10-14T08:24:25.144Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "dom_monitor.shared_kernel_attached",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265126,
+          "tagName": "DIV",
+          "testId": "",
+          "sharedObservationKernel": true,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 72,
+      "time": "2026-10-14T08:24:25.145Z",
+      "type": "diagnostic.dom_monitor.started",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.dom_monitor.started",
+        "time": "2026-10-14T08:24:25.145Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "dom_monitor.started",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265126,
+          "sharedObservationKernel": true,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 73,
+      "time": "2026-10-14T08:24:25.150Z",
+      "type": "diagnostic.chat.session.snapshot",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.session.snapshot",
+        "time": "2026-10-14T08:24:25.150Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.session.snapshot",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265126,
+          "eventType": "session.snapshot",
+          "session": {
+            "id": "new",
+            "url": "https://chatgpt.com/",
+            "title": "ChatGPT",
+            "active": true
+          },
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 74,
+      "time": "2026-10-14T08:24:25.151Z",
+      "type": "diagnostic.prompt.turn_boundary.armed",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.prompt.turn_boundary.armed",
+        "time": "2026-10-14T08:24:25.151Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "prompt.turn_boundary.armed",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265126,
+          "turnCount": 0,
+          "baselineCount": 0,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 75,
+      "time": "2026-10-14T08:24:25.155Z",
+      "type": "diagnostic.chat.prompt.turn_boundary.armed",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.prompt.turn_boundary.armed",
+        "time": "2026-10-14T08:24:25.155Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.prompt.turn_boundary.armed",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265126,
+          "eventType": "prompt.turn_boundary.armed",
+          "turnCount": 0,
+          "baselineCount": 0,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 76,
+      "time": "2026-10-14T08:24:25.156Z",
+      "type": "request.effect.started",
+      "level": "info",
+      "data": {
+        "type": "request.effect.started",
+        "time": "2026-10-14T08:24:25.156Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:prompt.submit:attempt:1",
+        "effectType": "prompt.submit",
+        "phase": "",
+        "evidence": null
+      }
+    },
+    {
+      "id": 77,
+      "time": "2026-10-14T08:24:25.160Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:25.160Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966325160",
+        "kind": "hard_liveness",
+        "dueAt": 1791966325160,
+        "scheduledRevision": 32
+      }
+    },
+    {
+      "id": 78,
+      "time": "2026-10-14T08:24:25.160Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:25.160Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "progress_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791967462535",
+        "kind": "progress_liveness",
+        "dueAt": 1791967462535,
+        "scheduledRevision": 32
+      }
+    },
+    {
+      "id": 79,
+      "time": "2026-10-14T08:24:25.161Z",
+      "type": "diagnostic.browser.effect.started",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.browser.effect.started",
+        "time": "2026-10-14T08:24:25.161Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "browser.effect.started",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265156,
+          "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+          "commandId": "0fed039e-aacf-4f78-a287-6fee9ffb8238",
+          "causationId": "0fed039e-aacf-4f78-a287-6fee9ffb8238",
+          "responseEpoch": 0,
+          "attempt": 1,
+          "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:prompt.submit:attempt:1",
+          "effectType": "prompt.submit",
+          "idempotencyKey": "mathagent_de0287dba4305edd9418a7447a5da0f2:prompt.submit",
+          "phase": "prompt_accepted_by_content_script",
+          "retryPolicy": "never",
+          "preconditions": {
+            "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+            "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+            "responseEpoch": 0,
+            "promptHash": "af1cc4451184e652710589af309cfb4941c2069d1a037da9fbd80befd6d0b5b5",
+            "attachmentCount": 0
+          },
+          "preconditionsHash": "6ede0a1970929305559d903a2d3ece5734b7b7ad18ff333b9b30ffe275256208",
+          "evidence": null,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 80,
+      "time": "2026-10-14T08:24:25.161Z",
+      "type": "diagnostic.chat.page.ready.wait",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.page.ready.wait",
+        "time": "2026-10-14T08:24:25.161Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.page.ready.wait",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265157,
+          "eventType": "page.ready.wait",
+          "stage": "prompt.submit",
+          "timeoutMs": 45000,
+          "settleMs": 350,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 81,
+      "time": "2026-10-14T08:24:25.161Z",
+      "type": "diagnostic.page.ready.state",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.page.ready.state",
+        "time": "2026-10-14T08:24:25.161Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "page.ready.state",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265157,
+          "stage": "prompt.submit",
+          "documentReadyState": "complete",
+          "chatMainReady": true,
+          "composerReady": true,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 82,
+      "time": "2026-10-14T08:24:25.568Z",
+      "type": "diagnostic.page.ready",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.page.ready",
+        "time": "2026-10-14T08:24:25.567Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "page.ready",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265562,
+          "stage": "prompt.submit",
+          "waitedMs": 405,
+          "settleMs": 350,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 83,
+      "time": "2026-10-14T08:24:25.571Z",
+      "type": "diagnostic.chat.page.ready",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.page.ready",
+        "time": "2026-10-14T08:24:25.570Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.page.ready",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265562,
+          "eventType": "page.ready",
+          "stage": "prompt.submit",
+          "waitedMs": 405,
+          "settleMs": 350,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 84,
+      "time": "2026-10-14T08:24:25.583Z",
+      "type": "diagnostic.composer.found",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.composer.found",
+        "time": "2026-10-14T08:24:25.582Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "composer.found",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966265563,
+          "tagName": "DIV",
+          "role": "textbox",
+          "testId": "",
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 85,
+      "time": "2026-10-14T08:24:25.584Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:25.584Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966325584",
+        "kind": "hard_liveness",
+        "dueAt": 1791966325584,
+        "scheduledRevision": 34
+      }
+    },
+    {
+      "id": 86,
+      "time": "2026-10-14T08:24:25.886Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:25.886Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966325886",
+        "kind": "hard_liveness",
+        "dueAt": 1791966325886,
+        "scheduledRevision": 36
+      }
+    },
+    {
+      "id": 87,
+      "time": "2026-10-14T08:24:26.794Z",
+      "type": "diagnostic.composer.text_method_failed",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.composer.text_method_failed",
+        "time": "2026-10-14T08:24:26.794Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "composer.text_method_failed",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966266787,
+          "method": "page_main",
+          "message": "main_world_composer_timeout",
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 88,
+      "time": "2026-10-14T08:24:27.009Z",
+      "type": "diagnostic.prompt.submit.ready",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.prompt.submit.ready",
+        "time": "2026-10-14T08:24:27.009Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "prompt.submit.ready",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966267007,
+          "waitedMs": 0,
+          "label": "Send",
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 89,
+      "time": "2026-10-14T08:24:27.010Z",
+      "type": "diagnostic.composer.text_verified",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.composer.text_verified",
+        "time": "2026-10-14T08:24:27.010Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "composer.text_verified",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966267007,
+          "method": "exec_command",
+          "length": 156,
+          "sendReady": true,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 90,
+      "time": "2026-10-14T08:24:27.011Z",
+      "type": "diagnostic.composer.filled",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.composer.filled",
+        "time": "2026-10-14T08:24:27.011Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "composer.filled",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966267007,
+          "kind": "prompt",
+          "length": 156,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 91,
+      "time": "2026-10-14T08:24:27.134Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:27.134Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966327134",
+        "kind": "hard_liveness",
+        "dueAt": 1791966327134,
+        "scheduledRevision": 38
+      }
+    },
+    {
+      "id": 92,
+      "time": "2026-10-14T08:24:27.175Z",
+      "type": "diagnostic.prompt.submit.ready",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.prompt.submit.ready",
+        "time": "2026-10-14T08:24:27.175Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "prompt.submit.ready",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966267170,
+          "waitedMs": 0,
+          "label": "Send",
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 93,
+      "time": "2026-10-14T08:24:27.177Z",
+      "type": "diagnostic.send_button.found",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.send_button.found",
+        "time": "2026-10-14T08:24:27.176Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "send_button.found",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966267171,
+          "kind": "prompt",
+          "attempt": 1,
+          "label": "Send",
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 94,
+      "time": "2026-10-14T08:24:27.270Z",
+      "type": "diagnostic.prompt.submit.attempt",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.prompt.submit.attempt",
+        "time": "2026-10-14T08:24:27.270Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "prompt.submit.attempt",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966267268,
+          "kind": "prompt",
+          "attempt": 1,
+          "method": "button",
+          "confirmed": true,
+          "reason": "composer_cleared",
+          "waitedMs": 41,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 95,
+      "time": "2026-10-14T08:24:27.271Z",
+      "type": "diagnostic.chat.prompt.submit.confirmed",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.prompt.submit.confirmed",
+        "time": "2026-10-14T08:24:27.271Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.prompt.submit.confirmed",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966267268,
+          "eventType": "prompt.submit.confirmed",
+          "kind": "prompt",
+          "attempt": 1,
+          "method": "button",
+          "confirmed": true,
+          "reason": "composer_cleared",
+          "waitedMs": 41,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 96,
+      "time": "2026-10-14T08:24:27.271Z",
+      "type": "diagnostic.request.phase",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.request.phase",
+        "time": "2026-10-14T08:24:27.271Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "request.phase",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966267269,
+          "phase": "prompt_submitted",
+          "previousPhase": "prompt_accepted_by_content_script",
+          "meaningful": true,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 97,
+      "time": "2026-10-14T08:24:27.275Z",
+      "type": "diagnostic.chat.request.phase",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.request.phase",
+        "time": "2026-10-14T08:24:27.275Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.request.phase",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966267269,
+          "eventType": "request.phase",
+          "phase": "prompt_submitted",
+          "previousPhase": "prompt_accepted_by_content_script",
+          "meaningful": true,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 98,
+      "time": "2026-10-14T08:24:27.276Z",
+      "type": "diagnostic.prompt.user_turn_anchor_wait.started",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.prompt.user_turn_anchor_wait.started",
+        "time": "2026-10-14T08:24:27.276Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "prompt.user_turn_anchor_wait.started",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/",
+          "title": "ChatGPT",
+          "time": 1791966267271,
+          "timeoutMs": 5000,
+          "baselineCount": 0,
+          "expectedTextHash": "1223hs9",
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 99,
+      "time": "2026-10-14T08:24:27.495Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:27.495Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966327495",
+        "kind": "hard_liveness",
+        "dueAt": 1791966327495,
+        "scheduledRevision": 40
+      }
+    },
+    {
+      "id": 100,
+      "time": "2026-10-14T08:24:27.495Z",
+      "type": "diagnostic.submitted_user_turn.captured",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.submitted_user_turn.captured",
+        "time": "2026-10-14T08:24:27.495Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "submitted_user_turn.captured",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/c/local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987",
+          "title": "You are Session A. Your fixed marker is TREE-A-719. Calculate 37 * 43, explain in one or two sentences, and include your fixed marker in the final response.",
+          "time": 1791966267493,
+          "turnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user",
+          "turnIndex": 0,
+          "textLength": 156,
+          "textHash": "1223hs9",
+          "promptHash": "1223hs9",
+          "previousSubmittedUserTurnKey": "",
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 101,
+      "time": "2026-10-14T08:24:27.498Z",
+      "type": "diagnostic.chat.user_turn.captured",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.user_turn.captured",
+        "time": "2026-10-14T08:24:27.498Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.user_turn.captured",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/c/local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987",
+          "title": "You are Session A. Your fixed marker is TREE-A-719. Calculate 37 * 43, explain in one or two sentences, and include your fixed marker in the final response.",
+          "time": 1791966267493,
+          "eventType": "user_turn.captured",
+          "turnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user",
+          "turnIndex": 0,
+          "textLength": 156,
+          "textHash": "1223hs9",
+          "promptHash": "1223hs9",
+          "previousSubmittedUserTurnKey": "",
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 102,
+      "time": "2026-10-14T08:24:27.499Z",
+      "type": "diagnostic.request.phase",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.request.phase",
+        "time": "2026-10-14T08:24:27.499Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "request.phase",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/c/local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987",
+          "title": "You are Session A. Your fixed marker is TREE-A-719. Calculate 37 * 43, explain in one or two sentences, and include your fixed marker in the final response.",
+          "time": 1791966267493,
+          "phase": "waiting_for_assistant_turn",
+          "previousPhase": "prompt_submitted",
+          "submittedUserTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user",
+          "submittedUserTurnIndex": 0,
+          "reanchoredAfterSteer": false,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 103,
+      "time": "2026-10-14T08:24:27.502Z",
+      "type": "diagnostic.chat.request.phase",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.request.phase",
+        "time": "2026-10-14T08:24:27.502Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.request.phase",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/c/local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987",
+          "title": "You are Session A. Your fixed marker is TREE-A-719. Calculate 37 * 43, explain in one or two sentences, and include your fixed marker in the final response.",
+          "time": 1791966267493,
+          "eventType": "request.phase",
+          "phase": "waiting_for_assistant_turn",
+          "previousPhase": "prompt_submitted",
+          "submittedUserTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user",
+          "submittedUserTurnIndex": 0,
+          "reanchoredAfterSteer": false,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 104,
+      "time": "2026-10-14T08:24:27.505Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:27.504Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "forced_snapshot:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966352535",
+        "kind": "forced_snapshot",
+        "dueAt": 1791966352535,
+        "scheduledRevision": 41
+      }
+    },
+    {
+      "id": 105,
+      "time": "2026-10-14T08:24:27.505Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:27.504Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "forced_snapshot:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966357504",
+        "kind": "forced_snapshot",
+        "dueAt": 1791966357504,
+        "scheduledRevision": 42
+      }
+    },
+    {
+      "id": 106,
+      "time": "2026-10-14T08:24:27.505Z",
+      "type": "request.effect.succeeded",
+      "level": "info",
+      "data": {
+        "type": "request.effect.succeeded",
+        "time": "2026-10-14T08:24:27.504Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:prompt.submit:attempt:1",
+        "effectType": "prompt.submit",
+        "result": {
+          "submittedUserTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user",
+          "submittedUserTurnIndex": 0,
+          "retryAttempt": 0,
+          "previousResponseEpoch": 0,
+          "targetResponseEpoch": 0
+        },
+        "evidence": null,
+        "message": ""
+      }
+    },
+    {
+      "id": 107,
+      "time": "2026-10-14T08:24:27.505Z",
+      "type": "prompt.sent",
+      "level": "info",
+      "data": {
+        "type": "prompt.sent",
+        "time": "2026-10-14T08:24:27.504Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:prompt.submit:attempt:1",
+        "effectType": "prompt.submit",
+        "submissionSource": "browser_effect_result"
+      }
+    },
+    {
+      "id": 108,
+      "time": "2026-10-14T08:24:27.510Z",
+      "type": "diagnostic.request.effect.succeeded",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.request.effect.succeeded",
+        "time": "2026-10-14T08:24:27.510Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "request.effect.succeeded",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/c/local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987",
+          "title": "You are Session A. Your fixed marker is TREE-A-719. Calculate 37 * 43, explain in one or two sentences, and include your fixed marker in the final response.",
+          "time": 1791966267505,
+          "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+          "commandId": "0fed039e-aacf-4f78-a287-6fee9ffb8238",
+          "causationId": "0fed039e-aacf-4f78-a287-6fee9ffb8238",
+          "responseEpoch": 0,
+          "attempt": 1,
+          "effectId": "mathagent_de0287dba4305edd9418a7447a5da0f2:prompt.submit:attempt:1",
+          "effectType": "prompt.submit",
+          "idempotencyKey": "mathagent_de0287dba4305edd9418a7447a5da0f2:prompt.submit",
+          "phase": "prompt_accepted_by_content_script",
+          "retryPolicy": "never",
+          "preconditions": {
+            "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+            "ownerServerInstanceId": "38a1466b-651d-4ae0-9bb8-80a9f60ada9e",
+            "responseEpoch": 0,
+            "promptHash": "af1cc4451184e652710589af309cfb4941c2069d1a037da9fbd80befd6d0b5b5",
+            "attachmentCount": 0
+          },
+          "preconditionsHash": "6ede0a1970929305559d903a2d3ece5734b7b7ad18ff333b9b30ffe275256208",
+          "evidence": null,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 109,
+      "time": "2026-10-14T08:24:27.510Z",
+      "type": "diagnostic.prompt.sent",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.prompt.sent",
+        "time": "2026-10-14T08:24:27.510Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "prompt.sent",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/c/local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987",
+          "title": "You are Session A. Your fixed marker is TREE-A-719. Calculate 37 * 43, explain in one or two sentences, and include your fixed marker in the final response.",
+          "time": 1791966267505,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 110,
+      "time": "2026-10-14T08:24:27.514Z",
+      "type": "diagnostic.chat.prompt.sent",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.prompt.sent",
+        "time": "2026-10-14T08:24:27.514Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "clientId": "extension:tab:1707788658",
+        "payload": {
+          "name": "chat.prompt.sent",
+          "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "url": "https://chatgpt.com/c/local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987",
+          "title": "You are Session A. Your fixed marker is TREE-A-719. Calculate 37 * 43, explain in one or two sentences, and include your fixed marker in the final response.",
+          "time": 1791966267505,
+          "eventType": "prompt.sent",
+          "attachmentCount": 0,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    },
+    {
+      "id": 111,
+      "time": "2026-10-14T08:24:27.515Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:27.515Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "forced_snapshot:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966357515",
+        "kind": "forced_snapshot",
+        "dueAt": 1791966357515,
+        "scheduledRevision": 43
+      }
+    },
+    {
+      "id": 112,
+      "time": "2026-10-14T08:24:27.515Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:27.515Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966327515",
+        "kind": "hard_liveness",
+        "dueAt": 1791966327515,
+        "scheduledRevision": 44
+      }
+    },
+    {
+      "id": 113,
+      "time": "2026-10-14T08:24:28.275Z",
+      "type": "request.deadline.scheduled",
+      "level": "info",
+      "data": {
+        "type": "request.deadline.scheduled",
+        "time": "2026-10-14T08:24:28.275Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "deadlineId": "hard_liveness:mathagent_de0287dba4305edd9418a7447a5da0f2:1791966328274",
+        "kind": "hard_liveness",
+        "dueAt": 1791966328274,
+        "scheduledRevision": 46
+      }
+    },
+    {
+      "id": 114,
+      "time": "2026-10-14T08:24:28.864Z",
+      "type": "request.error",
+      "level": "info",
+      "data": {
+        "type": "request.error",
+        "time": "2026-10-14T08:24:28.863Z",
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+        "message": "Bound ChatGPT conversation changed",
+        "phase": "failed",
+        "recoverable": false,
+        "finishReason": "canonical_state_failure",
+        "code": "CANONICAL_CONVERSATION_CHANGED",
+        "name": "CanonicalRequestStateError"
+      }
+    },
+    {
+      "id": 115,
+      "time": "2026-10-14T08:24:28.869Z",
+      "type": "turn/failed",
+      "level": "info",
+      "data": {
+        "turn": {
+          "id": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "threadId": "thread_mv7ug1cy-f0ev6dud",
+          "idempotencyKey": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+          "status": "failed",
+          "createdAt": "2026-10-14T08:24:22.500Z",
+          "updatedAt": "2026-10-14T08:24:28.866Z",
+          "startedAt": "2026-10-14T08:24:22.503Z",
+          "completedAt": "2026-10-14T08:24:28.865Z",
+          "input": {
+            "input": [
+              {
+                "type": "text",
+                "text": "You are Session A. Your fixed marker is TREE-A-719. Calculate 37 * 43, explain in one or two sentences, and include your fixed marker in the final response."
+              }
+            ],
+            "message": "You are Session A. Your fixed marker is TREE-A-719. Calculate 37 * 43, explain in one or two sentences, and include your fixed marker in the final response.",
+            "cwd": "",
+            "model": "",
+            "effort": "",
+            "attachments": [],
+            "sessionId": "",
+            "sessionPolicy": "reuse",
+            "sourceClientId": "extension:tab:1707788658",
+            "project": null,
+            "output": {
+              "expected": "text",
+              "required": false
+            },
+            "metadata": {
+              "researchNodeId": "smoke-A",
+              "requiredModel": "model-gpt-6",
+              "requiredEffort": "xhigh"
+            }
+          },
+          "output": null,
+          "error": {
+            "code": "CANONICAL_CONVERSATION_CHANGED",
+            "message": "Bound ChatGPT conversation changed",
+            "recoverable": true
+          }
+        },
+        "error": {
+          "code": "CANONICAL_CONVERSATION_CHANGED",
+          "message": "Bound ChatGPT conversation changed",
+          "recoverable": true
+        }
+      }
+    }
+  ],
+  "measurements": {
+    "dispatch_started": {
+      "at": "2026-10-14T08:24:22.482348+00:00",
+      "monotonic_ns": 987599512888375,
+      "process_id": "0b11adebded64fb3b8715a9be0f92dc3"
+    },
+    "dispatch_acknowledged": {
+      "at": "2026-10-14T08:24:22.504267+00:00",
+      "monotonic_ns": 987599534794041,
+      "process_id": "0b11adebded64fb3b8715a9be0f92dc3"
+    },
+    "terminal_record_received": {
+      "at": "2026-10-14T08:24:28.889481+00:00",
+      "monotonic_ns": 987605920034333,
+      "process_id": "0b11adebded64fb3b8715a9be0f92dc3"
+    }
+  }
+}

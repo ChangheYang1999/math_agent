@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-15T07:55:48.004220+00:00",
+  "classification": "OFFLINE_PASS",
+  "scope": "Temporary scripted-transport project and temporary ledger only; zero browser/bridge/model calls.",
+  "checks": [
+    "Direct production Scheduler subclass; no experimental role mapping.",
+    "Current leaf prompt is exact production Pro template, version1 with matching approval payload/hash.",
+    "Three fake leaf reports each receive their mandatory Parent response; third report pauses leaf and fourth prompt remains saved undispatched.",
+    "Independent Pro leaf and Extra High parent session roles.",
+    "Private helper export/run label is CONSOLIDATED_GENUINE_PRO_TREE, not old Extra High override.",
+    "New global ledger rejects duplicate POST reservation and seventeenth distinct reservation."
+  ],
+  "syntax": "PASS",
+  "real_model_requests": 0
+}

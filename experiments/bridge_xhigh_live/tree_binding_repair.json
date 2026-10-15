@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-14T09:10:55.897570+00:00",
+  "session_id": "S-1757476a2a495611b0048f94c239449c",
+  "conversation_id": "6acf41cd-3fe8-83e9-b8b3-0ddddf0e91db",
+  "transient_duplicate_client": "extension:tab:1707788682",
+  "restored_original_client": "extension:tab:1707788676",
+  "reason": "Extension reload disconnected own leaf content; initial verification auto-reopened the same conversation before leaf reconnected. No request dispatched to replacement. Closed own unused duplicate and restored exact original experiment tab. Verification now refuses disconnected saved tabs."
+}

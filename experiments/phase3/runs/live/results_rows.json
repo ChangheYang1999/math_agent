@@ -1,0 +1,62 @@
+[
+  {
+    "phase": "tree",
+    "live_or_mock": "live",
+    "actual_model": "model-gpt-6",
+    "actual_effort": "xhigh",
+    "browser_instance": "Existing Chrome/profile only; root verifies UI identity",
+    "tab_id": "extension:tab:1707788777",
+    "conversation_id": "6ad073a4-b6b0-83ea-8d27-eb898d8fc2c1",
+    "turn/request_id": "mathagent_6b11c7b8d84959538a9d96da0b25d505",
+    "started_at": "2026-10-15T06:33:05.318467+00:00",
+    "finished_at": "2026-10-15T06:34:21.154423+00:00",
+    "terminal_status": "COMPLETED",
+    "correct_marker": null,
+    "context_retained": null
+  },
+  {
+    "phase": "tree",
+    "live_or_mock": "live",
+    "actual_model": "model-gpt-6",
+    "actual_effort": "xhigh",
+    "browser_instance": "Existing Chrome/profile only; root verifies UI identity",
+    "tab_id": "extension:tab:1707788780",
+    "conversation_id": "6ad075c9-dc9c-83e9-969e-6b6ab3986682",
+    "turn/request_id": "mathagent_9c78d914743e56968af114c8c6944968",
+    "started_at": "2026-10-15T06:42:14.394682+00:00",
+    "finished_at": "2026-10-15T06:43:41.081929+00:00",
+    "terminal_status": "COMPLETED",
+    "correct_marker": null,
+    "context_retained": null
+  },
+  {
+    "phase": "tree",
+    "live_or_mock": "live",
+    "actual_model": "model-gpt-6",
+    "actual_effort": "xhigh",
+    "browser_instance": "Existing Chrome/profile only; root verifies UI identity",
+    "tab_id": "extension:tab:1707788783",
+    "conversation_id": "6ad075cb-4900-83ea-8233-273180550313",
+    "turn/request_id": "mathagent_007d00f57c7259f394d556a0b4cfcb63",
+    "started_at": "2026-10-15T06:42:15.987039+00:00",
+    "finished_at": "2026-10-15T06:43:49.727929+00:00",
+    "terminal_status": "COMPLETED",
+    "correct_marker": null,
+    "context_retained": null
+  },
+  {
+    "phase": "tree",
+    "live_or_mock": "live",
+    "actual_model": "model-gpt-6",
+    "actual_effort": "xhigh",
+    "browser_instance": "Existing Chrome/profile only; root verifies UI identity",
+    "tab_id": "extension:tab:1707788777",
+    "conversation_id": "6ad073a4-b6b0-83ea-8d27-eb898d8fc2c1",
+    "turn/request_id": "mathagent_8dead57559845377aa96cac3e5f68d83",
+    "started_at": "2026-10-15T06:43:45.222697+00:00",
+    "finished_at": "2026-10-15T06:44:16.475721+00:00",
+    "terminal_status": "ERROR",
+    "correct_marker": null,
+    "context_retained": null
+  }
+]

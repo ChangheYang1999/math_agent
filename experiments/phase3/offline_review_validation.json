@@ -1,0 +1,39 @@
+{
+  "recorded_at_utc": "2026-10-15T06:27:19.602707+00:00",
+  "kind": "OFFLINE_TEST_EVIDENCE",
+  "real_browser_calls": 0,
+  "human_approvals": 0,
+  "synthetic_approvals_only_in_pytest_temporary_projects": true,
+  "test_command": ".venv/bin/python -m pytest -q tests/test_review_dashboard.py tests/test_parent_prompt.py tests/test_research_tree.py -k \"review or feedback or asking_parent or prompt or replaced_parent\" --junitxml=experiments/phase3/offline_review_tests.xml",
+  "result": {
+    "passed": 12,
+    "deselected": 15
+  },
+  "new_tests": 3,
+  "lint": "Ruff passed on changed Python files",
+  "files": {
+    "src/math_research_agent/dashboard.py": "a00418db463ae4f21136ae0f3b64539d3dee5e07aa4f318e82631bd7c23d6c9e",
+    "src/math_research_agent/static/dashboard.html": "03b584ef72e54862916d92ad2f249ef09c5042eb1bfe4ed775348ad6a6651470",
+    "src/math_research_agent/scheduler.py": "85f3ccb14846b352b99dbc33e5051eb14a128625681937a489a8910456f65181",
+    "src/math_research_agent/parent_prompt.py": "63cf1c33e3beb07cec549b44324b66ea0abc2c5a78450e69f0e73615cd65d185",
+    "prompts/parent_response.md": "f5801c6bd69b9dc6744fd42d4c826ebb5ed4a8f2ae6681ecfde214adca1235ce",
+    "tests/test_review_dashboard.py": "e44837ea5f5fccd2d4d73036cf69d05546b1dd2f555b690801ea380506bc7c87"
+  },
+  "reproduced_before_fix": {
+    "manual_review_enable_after_auto_prompt_creation": {
+      "round_stage": "PROMPT_READY",
+      "pending_approvals": 0
+    },
+    "persistent_later_filter": "Dashboard auto-open required !a.deferred, suppressing the same pending modal across page loads."
+  },
+  "fixed": [
+    "Rearm unsent automatically approved prompts and not-yet-consumed reports when review is enabled; preserve active parent requests.",
+    "A locally queued leaf cannot dispatch a rearmed prompt.",
+    "Later/Escape dismisses within the current page; a pending modal can reappear after reload.",
+    "Chinese structural summary with an exact original-English artifact link.",
+    "Two questions through local HTTP preserve approval hash/state and use the same assigned Parent.",
+    "Parent discussion always gets Chinese display translation with authoritative English retained.",
+    "Prompt revisions reject stale approvals; report correction preserves immutable unaccepted original and creates a new approval gate.",
+    "Restored Parent history retains explicit report_accepted and response_source markers."
+  ]
+}

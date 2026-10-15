@@ -1,0 +1,70 @@
+diff --git a/tools/chrome-bridge-extension/content/responseDom.js b/tools/chrome-bridge-extension/content/responseDom.js
+index 9756c35..ff21770 100644
+--- a/tools/chrome-bridge-extension/content/responseDom.js
++++ b/tools/chrome-bridge-extension/content/responseDom.js
+@@ -79,6 +79,17 @@ function inlineCodeMarkdown(value) {
+   return `${fence}${padded}${fence}`;
+ }
+ 
++function renderedMathMarkdown(element) {
++  if (!element?.matches?.('.katex, .katex-display') || element.closest?.('pre, code')) return null;
++  const clone = element.cloneNode(true);
++  const annotation = clone.querySelector?.('annotation[encoding="application/x-tex"]');
++  const tex = String(annotation?.textContent || '');
++  if (!tex.trim()) return null;
++  const display = element.matches('.katex-display') || element.closest?.('.katex-display')
++    || clone.querySelector?.('math[display="block"]');
++  return display ? `\\[\n${tex}\n\\]` : `\\(${tex}\\)`;
++}
++
+ function inlineMarkdown(element, context = null) {
+   if (!element) return '';
+   const preserved = [];
+@@ -93,6 +104,8 @@ function inlineMarkdown(element, context = null) {
+     const tag = node.tagName?.toLowerCase?.() || '';
+     if (tag === 'br') return '\n';
+     if (tag === 'code' && node.closest?.('pre') === null) return preserve(inlineCodeMarkdown(node.textContent || ''));
++    const math = renderedMathMarkdown(node);
++    if (math !== null) return preserve(math);
+     const inner = Array.from(node.childNodes || []).map(render).join('');
+     if (!inner) return '';
+     if (tag === 'strong' || tag === 'b') return `**${inner}**`;
+@@ -845,6 +858,8 @@ function elementToMarkdown(element, context) {
+   if (!element || context.isExcluded(element) || !parserElementVisible(element, context.parserPass)) return '';
+   const tag = element.tagName.toLowerCase();
+   if (tag === 'pre') return preToMarkdown(element);
++  const math = renderedMathMarkdown(element);
++  if (math !== null) return math;
+   if (tag === 'table') return tableToMarkdown(element);
+   if (tag === 'blockquote') return blockquoteToMarkdown(element, context);
+   if (tag === 'ul' || tag === 'ol') return listToMarkdown(element, context, tag === 'ol');
+@@ -868,11 +883,28 @@ function elementToMarkdown(element, context) {
+ 
+ function isBlockTag(tag) { return /^(p|div|section|article|pre|table|blockquote|ul|ol|li|h[1-6]|hr)$/i.test(tag); }
+ function inlineText(element, context = null) {
+-  if (!context?.isExcluded) return visibleText(element).replace(/\n+/g, ' ').replace(/\s{2,}/g, ' ').trim();
++  if (!context?.isExcluded) {
++    if (!element.querySelector?.('.katex, .katex-display')) {
++      return visibleText(element).replace(/\n+/g, ' ').replace(/\s{2,}/g, ' ').trim();
++    }
++    // Lists and tables use a plain-text flattening path. Replace only rendered
++    // math in a clone; keep TeX protected from whitespace normalization.
++    const clone = element.cloneNode(true);
++    const preserved = [];
++    for (const formula of Array.from(clone.querySelectorAll?.('.katex-display, .katex') || [])) {
++      if (!clone.contains(formula)) continue;
++      const math = renderedMathMarkdown(formula);
++      if (math !== null) formula.replaceWith(`\uE000${preserved.push(math) - 1}\uE001`);
++    }
++    return visibleText(clone).replace(/\n+/g, ' ').replace(/\s{2,}/g, ' ').trim()
++      .replace(/\uE000(\d+)\uE001/g, (_match, index) => preserved[Number(index)] || '');
++  }
+   const collect = (node) => {
+     if (!node) return '';
+     if (node.nodeType === Node.TEXT_NODE) return node.textContent || '';
+     if (node.nodeType !== Node.ELEMENT_NODE || context.isExcluded(node) || !parserElementVisible(node, context.parserPass)) return '';
++    const math = renderedMathMarkdown(node);
++    if (math !== null) return math;
+     return Array.from(node.childNodes || []).map(collect).join(' ');
+   };
+   return normalizeText(collect(element)).replace(/\n+/g, ' ').replace(/\s{2,}/g, ' ').trim();

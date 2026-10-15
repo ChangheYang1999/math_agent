@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-15T07:34:52.371187+00:00",
+  "scope": "Read-only source/health/old live DB; no browser or model actions. Only narrowly relevant lockfile backups written.",
+  "health": {
+    "ok": true,
+    "pendingRequests": 0,
+    "pendingCommands": 0,
+    "activeRequestCount": 0,
+    "clientCount": 8
+  },
+  "pinned_revision": "0ffdae90239988f253058c05253226152acd55d2",
+  "first_eight_patch_checksums": {
+    "picker": true,
+    "conversation": true,
+    "release": true,
+    "math": true,
+    "long_prompt_v2": true,
+    "delivery_state": true,
+    "observation_recovery": true,
+    "code_lines": true
+  },
+  "first_eight_active_source_hashes": {
+    "tools/chrome-bridge-extension/content/intelligenceCommands.js": true,
+    "src/bridge/adapters/tabObservationAdapter.js": true,
+    "tools/chrome-bridge-extension/background/portRouter.js": true,
+    "tools/chrome-bridge-extension/content/responseDom.js": true,
+    "tools/chrome-bridge-extension/artifactCaptureMain.js": true,
+    "tools/chrome-bridge-extension/content/composerCommands.js": true,
+    "src/bridge/coordinator/bridgeClientEventRouter.js": true,
+    "src/bridge/coordinator/requestResultMaterializer.js": true,
+    "src/bridge/state/requestEffectTransitions.js": true,
+    "src/turnManager.js": true,
+    "tools/chrome-bridge-extension/content/requestEffectReconciliation.js": true,
+    "test/browserEffectReconciliationMatrix.test.js": true,
+    "test/extensionInteractionRegression.test.js": true,
+    "tools/chrome-bridge-extension/content/requestMonitor.js": true,
+    "tools/chrome-bridge-extension/content/turnSnapshots.js": true,
+    "tools/chrome-bridge-extension/content/userTurnState.js": true,
+    "tools/chrome-bridge-extension/responseParserCore.js": true
+  },
+  "first_eight_installed_source_hashes": {
+    "content/intelligenceCommands.js": true,
+    "background/portRouter.js": true,
+    "content/responseDom.js": true,
+    "artifactCaptureMain.js": true,
+    "content/composerCommands.js": true,
+    "content/requestEffectReconciliation.js": true,
+    "content/requestMonitor.js": true,
+    "content/turnSnapshots.js": true,
+    "content/userTurnState.js": true,
+    "responseParserCore.js": true
+  },
+  "resume_role_active_base_unchanged": true,
+  "resume_role_installed_base_unchanged": true,
+  "active_lockfile_sha256": "97288d96ef0c1419506e87c45c1b1cbcc39af20cecb42245e6d24661d2346b0e",
+  "lockfile_backup_sha256": "97288d96ef0c1419506e87c45c1b1cbcc39af20cecb42245e6d24661d2346b0e",
+  "lockfile_diff": "diff --git a/package-lock.json b/package-lock.json\nindex c79f492..8d91457 100644\n--- a/package-lock.json\n+++ b/package-lock.json\n@@ -782,6 +782,7 @@\n       \"resolved\": \"https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz\",\n       \"integrity\": \"sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==\",\n       \"license\": \"MIT\",\n+      \"peer\": true,\n       \"engines\": {\n         \"node\": \">=12\"\n       },\n",
+  "lockfile_mutated": false,
+  "active_strict_setup": "Refused exactly the unreviewed package-lock.json file; strict installer unchanged.",
+  "phase3_old_parent": {
+    "id": "parent:n-4360dde303ec-r000001:e0:a0",
+    "status": "ERROR",
+    "bridge_request_id": "mathagent_8dead57559845377aa96cac3e5f68d83",
+    "error": "Bridge terminal error CANONICAL_RECOVERY_UNCERTAIN: The submitted user turn disappeared after content reload; repeating prompt.submit would be ambiguous and is forbidden.",
+    "prompt_characters": 16701,
+    "raw_response_is_null": true
+  },
+  "phase3_counts": {
+    "rounds": 2,
+    "parent_responses": 0,
+    "turns": 4,
+    "errors": 1
+  }
+}

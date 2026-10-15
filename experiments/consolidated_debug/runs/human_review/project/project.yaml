@@ -1,0 +1,13 @@
+# Research Tree configuration is also persisted in tree.db.
+bridge_base_url: http://127.0.0.1:8080
+bridge_parent_effort: xhigh
+bridge_parent_model: GPT-6 Thinking
+bridge_pro_model: GPT-6 Pro
+bridge_request_timeout: 20.0
+bridge_turn_timeout: 1800.0
+format_retries: 2
+manual_review_enabled: true
+max_concurrent_pro_turns: 1
+projects_root: experiments/consolidated_debug/runs/human_review
+target_active_leaves: 1
+transport: bridge

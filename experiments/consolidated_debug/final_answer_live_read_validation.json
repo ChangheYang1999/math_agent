@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-15T08:22:45.994784+00:00",
+  "status": "LIVE_SELECTOR_RECOVERY_PASS",
+  "scope": "Read-only extraction from the already-completed owned Pro Leaf after the user reloaded the same extension and root refreshed only owned experiment tabs. No new inference.",
+  "capture": "experiments/consolidated_debug/pro_smoke_postfix_read_recovery.json",
+  "capture_sha256": "8b36307e1e34d7df11a013dcd3d5ed322d12f9b7af82f0c124adec295abb66da",
+  "captured_at": "2026-10-15T08:22:00.581394+00:00",
+  "http_status": 200,
+  "source_client_id": "extension:tab:1707788894",
+  "url": "https://chatgpt.com/c/6ad0893b-aed0-83ea-8da4-72db3bdec676",
+  "turn_key": "bb04925c-2b25-4251-a340-7eeb2134bcdf::assistant",
+  "user_turn_key": "bb04925c-2b25-4251-a340-7eeb2134bcdf::user",
+  "answer_length": 4426,
+  "answer_sha256": "692207586327a643a4ef93d902c498d4d4bf0c78530f9e9c7d78ed7476fe5e66",
+  "matches_offline_patched_dom_answer_exactly": true,
+  "json_schema_identity": {
+    "node_id": "n-3790f8503746",
+    "round_id": "n-3790f8503746-r000001"
+  },
+  "content_fidelity": "KNOWN_FAIL_PLAIN_MARKDOWN; same two source underscore\u2192star changes inside evidence, documented in final_answer_content_fidelity.json. This is not a lossless content pass.",
+  "original_upstream_request": "mathagent_91fd67634c1b5ff3b107263f1fc529c6",
+  "original_upstream_17_character_terminal": "PRESERVED; read-only recovery did not rewrite it",
+  "normal_new_inference_postfix": "NOT_RUN",
+  "ninth_request_resume_handler_execution": "NOT_RUN",
+  "browser_actions_by_this_agent": 0,
+  "inference_requests_by_this_agent": 0
+}

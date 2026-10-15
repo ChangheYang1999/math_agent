@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-15T08:04:19.690Z",
+  "parent": {
+    "tab": "1707788883",
+    "model": "GPT-6",
+    "tier": "Extra High",
+    "slider": 3
+  },
+  "leaf1": {
+    "tab": "1707788894",
+    "tier": "Pro",
+    "slider": 4,
+    "family": [
+      {
+        "checked": "true",
+        "label": "GPT-6"
+      },
+      {
+        "checked": "false",
+        "label": "GPT-5.6 Sol"
+      }
+    ]
+  },
+  "leaf2": {
+    "tab": "1707788897",
+    "tier": "Pro",
+    "slider": 4,
+    "family": [
+      {
+        "checked": "true",
+        "label": "GPT-6"
+      },
+      {
+        "checked": "false",
+        "label": "GPT-5.6 Sol"
+      }
+    ]
+  },
+  "scope": "ACTUAL_SUPPORTED_UI_CLICK_SEQUENCE_BEFORE_INFERENCE"
+}

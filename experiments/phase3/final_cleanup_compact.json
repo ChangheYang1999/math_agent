@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-15T06:50:49.584764+00:00",
+  "zero_bridge_work": true,
+  "research_process": "Capped runner exited1 and halted; no automatic scheduler is running for liveproject",
+  "pending_mandatory_obligations": 2,
+  "unresolved_local_errors": [
+    {
+      "id": 1,
+      "node_id": "n-4360dde303ec",
+      "operation": "parent:n-4360dde303ec-r000001",
+      "message": "Bridge terminal error CANONICAL_RECOVERY_UNCERTAIN: The submitted user turn disappeared after content reload; repeating prompt.submit would be ambiguous and is forbidden.",
+      "resolved": 0,
+      "created_at": "2026-10-15 06:44:16"
+    }
+  ],
+  "real_model_requests": 4,
+  "review_server": "http://127.0.0.1:8766/ intentionally left running idle behind human promptgate",
+  "original_browser_process": "8492 Thu Oct  8 19:20:18 2026     /Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "bridge_process": "67555 Wed Oct 14 17:28:50 2026     /Users/changheyang/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+  "original_tab_preservation": {
+    "capturedAt": "2026-10-15T06:50:14.732Z",
+    "browserId": "1",
+    "originalTabPresent": true,
+    "originalTabContentRead": false,
+    "originalTabNavigated": false,
+    "retainedExperimentTabs": [
+      "1707788777",
+      "1707788780",
+      "1707788783"
+    ],
+    "reviewHandoffTab": "1707788774",
+    "closedOwnBlankProDiscoveryTab": "1707788771"
+  },
+  "candidate_parent_not_committed": true,
+  "bridge_health": {
+    "ok": true,
+    "clients": 7,
+    "selectedClientId": "extension:tab:1707788783",
+    "pendingRequests": 0,
+    "pendingCommands": 0,
+    "activeRequests": []
+  },
+  "selected_test_client_release": {
+    "id": "extension:tab:1707788783",
+    "browserTabId": 1707788783,
+    "releasePending": false,
+    "releaseState": "idle",
+    "activeRequest": null
+  },
+  "review_pending": {
+    "label": "final",
+    "pending": [
+      {
+        "id": "n-4f28a4306033-r000001:prompt:2",
+        "node_id": "n-4f28a4306033",
+        "round_id": "n-4f28a4306033-r000001",
+        "artifact_type": "prompt",
+        "version": 2,
+        "content_hash": "1414a537c76f2af560628f2e33dd66c8273f8b59258b4ed91d67ca7e213c2395",
+        "status": "PENDING"
+      }
+    ],
+    "leaf_turn_count": 0
+  }
+}

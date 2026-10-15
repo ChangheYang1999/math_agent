@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-15T09:46:11.791906+00:00",
+  "scope": "Source-only audit; no browser or HTTP calls, no install, reload, inference, or database mutations",
+  "request_id": "mathagent_31d119ebc02256399ac75510fc63ab2e",
+  "checkpoint": "leaf1_round3_uncertainty_checkpoint.json",
+  "original_effect": {
+    "effect_type": "prompt.submit",
+    "attempt": 1,
+    "retry_policy": "never",
+    "result": "uncertain",
+    "submitted_user_turn_key": "",
+    "pending_expected_length": 19178
+  },
+  "source_revision": "0ffdae90239988f253058c05253226152acd55d2",
+  "request_specific_no_send_paths": [
+    {
+      "source": "src/bridge/coordinator/requestReattachmentCoordinator.js:131",
+      "finding": "Unproved submission creates EFFECT_UNCERTAIN; never directly resends. Submitted/keyed requests alone use request.resume at line46."
+    },
+    {
+      "source": "tools/chrome-bridge-extension/background/portRouter.js:279",
+      "finding": "Content reload marks dispatched effects uncertain; replays only durable protocol outcome outbox. No original effect payload replay."
+    },
+    {
+      "source": "tools/chrome-bridge-extension/background/standaloneCommandRecovery.js:104",
+      "finding": "Managed command recovery settles outcomes or sends standalone read probes; it does not repeat passive.prompt.submit."
+    },
+    {
+      "source": "tools/chrome-bridge-extension/content/requestEffectReconciliation.js:189",
+      "finding": "prompt.submit reconciliation returns succeeded only with existing submitted key; otherwise uncertain. It never invokes enterPrompt or returns not_started."
+    },
+    {
+      "source": "src/bridge/state/requestEffectTransitions.js:216",
+      "finding": "Only proved preparation effects continue pipeline; prompt.submit is excluded. A hypothetical not_started prompt.submit ends RECOVERY_UNCERTAIN and explicitly forbids automatic Send replay."
+    },
+    {
+      "source": "tools/chrome-bridge-extension/content/requestResumeCommands.js:149",
+      "finding": "Request resume updates anchors and observes/collects; no Send."
+    }
+  ],
+  "recovery_limitation": {
+    "sources": [
+      "tools/chrome-bridge-extension/content/executionState.js:137",
+      "tools/chrome-bridge-extension/content/executionState.js:199",
+      "tools/chrome-bridge-extension/content/requestState.js:57"
+    ],
+    "finding": "A new document has a new in-memory execution store. Lease recovery can preserve old expected text/baseline only when an existing same-document projection exists. Canonical unsubmitted/no-key requests are not request.resume hydrated; patch12 therefore cannot be claimed to recover this pending request merely by reload."
+  },
+  "qualification": "This is a request-specific Send replay audit, not a general promise that reload never advances preparation: proved pre-submit preparation effects can resume the remaining execution plan by design. Exact current prompt.submit uncertainty is distinct. Native generation remains active per root at 09:42; do not interrupt it.",
+  "recommendation": "Keep current document through native completion and natural canonical terminal. Publish source12 only after root approval; no pending-tab reload for speculative recovery. Ninth handler live execution remains NOT_RUN."
+}

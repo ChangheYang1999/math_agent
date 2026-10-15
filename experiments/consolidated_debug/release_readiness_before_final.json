@@ -1,0 +1,422 @@
+{
+  "at": "2026-10-15T10:06:05.575873+00:00",
+  "status": "SOURCE_AND_PACKAGE_READINESS_PASS_FINAL_OUTCOME_PENDING",
+  "scope": "Read-only source/saved-file checks; only audit and truthful metadata written; no browser, HTTP, inference, DB writes or archive build",
+  "revision": "0ffdae90239988f253058c05253226152acd55d2",
+  "original_eight_manifest_entries_identical": true,
+  "original_revision_unchanged": true,
+  "whole_baseline_manifest_unchanged": false,
+  "manifest_change": "12 accepted patch entries plus narrowly updated twelfth verification metadata; original11 entries unchanged by this audit",
+  "accepted_patch_count": 12,
+  "patch_hashes": {
+    "picker": {
+      "expected": "931afdf266931d3b98ee9c66f312c48e1a4bb336021c1eb2c4b10e98139e6931",
+      "actual": "931afdf266931d3b98ee9c66f312c48e1a4bb336021c1eb2c4b10e98139e6931",
+      "matches": true
+    },
+    "conversation": {
+      "expected": "b412ff43c0e5beca2d96ddcdaddd863ed0003104ca932ed39e5d65a0ea7ce965",
+      "actual": "b412ff43c0e5beca2d96ddcdaddd863ed0003104ca932ed39e5d65a0ea7ce965",
+      "matches": true
+    },
+    "release": {
+      "expected": "48905196a6c8b4722c36c5bdaf220b1c2fef9fcf13198e25380b760ce981983a",
+      "actual": "48905196a6c8b4722c36c5bdaf220b1c2fef9fcf13198e25380b760ce981983a",
+      "matches": true
+    },
+    "math": {
+      "expected": "ec918ac402fae6a77a98e678c32f6dd82614d8fc41c3797fe66f0806958178ec",
+      "actual": "ec918ac402fae6a77a98e678c32f6dd82614d8fc41c3797fe66f0806958178ec",
+      "matches": true
+    },
+    "long_prompt_v2": {
+      "expected": "75697838c4191b4b72a6c50299ad959765fedb53126c5cd98920ce36b746897b",
+      "actual": "75697838c4191b4b72a6c50299ad959765fedb53126c5cd98920ce36b746897b",
+      "matches": true
+    },
+    "delivery_state": {
+      "expected": "bb9098333f90fc2bf8b16735bf64907adc512d59605628dd1af4f8695ab42cb8",
+      "actual": "bb9098333f90fc2bf8b16735bf64907adc512d59605628dd1af4f8695ab42cb8",
+      "matches": true
+    },
+    "observation_recovery": {
+      "expected": "325234ba7f828ab8b4cf3e9539211b3b509dcec66fe9a90b27f494d03674f939",
+      "actual": "325234ba7f828ab8b4cf3e9539211b3b509dcec66fe9a90b27f494d03674f939",
+      "matches": true
+    },
+    "code_lines": {
+      "expected": "b2fd4b0748fab9a5e4b202d912d6f7dbf9b4359b36ca9fdfe8b62ecc430b0b0e",
+      "actual": "b2fd4b0748fab9a5e4b202d912d6f7dbf9b4359b36ca9fdfe8b62ecc430b0b0e",
+      "matches": true
+    },
+    "resume_roles": {
+      "expected": "6048dbe51830117e43f27a2f5197eb744fc47322a56ece0e53d39837e827a441",
+      "actual": "6048dbe51830117e43f27a2f5197eb744fc47322a56ece0e53d39837e827a441",
+      "matches": true
+    },
+    "final_answer": {
+      "expected": "87ed75edb547a0f0d1b6176b2dbfd4ea98b272406658a476ca5b4d9e1540b52a",
+      "actual": "87ed75edb547a0f0d1b6176b2dbfd4ea98b272406658a476ca5b4d9e1540b52a",
+      "matches": true
+    },
+    "picker_activation": {
+      "expected": "7b0b928a6c9393ab4fcd2e4c0ed20748833cd2327f028d9c39b8338332e57d8e",
+      "actual": "7b0b928a6c9393ab4fcd2e4c0ed20748833cd2327f028d9c39b8338332e57d8e",
+      "matches": true
+    },
+    "user_payload": {
+      "expected": "9d0e49e9dff5872fe904bda3502d0d8ceaa1350d4533e08c8a2612627c9a1663",
+      "actual": "9d0e49e9dff5872fe904bda3502d0d8ceaa1350d4533e08c8a2612627c9a1663",
+      "matches": true
+    }
+  },
+  "latest_managed_and_installed_source": [
+    {
+      "path": "tools/chrome-bridge-extension/content/intelligenceCommands.js",
+      "expected": "623ef068e5e8eeb9cbd4328dd6c3f7dd901752236ac212925629c50b4121c65d",
+      "managed": "623ef068e5e8eeb9cbd4328dd6c3f7dd901752236ac212925629c50b4121c65d",
+      "managed_matches": true,
+      "installed": "623ef068e5e8eeb9cbd4328dd6c3f7dd901752236ac212925629c50b4121c65d",
+      "installed_matches": true
+    },
+    {
+      "path": "src/bridge/adapters/tabObservationAdapter.js",
+      "expected": "545a8de1f78c12a756a6af839c8b2a14a8c9f0d2f00d1872978240b9f390ef13",
+      "managed": "545a8de1f78c12a756a6af839c8b2a14a8c9f0d2f00d1872978240b9f390ef13",
+      "managed_matches": true
+    },
+    {
+      "path": "tools/chrome-bridge-extension/background/portRouter.js",
+      "expected": "ba393cc48e9c93fb1d13ff6241c63f4b678451305299ee16398970e3301b7a5f",
+      "managed": "ba393cc48e9c93fb1d13ff6241c63f4b678451305299ee16398970e3301b7a5f",
+      "managed_matches": true,
+      "installed": "ba393cc48e9c93fb1d13ff6241c63f4b678451305299ee16398970e3301b7a5f",
+      "installed_matches": true
+    },
+    {
+      "path": "tools/chrome-bridge-extension/content/responseDom.js",
+      "expected": "66d24a8cd7b9168eafb1d4ebffd6ebaca4c4358edc584f3130ac4a46c8f99d9a",
+      "managed": "66d24a8cd7b9168eafb1d4ebffd6ebaca4c4358edc584f3130ac4a46c8f99d9a",
+      "managed_matches": true,
+      "installed": "66d24a8cd7b9168eafb1d4ebffd6ebaca4c4358edc584f3130ac4a46c8f99d9a",
+      "installed_matches": true
+    },
+    {
+      "path": "tools/chrome-bridge-extension/artifactCaptureMain.js",
+      "expected": "540a729dc96606e77dddea1f182b6c8bc7ec00415e38d802dd01af480cbc40b5",
+      "managed": "540a729dc96606e77dddea1f182b6c8bc7ec00415e38d802dd01af480cbc40b5",
+      "managed_matches": true,
+      "installed": "540a729dc96606e77dddea1f182b6c8bc7ec00415e38d802dd01af480cbc40b5",
+      "installed_matches": true
+    },
+    {
+      "path": "tools/chrome-bridge-extension/content/composerCommands.js",
+      "expected": "243fc09488b9170eeca05a52d576e361a98a1870ce095f80ebf5c4b015525150",
+      "managed": "243fc09488b9170eeca05a52d576e361a98a1870ce095f80ebf5c4b015525150",
+      "managed_matches": true,
+      "installed": "243fc09488b9170eeca05a52d576e361a98a1870ce095f80ebf5c4b015525150",
+      "installed_matches": true
+    },
+    {
+      "path": "src/bridge/coordinator/bridgeClientEventRouter.js",
+      "expected": "49f754dfd490eeab1246b1be9478738f7c4136a61a5fca1995a9bc792ca814ac",
+      "managed": "49f754dfd490eeab1246b1be9478738f7c4136a61a5fca1995a9bc792ca814ac",
+      "managed_matches": true
+    },
+    {
+      "path": "src/bridge/coordinator/requestResultMaterializer.js",
+      "expected": "9b8178b2cce80b8d35ae258035c515bb632203af376791dcd98d280a3ef9c01f",
+      "managed": "9b8178b2cce80b8d35ae258035c515bb632203af376791dcd98d280a3ef9c01f",
+      "managed_matches": true
+    },
+    {
+      "path": "src/bridge/state/requestEffectTransitions.js",
+      "expected": "375d3ba134b06a811ff5cec19dbae64e52f1bd94a263ce8076c8fbbba9289feb",
+      "managed": "375d3ba134b06a811ff5cec19dbae64e52f1bd94a263ce8076c8fbbba9289feb",
+      "managed_matches": true
+    },
+    {
+      "path": "src/turnManager.js",
+      "expected": "ed1c0218203bc4039669dd76b119229949d786dd7ef742cd886478ca52f84af0",
+      "managed": "ed1c0218203bc4039669dd76b119229949d786dd7ef742cd886478ca52f84af0",
+      "managed_matches": true
+    },
+    {
+      "path": "tools/chrome-bridge-extension/content/requestEffectReconciliation.js",
+      "expected": "4d3f1b8bf1948a6a47a01ca3a8d7449b4043d0209307832693c3abd02752b274",
+      "managed": "4d3f1b8bf1948a6a47a01ca3a8d7449b4043d0209307832693c3abd02752b274",
+      "managed_matches": true,
+      "installed": "4d3f1b8bf1948a6a47a01ca3a8d7449b4043d0209307832693c3abd02752b274",
+      "installed_matches": true
+    },
+    {
+      "path": "test/browserEffectReconciliationMatrix.test.js",
+      "expected": "275c0268e3e2aaa27f60af68e5c9401fc636c9bd466e48f0604d4c75ff130550",
+      "managed": "275c0268e3e2aaa27f60af68e5c9401fc636c9bd466e48f0604d4c75ff130550",
+      "managed_matches": true
+    },
+    {
+      "path": "test/extensionInteractionRegression.test.js",
+      "expected": "5d6aa431be0d65f1f8d8ad437737f7eea08020f745b07f9725de8b6dd32e7fdd",
+      "managed": "5d6aa431be0d65f1f8d8ad437737f7eea08020f745b07f9725de8b6dd32e7fdd",
+      "managed_matches": true
+    },
+    {
+      "path": "tools/chrome-bridge-extension/content/requestMonitor.js",
+      "expected": "d9c509a772dd64d7c8166bee75dcce0e6eece2594da11381734ab6f8366312ef",
+      "managed": "d9c509a772dd64d7c8166bee75dcce0e6eece2594da11381734ab6f8366312ef",
+      "managed_matches": true,
+      "installed": "d9c509a772dd64d7c8166bee75dcce0e6eece2594da11381734ab6f8366312ef",
+      "installed_matches": true
+    },
+    {
+      "path": "tools/chrome-bridge-extension/content/turnSnapshots.js",
+      "expected": "35cefe20cdca408e10bdc7bd24c3f3fa88ecc179100dda1364b97c82651ad63e",
+      "managed": "35cefe20cdca408e10bdc7bd24c3f3fa88ecc179100dda1364b97c82651ad63e",
+      "managed_matches": true,
+      "installed": "35cefe20cdca408e10bdc7bd24c3f3fa88ecc179100dda1364b97c82651ad63e",
+      "installed_matches": true
+    },
+    {
+      "path": "tools/chrome-bridge-extension/content/userTurnState.js",
+      "expected": "f6fb616beff71c868946cfb60a8c5886cb0624a42fe014ba8e8513f8f536a73e",
+      "managed": "f6fb616beff71c868946cfb60a8c5886cb0624a42fe014ba8e8513f8f536a73e",
+      "managed_matches": true,
+      "installed": "f6fb616beff71c868946cfb60a8c5886cb0624a42fe014ba8e8513f8f536a73e",
+      "installed_matches": true
+    },
+    {
+      "path": "tools/chrome-bridge-extension/responseParserCore.js",
+      "expected": "faf262d4c9e4882b068ff7dd69ed01ff72d8b39b0eb248ce06dbe47753f442fa",
+      "managed": "faf262d4c9e4882b068ff7dd69ed01ff72d8b39b0eb248ce06dbe47753f442fa",
+      "managed_matches": true,
+      "installed": "faf262d4c9e4882b068ff7dd69ed01ff72d8b39b0eb248ce06dbe47753f442fa",
+      "installed_matches": true
+    },
+    {
+      "path": "tools/chrome-bridge-extension/content/requestResumeCommands.js",
+      "expected": "b4c0034347eff4fc3667bbc24535c977721c7e4ed18b1151ce5606271c31e9e5",
+      "managed": "b4c0034347eff4fc3667bbc24535c977721c7e4ed18b1151ce5606271c31e9e5",
+      "managed_matches": true,
+      "installed": "b4c0034347eff4fc3667bbc24535c977721c7e4ed18b1151ce5606271c31e9e5",
+      "installed_matches": true
+    },
+    {
+      "path": "tools/chrome-bridge-extension/content/currentTurnDom.js",
+      "expected": "6de208cb406a6a6c31d4673d952c6beeb01321f089ee185b33dcf3a43c4c1cb3",
+      "managed": "6de208cb406a6a6c31d4673d952c6beeb01321f089ee185b33dcf3a43c4c1cb3",
+      "managed_matches": true,
+      "installed": "6de208cb406a6a6c31d4673d952c6beeb01321f089ee185b33dcf3a43c4c1cb3",
+      "installed_matches": true
+    },
+    {
+      "path": "tools/chrome-bridge-extension/background/serverEnvelopeRouter.js",
+      "expected": "6083dd6a8649dad240761005de9cb6501c04e49d34d00071b9681b4a90543fd1",
+      "managed": "6083dd6a8649dad240761005de9cb6501c04e49d34d00071b9681b4a90543fd1",
+      "managed_matches": true,
+      "installed": "6083dd6a8649dad240761005de9cb6501c04e49d34d00071b9681b4a90543fd1",
+      "installed_matches": true
+    }
+  ],
+  "baseline_artifacts": {
+    "FIX_SUMMARY.md": {
+      "expected": "3e5100dedb58aea14c5eedc6a915bbedfb1a8e0e52e79cfadd9b0a3cdafaca0e",
+      "actual": "3e5100dedb58aea14c5eedc6a915bbedfb1a8e0e52e79cfadd9b0a3cdafaca0e",
+      "unchanged": true
+    },
+    "config.example.yaml": {
+      "expected": "d75cfa25f9bbf667d9b91beffbecf043e9b320a0bf34dfd7770d131ce81f6516",
+      "actual": "d75cfa25f9bbf667d9b91beffbecf043e9b320a0bf34dfd7770d131ce81f6516",
+      "unchanged": true
+    },
+    "bridge/manifest.json": {
+      "expected": "81bad1557b73ebe95477875c5cf3973ab7a97f105f64beebe39ecd00374992f7",
+      "actual": "bcb02685efffe4db1cff04116012edf3e28d37a69757df1f3e22b5e115807561",
+      "unchanged": false
+    },
+    "experiments/phase3/SUMMARY.md": {
+      "expected": "c61c05e9038e31f50e7b09ce6f3d75da339a31d045ec6b908b413e36e3b80fd7",
+      "actual": "c61c05e9038e31f50e7b09ce6f3d75da339a31d045ec6b908b413e36e3b80fd7",
+      "unchanged": true
+    },
+    "experiments/phase3/LIVE_RUN.md": {
+      "expected": "1096f03100c8b6ff9529ceae5b5a0ab9eadc60c56dd8561ee18180cd4c3201ac",
+      "actual": "1096f03100c8b6ff9529ceae5b5a0ab9eadc60c56dd8561ee18180cd4c3201ac",
+      "unchanged": true
+    },
+    "experiments/phase3/HUMAN_REVIEW.md": {
+      "expected": "25a69f0acb03ea78cb75b0a7a6a9960142bdb9f6a483d4b03d183ec74905e716",
+      "actual": "25a69f0acb03ea78cb75b0a7a6a9960142bdb9f6a483d4b03d183ec74905e716",
+      "unchanged": true
+    },
+    "experiments/phase3/parent_recovery_candidate.json": {
+      "expected": "2aab4604f295985c18bc9fe0945656d5c2a9d6b0e66a59f0f49d5e66c0035da0",
+      "actual": "2aab4604f295985c18bc9fe0945656d5c2a9d6b0e66a59f0f49d5e66c0035da0",
+      "unchanged": true
+    },
+    "experiments/phase3/runs/live/manifest.json": {
+      "expected": "db5d7d8dc0bcefc5a96a8a4de77bdd198c32a7f7f7d1b507ff991b8dc52d3fd7",
+      "actual": "db5d7d8dc0bcefc5a96a8a4de77bdd198c32a7f7f7d1b507ff991b8dc52d3fd7",
+      "unchanged": true
+    },
+    "bridge/patches/long_prompt_v2.patch": {
+      "expected": "75697838c4191b4b72a6c50299ad959765fedb53126c5cd98920ce36b746897b",
+      "actual": "75697838c4191b4b72a6c50299ad959765fedb53126c5cd98920ce36b746897b",
+      "unchanged": true
+    },
+    "bridge/patches/delivery_state.patch": {
+      "expected": "bb9098333f90fc2bf8b16735bf64907adc512d59605628dd1af4f8695ab42cb8",
+      "actual": "bb9098333f90fc2bf8b16735bf64907adc512d59605628dd1af4f8695ab42cb8",
+      "unchanged": true
+    },
+    "bridge/patches/conversation.patch": {
+      "expected": "b412ff43c0e5beca2d96ddcdaddd863ed0003104ca932ed39e5d65a0ea7ce965",
+      "actual": "b412ff43c0e5beca2d96ddcdaddd863ed0003104ca932ed39e5d65a0ea7ce965",
+      "unchanged": true
+    },
+    "bridge/patches/picker.patch": {
+      "expected": "931afdf266931d3b98ee9c66f312c48e1a4bb336021c1eb2c4b10e98139e6931",
+      "actual": "931afdf266931d3b98ee9c66f312c48e1a4bb336021c1eb2c4b10e98139e6931",
+      "unchanged": true
+    },
+    "bridge/patches/observation_recovery.patch": {
+      "expected": "325234ba7f828ab8b4cf3e9539211b3b509dcec66fe9a90b27f494d03674f939",
+      "actual": "325234ba7f828ab8b4cf3e9539211b3b509dcec66fe9a90b27f494d03674f939",
+      "unchanged": true
+    },
+    "bridge/patches/math.patch": {
+      "expected": "ec918ac402fae6a77a98e678c32f6dd82614d8fc41c3797fe66f0806958178ec",
+      "actual": "ec918ac402fae6a77a98e678c32f6dd82614d8fc41c3797fe66f0806958178ec",
+      "unchanged": true
+    },
+    "bridge/patches/release.patch": {
+      "expected": "48905196a6c8b4722c36c5bdaf220b1c2fef9fcf13198e25380b760ce981983a",
+      "actual": "48905196a6c8b4722c36c5bdaf220b1c2fef9fcf13198e25380b760ce981983a",
+      "unchanged": true
+    },
+    "bridge/patches/code_lines.patch": {
+      "expected": "b2fd4b0748fab9a5e4b202d912d6f7dbf9b4359b36ca9fdfe8b62ecc430b0b0e",
+      "actual": "b2fd4b0748fab9a5e4b202d912d6f7dbf9b4359b36ca9fdfe8b62ecc430b0b0e",
+      "unchanged": true
+    },
+    "bridge/patches/resume_roles.patch": {
+      "expected": "6048dbe51830117e43f27a2f5197eb744fc47322a56ece0e53d39837e827a441",
+      "actual": "6048dbe51830117e43f27a2f5197eb744fc47322a56ece0e53d39837e827a441",
+      "unchanged": true
+    }
+  },
+  "runtime_cases": {
+    "ninth_request_resume_handler": "NOT_RUN",
+    "tenth_final_answer": "LIVE_SELECTOR_RECOVERY_PASS; original plain-Markdown fidelity KNOWN_FAIL, subsequent fenced Pro fields exact",
+    "eleventh_picker_activation": "LIVE_DISCOVERY_PASS6reads; earlier maintenanceHTTP500 preserved; no third user confirmation claimed",
+    "twelfth_user_payload": "LIVE_RICH_PAYLOAD_DELIVERY_PASS23768chars actual0164, normalcompleted; separate source evidence files"
+  },
+  "latest_focused_tests": {
+    "at": "2026-10-15T09:59:10.582442+00:00",
+    "status": "OFFLINE_PASS",
+    "tests": 47,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 6.684,
+    "scope": "review JS/HTTP/SQLite; recursive tree/P0; lossless context; exact model/effort; old+new Parent recovery; first/later Pro recovery incl serialized-network+exactDOM; strict NOT_SENT busy acknowledgement",
+    "ruff": "PASS production/tests/packager/experimental harness",
+    "inference_requests": 0
+  },
+  "request_ledger_saved_checkpoint": {
+    "hard_cap": 16,
+    "reserved": 13
+  },
+  "package": {
+    "created": false,
+    "command": ".venv/bin/python scripts/package_source.py dist/math-agent-consolidated-source.zip --summary experiments/consolidated_debug/RELEASE_SUMMARY.md",
+    "expected_files": 60,
+    "missing_files": [],
+    "forbidden_entries": [],
+    "credential_pattern_hits": [],
+    "accepted_patch_count": 12,
+    "explicit_js_fixtures": [
+      "bridge/tests/code_lines.mjs",
+      "bridge/tests/resume_roles.mjs",
+      "bridge/tests/final_answer.mjs",
+      "bridge/tests/picker_activation.mjs",
+      "bridge/tests/user_payload.mjs",
+      "tests/dashboard_review_fixture.mjs"
+    ],
+    "release_summary_links": [
+      "bridge/README.md",
+      "README.md"
+    ],
+    "summary_needs_final_outcome_update": true,
+    "summary_current_stale_checkpoints": [
+      "45tests",
+      "11patches",
+      "7/16",
+      "two pairs",
+      "IN_PROGRESS09:20"
+    ],
+    "prior58file_candidate": "Historical/stale; do not present as current. Final60-file ZIP awaits actual live outcome.",
+    "source_file_sha256": {
+      ".env.example": "1975b31ebf5e85dc51097e0953d4cf5f5b2eb34185b2d2ae23f19b5f4da1950c",
+      ".gitignore": "fb391ed8404b1166c5be351f51b763723535171155ae42cdcc254379ad4580ce",
+      "IMPLEMENTATION.md": "7cc30bdac2c65cd0f09553fd970966428e41f2dd691a110c915a98a905bbd4ca",
+      "README.md": "82e325eaaa9cd7482f5eea2a02011ff69409ec0bd324d0bce37c0ea6a64b1a3d",
+      "RELEASE_SUMMARY.md": "a1b94c58d75a98a221540e55e3f0a718e1dfebbf1b0757000957fb6cefb75abe",
+      "bridge/README.md": "c410fd76d6b3246b0962ddec94cd8e83ddf8980ee0e2274083cf836dd4acc67c",
+      "bridge/manifest.json": "bcb02685efffe4db1cff04116012edf3e28d37a69757df1f3e22b5e115807561",
+      "bridge/patches/code_lines.patch": "b2fd4b0748fab9a5e4b202d912d6f7dbf9b4359b36ca9fdfe8b62ecc430b0b0e",
+      "bridge/patches/conversation.patch": "b412ff43c0e5beca2d96ddcdaddd863ed0003104ca932ed39e5d65a0ea7ce965",
+      "bridge/patches/delivery_state.patch": "bb9098333f90fc2bf8b16735bf64907adc512d59605628dd1af4f8695ab42cb8",
+      "bridge/patches/final_answer.patch": "87ed75edb547a0f0d1b6176b2dbfd4ea98b272406658a476ca5b4d9e1540b52a",
+      "bridge/patches/long_prompt_v2.patch": "75697838c4191b4b72a6c50299ad959765fedb53126c5cd98920ce36b746897b",
+      "bridge/patches/math.patch": "ec918ac402fae6a77a98e678c32f6dd82614d8fc41c3797fe66f0806958178ec",
+      "bridge/patches/observation_recovery.patch": "325234ba7f828ab8b4cf3e9539211b3b509dcec66fe9a90b27f494d03674f939",
+      "bridge/patches/picker.patch": "931afdf266931d3b98ee9c66f312c48e1a4bb336021c1eb2c4b10e98139e6931",
+      "bridge/patches/picker_activation.patch": "7b0b928a6c9393ab4fcd2e4c0ed20748833cd2327f028d9c39b8338332e57d8e",
+      "bridge/patches/release.patch": "48905196a6c8b4722c36c5bdaf220b1c2fef9fcf13198e25380b760ce981983a",
+      "bridge/patches/resume_roles.patch": "6048dbe51830117e43f27a2f5197eb744fc47322a56ece0e53d39837e827a441",
+      "bridge/patches/user_payload.patch": "9d0e49e9dff5872fe904bda3502d0d8ceaa1350d4533e08c8a2612627c9a1663",
+      "bridge/tests/code_lines.mjs": "90ccb2b7390e9b3f7a1779fede9604cef2015d47def0d39ca58cefb2a6c4fd4b",
+      "bridge/tests/final_answer.mjs": "e203dd81019f0c84aa327446c591588bc4349598fdb5e969cb9509aad1427651",
+      "bridge/tests/picker_activation.mjs": "63a25af5b27ebae282495a553da5c297f8d40d8ce0db636c2f5d112ddc89da72",
+      "bridge/tests/resume_roles.mjs": "581826ee7d0d4db8998b01cc4bbc127191cd4a4abe5a362a68f452ff265b4156",
+      "bridge/tests/user_payload.mjs": "96bad9ad3554772ff60a6a73d9fddd866ef6c7de54b66fe6049af8f384eb6fbb",
+      "config.example.yaml": "d75cfa25f9bbf667d9b91beffbecf043e9b320a0bf34dfd7770d131ce81f6516",
+      "prompts/leaf_round.md": "a8f345b423275b2ffa9a8f726c1b5528f6a69bff85203ddb820fdef52ddd87b7",
+      "prompts/parent_bootstrap.md": "84141b0624107d66fc21e0b50fa8ff4f16d549f66ca91237e7b47edd07421f82",
+      "prompts/parent_coordination.md": "6c50e374e7aa60bfb77f0639a04846f1d59cc964880d0f17d1684f4b07d19467",
+      "prompts/parent_discussion.md": "3ba422cc5e770562a429d9f7cd3f8bc53e0818e44d4108842b46c831cbf88f50",
+      "prompts/parent_response.md": "2e755cc1b80618ce0253ca58ff313eb4e7696eb23b584c74f6663f8a346748e1",
+      "prompts/report_update.md": "1710b8c4f3cc5e55e291c56df15c42fa3c81d800e93ef68497be76a1b3b9fe2f",
+      "prompts/user_display.md": "47eb0e0b2164a972d679b5f902a15888b53c856580a97cd9e158c6b8f5e4c317",
+      "prompts/user_feedback.md": "1921b4d3bd7b4eb61d4b56bb6a7d79d90ab583dfb2d26a60714ce28471ddc124",
+      "prompts/user_translation.md": "2e506f364b4f3994fdaf0a044bb68429bf8f77f3e166dedfec86195fd2fbff99",
+      "pyproject.toml": "57360dfb88d92e609ff056db7f1cea650bb4e780fc7a329e069ee77b27a5baad",
+      "scripts/package_source.py": "18b7007009ef591354efcfd3ac7ac539ae21fdcdec17d854229c2868cf010ddf",
+      "scripts/setup_bridge.py": "f044a8ab8994dd9a62f2e82e1c600815fd341eb7fc963996afede721b7dc696f",
+      "src/math_research_agent/__init__.py": "371fbc0f63135875f2fec8c1ae5e0c4093aaa6522198d24998ef818a0da6757f",
+      "src/math_research_agent/bridge_transport.py": "759fe2a33dc765128daac0203daa62ac7b7ec94af8717e3f6cb40e3474d4bf4d",
+      "src/math_research_agent/cli.py": "e537b47cf942fb2befdf1b12e46008782621f716c54eacdce29478bbbea14920",
+      "src/math_research_agent/config.py": "d49f67f6c02c25a6ad23de7354857762636c6feb0220ab6c1756c2e579f916b9",
+      "src/math_research_agent/dashboard.py": "694d4a21233056365f0329b36e030144807db304583bf5ec2e03c02c6067afe4",
+      "src/math_research_agent/demo.py": "ec77c1afa01889233449ebdaebcedaa043a2058aee4d4ebee6fe8aa91703f4ab",
+      "src/math_research_agent/leaf_recovery.py": "1207f3f8c29c8a2ccf06087d09e69ec5244bfb65bdeec0b0eb11d64f0eb59bfa",
+      "src/math_research_agent/parent_prompt.py": "63cf1c33e3beb07cec549b44324b66ea0abc2c5a78450e69f0e73615cd65d185",
+      "src/math_research_agent/paths.py": "24a0a36e6614d5944efbd5ffc51c3426ac22819b15c85b80da0e2f5641359319",
+      "src/math_research_agent/recovery.py": "513e8635328cba884f9cbbcf57cf0ce2d388ee41afa3274776c5f3ed0440e869",
+      "src/math_research_agent/scheduler.py": "0038bfd362ecd7050b922b8599cdb663076d294eec600181b5b0dc99fee28df1",
+      "src/math_research_agent/schemas.py": "2bbb2efe70afb3ba87765166a55d9ab38b71779c62ed1e2d35190a403a341f88",
+      "src/math_research_agent/static/dashboard.html": "ada7137cb8cf5e97c4879c131783ece6629166a88af1637011da805a77bae419",
+      "src/math_research_agent/store.py": "37e3a1ef192050cd8fe30b5265cc5400d33e41312cd18d21acb74643008d48b7",
+      "src/math_research_agent/transport.py": "5daed9cb50bb2eeadc47da137e225911168f700b99d3fe3518b067a483edeffc",
+      "tests/dashboard_review_fixture.mjs": "444d22d7b7c1245cf02e47ceab38975c73a83bc12a380bed9ff7c187868340ec",
+      "tests/test_bridge_transport.py": "ad5e2fb6f77641364180feb3b0e0a751e4c18d19a438031d88de005bcb4bb525",
+      "tests/test_leaf_recovery.py": "2250d3c1c73630e1435dd6334161a63c6f206f5708bf11bf5d81771e9b3d7f4f",
+      "tests/test_parent_prompt.py": "3b862d927f1dc55b5000a3bb410561cba0e197eb4cd30b75a017befbd54d2775",
+      "tests/test_parent_recovery.py": "17cd8dfbf72800650464a526ffa13c95e84bd73c937caae09da05b6a3549839e",
+      "tests/test_research_tree.py": "a44cd2e4a9d59bb299defe56b78db9d7c1329225435dc4e1751965721b5aa268",
+      "tests/test_review_dashboard.py": "6468b7c42f5a381705ae3532383ebc0380ec3d74817c4e9b0d6ae7681325dc69",
+      "tests/test_tree_dynamics.py": "c56576f0b4874771a27a347ac75a12f68c8e74e27e71be168ec965c8322fbfeb"
+    }
+  },
+  "new_inference_by_audit": 0
+}

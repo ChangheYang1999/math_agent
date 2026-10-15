@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-14T09:16:27.553844+00:00",
+  "request_id": "mathagent_bd996b71a2295575853a8d3dd1e1896d",
+  "reason": "Bounded experiment repair: source explicitly cancelled composer preparation as provenNotExecuted, controls remove1/show0 before submission boundary. Stop this request before reordering existing verified input setters.",
+  "status": "cancelled",
+  "error": {
+    "code": "TURN_CANCELLED",
+    "message": "Bounded experiment repair: source explicitly cancelled composer preparation as provenNotExecuted, controls remove1/show0 before submission boundary. Stop this request before reordering existing verified input setters."
+  },
+  "completed_at": "2026-10-14T09:16:27.551Z"
+}

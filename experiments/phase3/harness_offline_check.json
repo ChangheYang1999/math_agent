@@ -1,0 +1,11 @@
+{
+  "classification": "OFFLINE_PASS",
+  "scope": "Temporary fake-transport database and temporary request ledger only. No browser, network or model calls.",
+  "checks": [
+    "Current leaf prompt begins TEST_ONLY_EXTRA_HIGH_LEAF_OVERRIDE and removes the false GPT-6 Pro role sentence.",
+    "Generated original prompt artifact remains immutable and superseded; distinct version 2 has an exact matching autoapproval payload/hash.",
+    "Durable before-POST reservation refuses a second reservation of the same request identity.",
+    "Sixteen distinct reservations succeed; a seventeenth is refused without changing the ledger."
+  ],
+  "syntax_check": "Python compilation passed."
+}

@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-15T10:11:40.279488+00:00",
+  "exit_code": 0,
+  "scope": "zero-inference final exact-model/effort verification",
+  "result": {
+    "Parent": {
+      "id": "S-38b8512164ec5b83b2c69131730eb5ae",
+      "node_id": "root",
+      "model": "GPT-6 Extra High",
+      "url": "https://chatgpt.com/c/6ad087b7-b0dc-83ea-82f2-b587762d8345",
+      "bridge_client_id": "extension:tab:1707788883",
+      "bridge_session_id": "6ad087b7-b0dc-83ea-82f2-b587762d8345",
+      "bridge_model": "model-gpt-6",
+      "bridge_effort": "xhigh",
+      "bridge_state": "BOUND",
+      "browser_tab_id": 1707788883,
+      "verified_at": {
+        "at": "2026-10-15T10:11:35.453962+00:00",
+        "monotonic_ns": 1080431960023958,
+        "process_id": "6bbf3e8d78e94948b4d7d66b75f0461b"
+      }
+    },
+    "Leaf-1": {
+      "id": "S-d7d20ec2e96655c4a8ba1be41947443e",
+      "node_id": "n-3790f8503746",
+      "model": "GPT-6 Pro",
+      "url": "https://chatgpt.com/c/6ad0893b-aed0-83ea-8da4-72db3bdec676",
+      "bridge_client_id": "extension:tab:1707788894",
+      "bridge_session_id": "6ad0893b-aed0-83ea-8da4-72db3bdec676",
+      "bridge_model": "model-gpt-6",
+      "bridge_effort": "effort-pro-pro",
+      "bridge_state": "BOUND",
+      "browser_tab_id": 1707788894,
+      "verified_at": {
+        "at": "2026-10-15T10:11:37.699890+00:00",
+        "monotonic_ns": 1080434205981875,
+        "process_id": "6bbf3e8d78e94948b4d7d66b75f0461b"
+      }
+    },
+    "Leaf-2": {
+      "id": "S-d5870b32c59d57988c1b3f31b2e2c444",
+      "node_id": "n-dab935ae44d1",
+      "model": "GPT-6 Pro",
+      "url": "https://chatgpt.com/c/6ad09396-818c-83ea-8252-bb2f31c6afee",
+      "bridge_client_id": "extension:tab:1707789016",
+      "bridge_session_id": "6ad09396-818c-83ea-8252-bb2f31c6afee",
+      "bridge_model": "model-gpt-6",
+      "bridge_effort": "effort-pro-pro",
+      "bridge_state": "BOUND",
+      "browser_tab_id": 1707789016,
+      "verified_at": {
+        "at": "2026-10-15T10:11:40.049284+00:00",
+        "monotonic_ns": 1080436555409708,
+        "process_id": "6bbf3e8d78e94948b4d7d66b75f0461b"
+      }
+    }
+  },
+  "stderr": "",
+  "preceding_configuration_diagnostic": "one verify invocation omitted its process API-token environment and returned401; no request was sent; error record preserved"
+}

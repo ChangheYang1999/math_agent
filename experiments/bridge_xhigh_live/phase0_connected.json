@@ -1,0 +1,41 @@
+{
+  "observed_at": "2026-10-14T08:15:53.984914+00:00",
+  "endpoints": {
+    "/health": {
+      "http_status": 200,
+      "data": {
+        "ok": true,
+        "transport": "extension:extension",
+        "clients": 1,
+        "pendingCommands": 0
+      }
+    },
+    "/browser/clients": {
+      "http_status": 200,
+      "data": {
+        "clients": [
+          {
+            "id": "extension:tab:1707788652",
+            "browserTabId": 1707788652,
+            "platform": null,
+            "new_chat": true
+          }
+        ]
+      }
+    },
+    "/sessions": {
+      "http_status": 200,
+      "data": {
+        "count": 1
+      }
+    },
+    "/models": {
+      "http_status": 500,
+      "detail": "DOM_SCHEMA_CHANGED: intelligence effort options were not found."
+    },
+    "/efforts": {
+      "http_status": 500,
+      "detail": "DOM_SCHEMA_CHANGED: intelligence effort options were not found."
+    }
+  }
+}

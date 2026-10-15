@@ -1,0 +1,164 @@
+{
+  "observed_at_utc": "2026-10-15T06:23:16.903507+00:00",
+  "scope": "Read-only local source and historical DB; no browser/network/model calls.",
+  "pinned_revision": "0ffdae90239988f253058c05253226152acd55d2",
+  "accepted_patch_count": 8,
+  "patch_checksums_match": {
+    "picker": true,
+    "conversation": true,
+    "release": true,
+    "math": true,
+    "long_prompt_v2": true,
+    "delivery_state": true,
+    "observation_recovery": true,
+    "code_lines": true
+  },
+  "source_checkouts": {
+    "/private/tmp/mathagent-upstream-bridge": {
+      "revision": "0ffdae90239988f253058c05253226152acd55d2",
+      "source_hashes_match": {
+        "tools/chrome-bridge-extension/content/intelligenceCommands.js": true,
+        "src/bridge/adapters/tabObservationAdapter.js": true,
+        "tools/chrome-bridge-extension/background/portRouter.js": true,
+        "tools/chrome-bridge-extension/content/responseDom.js": true,
+        "tools/chrome-bridge-extension/artifactCaptureMain.js": true,
+        "tools/chrome-bridge-extension/content/composerCommands.js": true,
+        "src/bridge/coordinator/bridgeClientEventRouter.js": true,
+        "src/bridge/coordinator/requestResultMaterializer.js": true,
+        "src/bridge/state/requestEffectTransitions.js": true,
+        "src/turnManager.js": true,
+        "tools/chrome-bridge-extension/content/requestEffectReconciliation.js": true,
+        "test/browserEffectReconciliationMatrix.test.js": true,
+        "test/extensionInteractionRegression.test.js": true,
+        "tools/chrome-bridge-extension/content/requestMonitor.js": true,
+        "tools/chrome-bridge-extension/content/turnSnapshots.js": true,
+        "tools/chrome-bridge-extension/content/userTurnState.js": true,
+        "tools/chrome-bridge-extension/responseParserCore.js": true
+      }
+    },
+    "/private/tmp/mathagent-eight-patch-check-6pevzfl1/checkout": {
+      "revision": "0ffdae90239988f253058c05253226152acd55d2",
+      "source_hashes_match": {
+        "tools/chrome-bridge-extension/content/intelligenceCommands.js": true,
+        "src/bridge/adapters/tabObservationAdapter.js": true,
+        "tools/chrome-bridge-extension/background/portRouter.js": true,
+        "tools/chrome-bridge-extension/content/responseDom.js": true,
+        "tools/chrome-bridge-extension/artifactCaptureMain.js": true,
+        "tools/chrome-bridge-extension/content/composerCommands.js": true,
+        "src/bridge/coordinator/bridgeClientEventRouter.js": true,
+        "src/bridge/coordinator/requestResultMaterializer.js": true,
+        "src/bridge/state/requestEffectTransitions.js": true,
+        "src/turnManager.js": true,
+        "tools/chrome-bridge-extension/content/requestEffectReconciliation.js": true,
+        "test/browserEffectReconciliationMatrix.test.js": true,
+        "test/extensionInteractionRegression.test.js": true,
+        "tools/chrome-bridge-extension/content/requestMonitor.js": true,
+        "tools/chrome-bridge-extension/content/turnSnapshots.js": true,
+        "tools/chrome-bridge-extension/content/userTurnState.js": true,
+        "tools/chrome-bridge-extension/responseParserCore.js": true
+      }
+    }
+  },
+  "installed_extension_hashes_match": {
+    "content/intelligenceCommands.js": true,
+    "background/portRouter.js": true,
+    "content/responseDom.js": true,
+    "artifactCaptureMain.js": true,
+    "content/composerCommands.js": true,
+    "content/requestEffectReconciliation.js": true,
+    "content/requestMonitor.js": true,
+    "content/turnSnapshots.js": true,
+    "content/userTurnState.js": true,
+    "responseParserCore.js": true
+  },
+  "baseline_artifacts_unchanged": {
+    "bridge/manifest.json": true,
+    "bridge/patches/long_prompt_v2.patch": true,
+    "bridge/patches/delivery_state.patch": true,
+    "bridge/patches/conversation.patch": true,
+    "bridge/patches/picker.patch": true,
+    "bridge/patches/observation_recovery.patch": true,
+    "bridge/patches/math.patch": true,
+    "bridge/patches/release.patch": true,
+    "bridge/patches/code_lines.patch": true,
+    "experiments/bridge_xhigh_live/RESULTS.md": true,
+    "experiments/bridge_xhigh_live/RESULTS_LONG_PROMPT_FIX.md": true,
+    "experiments/bridge_xhigh_live/tree_audit.json": true,
+    "experiments/bridge_xhigh_live/runs/20261015-long-prompt/tree_final_audit.json": true,
+    "experiments/bridge_xhigh_live/runs/20261015-long-prompt/final_cleanup_recheck.json": true
+  },
+  "active_extra_tracked_files": [
+    "package-lock.json"
+  ],
+  "active_lockfile_note": "Strict check-only refuses package-lock.json: one added peer=true metadata line for picomatch. Dependency version/integrity unchanged. File left untouched; cause not inferred from metadata alone.",
+  "fresh_check_only": "PASS: all eight applied; no setup/source changes made.",
+  "historical_tree": {
+    "path": "experiments/bridge_xhigh_live/runs/20261014-live-r2/projects/tree/tree.db",
+    "tables": {
+      "approvals": {
+        "rows": 10,
+        "sha256": "eebb4e53a353acc82e482561c5e919ba7312c8bfffa19a90b2ccb9f2aeec9c80"
+      },
+      "artifacts": {
+        "rows": 10,
+        "sha256": "8cc9e0bbd44cd203ebf438a654d9596d48b1286dae89cd1526a34313e4a16de8"
+      },
+      "errors": {
+        "rows": 4,
+        "sha256": "77ea91122a78d780349d199e3ecce2dd7a614d9e22925a6a91fdd0de8f647fcc"
+      },
+      "events": {
+        "rows": 59,
+        "sha256": "bb17bc177a9e3f1040129b338abf86fefb248f3f7e5393f24b3c115b1cbab94e"
+      },
+      "feedback": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "messages": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "nodes": {
+        "rows": 3,
+        "sha256": "9245e0729a880b3edb7cd543059c70d6b6a84c11d7605de2a788a919a0185fa3"
+      },
+      "optional_jobs": {
+        "rows": 7,
+        "sha256": "a32bd240ef3a02a5750cf5f8a9818d1c2eb74ee3013ee52ecbfd89e970a3c827"
+      },
+      "parent_responses": {
+        "rows": 4,
+        "sha256": "c71b6c24a29685040f661ffa89d423d35f447731564a6d4cd48d8afea6577baf"
+      },
+      "review_messages": {
+        "rows": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "rounds": {
+        "rows": 6,
+        "sha256": "97681885c2274d822acede11c927ddf8468b156e4b99ddbf18f9bc039afa95a2"
+      },
+      "sections": {
+        "rows": 3,
+        "sha256": "b352e3d545b123ad3f34eac8457a3b0b18208121dfaf0f564d32f81c0ac6c4f5"
+      },
+      "sessions": {
+        "rows": 3,
+        "sha256": "78f6cb641c5f41637352eb0a4a92b95ea346689f61fd02da19459c3d6da77f9a"
+      },
+      "settings": {
+        "rows": 8,
+        "sha256": "21f4364359ceed9be8dc91b89a1be72e9b2e9f1c228b07625d7ebb1e9a040f9c"
+      },
+      "sqlite_sequence": {
+        "rows": 4,
+        "sha256": "5e1c19089ff23e0f5dc57a7a7268db6b1d738c99e32d87b4bbc5dd5bac49f55f"
+      },
+      "turns": {
+        "rows": 12,
+        "sha256": "0b524ad6e6c25e414a22b896ae63166988be1374d9371cee4007b7d1e21a5b25"
+      }
+    }
+  }
+}

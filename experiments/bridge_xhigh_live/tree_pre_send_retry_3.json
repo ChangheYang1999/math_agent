@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-14T09:17:23.194420+00:00",
+  "scope": "disposable experiment only",
+  "local_turn_id": "parent:n-e615a92f81c6-r000002:e2:a0",
+  "request_id": "mathagent_bd996b71a2295575853a8d3dd1e1896d",
+  "terminal_status": "interrupted",
+  "previous_status": "ERROR",
+  "new_status": "FAILED_NOT_SENT",
+  "raw_response_preserved_null": true,
+  "error_preserved": "Bridge terminal error TURN_CANCELLED: Bounded experiment repair: source explicitly cancelled composer preparation as provenNotExecuted, controls remove1/show0 before submission boundary. Stop this request before reordering existing verified input setters.",
+  "code": "COMPOSER_TEXT_VERIFY_FAILED",
+  "source_proven_not_executed": true,
+  "cancellation_evidence": {
+    "source": "composer_preparation",
+    "reason": "submission_boundary_not_entered"
+  },
+  "retry_key": "retry:parent:n-e615a92f81c6-r000002",
+  "previous_epoch": 2,
+  "next_epoch": 3,
+  "manual_step": "Removed only this stopped own Parent pasted-text attachment; no Send action.",
+  "scheduler_recovery": {
+    "errors_released": 1,
+    "pending_approvals": 0,
+    "pending_turns": 0
+  }
+}

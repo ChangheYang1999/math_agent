@@ -1,0 +1,63 @@
+{
+  "timestamp_utc": "2026-10-15T08:17:35.056167+00:00",
+  "status": "OFFLINE_SELECTOR_PASS",
+  "patch": {
+    "name": "final_answer",
+    "patch": "patches/final_answer.patch",
+    "sha256": "87ed75edb547a0f0d1b6176b2dbfd4ea98b272406658a476ca5b4d9e1540b52a",
+    "verification": "Consolidated debugging offline reproduction of actual Pro reasoning-recap DOM; exact final content selection, same-turn/marker isolation, placeholder refusal and legacy regression passed. Not yet deployed or live-retested.",
+    "files": [
+      {
+        "path": "tools/chrome-bridge-extension/content/currentTurnDom.js",
+        "base_sha256": "a72647f42655d14077d0b6f2c722fec16df5ff3347b27b919a0f93019afbf9ef",
+        "patched_sha256": "6de208cb406a6a6c31d4673d952c6beeb01321f089ee185b33dcf3a43c4c1cb3"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "argv": [
+        "/Users/changheyang/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "bridge/tests/final_answer.mjs",
+        "/private/tmp/mathagent-consolidated-final-answer-fix",
+        "/Users/changheyang/Library/CloudStorage/Dropbox/Private/\u6587\u6863/PhD/PhD \u7b2c5\u5e74 quarter 1/math_agent/experiments/consolidated_debug/pro_smoke_full_turn_dom.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"status\":\"OFFLINE_PASS\",\"before\":\"reproduced 17-character reasoning recap\",\"after\":\"exact final assistant content; placeholder fails closed; user/key/marker interval and legacy cases preserved\",\"captured\":{\"beforeLength\":17,\"afterLength\":4463,\"exactFinalNode\":true},\"live\":\"NOT_RUN\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Users/changheyang/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "bridge/tests/resume_roles.mjs",
+        "/private/tmp/mathagent-consolidated-final-answer-fix"
+      ],
+      "returncode": 0,
+      "stdout": "OFFLINE_PASS: current-DOM resume fails before and matches after; exact keys/text, missing-boundary refusal, legacy behavior and zero Send are preserved.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Users/changheyang/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "bridge/tests/code_lines.mjs",
+        "/private/tmp/mathagent-consolidated-final-answer-fix"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: actual shared/content parser preserves CodeMirror physical lines, blank lines, indentation, literal whitespace and fences; ordinary code and source DOM remain unchanged.\n",
+      "stderr": ""
+    }
+  ],
+  "before": "Actual captured Pro structure reproduces 17-character Worked for 5m 59s answer before patch",
+  "after": "Selects exact captured final-content DOM (4463 textContent characters), placeholder refuses recap and unrelated keyed turn, current/legacy branches preserved. Production parser returns valid JSON, 4426 characters.",
+  "deployment": "Installed atomically through unchanged strict recipe, user reloaded existing extension, root refreshed only owned experiment tabs",
+  "live_retest": "Read-only selector extraction PASS; normal new-inference retest NOT_RUN",
+  "inference_requests_by_this_agent": 0,
+  "historical_terminal": "UNCHANGED; no request replay or local report repair",
+  "content_fidelity": "Exact all-values comparison to authenticated final JSON found two underscore\u2192star changes in evidence. See final_answer_content_fidelity.json. No normalization or guessed repair is accepted.",
+  "strict_ten_patch_check_only": "PASS",
+  "historical_nine_patch_bytes_preserved": true,
+  "content_fidelity_status": "KNOWN_FAIL_PLAIN_MARKDOWN",
+  "live_selector_recovery": "LIVE_SELECTOR_RECOVERY_PASS; HTTP200 final4426-character JSON from an already-completed owned request, not new inference",
+  "live_read_evidence": "final_answer_live_read_validation.json",
+  "ninth_request_resume_handler_execution": "NOT_RUN"
+}

@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-15T10:16:22.518331+00:00",
+  "exit_code": 0,
+  "result": {
+    "completed_pairs": 6,
+    "evidence_errors": []
+  },
+  "stderr": "",
+  "new_inference_requests": 0
+}

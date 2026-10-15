@@ -1,0 +1,13 @@
+{
+  "saved_at": "2026-10-14T08:28:06.369312+00:00",
+  "source": "CUA read-only diagnostic of experiment tab, not authoritative bridge terminal output",
+  "tab_id": 1707788658,
+  "request_id": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+  "conversation_id": "6acf3c3b-1af0-83ea-a62d-c2b0f333505e",
+  "url": "https://chatgpt.com/c/6acf3c3b-1af0-83ea-a62d-c2b0f333505e",
+  "visible_completion_status": "Response complete",
+  "visible_arithmetic": "1591",
+  "visible_marker": "TREE-A-719",
+  "bridge_terminal_status": "failed",
+  "counts_as_smoke_pass": false
+}

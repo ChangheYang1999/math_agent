@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-15T08:02:08.278852+00:00",
+  "scope": "OFFLINE_SYNTHETIC_REGRESSION_NO_WEB_INFERENCE",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_review_dashboard.py",
+    "tests/test_tree_dynamics.py",
+    "tests/test_research_tree.py",
+    "tests/test_parent_prompt.py",
+    "tests/test_bridge_transport.py",
+    "tests/test_parent_recovery.py",
+    "--junitxml=experiments/consolidated_debug/focused_tests.xml"
+  ],
+  "exit_code": 0,
+  "duration_seconds": 5.742883750004694,
+  "stdout": ".......................................                                  [100%]\n39 passed in 5.54s\n",
+  "stderr": "",
+  "new_real_model_requests": 0
+}

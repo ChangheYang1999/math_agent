@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-15T07:45:39.667291+00:00",
+  "pid": 82304,
+  "args": ".venv/bin/python -m math_research_agent.cli --projects-root experiments/phase3/projects dashboard human-review-offline --port 8766",
+  "signal": "SIGINT",
+  "pending": "n-4f28a4306033-r000007:prompt:1",
+  "unresolved_turns": 0
+}

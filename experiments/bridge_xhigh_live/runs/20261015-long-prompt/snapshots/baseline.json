@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-15T00:24:43.299483+00:00",
+  "monotonic_ns": 1045220016683000,
+  "process_id": "36135b5cb3384322a7db7306feb1a54d",
+  "sha256": {
+    "runs/20261014-live-r2/manifest.json": "94e1226b28886b84e8cc59d4cadd8e79ad2bd6e507c50129a25ebad129383e73",
+    "RESULTS.md": "c859cec82eb1a573b2389c336468efd27db3563aed3742b6f39e0b6b33242f41",
+    "tree_audit.json": "d12cf29faf7612e42c1a41b4c3d7fea0aa640f29f868f3842d457ed895aadffb",
+    "runs/20261014-live-r2/evidence/leaf:n-e615a92f81c6-r000001:e0:a0.json": "5fc16c509bbb949c013066026fbfe2b6d47c85c4462193a61c4cc4b0494f47d4",
+    "runs/20261014-live-r2/evidence/leaf:n-e615a92f81c6-r000002:e0:a0.json": "f96a248e0e1fc79d7c1815c7bca9d48c6e1fda72d63d7094cee39f1e6b51f43e",
+    "runs/20261014-live-r2/evidence/leaf:n-f9b4c78a7858-r000001:e0:a0.json": "24993c7fd0bb99a089f55b7c9071446a4f8dc20dcbea0936c3cf481a664a3811",
+    "runs/20261014-live-r2/evidence/leaf:n-f9b4c78a7858-r000002:e0:a0.json": "266d4018aba439377b52fc63cedecfc47425137239e584382d848dd052ac74a9",
+    "runs/20261014-live-r2/evidence/parallel-A-context.json": "9cef0c8f5126a17cbe0ab853d2bbb8ccc5802970fde68521ca582e8ce16ef3ec",
+    "runs/20261014-live-r2/evidence/parallel-A-proof.json": "00aea96f3c382a15ff043616eb062859549013d40e49db1d5ad65ee0813c3d6a",
+    "runs/20261014-live-r2/evidence/parallel-B-context.json": "0d931a982d25153297867e62645ea54bd03b001987df587e00c39186cee06a20",
+    "runs/20261014-live-r2/evidence/parallel-B-proof.json": "549fdb2cb942efcb63e28f8f1d0ca9e678ae07838461372b775e40b2a7991ea2",
+    "runs/20261014-live-r2/evidence/parallel-C-context.json": "742789a523338f23eb6d2e1f1982c170b6134b16a999a9186e076f1374000f87",
+    "runs/20261014-live-r2/evidence/parallel-C-proof.json": "b92ee02346c28d95214d1e59398908f954d6424844efc982b4cc5c4432489f86",
+    "runs/20261014-live-r2/evidence/parent:n-e615a92f81c6-r000001:e0:a0.json": "2e241c4646a4ea322cce22ffc6dced0d7fe7f37132390750973f14bed2634c4d",
+    "runs/20261014-live-r2/evidence/parent:n-e615a92f81c6-r000002:e0:a0.json": "907731e69e822a89946eb0400b1123007d0df59692c2ee2798a7c7bbd6f8acf7",
+    "runs/20261014-live-r2/evidence/parent:n-e615a92f81c6-r000002:e1:a0.json": "f80dda2c0d4490d70fbd6634c3d3f27e8e870a06617ecfeebb59cab8851bc98a",
+    "runs/20261014-live-r2/evidence/parent:n-e615a92f81c6-r000002:e2:a0.json": "668b331a441ebeb0e347d2df574f29e7c6d47e54512bcf30bd0098cec6aa32e1",
+    "runs/20261014-live-r2/evidence/parent:n-e615a92f81c6-r000002:e3:a0.json": "3927c52cabb5c47699217e11785e3ac17e89663e6fa6188b772a242c1360d380",
+    "runs/20261014-live-r2/evidence/parent:n-f9b4c78a7858-r000001:e0:a0.json": "2b21d5a9713f81c0cb298dc4b6e85de40c9b536e0fd5c438b8b54112507ef973",
+    "runs/20261014-live-r2/evidence/smoke-A-arithmetic.json": "2460b6bab3da5854ff0696d4cd4640436c53d95c2a354ab7e1448bf9de817d67",
+    "runs/20261014-live-r2/evidence/smoke-A-context-after-release-fix.json": "ad3fb645e8c5746ffb301f234db1d32b08ad43b4d62c0321360a671b0d267dc7",
+    "runs/20261014-live-r2/evidence/smoke-A-context.json": "b5ef125a6d5d31e50e32a7c67ce16414e860b0a49113eb5b218f5b72a57170f7"
+  }
+}

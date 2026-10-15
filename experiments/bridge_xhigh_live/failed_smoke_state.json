@@ -1,0 +1,882 @@
+{
+  "observed_at_utc": "2026-10-14T08:26:30.269139+00:00",
+  "endpoint": "/diagnostics/request-state?requestId=mathagent_de0287dba4305edd9418a7447a5da0f2",
+  "authoritative": true,
+  "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2",
+  "displayPhase": "failed",
+  "source": {
+    "clientId": "extension:tab:1707788658",
+    "conversationId": "6acf3c3b-1af0-83ea-a62d-c2b0f333505e"
+  },
+  "response": {
+    "userTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user",
+    "startedAt": 1791966262507
+  },
+  "terminal": {
+    "code": "conversation_changed",
+    "message": "Bound ChatGPT conversation changed",
+    "at": 1791966268862,
+    "at_utc": "2026-10-14T08:24:28.862000+00:00"
+  },
+  "terminal_evidence": {
+    "clientId": "extension:tab:1707788658",
+    "conversationId": "6acf3c3b-1af0-83ea-a62d-c2b0f333505e",
+    "turnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::assistant",
+    "turnIndex": 1,
+    "failedUserTurnKey": "",
+    "conversationChanged": true,
+    "conversationCanonicalized": false,
+    "previousConversationId": "",
+    "originalSubmittedUserTurnKey": "",
+    "submittedUserTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user"
+  },
+  "completion_evidence": {
+    "terminalCandidate": false,
+    "assistantTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::assistant",
+    "userTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user"
+  },
+  "terminal_observation": {
+    "conversationId": "6acf3c3b-1af0-83ea-a62d-c2b0f333505e",
+    "revision": 18,
+    "reason": "mutation.peripheral"
+  },
+  "timestamps": {
+    "createdAt": 1791966262507
+  },
+  "history": [
+    {
+      "displayPhase": "created",
+      "event": {
+        "type": "request.created",
+        "occurredAt": 1791966262507,
+        "occurred_at_utc": "2026-10-14T08:24:22.507000+00:00"
+      },
+      "data": {
+        "sessionId": "",
+        "sourceClientId": ""
+      },
+      "terminal": {},
+      "revision": 1,
+      "lifecycle": "created"
+    },
+    {
+      "displayPhase": "preparing",
+      "event": {
+        "type": "source.bound",
+        "occurredAt": 1791966262511,
+        "occurred_at_utc": "2026-10-14T08:24:22.511000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "sessionId": ""
+      },
+      "terminal": {},
+      "revision": 2,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "preparing",
+      "event": {
+        "type": "effect.started",
+        "occurredAt": 1791966262512,
+        "occurred_at_utc": "2026-10-14T08:24:22.512000+00:00"
+      },
+      "data": {},
+      "terminal": {},
+      "revision": 3,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "preparing",
+      "event": {
+        "type": "effect.succeeded",
+        "occurredAt": 1791966262512,
+        "occurred_at_utc": "2026-10-14T08:24:22.512000+00:00"
+      },
+      "data": {},
+      "terminal": {},
+      "revision": 4,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "preparing",
+      "event": {
+        "type": "prompt.delivered",
+        "occurredAt": 1791966262512,
+        "occurred_at_utc": "2026-10-14T08:24:22.512000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658"
+      },
+      "terminal": {},
+      "revision": 5,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "prompt.accepted",
+        "occurredAt": 1791966262535,
+        "occurred_at_utc": "2026-10-14T08:24:22.535000+00:00"
+      },
+      "data": {
+        "requestId": "mathagent_de0287dba4305edd9418a7447a5da0f2"
+      },
+      "terminal": {},
+      "revision": 6,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "effect.started",
+        "occurredAt": 1791966262535,
+        "occurred_at_utc": "2026-10-14T08:24:22.535000+00:00"
+      },
+      "data": {
+        "phase": ""
+      },
+      "terminal": {},
+      "revision": 7,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966254349,
+        "occurred_at_utc": "2026-10-14T08:24:14.349000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new",
+        "turnKey": "",
+        "turnIndex": -1,
+        "failedUserTurnKey": "",
+        "conversationChanged": false,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": ""
+      },
+      "terminal": {},
+      "revision": 8,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966262536,
+        "occurred_at_utc": "2026-10-14T08:24:22.536000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new"
+      },
+      "terminal": {},
+      "revision": 9,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "effect.uncertain",
+        "occurredAt": 1791966262537,
+        "occurred_at_utc": "2026-10-14T08:24:22.537000+00:00"
+      },
+      "data": {
+        "code": "PROMPT_SUBMISSION_UNCERTAIN_AFTER_RELOAD",
+        "message": "Content runtime reloaded before prompt submission could be proved; automatic resend is forbidden."
+      },
+      "terminal": {},
+      "revision": 10,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966262528,
+        "occurred_at_utc": "2026-10-14T08:24:22.528000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new",
+        "turnKey": "",
+        "turnIndex": -1,
+        "failedUserTurnKey": "",
+        "conversationChanged": false,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": ""
+      },
+      "terminal": {},
+      "revision": 11,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966262543,
+        "occurred_at_utc": "2026-10-14T08:24:22.543000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new"
+      },
+      "terminal": {},
+      "revision": 12,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "effect.reconciled",
+        "occurredAt": 1791966262548,
+        "occurred_at_utc": "2026-10-14T08:24:22.548000+00:00"
+      },
+      "data": {
+        "reason": "reconcile_command_failed",
+        "message": "Browser effect page.ready.initial remains uncertain"
+      },
+      "terminal": {},
+      "revision": 13,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966263282,
+        "occurred_at_utc": "2026-10-14T08:24:23.282000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new",
+        "turnKey": "",
+        "turnIndex": -1,
+        "failedUserTurnKey": "",
+        "conversationChanged": false,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": ""
+      },
+      "terminal": {},
+      "revision": 14,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966263287,
+        "occurred_at_utc": "2026-10-14T08:24:23.287000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new"
+      },
+      "terminal": {},
+      "revision": 15,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "effect.succeeded",
+        "occurredAt": 1791966263568,
+        "occurred_at_utc": "2026-10-14T08:24:23.568000+00:00"
+      },
+      "data": {
+        "message": ""
+      },
+      "terminal": {},
+      "revision": 16,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966263282,
+        "occurred_at_utc": "2026-10-14T08:24:23.282000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new",
+        "turnKey": "",
+        "turnIndex": -1,
+        "failedUserTurnKey": "",
+        "conversationChanged": false,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": ""
+      },
+      "terminal": {},
+      "revision": 17,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966263570,
+        "occurred_at_utc": "2026-10-14T08:24:23.570000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new"
+      },
+      "terminal": {},
+      "revision": 18,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "effect.uncertain",
+        "occurredAt": 1791966263570,
+        "occurred_at_utc": "2026-10-14T08:24:23.570000+00:00"
+      },
+      "data": {
+        "code": "PROMPT_SUBMISSION_UNCERTAIN_AFTER_RELOAD",
+        "message": "Content runtime reloaded before prompt submission could be proved; automatic resend is forbidden."
+      },
+      "terminal": {},
+      "revision": 19,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "effect.started",
+        "occurredAt": 1791966263617,
+        "occurred_at_utc": "2026-10-14T08:24:23.617000+00:00"
+      },
+      "data": {
+        "phase": ""
+      },
+      "terminal": {},
+      "revision": 20,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966264448,
+        "occurred_at_utc": "2026-10-14T08:24:24.448000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new"
+      },
+      "terminal": {},
+      "revision": 21,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966264531,
+        "occurred_at_utc": "2026-10-14T08:24:24.531000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new",
+        "turnKey": "",
+        "turnIndex": -1,
+        "failedUserTurnKey": "",
+        "conversationChanged": false,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": ""
+      },
+      "terminal": {},
+      "revision": 22,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966264537,
+        "occurred_at_utc": "2026-10-14T08:24:24.537000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new"
+      },
+      "terminal": {},
+      "revision": 23,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "effect.succeeded",
+        "occurredAt": 1791966264648,
+        "occurred_at_utc": "2026-10-14T08:24:24.648000+00:00"
+      },
+      "data": {
+        "message": ""
+      },
+      "terminal": {},
+      "revision": 24,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966264531,
+        "occurred_at_utc": "2026-10-14T08:24:24.531000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new",
+        "turnKey": "",
+        "turnIndex": -1,
+        "failedUserTurnKey": "",
+        "conversationChanged": false,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": ""
+      },
+      "terminal": {},
+      "revision": 25,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966264650,
+        "occurred_at_utc": "2026-10-14T08:24:24.650000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new"
+      },
+      "terminal": {},
+      "revision": 26,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "effect.uncertain",
+        "occurredAt": 1791966264650,
+        "occurred_at_utc": "2026-10-14T08:24:24.650000+00:00"
+      },
+      "data": {
+        "code": "PROMPT_SUBMISSION_UNCERTAIN_AFTER_RELOAD",
+        "message": "Content runtime reloaded before prompt submission could be proved; automatic resend is forbidden."
+      },
+      "terminal": {},
+      "revision": 27,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "effect.started",
+        "occurredAt": 1791966264684,
+        "occurred_at_utc": "2026-10-14T08:24:24.684000+00:00"
+      },
+      "data": {
+        "phase": ""
+      },
+      "terminal": {},
+      "revision": 28,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "effect.succeeded",
+        "occurredAt": 1791966265114,
+        "occurred_at_utc": "2026-10-14T08:24:25.114000+00:00"
+      },
+      "data": {
+        "message": ""
+      },
+      "terminal": {},
+      "revision": 29,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "effect.started",
+        "occurredAt": 1791966265155,
+        "occurred_at_utc": "2026-10-14T08:24:25.155000+00:00"
+      },
+      "data": {
+        "phase": ""
+      },
+      "terminal": {},
+      "revision": 30,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966265127,
+        "occurred_at_utc": "2026-10-14T08:24:25.127000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new",
+        "turnKey": "",
+        "turnIndex": -1,
+        "failedUserTurnKey": "",
+        "conversationChanged": false,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": ""
+      },
+      "terminal": {},
+      "revision": 31,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966265160,
+        "occurred_at_utc": "2026-10-14T08:24:25.160000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new"
+      },
+      "terminal": {},
+      "revision": 32,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966265127,
+        "occurred_at_utc": "2026-10-14T08:24:25.127000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new",
+        "turnKey": "",
+        "turnIndex": -1,
+        "failedUserTurnKey": "",
+        "conversationChanged": false,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": ""
+      },
+      "terminal": {},
+      "revision": 33,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966265584,
+        "occurred_at_utc": "2026-10-14T08:24:25.584000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new"
+      },
+      "terminal": {},
+      "revision": 34,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966265881,
+        "occurred_at_utc": "2026-10-14T08:24:25.881000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new",
+        "turnKey": "",
+        "turnIndex": -1,
+        "failedUserTurnKey": "",
+        "conversationChanged": false,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": ""
+      },
+      "terminal": {},
+      "revision": 35,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966265886,
+        "occurred_at_utc": "2026-10-14T08:24:25.886000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new"
+      },
+      "terminal": {},
+      "revision": 36,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966267131,
+        "occurred_at_utc": "2026-10-14T08:24:27.131000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new",
+        "turnKey": "",
+        "turnIndex": -1,
+        "failedUserTurnKey": "",
+        "conversationChanged": false,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": ""
+      },
+      "terminal": {},
+      "revision": 37,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966267134,
+        "occurred_at_utc": "2026-10-14T08:24:27.134000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "new"
+      },
+      "terminal": {},
+      "revision": 38,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966267493,
+        "occurred_at_utc": "2026-10-14T08:24:27.493000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987",
+        "turnKey": "",
+        "turnIndex": -1,
+        "failedUserTurnKey": "",
+        "conversationChanged": false,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": ""
+      },
+      "terminal": {},
+      "revision": 39,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966267495,
+        "occurred_at_utc": "2026-10-14T08:24:27.495000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987"
+      },
+      "terminal": {},
+      "revision": 40,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "accepted",
+      "event": {
+        "type": "effect.succeeded",
+        "occurredAt": 1791966267504,
+        "occurred_at_utc": "2026-10-14T08:24:27.504000+00:00"
+      },
+      "data": {
+        "message": ""
+      },
+      "terminal": {},
+      "revision": 41,
+      "lifecycle": "preparing"
+    },
+    {
+      "displayPhase": "submitted",
+      "event": {
+        "type": "prompt.submitted",
+        "occurredAt": 1791966267504,
+        "occurred_at_utc": "2026-10-14T08:24:27.504000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658"
+      },
+      "terminal": {},
+      "revision": 42,
+      "lifecycle": "submitted"
+    },
+    {
+      "displayPhase": "streaming",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966267511,
+        "occurred_at_utc": "2026-10-14T08:24:27.511000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987",
+        "turnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::assistant",
+        "turnIndex": 1,
+        "failedUserTurnKey": "",
+        "conversationChanged": false,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user"
+      },
+      "terminal": {},
+      "revision": 43,
+      "lifecycle": "generating"
+    },
+    {
+      "displayPhase": "streaming",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966267515,
+        "occurred_at_utc": "2026-10-14T08:24:27.515000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987"
+      },
+      "terminal": {},
+      "revision": 44,
+      "lifecycle": "generating"
+    },
+    {
+      "displayPhase": "streaming",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966268269,
+        "occurred_at_utc": "2026-10-14T08:24:28.269000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987",
+        "turnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::assistant",
+        "turnIndex": 1,
+        "failedUserTurnKey": "",
+        "conversationChanged": false,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user"
+      },
+      "terminal": {},
+      "revision": 45,
+      "lifecycle": "generating"
+    },
+    {
+      "displayPhase": "streaming",
+      "event": {
+        "type": "source.heartbeat",
+        "occurredAt": 1791966268274,
+        "occurred_at_utc": "2026-10-14T08:24:28.274000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987"
+      },
+      "terminal": {},
+      "revision": 46,
+      "lifecycle": "generating"
+    },
+    {
+      "displayPhase": "failed",
+      "event": {
+        "type": "observation.updated",
+        "occurredAt": 1791966268861,
+        "occurred_at_utc": "2026-10-14T08:24:28.861000+00:00"
+      },
+      "data": {
+        "clientId": "extension:tab:1707788658",
+        "conversationId": "6acf3c3b-1af0-83ea-a62d-c2b0f333505e",
+        "turnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::assistant",
+        "turnIndex": 1,
+        "failedUserTurnKey": "",
+        "conversationChanged": true,
+        "conversationCanonicalized": false,
+        "previousConversationId": "",
+        "originalSubmittedUserTurnKey": "",
+        "submittedUserTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user"
+      },
+      "terminal": {
+        "code": "conversation_changed",
+        "message": "Bound ChatGPT conversation changed",
+        "at": 1791966268862
+      },
+      "revision": 47,
+      "lifecycle": "failed"
+    }
+  ],
+  "canonical_lifecycle": "failed",
+  "same_turn_conversation_transition_evidence": [
+    {
+      "occurred_at_utc": "2026-10-14T08:24:27.511000+00:00",
+      "conversationId": "local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987",
+      "submittedUserTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user",
+      "assistantTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::assistant",
+      "turnIndex": 1,
+      "conversationChanged": false,
+      "conversationCanonicalized": false
+    },
+    {
+      "occurred_at_utc": "2026-10-14T08:24:28.269000+00:00",
+      "conversationId": "local-chatgpt%3A4b62870c-08e1-46d1-b1bc-5fbb7a01a987",
+      "submittedUserTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user",
+      "assistantTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::assistant",
+      "turnIndex": 1,
+      "conversationChanged": false,
+      "conversationCanonicalized": false
+    },
+    {
+      "occurred_at_utc": "2026-10-14T08:24:28.861000+00:00",
+      "conversationId": "6acf3c3b-1af0-83ea-a62d-c2b0f333505e",
+      "submittedUserTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::user",
+      "assistantTurnKey": "b92fa2c8-834c-4e9a-8d0b-ef0a65d9743f::assistant",
+      "turnIndex": 1,
+      "conversationChanged": true,
+      "conversationCanonicalized": false
+    }
+  ]
+}

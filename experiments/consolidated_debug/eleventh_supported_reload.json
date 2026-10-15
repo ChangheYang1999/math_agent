@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-15T08:47:36.223922+00:00",
+  "route": "/browser/extension/reload",
+  "request": {
+    "sourceClientId": "extension:tab:1707788883",
+    "expectedVersion": "2.4.8",
+    "reloadTabs": false,
+    "allowMaintenancePageBootstrap": false,
+    "timeoutMs": 30000
+  },
+  "aggregate_active_requests_before": [],
+  "status_code": 500,
+  "accepted": null,
+  "recovery": null,
+  "reconnected": {
+    "id": null,
+    "browserTabId": null,
+    "extensionVersion": null,
+    "clientVersion": null,
+    "connectedAt": null,
+    "url": null
+  },
+  "error": "Timed out waiting for extension 2.4.8 to reconnect after reload"
+}

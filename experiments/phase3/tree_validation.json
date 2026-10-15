@@ -1,0 +1,14 @@
+{
+  "mode": "OFFLINE_SIMULATION",
+  "verdict": "OFFLINE_PASS",
+  "recorded_at": "2026-10-15T06:25:42.651309+00:00",
+  "command": ".venv/bin/python -m pytest -q tests/test_tree_dynamics.py tests/test_research_tree.py",
+  "passed": 22,
+  "failed": 0,
+  "elapsed_seconds": 3.73,
+  "ruff": "All checks passed; new test file formatted",
+  "modified_production_file": "src/math_research_agent/scheduler.py",
+  "fix": "Allow optional coordinator messages/allocation events at saved, undispatched prompt boundaries; continue blocking on SOLVING, REPORT_APPROVAL, AWAITING_PARENT_RESPONSE and newly launched leaf tasks.",
+  "no_browser_or_inference_requests": true,
+  "no_existing_project_database_modified": true
+}

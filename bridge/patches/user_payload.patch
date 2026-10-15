@@ -1,0 +1,24 @@
+diff --git a/tools/chrome-bridge-extension/content/composerCommands.js b/tools/chrome-bridge-extension/content/composerCommands.js
+--- a/tools/chrome-bridge-extension/content/composerCommands.js
++++ b/tools/chrome-bridge-extension/content/composerCommands.js
+@@ -85,6 +85,8 @@
+   // Current ChatGPT keeps the complete literal user payload in this bubble;
+   // exclude surrounding turn controls/headings from its delivery checksum.
+   const bubble = turn?.querySelector?.('[data-user-message-bubble="true"]') || turn;
++  const rich = Array.from(bubble?.querySelectorAll?.('[data-markdown-text-tone="user-message"]') || []);
++  if (rich.length === 1) return visibleText(rich[0]);
+   const payloads = Array.from(bubble?.querySelectorAll?.('.whitespace-pre-wrap[dir="auto"]') || []);
+   return visibleText(payloads.length === 1 ? payloads[0] : bubble);
+ }
+diff --git a/tools/chrome-bridge-extension/content/userTurnState.js b/tools/chrome-bridge-extension/content/userTurnState.js
+--- a/tools/chrome-bridge-extension/content/userTurnState.js
++++ b/tools/chrome-bridge-extension/content/userTurnState.js
+@@ -23,6 +23,8 @@
+       const root = userMessageRoot(turn);
+       if (!root?.querySelector) return null;
+       const bubble = root.querySelector('[data-user-message-bubble="true"]');
++      const rich = Array.from(bubble?.querySelectorAll?.('[data-markdown-text-tone="user-message"]') || []);
++      if (rich.length === 1) return rich[0];
+       const literal = Array.from(bubble?.querySelectorAll?.('.whitespace-pre-wrap[dir="auto"]') || []);
+       if (literal.length === 1) return literal[0];
+       return root.querySelector('.user-message-bubble-color, [data-testid="user-message"], [data-testid="user-message-content"]')

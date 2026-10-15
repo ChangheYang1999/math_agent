@@ -1,0 +1,42 @@
+diff --git a/tools/chrome-bridge-extension/responseParserCore.js b/tools/chrome-bridge-extension/responseParserCore.js
+--- a/tools/chrome-bridge-extension/responseParserCore.js
++++ b/tools/chrome-bridge-extension/responseParserCore.js
+@@ -378,6 +378,19 @@
+     )));
+   }
+ 
++  function codeTextFromElement(element) {
++    const editor = element?.matches?.('.cm-content') ? element : element?.querySelector?.('.cm-content');
++    if (editor) {
++      const lines = Array.from(editor.querySelectorAll?.('.cm-line') || [])
++        .filter((line) => line.closest?.('.cm-content') === editor);
++      // CodeMirror stores each physical line in a separate div. textContent
++      // joins those divs without separators; do not trim indentation or empty
++      // lines, and leave ordinary code elements on their literal text path.
++      if (lines.length) return lines.map((line) => String(line.textContent ?? '')).join('\n').replace(/\r\n?/g, '\n');
++    }
++    return String(element?.textContent || '').replace(/\r\n?/g, '\n');
++  }
++
+   function inspectCodeWidget(widget, providedPass = null) {
+     const pass = parserPass(providedPass, widget);
+     const content = contentSourceForWidget(widget, pass);
+@@ -532,6 +545,7 @@
+     rawCodeWidgetOwnerCandidate,
+     isCodeWidgetOwner,
+     collectCodeWidgetOwners,
++    codeTextFromElement,
+     inspectCodeWidget,
+   });
+ })();
+diff --git a/tools/chrome-bridge-extension/content/responseDom.js b/tools/chrome-bridge-extension/content/responseDom.js
+--- a/tools/chrome-bridge-extension/content/responseDom.js
++++ b/tools/chrome-bridge-extension/content/responseDom.js
+@@ -439,6 +439,7 @@
+ function codeTextFromPre(element, inspection = null) {
+   const details = inspection || codeWidgetInspection(element);
+   const code = details?.contentSource || element?.querySelector?.('code') || element;
++  if (globalThis.ChatGptResponseParserCore?.codeTextFromElement) return globalThis.ChatGptResponseParserCore.codeTextFromElement(code);
+   return String(code?.textContent || '').replace(/\r\n?/g, '\n');
+ }
+ 

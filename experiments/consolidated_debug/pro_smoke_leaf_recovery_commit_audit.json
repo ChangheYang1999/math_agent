@@ -1,0 +1,62 @@
+{
+  "audited_at": "2026-10-15T08:26:31.575128+00:00",
+  "mode": "READ_ONLY_SQLITE_AND_SAVED_FILES",
+  "status": "LIVE_PASS_SOURCE_BOUND_LOCAL_LEAF_RECOVERY_ONLY",
+  "live_tree_status": "HALTED_PENDING_MODEL_VERIFICATION_ZERO_COMPLETED_PAIRS",
+  "assertions": {
+    "all_turn_rows_byte_value_identical_to_backup": true,
+    "all_parent_response_rows_identical_to_backup": true,
+    "all_sibling_round_rows_identical_to_backup": true,
+    "source_network_fields_equal_stored_report": true,
+    "stored_report_hash_matches_receipt": true,
+    "original_turn_hash_matches_receipt": true,
+    "report_stage_is_mandatory_parent_pending": true,
+    "ordinary_report_approval_hash_exact": true,
+    "report_event_precedes_recovery_receipt": true,
+    "no_second_leaf_dispatch_after_recovery": true,
+    "original_halt_retained": true,
+    "ledger_reservations_still_two": true
+  },
+  "commit_time": "2026-10-15T08:23:53.535121+00:00",
+  "completed_report_count": 1,
+  "completed_parent_pair_count": 0,
+  "pending_parent_obligations": [
+    "n-3790f8503746-r000001"
+  ],
+  "other_leaf_state": [
+    {
+      "id": "n-dab935ae44d1-r000001",
+      "stage": "PROMPT_READY",
+      "prompt_version": 1,
+      "report_accepted": 0
+    }
+  ],
+  "new_inference_requests_during_recovery": 0,
+  "current_ledger_count": 2,
+  "hard_cap": 16,
+  "recent_command_errors": [
+    {
+      "at": "2026-10-15T08:11:22.074444+00:00",
+      "monotonic_ns": 1073218619997791,
+      "process_id": "8c3919fc591e4cfd84f044c69f056717",
+      "command": "smoke",
+      "error": "Format repair exhausted for leaf:n-3790f8503746-r000001: [{\"loc\": [], \"msg\": \"Invalid JSON: expected value at line 1 column 1\", \"type\": \"json_invalid\"}]"
+    },
+    {
+      "at": "2026-10-15T08:24:40.391266+00:00",
+      "monotonic_ns": 1074017016647250,
+      "process_id": "57d0301acbbd40e19691c621cf5719cd",
+      "command": "resume_recovered_smoke",
+      "error": "Bridge request failed: HTTPStatusError (HTTP 500)"
+    }
+  ],
+  "evidence": [
+    "pro_smoke_leaf_recovery_commit.json",
+    "pro_smoke_recovery_proof.json",
+    "pro_smoke_authenticated_history.json",
+    "pro_tree_immediately_before_leaf_recovery.db",
+    "runs/pro_tree/project/tree.db",
+    "runs/pro_tree/manifest.json",
+    "request_ledger.json"
+  ]
+}

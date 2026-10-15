@@ -1,0 +1,20 @@
+{
+  "status": "OFFLINE_PASS",
+  "recorded_at": "2026-10-15 08:25:06 UTC",
+  "scope": "Synthetic unit/regression tests only; zero inference or browser calls",
+  "tests": "tests/test_leaf_recovery.py tests/test_parent_recovery.py tests/test_bridge_transport.py tests/test_research_tree.py tests/test_tree_dynamics.py tests/test_parent_prompt.py",
+  "result": {
+    "passed": 38,
+    "seconds": 5.13
+  },
+  "leaf_cases": [
+    "manual review OFF persists accepted report and mandatory Parent obligation",
+    "manual review ON persists exact report PENDING and unaccepted",
+    "original INVALID/raw recap turn unchanged in every column",
+    "duplicate explicit commit idempotent",
+    "wrong exchange, incomplete terminal, wrong model, incomplete page, wrong current node, wrong user text and wrong report IDs rejected without mutation",
+    "synthetic normal Parent response remains possible after accepted recovered report"
+  ],
+  "actual_evidence_validation": "pro_smoke_recovery_validation.json records separate read-only source validation; this test result is not a live inference pass",
+  "database_mutation_by_this_agent": "Temporary synthetic test databases only"
+}

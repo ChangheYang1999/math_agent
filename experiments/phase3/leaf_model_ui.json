@@ -1,0 +1,23 @@
+{
+  "captured": "2026-10-15T06:41:13.901Z",
+  "leafA": {
+    "tabId": "1707788780",
+    "selected": "GPT-6",
+    "effort": "Extra High, 4 of 5.",
+    "source": "visible checked menuitemradio and status"
+  },
+  "leafB": {
+    "options": [
+      {
+        "checked": "true",
+        "disabled": null,
+        "text": "GPT-6"
+      },
+      {
+        "checked": "false",
+        "disabled": null,
+        "text": "GPT-5.6 Sol"
+      }
+    ]
+  }
+}

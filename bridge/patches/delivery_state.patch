@@ -1,0 +1,243 @@
+diff --git a/src/bridge/coordinator/bridgeClientEventRouter.js b/src/bridge/coordinator/bridgeClientEventRouter.js
+index 95fccba..c9f050b 100644
+--- a/src/bridge/coordinator/bridgeClientEventRouter.js
++++ b/src/bridge/coordinator/bridgeClientEventRouter.js
+@@ -303,6 +303,9 @@ handleClientMessage(clientId, payload, envelope = null) {
+     const transition = this.lifecycle.ingestRequestTransition(state, this.lifecycle.canonicalEvent(state, RequestEventType.EFFECT_CANCELLED, {
+       effectId: payload.effectId || '',
+       effectType,
++      code: String(payload.code || ''),
++      provenNotExecuted: payload.provenNotExecuted === true,
++      cancellationEvidence: payload.cancellationEvidence || null,
+       message: payload.message || 'Browser operation cancelled',
+     }, 'browser_effect'));
+     if (transition?.accepted) {
+@@ -310,6 +313,9 @@ handleClientMessage(clientId, payload, envelope = null) {
+         requestId,
+         effectId: String(payload.effectId || ''),
+         effectType,
++        code: String(payload.code || ''),
++        provenNotExecuted: payload.provenNotExecuted === true,
++        cancellationEvidence: payload.cancellationEvidence || null,
+         message: String(payload.message || 'Browser operation cancelled'),
+       }));
+     }
+diff --git a/src/bridge/coordinator/requestResultMaterializer.js b/src/bridge/coordinator/requestResultMaterializer.js
+index 2b44803..b1e2208 100644
+--- a/src/bridge/coordinator/requestResultMaterializer.js
++++ b/src/bridge/coordinator/requestResultMaterializer.js
+@@ -181,6 +181,12 @@ export class RequestResultMaterializer {
+       || `CANONICAL_${String(code || 'failed').toUpperCase()}`;
+     error.phase = canonicalState.lifecycle || state.progress?.phase || '';
+     error.canonicalTerminal = terminal;
++    if (error.code === 'COMPOSER_TEXT_VERIFY_FAILED' && terminal.evidence?.provenNotExecuted === true
++      && terminal.evidence?.cancellationEvidence?.source === 'composer_preparation'
++      && terminal.evidence?.cancellationEvidence?.reason === 'submission_boundary_not_entered') {
++      error.provenNotExecuted = true;
++      error.cancellationEvidence = terminal.evidence.cancellationEvidence;
++    }
+     if (code === RequestTerminalCode.SOURCE_LOST) error.recoverable = true;
+     if (code === RequestTerminalCode.DEADLINE_EXCEEDED && state.clientId) {
+       try {
+@@ -233,6 +239,7 @@ export class RequestResultMaterializer {
+         finishReason: metadata.finishReason || '',
+         code: err.code || '',
+         name: err.name || '',
++        ...(err.provenNotExecuted === true ? { provenNotExecuted: true, cancellationEvidence: err.cancellationEvidence } : {}),
+       }), { canonical: false });
+       for (const follower of state.followers || []) {
+         if (follower.done) continue;
+diff --git a/src/bridge/state/requestEffectTransitions.js b/src/bridge/state/requestEffectTransitions.js
+index ae20a71..8c1bec0 100644
+--- a/src/bridge/state/requestEffectTransitions.js
++++ b/src/bridge/state/requestEffectTransitions.js
+@@ -1,4 +1,6 @@
+ import {
++  GenerationState,
++  OutputState,
+   RequestBlocker,
+   RequestDeadlineKind,
+   RequestEffectType,
+@@ -67,6 +69,18 @@ export function reduceRequestEffectTransition(state, event) {
+         activeType: null,
+         lastResult: { type: event.type, at, data },
+       });
++      // A bounded editor-preparation failure before the submission boundary
++      // is terminal NOT_SENT. It must not hang or schedule an automatic retry.
++      if (event.type === RequestEventType.EFFECT_CANCELLED && domain === 'browser'
++        && data.effectId && slot.activeId === data.effectId && slot.activeType === 'prompt.submit'
++        && data.effectType === 'prompt.submit' && state.submission !== SubmissionState.SUBMITTED
++        && !state.response?.userTurnKey && state.generation !== GenerationState.ACTIVE && state.output === OutputState.NONE
++        && data.code === 'COMPOSER_TEXT_VERIFY_FAILED' && data.provenNotExecuted === true
++        && data.cancellationEvidence?.source === 'composer_preparation'
++        && data.cancellationEvidence?.reason === 'submission_boundary_not_entered') {
++        return terminalResult(nextState, RequestTerminalCode.EFFECT_FAILED,
++          String(data.message || 'Composer preparation stopped before Send'), data, event);
++      }
+       if (domain === 'browser' && String(data.effectType || '') === 'prompt.cancel') {
+         if (event.type === RequestEventType.EFFECT_SUCCEEDED) {
+           return terminalResult(
+@@ -232,6 +246,11 @@ export function reduceRequestEffectTransition(state, event) {
+         };
+       }
+       if (outcome === 'not_started') {
++        if (['prompt.submit', 'prompt.steer'].includes(String(data.effectType || ''))) {
++          return terminalResult(state, RequestTerminalCode.RECOVERY_UNCERTAIN,
++            'Submission reconciliation cannot authorize automatic Send replay; explicit reconciliation is required',
++            { ...data, recoverable: true, safeToRetryAsNewRequest: false }, event);
++        }
+         const retryable = String(data.retryPolicy || 'if_unconfirmed') !== 'never';
+         if (!retryable) {
+           return terminalResult(
+diff --git a/src/turnManager.js b/src/turnManager.js
+index 59b7330..debbda2 100644
+--- a/src/turnManager.js
++++ b/src/turnManager.js
+@@ -418,7 +418,9 @@ export class TurnManager extends EventEmitter {
+       }
+       const code = err.name === 'AbortError' ? 'TURN_INTERRUPTED' : err.code || 'TURN_FAILED';
+       const status = code === 'TURN_INTERRUPTED' ? 'interrupted' : 'failed';
+-      const error = { code, message: err.message || String(err), recoverable: status !== 'interrupted', ...(err.extra ? { extra: err.extra } : {}) };
++      const error = { code, message: err.message || String(err), recoverable: status !== 'interrupted' && err.provenNotExecuted !== true,
++        ...(err.provenNotExecuted === true ? { provenNotExecuted: true, cancellationEvidence: err.cancellationEvidence } : {}),
++        ...(err.extra ? { extra: err.extra } : {}) };
+       const updated = await this.metadataStore.updateTurn(turnId, { status, completedAt: nowIso(), error });
+       await this.#record(turnId, status === 'interrupted' ? 'turn/interrupted' : 'turn/failed', { turn: updated, error });
+     } finally {
+diff --git a/test/browserEffectReconciliationMatrix.test.js b/test/browserEffectReconciliationMatrix.test.js
+index 215a0d9..c6b868d 100644
+--- a/test/browserEffectReconciliationMatrix.test.js
++++ b/test/browserEffectReconciliationMatrix.test.js
+@@ -139,10 +139,10 @@ const cases = [
+     outcome: 'succeeded', reason: 'submitted_user_turn_observed',
+   },
+   {
+-    name: 'prompt submit is proved not started when exact text remains in composer',
++    name: 'prompt submit remains uncertain when exact text remains after a possible Send',
+     options: { composerText: 'hello' },
+     payload: { effectType: 'prompt.submit', evidence: { message: 'hello' } },
+-    outcome: 'not_started', reason: 'expected_prompt_still_in_composer',
++    outcome: 'uncertain', reason: 'expected_prompt_still_in_composer_submission_unknown',
+   },
+   {
+     name: 'prompt submit remains uncertain without a turn or composer proof',
+diff --git a/test/extensionInteractionRegression.test.js b/test/extensionInteractionRegression.test.js
+index 25e4cbf..6374379 100644
+--- a/test/extensionInteractionRegression.test.js
++++ b/test/extensionInteractionRegression.test.js
+@@ -458,6 +458,71 @@ test('steer acknowledgement uses a longer bounded proof window than an ordinary
+   assert.equal(commands.resolveSubmissionAckTimeoutMs({ options: { steerSubmitAckTimeoutMs: 8_000 } }, 'steer'), 8_000);
+ });
+ 
++test('submission acknowledgement rechecks the current DOM after root replacement and asynchronous Show more', async () => {
++  const { sandbox } = await bootstrapExtensionContentRuntime();
++  const timers = new Map();
++  let nextTimer = 0, turns = [], observedRoot = null, disconnected = false, expansions = 0;
++  sandbox.setTimeout = (callback, ms) => { const id = ++nextTimer; timers.set(id, { callback, ms }); return id; };
++  sandbox.clearTimeout = (id) => timers.delete(id);
++  sandbox.MutationObserver = class {
++    observe(root) { observedRoot = root; }
++    disconnect() { disconnected = true; }
++  };
++  const oldRoot = { isConnected: true };
++  sandbox.document.body = oldRoot;
++  sandbox.document.querySelectorAll = () => [];
++  const prompt = 'LONG-BEGIN\n' + 'literal input\n'.repeat(1500) + 'LONG-END';
++  const payload = { textContent: prompt.slice(0, 10240) };
++  const more = { disabled: false, getAttribute(name) { return name === 'aria-label' ? 'Show more' : null; },
++    click() { expansions++; } };
++  const bubble = { querySelectorAll(selector) {
++    return selector === '.whitespace-pre-wrap[dir="auto"]' ? [payload] : [more];
++  } };
++  const userTurn = { querySelector() { return bubble; } };
++  const commands = sandbox.ChatGptComposerCommands.createComposerCommands(composerDependencies({
++    getTurnNodes() { return turns; }, turnKey() { return 'new-own-user'; }, turnRole() { return 'user'; },
++  }));
++  const waiter = commands.createPromptSubmissionEvidenceWaiter({ requestId: 'root-replaced' }, new Set(), prompt,
++    null, 1000, { allowExpand: true, expandedTurnKeys: new Set() });
++  const result = waiter.wait();
++  assert.equal(observedRoot, oldRoot);
++  oldRoot.isConnected = false;
++  sandbox.document.body = { isConnected: true }; // No mutation reaches the old root.
++  turns = [userTurn];
++  const tick = () => {
++    const [id, timer] = [...timers].find(([, item]) => item.ms === 200);
++    timers.delete(id); timer.callback();
++  };
++  tick();
++  assert.equal(expansions, 1);
++  payload.textContent = prompt; // Show more's async render, also without an old-root mutation.
++  tick();
++  const evidence = await result;
++  assert.equal(evidence.confirmed, true);
++  assert.equal(evidence.turnKey, 'new-own-user');
++  assert.equal(expansions, 1, 'read-only reinspection never repeats expansion');
++  assert.equal(disconnected, true);
++  assert.equal(timers.size, 0, 'both timeout and reinspection are bounded and cleaned up');
++});
++
++test('submission timeout performs a final current-DOM inspection when polling was throttled', async () => {
++  const { sandbox } = await bootstrapExtensionContentRuntime();
++  const timers = new Map();
++  let nextTimer = 0, turns = [];
++  sandbox.setTimeout = (callback, ms) => { const id = ++nextTimer; timers.set(id, { callback, ms }); return id; };
++  sandbox.clearTimeout = (id) => timers.delete(id);
++  const commands = sandbox.ChatGptComposerCommands.createComposerCommands(composerDependencies({
++    getTurnNodes() { return turns; }, turnKey() { return 'late-own-user'; }, turnRole() { return 'user'; },
++  }));
++  const waiter = commands.createPromptSubmissionEvidenceWaiter({ requestId: 'late-user' }, new Set(), 'exact late text', null, 1000);
++  const result = waiter.wait();
++  turns = [{ textContent: 'exact late text' }];
++  const [, deadline] = [...timers].find(([, item]) => item.ms === 1000);
++  deadline.callback(); // The 200ms callback never ran.
++  assert.equal((await result).confirmed, true);
++  assert.equal(timers.size, 0);
++});
++
+ 
+ test('prompt submission evidence rejects an unrelated new user turn even when the composer cleared', async () => {
+   const { sandbox } = await bootstrapExtensionContentRuntime();
+@@ -501,7 +566,7 @@ test('prompt submission evidence accepts an attachment-prefixed turn only when i
+   assert.equal(evidence.turnKey, 'user-project');
+ });
+ 
+-test('a proven unsubmitted passive prompt is rolled back instead of poisoning the next request', async () => {
++test('a passive prompt retains its draft and uncertainty after a Send without confirmation', async () => {
+   const { sandbox } = await bootstrapExtensionContentRuntime();
+   sandbox.DataTransfer = class {
+     constructor() { this.value = ''; }
+@@ -576,11 +641,11 @@ test('a proven unsubmitted passive prompt is rolled back instead of poisoning th
+   await assert.rejects(
+     commands.enterPrompt('stale passive workflow prompt', { requestId: 'passive-stale', options: {} }, { kind: 'passive' }),
+     (error) => {
+-      assert.equal(error.code, 'PROMPT_SUBMIT_NOT_EXECUTED');
+-      assert.equal(error.provenNotExecuted, true);
++      assert.equal(error.code, 'PROMPT_SUBMIT_UNCERTAIN');
++      assert.notEqual(error.provenNotExecuted, true);
+       return true;
+     },
+   );
+-  assert.equal(composer.value, '');
+-  assert.equal(diagnostics.some((entry) => entry.name === 'prompt.submit.rolled_back'), true);
++  assert.equal(composer.value, 'stale passive workflow prompt');
++  assert.equal(diagnostics.some((entry) => entry.name === 'prompt.submit.rolled_back'), false);
+ });
+diff --git a/tools/chrome-bridge-extension/content/requestEffectReconciliation.js b/tools/chrome-bridge-extension/content/requestEffectReconciliation.js
+index b5391a8..facad68 100644
+--- a/tools/chrome-bridge-extension/content/requestEffectReconciliation.js
++++ b/tools/chrome-bridge-extension/content/requestEffectReconciliation.js
+@@ -207,12 +207,12 @@
+           } else if (pendingBaseline.size && submittedTurnIsNew) {
+             outcome = 'succeeded'; reason = 'new_steer_user_turn_observed';
+           } else if (expectedText && currentComposerText === expectedText) {
+-            outcome = 'not_started'; reason = 'expected_steer_still_in_composer';
++            reason = 'expected_steer_still_in_composer_submission_unknown';
+           } else reason = 'steer_submission_not_provable';
+         } else if (request.submittedUserTurnKey) {
+           outcome = 'succeeded'; reason = 'submitted_user_turn_observed';
+         } else if (expectedText && currentComposerText === expectedText) {
+-          outcome = 'not_started'; reason = 'expected_prompt_still_in_composer';
++          reason = 'expected_prompt_still_in_composer_submission_unknown';
+         } else reason = 'prompt_submission_not_provable';
+       } else if (effectType === 'prompt.cancel') {
+         const stillGenerating = Boolean(findStopButton?.() || isGenerating?.());

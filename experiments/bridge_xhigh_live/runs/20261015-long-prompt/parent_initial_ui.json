@@ -1,0 +1,19 @@
+{
+  "observed_at": "2026-10-15T00:25:12.956076+00:00",
+  "parent_tab": 1707788745,
+  "conversation_id": "6acf41ec-72f8-83ea-a670-bfd46819ef79",
+  "visible_user_message_text_lengths": [
+    8261,
+    8281
+  ],
+  "matches_two_prior_completed_inputs": true,
+  "trimmed_draft_characters": 0,
+  "pasted_text_attachment_count": 0,
+  "inspection": "Read-only DOM of test-owned parent conversation; no Send action.",
+  "hash_observed_at": "2026-10-15T00:45:33.381660+00:00",
+  "visible_user_message_sha256": [
+    "3045594ef4c78551e9502e293a41bda15c5a4f2cd9de93615c47a74460bc2da9",
+    "00d930284d1a61ccd59d72474bd38a31b397a975c6431d1e0126fec1d3d7d403"
+  ],
+  "hash_source": "Read-only literal submitted DOM via CUA; Node SHA256; full text not persisted in this inspection artifact"
+}

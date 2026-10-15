@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-14T09:12:00.305322+00:00",
+  "request_id": "mathagent_c3b62eaee6945f11a6b807f2b92521ba",
+  "reason": "Bounded experiment repair: exact long-paste attachment is present, but preparation refused its control pair before Send. Stop this original request before targeted selector correction.",
+  "status": "interrupted",
+  "error": {
+    "code": "TURN_INTERRUPTED",
+    "message": "Bounded experiment repair: exact long-paste attachment is present, but preparation refused its control pair before Send. Stop this original request before targeted selector correction."
+  },
+  "completed_at": "2026-10-14T09:12:00.303Z"
+}

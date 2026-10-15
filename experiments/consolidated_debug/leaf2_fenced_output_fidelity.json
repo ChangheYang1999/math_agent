@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-15T09:03:01.202076+00:00",
+  "status": "LIVE_FENCED_CONTENT_PASS",
+  "authority": "Actual owned-tab HTTP200 terminal final",
+  "bridge_read_recovery_http": 200,
+  "request_id": "mathagent_4b6ed10cadb158698fb7fe1779f2b500",
+  "canonical_answer_sha256": "7df910f7cf33dcdaedfdd67fd19de5300f4e5fdf2693a263a2cd2cad956e7598",
+  "all_json_field_values_exact": true,
+  "differing_top_fields": [],
+  "normal_bridge_terminal_pass": false,
+  "note": "Original request failed rendered input comparison; this read-only comparison tests output fidelity, not submitted-turn acceptance."
+}

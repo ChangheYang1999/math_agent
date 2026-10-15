@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-15T07:43:01.598232+00:00",
+  "scope": "READ_ONLY_CONTENT_RECOVERY_NO_INFERENCE_NO_TERMINAL_REWRITE",
+  "body": {
+    "sourceClientId": "extension:tab:1707788777",
+    "index": 1,
+    "reconcileConversation": {
+      "conversationId": "6ad073a4-b6b0-83ea-8d27-eb898d8fc2c1",
+      "userMessageId": "c27f4451-1b2b-4d48-bbeb-3a35ee7daae0",
+      "assistantMessageId": "68955394-7547-4acc-8cb7-c4d80c20ae82"
+    }
+  },
+  "http_status": 500,
+  "response": {
+    "detail": "Browser extension client not found: extension:tab:1707788777"
+  }
+}

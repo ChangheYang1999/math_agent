@@ -1,0 +1,184 @@
+{
+  "observed": {
+    "at": "2026-10-15T00:56:05.553768+00:00",
+    "monotonic_ns": 1047102229668041,
+    "process_id": "d93a4356314644e79ad3ca3135a931a5"
+  },
+  "outcome": "BLOCKED",
+  "requested_exact_model": "GPT-6 Pro",
+  "client_id": "extension:tab:1707788760",
+  "models": {
+    "ok": true,
+    "models": [
+      {
+        "label": "GPT-6",
+        "rawText": "GPT-6",
+        "selected": true,
+        "kind": "model",
+        "id": "model-gpt-6",
+        "value": "GPT-6",
+        "checked": true,
+        "index": 0,
+        "selectionSource": "submenu-check"
+      },
+      {
+        "label": "GPT-5.6 Sol",
+        "rawText": "GPT-5.6 Sol",
+        "selected": false,
+        "kind": "model",
+        "id": "model-gpt-5-6-sol",
+        "value": "GPT-5.6 Sol",
+        "checked": false,
+        "index": 1
+      }
+    ],
+    "current": {
+      "label": "GPT-6",
+      "rawText": "GPT-6",
+      "selected": true,
+      "kind": "model",
+      "id": "model-gpt-6",
+      "value": "GPT-6",
+      "checked": true,
+      "index": 0,
+      "selectionSource": "submenu-check"
+    },
+    "intelligence": {
+      "efforts": [
+        {
+          "label": "Extra High",
+          "rawText": "Extra High",
+          "selected": true,
+          "kind": "effort",
+          "id": "xhigh",
+          "value": "xhigh",
+          "checked": true,
+          "index": 3,
+          "observedOnly": true
+        }
+      ],
+      "models": [
+        {
+          "label": "GPT-6",
+          "rawText": "GPT-6",
+          "selected": true,
+          "kind": "model",
+          "id": "model-gpt-6",
+          "value": "GPT-6",
+          "checked": true,
+          "index": 0,
+          "selectionSource": "submenu-check"
+        },
+        {
+          "label": "GPT-5.6 Sol",
+          "rawText": "GPT-5.6 Sol",
+          "selected": false,
+          "kind": "model",
+          "id": "model-gpt-5-6-sol",
+          "value": "GPT-5.6 Sol",
+          "checked": false,
+          "index": 1
+        }
+      ],
+      "selectedEffort": {
+        "label": "Extra High",
+        "rawText": "Extra High",
+        "selected": true,
+        "kind": "effort",
+        "id": "xhigh",
+        "value": "xhigh",
+        "checked": true,
+        "index": 3,
+        "observedOnly": true
+      },
+      "selectedModel": {
+        "label": "GPT-6",
+        "rawText": "GPT-6",
+        "selected": true,
+        "kind": "model",
+        "id": "model-gpt-6",
+        "value": "GPT-6",
+        "checked": true,
+        "index": 0,
+        "selectionSource": "submenu-check"
+      },
+      "modelTrigger": null,
+      "capturedAt": 1792025766130
+    }
+  },
+  "efforts": {
+    "ok": true,
+    "efforts": [
+      {
+        "label": "Extra High",
+        "rawText": "Extra High",
+        "selected": true,
+        "kind": "effort",
+        "id": "xhigh",
+        "value": "xhigh",
+        "checked": true,
+        "index": 3,
+        "observedOnly": true
+      }
+    ],
+    "current": {
+      "label": "Extra High",
+      "rawText": "Extra High",
+      "selected": true,
+      "kind": "effort",
+      "id": "xhigh",
+      "value": "xhigh",
+      "checked": true,
+      "index": 3,
+      "observedOnly": true
+    },
+    "intelligence": {
+      "efforts": [
+        {
+          "label": "Extra High",
+          "rawText": "Extra High",
+          "selected": true,
+          "kind": "effort",
+          "id": "xhigh",
+          "value": "xhigh",
+          "checked": true,
+          "index": 3,
+          "observedOnly": true
+        }
+      ],
+      "models": [],
+      "selectedEffort": {
+        "label": "Extra High",
+        "rawText": "Extra High",
+        "selected": true,
+        "kind": "effort",
+        "id": "xhigh",
+        "value": "xhigh",
+        "checked": true,
+        "index": 3,
+        "observedOnly": true
+      },
+      "selectedModel": null,
+      "modelTrigger": null,
+      "capturedAt": 1792025766991
+    }
+  },
+  "ui_observation": {
+    "checked_model": "GPT-6",
+    "model_options": [
+      "GPT-6",
+      "GPT-5.6 Sol"
+    ],
+    "effort": "Extra High, 4 of 5.",
+    "slider": {
+      "min": 0,
+      "max": 4,
+      "value": 3
+    },
+    "other_visible_indicator": "Locked, opens access options",
+    "exact_GPT6_Pro_option_observed": false,
+    "model_changed": false,
+    "menu_closed": true
+  },
+  "reason": "The exact GPT-6 Pro model is not exposed/selectable in the observed picker. The locked control is not proof of an exact Pro identity. No fallback or Pro inference was sent."
+}

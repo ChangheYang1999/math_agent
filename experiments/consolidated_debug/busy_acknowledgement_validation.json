@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-15T09:25:57.812715+00:00",
+  "classification": "FOCUSED_OFFLINE_PASS_NO_LIVE_MUTATION",
+  "source": [
+    "src/math_research_agent/bridge_transport.py",
+    "tests/test_bridge_transport.py"
+  ],
+  "source_sha256": {
+    "src/math_research_agent/bridge_transport.py": "759fe2a33dc765128daac0203daa62ac7b7ec94af8717e3f6cb40e3474d4bf4d",
+    "tests/test_bridge_transport.py": "ad5e2fb6f77641364180feb3b0e0a751e4c18d19a438031d88de005bcb4bb525"
+  },
+  "change": "Explicit blocking_request_id variant accepts only a unique olderERROR/rawnull turn in the same session whose immutable original hash is validated by an existing committed recovery receipt; complete pre-dispatch busy-rejection evidence remains mandatory. No automatic retry or stale-lease release.",
+  "tests": {
+    "command": ".venv/bin/python -m pytest -q tests/test_bridge_transport.py -k \"undelivered or exact_recovered_blocker\"",
+    "passed": 2,
+    "failed": 0,
+    "synthetic_only": true,
+    "checks": [
+      "legacy exact generic busy rejection unchanged",
+      "specific old request requires valid committed recovery receipt",
+      "unknown/tampered receipt refusal",
+      "any prompt.delivered refusal",
+      "newbusy status only changes toFAILED_NOT_SENT",
+      "old failed turn and committed receipt byte-identical",
+      "no extra transport sends"
+    ]
+  },
+  "style": "Ruff check PASS and format applied to only two owned source files",
+  "stale_lease_release": "Root used existing route once, returned202ambiguous; not repeated by this agent",
+  "client_rebind_source_review": "Supported recover_session opens savedURL only after oldclient gone and unresolvedturns none; changes only clientbinding/state while preserving sessionID/conversation. Background lease storage keyed by tabId and onRemoved cleans only removedtab. Root owns actual close/rebind/model verification.",
+  "database_mutations_by_this_agent": 0,
+  "browser_actions_by_this_agent": 0,
+  "new_inference_by_this_agent": 0,
+  "extension_changes": 0
+}

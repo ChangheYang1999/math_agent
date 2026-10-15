@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "math-research-agent"
+version = "0.2.1"
+description = "Local recursive research trees with persistent ChatGPT web conversations"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.11,<3", "typer>=0.16,<1", "PyYAML>=6,<7", "httpx>=0.28,<1"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src/math_research_agent", "/prompts", "/tests", "/scripts", "/bridge", "/README.md", "/IMPLEMENTATION.md", "/config.example.yaml", "/.env.example", "/.gitignore", "/pyproject.toml"]
+exclude = ["**/__pycache__", "**/*.pyc", "**/.DS_Store"]
+
+[project.scripts]
+mathagent = "math_research_agent.cli:app"
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-asyncio>=1", "ruff>=0.12"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/math_research_agent"]
+dev-mode-dirs = ["src"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"prompts" = "math_research_agent/prompts"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B"]

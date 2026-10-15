@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-15T07:54:22.432639+00:00",
+  "verdict": "SOURCE_BOUND_COMPLETION_PROOF_VALIDATED_NOT_COMMITTED",
+  "database_mode": "ro",
+  "committed": false,
+  "receipt": {
+    "turn_id": "parent:n-4360dde303ec-r000001:e0:a0",
+    "request_id": "mathagent_8dead57559845377aa96cac3e5f68d83",
+    "session_id": "S-69635a7172cd5208bd84c81f96463809",
+    "parent_id": "root",
+    "child_node_id": "n-4360dde303ec",
+    "round_id": "n-4360dde303ec-r000001",
+    "conversation_id": "6ad073a4-b6b0-83ea-8d27-eb898d8fc2c1",
+    "user_turn_key": "c27f4451-1b2b-4d48-bbeb-3a35ee7daae0::user",
+    "assistant_message_id": "68955394-7547-4acc-8cb7-c4d80c20ae82",
+    "original_turn_hash": "d6e73d532d99173bb652b5a50f331c8cc280303841065f5096dbfc585a20104b",
+    "prompt_sha256": "bcc21af483ea8258fd188239ab8c7b5dc600182a41203dfbc3c846b066b60b48",
+    "answer_sha256": "bb6980ffd19d57f330233e26662afd368d4a9349c87577afc663bc19aa9bd4dc",
+    "parent_response_hash": "f0933cfd845c54cc29f7b09b2d936b3bfc0aeaa9942d1c2569428568f3d477d7",
+    "proof_sha256": "7b4cea4953b6e2c3b4ba3f742d93d90867214fe4f70d9786f78dac9785d4fe6e",
+    "terminal_evidence": {
+      "source": "ACTUAL_OWN_TAB_NETWORK_RESPONSE",
+      "capture_sha256": "415b111200ea8ddeee0a3797f0b9fdb471dce5da7019ef3ee1745609fdfdfb14",
+      "network_request_id": "82230.1376",
+      "native_request_id": "dc8d0408-8349-4b04-8738-29e798dd1d79",
+      "model_slug": "gpt-6-thinking",
+      "thinking_effort": "max",
+      "decoded_answer_sha256": "00a8b4a7e53d3530d6e1d81f807ca777337732e59597cf79a05102285ab63cc3",
+      "user_sha256": "bcc21af483ea8258fd188239ab8c7b5dc600182a41203dfbc3c846b066b60b48"
+    }
+  },
+  "next_prompt_characters": 4946,
+  "original_bridge_reconciliation_preserved": {
+    "source": "conversation-record",
+    "version": 1,
+    "status": "unavailable",
+    "reason": "http_404",
+    "conversationId": "6ad073a4-b6b0-83ea-8d27-eb898d8fc2c1",
+    "userMessageId": "c27f4451-1b2b-4d48-bbeb-3a35ee7daae0",
+    "assistantMessageId": "68955394-7547-4acc-8cb7-c4d80c20ae82"
+  },
+  "local_turn": {
+    "id": "parent:n-4360dde303ec-r000001:e0:a0",
+    "status": "ERROR",
+    "error": "Bridge terminal error CANONICAL_RECOVERY_UNCERTAIN: The submitted user turn disappeared after content reload; repeating prompt.submit would be ambiguous and is forbidden.",
+    "raw_response": null
+  },
+  "parent_response_count": 0
+}

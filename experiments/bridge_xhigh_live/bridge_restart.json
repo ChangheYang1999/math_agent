@@ -1,0 +1,20 @@
+{
+  "restarted_at": "2026-10-14T08:12:06.626972+00:00",
+  "tool_session_id": 57429,
+  "base_url": "http://127.0.0.1:8080",
+  "data_dir": "/private/tmp/mathagent-bridge-live-data",
+  "credential_file": "/private/tmp/mathagent-bridge-live-data/.env",
+  "credential_mode": "0o600",
+  "health": {
+    "ok": false,
+    "transport": "extension:disconnected",
+    "clients": 0,
+    "pendingRequests": 0,
+    "pendingCommands": 0,
+    "error": "No selected browser extension client connected"
+  },
+  "listener": "COMMAND   PID        USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nnode    20131 changheyang   14u  IPv4 0x69c9e2e6fbffc70b      0t0  TCP 127.0.0.1:8080 (LISTEN)\n",
+  "browser_actions": false,
+  "prompts_sent": 0,
+  "mode": "server-only; automatic tab opening and startup reload disabled"
+}

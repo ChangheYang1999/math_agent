@@ -1,0 +1,27 @@
+{
+  "recorded_at_utc": "2026-10-15T09:22:34.874932+00:00",
+  "scope": "ACTUAL_CHROME_LOCAL_DASHBOARD_REAL_BRIDGE_PROVIDER_PRE_DISPATCH_GATE",
+  "verdict": "WAITING_FOR_HUMAN",
+  "local_ui": "LIVE_PASS",
+  "url": "http://127.0.0.1:8767/",
+  "screenshot": "genuine_review_pending.png",
+  "screenshot_sha256": "4fb80388e0ab2a423e0d2f3d7ac42d91d3ab6525c93139b8826ad602df8555cc",
+  "observed_identity": {
+    "node_id": "n-10712a75c7a1",
+    "round_id": "n-10712a75c7a1-r000001",
+    "approval_id": "n-10712a75c7a1-r000001:prompt:1",
+    "version": 1,
+    "content_hash": "1b9e4c081c998f4d1bf9f67c6718a4f04e2b0178bce4a8d5b71931f18b7c8f71",
+    "queue_position": "1/1",
+    "original_english_characters": 5480
+  },
+  "root_actions": "Opened actual owned Chrome dashboard and surfaced modal; no Approve action. User asked to personally review exact version.",
+  "scheduler_worker_running": false,
+  "sessions_bound": 0,
+  "web_inference_calls": 0,
+  "root_approval_actions": 0,
+  "genuine_human_approval": "PENDING_AS_OF_2026-10-15T10:03:22Z",
+  "subsequent_Pro_report_gate_and_full_manual_cycle": "NOT_RUN",
+  "source_state": "human_review_http_state.json",
+  "final_read_only_audit": "final_review_readonly_audit.json"
+}

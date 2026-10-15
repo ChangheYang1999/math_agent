@@ -1,0 +1,105 @@
+{
+  "at": "2026-10-15T08:27:07.158713+00:00",
+  "client": "extension:tab:1707788883",
+  "route": "/models",
+  "status": 200,
+  "body": {
+    "ok": true,
+    "models": [
+      {
+        "label": "GPT-6",
+        "rawText": "GPT-6",
+        "selected": true,
+        "kind": "model",
+        "id": "model-gpt-6",
+        "value": "GPT-6",
+        "checked": true,
+        "index": 0,
+        "selectionSource": "submenu-check"
+      },
+      {
+        "label": "GPT-5.6 Sol",
+        "rawText": "GPT-5.6 Sol",
+        "selected": false,
+        "kind": "model",
+        "id": "model-gpt-5-6-sol",
+        "value": "GPT-5.6 Sol",
+        "checked": false,
+        "index": 1
+      }
+    ],
+    "current": {
+      "label": "GPT-6",
+      "rawText": "GPT-6",
+      "selected": true,
+      "kind": "model",
+      "id": "model-gpt-6",
+      "value": "GPT-6",
+      "checked": true,
+      "index": 0,
+      "selectionSource": "submenu-check"
+    },
+    "intelligence": {
+      "efforts": [
+        {
+          "label": "Extra High",
+          "rawText": "Extra High",
+          "selected": true,
+          "kind": "effort",
+          "id": "xhigh",
+          "value": "xhigh",
+          "checked": true,
+          "index": 3,
+          "observedOnly": true
+        }
+      ],
+      "models": [
+        {
+          "label": "GPT-6",
+          "rawText": "GPT-6",
+          "selected": true,
+          "kind": "model",
+          "id": "model-gpt-6",
+          "value": "GPT-6",
+          "checked": true,
+          "index": 0,
+          "selectionSource": "submenu-check"
+        },
+        {
+          "label": "GPT-5.6 Sol",
+          "rawText": "GPT-5.6 Sol",
+          "selected": false,
+          "kind": "model",
+          "id": "model-gpt-5-6-sol",
+          "value": "GPT-5.6 Sol",
+          "checked": false,
+          "index": 1
+        }
+      ],
+      "selectedEffort": {
+        "label": "Extra High",
+        "rawText": "Extra High",
+        "selected": true,
+        "kind": "effort",
+        "id": "xhigh",
+        "value": "xhigh",
+        "checked": true,
+        "index": 3,
+        "observedOnly": true
+      },
+      "selectedModel": {
+        "label": "GPT-6",
+        "rawText": "GPT-6",
+        "selected": true,
+        "kind": "model",
+        "id": "model-gpt-6",
+        "value": "GPT-6",
+        "checked": true,
+        "index": 0,
+        "selectionSource": "submenu-check"
+      },
+      "modelTrigger": null,
+      "capturedAt": 1792052826874
+    }
+  }
+}

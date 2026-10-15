@@ -1,0 +1,50 @@
+diff --git a/tools/chrome-bridge-extension/content/currentTurnDom.js b/tools/chrome-bridge-extension/content/currentTurnDom.js
+index a59e2b1..3a75e67 100644
+--- a/tools/chrome-bridge-extension/content/currentTurnDom.js
++++ b/tools/chrome-bridge-extension/content/currentTurnDom.js
+@@ -7,6 +7,7 @@
+   const USER_TURN_MESSAGE_SELECTOR = '[data-chatgpt-search-message-ids]';
+   const ASSISTANT_TURN_START_SELECTOR = '[data-chatgpt-agent-turn-start]';
+   const ASSISTANT_MESSAGE_SELECTOR = '[data-message-author-role="assistant"]';
++  const CURRENT_ASSISTANT_MESSAGE_SELECTOR = '[data-content-search-unit-key$=":assistant"]';
+   const TURN_SELECTOR = `${LEGACY_TURN_SELECTOR},[data-turn-key],${USER_TURN_MESSAGE_SELECTOR},${ASSISTANT_TURN_START_SELECTOR},${ASSISTANT_MESSAGE_SELECTOR}`;
+ 
+   function createCurrentTurnDom({
+@@ -30,6 +31,17 @@
+ 
+     function currentAssistantNodeFromMarker(marker, turnContainer, userMarkers = []) {
+       if (!marker) return null;
++      // A Pro reasoning recap can be a separate sibling before the final reply.
++      // Select only explicit assistant content in this marker's keyed interval.
++      const markers = Array.from(turnContainer?.querySelectorAll?.(ASSISTANT_TURN_START_SELECTOR) || []);
++      const message = Array.from(turnContainer?.querySelectorAll?.(CURRENT_ASSISTANT_MESSAGE_SELECTOR) || [])
++        .filter((node) => node.closest?.('[data-turn-key]') === turnContainer)
++        .filter((node) => compareDocumentOrder(marker, node) < 0
++          && !markers.some((next) => compareDocumentOrder(marker, next) < 0 && compareDocumentOrder(next, node) < 0))
++        .at(-1);
++      if (message) return message;
++      const activity = marker.parentElement?.querySelector?.('[class~="group/activity-header"]');
++      if (activity && normalizeText(visibleText(marker.parentElement)) === normalizeText(visibleText(activity))) return null;
+       let current = marker;
+       let candidate = marker;
+       while (current?.parentElement && current.parentElement !== turnContainer) {
+@@ -102,7 +114,8 @@
+ 
+     function turnRole(turn) {
+       if (isCurrentUserMessage(turn)) return 'user';
+-      if (turn?.matches?.(ASSISTANT_TURN_START_SELECTOR)
++      if (turn?.matches?.(CURRENT_ASSISTANT_MESSAGE_SELECTOR)
++        || turn?.matches?.(ASSISTANT_TURN_START_SELECTOR)
+         || (turn?.querySelector?.(ASSISTANT_TURN_START_SELECTOR)
+           && !isCurrentUserMessage(turn)
+           && !Array.from(turn.querySelectorAll?.(USER_TURN_MESSAGE_SELECTOR) || []).some(isCurrentUserMessage))) return 'assistant';
+@@ -154,7 +167,8 @@
+     }
+ 
+     function isCurrentAssistantNode(node) {
+-      return Boolean(node?.matches?.(ASSISTANT_TURN_START_SELECTOR)
++      return Boolean(node?.matches?.(CURRENT_ASSISTANT_MESSAGE_SELECTOR)
++        || node?.matches?.(ASSISTANT_TURN_START_SELECTOR)
+         || (node?.querySelector?.(ASSISTANT_TURN_START_SELECTOR)
+           && !isCurrentUserMessage(node)
+           && !Array.from(node.querySelectorAll?.(USER_TURN_MESSAGE_SELECTOR) || []).some(isCurrentUserMessage)));

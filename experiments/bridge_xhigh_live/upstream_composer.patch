@@ -1,0 +1,140 @@
+diff --git a/tools/chrome-bridge-extension/content/composerCommands.js b/tools/chrome-bridge-extension/content/composerCommands.js
+index 6dac793..74391e1 100644
+--- a/tools/chrome-bridge-extension/content/composerCommands.js
++++ b/tools/chrome-bridge-extension/content/composerCommands.js
+@@ -302,14 +302,16 @@ async function enterPrompt(message, request, options = {}) {
+   }
+ 
+   await waitForChatPageReady(request, { stage: `${kind}.submit`, settleMs: 350 });
+-  const composer = await waitForComposer(request);
++  let composer = await waitForComposer(request);
+   const composerBeforeText = composerTextValue(composer);
+   if (!findChatMain()) {
+     throw new Error('DOM_SCHEMA_CHANGED: Chat conversation root is missing. Refusing to submit without a scoped DOM observation root.');
+   }
+   let preparedSubmitButton = null;
+   if (message.trim()) {
+-    preparedSubmitButton = (await focusAndSetComposerText(composer, message, request, { requireSendReady: kind !== 'steer' }))?.button || null;
++    const prepared = await focusAndSetComposerText(composer, message, request, { requireSendReady: kind !== 'steer' });
++    composer = prepared.element;
++    preparedSubmitButton = prepared.button || null;
+     diagnostic('composer.filled', { requestId: request.requestId, kind, length: message.length });
+   } else {
+     composer.focus();
+@@ -490,13 +492,19 @@ function findComposer() {
+ }
+ 
+ async function focusAndSetComposerText(element, text, request, options = {}) {
++  // Do not absorb an attachment left by another request/user into this prompt.
++  // Only a pasted-text chip created by one of the setters below is ours.
++  const initialControls = pastedTextControls(findComposerRootStrict());
++  if (initialControls.remove.length || initialControls.show.length) {
++    throw composerPreparationError(`A pre-existing pasted-text attachment must be cleared before preparing this prompt (remove=${initialControls.remove.length}, show=${initialControls.show.length})`);
++  }
+   element.focus();
+   await delay(20);
+ 
+   const attempts = [
+     { name: 'page_main', apply: () => setComposerTextByPageMain(element, text, request) },
+-    { name: 'paste', apply: () => setComposerTextByPaste(element, text) },
+     { name: 'exec_command', apply: () => setComposerTextByExecCommand(element, text) },
++    { name: 'paste', apply: () => setComposerTextByPaste(element, text) },
+     { name: 'text_content', apply: () => setComposerTextByTextContent(element, text) },
+     { name: 'native_value', apply: () => setComposerTextByNativeValue(element, text) },
+   ];
+@@ -512,7 +520,42 @@ async function focusAndSetComposerText(element, text, request, options = {}) {
+       });
+       continue;
+     }
+-    if (result && result.ok === false) {
++    await delay(80);
++    let controls = pastedTextControls(findComposerRootStrict());
++    if (controls.remove.length || controls.show.length) {
++      // React can render the chip and its hover action in separate commits.
++      // Wait for the unique pair; multiple real controls remain ambiguous.
++      const controlsStarted = Date.now();
++      while (controls.remove.length !== 1 || controls.show.length !== 1) {
++        if (controls.remove.length > 1 || controls.show.length > 1 || Date.now() - controlsStarted >= 900) break;
++        await delay(50);
++        controls = pastedTextControls(findComposerRootStrict());
++      }
++      diagnostic('composer.pasted_text_controls', {
++        requestId: request.requestId, method: attempt.name,
++        removeCount: controls.remove.length, showCount: controls.show.length,
++        waitedMs: Date.now() - controlsStarted,
++      });
++      if (controls.remove.length !== 1 || controls.show.length !== 1) {
++        throw composerPreparationError(`Pasted-text attachment controls are ambiguous or did not settle (remove=${controls.remove.length}, show=${controls.show.length})`);
++      }
++      // ChatGPT converts long paste events into a text attachment. Expand the
++      // one created by this setter, then verify its full contents before Send.
++      controls.show[0].click();
++      diagnostic('composer.pasted_text_expanded', { requestId: request.requestId, method: attempt.name });
++      const started = Date.now();
++      do {
++        await delay(50);
++        element = findComposer() || element;
++        if (!pastedTextControls(findComposerRootStrict()).remove.length && composerTextEquals(element, text)) break;
++      } while (Date.now() - started < 900);
++      if (pastedTextControls(findComposerRootStrict()).remove.length || !composerTextEquals(element, text)) {
++        throw composerPreparationError('Expanded pasted text did not exactly match the approved prompt');
++      }
++    } else {
++      element = findComposer() || element;
++    }
++    if (result && result.ok === false && !composerTextEquals(element, text)) {
+       diagnostic('composer.text_method_failed', {
+         requestId: request.requestId,
+         method: attempt.name,
+@@ -520,14 +563,13 @@ async function focusAndSetComposerText(element, text, request, options = {}) {
+       });
+       continue;
+     }
+-    await delay(80);
+-    if (composerContainsText(element, text)) {
++    if (composerTextEquals(element, text)) {
+       const button = await waitForPromptSendButton(request, options.requireSendReady === false ? 250 : 900);
+       if (button || options.requireSendReady === false) {
+         diagnostic('composer.text_verified', {
+           requestId: request.requestId, method: attempt.name, length: text.length, sendReady: Boolean(button),
+         });
+-        return { button: button || null, method: attempt.name };
++        return { element, button: button || null, method: attempt.name };
+       }
+       diagnostic('composer.text_not_submit_ready', {
+         requestId: request.requestId, method: attempt.name, length: text.length, sendReady: false,
+@@ -542,7 +584,33 @@ async function focusAndSetComposerText(element, text, request, options = {}) {
+     actualLength: visibleText(element).length,
+     reason: 'send_control_not_ready_after_bounded_setter_attempts',
+   });
+-  throw new Error('COMPOSER_TEXT_VERIFY_FAILED: ChatGPT did not expose an enabled send control after bounded composer input attempts');
++  throw composerPreparationError('ChatGPT did not expose the exact prompt and an enabled send control after bounded composer input attempts');
++}
++
++function composerPreparationError(message) {
++  const error = new Error(`COMPOSER_TEXT_VERIFY_FAILED: ${message}`);
++  error.code = 'COMPOSER_TEXT_VERIFY_FAILED';
++  error.provenNotExecuted = true;
++  error.cancellationEvidence = { source: 'composer_preparation', reason: 'submission_boundary_not_entered' };
++  return error;
++}
++
++function pastedTextControls(root) {
++  const buttons = scopedQueryAll(root ? [root] : [], 'button, [role="button"]')
++    .filter((button) => isPrimaryChatSurfaceElement(button) && isUsableButton(button));
++  const named = (button, name) => [button.getAttribute?.('aria-label'), button.getAttribute?.('title'), button.textContent]
++    .some((value) => String(value || '').trim() === name);
++  return {
++    remove: buttons.filter((button) => named(button, 'Remove pasted text attachment')),
++    show: buttons.filter((button) => named(button, 'Show in text field')),
++  };
++}
++
++function composerTextEquals(element, text) {
++  // innerText may append a final block newline. Preserve all other whitespace,
++  // case, punctuation, and the entire tail; prefix matching can send truncation.
++  const canonical = (value) => String(value ?? '').replace(/\r\n?/g, '\n').replace(/\n$/, '');
++  return canonical(composerTextValue(element)) === canonical(text);
+ }
+ 
+ function setComposerTextByPaste(element, text) {

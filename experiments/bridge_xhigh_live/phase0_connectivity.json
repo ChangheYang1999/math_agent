@@ -1,0 +1,48 @@
+{
+  "observed_at": "2026-10-14T08:02:30.152851+00:00",
+  "base_url": "http://127.0.0.1:8080",
+  "endpoints": {
+    "/health": {
+      "http_status": 200,
+      "ok": false,
+      "transport": "extension:disconnected",
+      "clients": 0,
+      "activeRequests": [],
+      "pendingCommands": 0
+    },
+    "/browser/clients": {
+      "http_status": 200,
+      "client_count": 0,
+      "selected_client_present": false
+    },
+    "/sessions": {
+      "http_status": 500,
+      "error": null
+    },
+    "/models": {
+      "http_status": 500,
+      "error": null
+    },
+    "/efforts": {
+      "http_status": 500,
+      "error": null
+    }
+  },
+  "followup_error_details": {
+    "observed_at": "2026-10-14T08:06:55.671626+00:00",
+    "endpoints": {
+      "/sessions": {
+        "http_status": 500,
+        "detail": "No browser extension client connected. Open chatgpt.com with the ChatGPT Bridge extension enabled. Run /setup for setup instructions."
+      },
+      "/models": {
+        "http_status": 500,
+        "detail": "No browser extension client connected. Open chatgpt.com with the ChatGPT Bridge extension enabled. Run /setup for setup instructions."
+      },
+      "/efforts": {
+        "http_status": 500,
+        "detail": "No browser extension client connected. Open chatgpt.com with the ChatGPT Bridge extension enabled. Run /setup for setup instructions."
+      }
+    }
+  }
+}

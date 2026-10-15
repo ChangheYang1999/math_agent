@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-15T09:59:10.582442+00:00",
+  "status": "OFFLINE_PASS",
+  "tests": 47,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 6.684,
+  "scope": "review JS/HTTP/SQLite; recursive tree/P0; lossless context; exact model/effort; old+new Parent recovery; first/later Pro recovery incl serialized-network+exactDOM; strict NOT_SENT busy acknowledgement",
+  "ruff": "PASS production/tests/packager/experimental harness",
+  "inference_requests": 0
+}

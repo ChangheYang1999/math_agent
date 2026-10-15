@@ -1,0 +1,104 @@
+{
+  "audited_at": "2026-10-15T09:32:17.687099+00:00",
+  "mode": "READ_ONLY_SQLITE_AND_SAVED_FILES",
+  "status": "LIVE_PASS_EXACT_NOT_SENT_ACK_AND_SAME_CONVERSATION_CLIENT_RECOVERY",
+  "checks": {
+    "only_known_busy_turn_status_changed": true,
+    "six_other_original_turns_unchanged": true,
+    "old_submitted_error_remains_ERROR_rawnull": true,
+    "old_recovered_leaf_source_hash_intact": true,
+    "same_logical_session_and_persistent_conversation": true,
+    "only_owned_client_changed": true,
+    "actual_role_Pro_unchanged": true,
+    "exact_retry_epoch1_only": true,
+    "only_covered_error_source_preserved": true,
+    "ack_and_resume_zero_inference": true,
+    "old_recovered_ERROR_and_NOTSENT_not_pending": true,
+    "known_not_sent_failed_upstream_not_rewritten": true
+  },
+  "only_original_turn_change": [
+    {
+      "turn_id": "leaf:n-dab935ae44d1-r000002:e0:a0",
+      "columns": {
+        "status": {
+          "before": "ERROR",
+          "after": "FAILED_NOT_SENT"
+        }
+      }
+    }
+  ],
+  "old_binding": {
+    "id": "S-d5870b32c59d57988c1b3f31b2e2c444",
+    "bridge_client_id": "extension:tab:1707788897",
+    "bridge_session_id": "6ad09396-818c-83ea-8252-bb2f31c6afee",
+    "model": "GPT-6 Pro"
+  },
+  "new_binding": {
+    "id": "S-d5870b32c59d57988c1b3f31b2e2c444",
+    "bridge_client_id": "extension:tab:1707789016",
+    "bridge_session_id": "6ad09396-818c-83ea-8252-bb2f31c6afee",
+    "model": "GPT-6 Pro"
+  },
+  "old_request_source_client_remains": "extension:tab:1707788897",
+  "current_client_is_not_historical_dispatch_client": true,
+  "recall_limit": "Same durable conversation and visible old history demonstrate preservation through client replacement, not an unaided model recall test. Fresh prompts also include durable state.",
+  "current_unresolved_turns": [
+    {
+      "id": "leaf:n-dab935ae44d1-r000002:e1:a0",
+      "status": "SENT",
+      "request_id": "mathagent_1dd1943103ee5aa78d4a8a932afcfd75"
+    },
+    {
+      "id": "parent:n-3790f8503746-r000002:e0:a0",
+      "status": "SENT",
+      "request_id": "mathagent_826280dae70652c2ac05d39557ed9910"
+    }
+  ],
+  "current_pairs": 2,
+  "current_accepted_reports": 3,
+  "current_rounds": [
+    {
+      "id": "n-dab935ae44d1-r000001",
+      "node_id": "n-dab935ae44d1",
+      "number": 1,
+      "stage": "RESPONDED",
+      "report_accepted": 1
+    },
+    {
+      "id": "n-3790f8503746-r000001",
+      "node_id": "n-3790f8503746",
+      "number": 1,
+      "stage": "RESPONDED",
+      "report_accepted": 1
+    },
+    {
+      "id": "n-3790f8503746-r000002",
+      "node_id": "n-3790f8503746",
+      "number": 2,
+      "stage": "AWAITING_PARENT_RESPONSE",
+      "report_accepted": 1
+    },
+    {
+      "id": "n-dab935ae44d1-r000002",
+      "node_id": "n-dab935ae44d1",
+      "number": 2,
+      "stage": "SOLVING",
+      "report_accepted": 0
+    }
+  ],
+  "current_ledger_count": 9,
+  "global_hard_cap": 16,
+  "planned_final_reservations": 14,
+  "budget_explanation": "13 research submissions plus one proven pre-delivery rejected reservation; no reservation is refunded.",
+  "current_halt": null,
+  "generation_overlap_pass_claimed": false,
+  "evidence": [
+    "busy_acknowledgement_commit.json",
+    "pro_tree_before_busy_ack.db",
+    "leaf2_round2_busy_original.json",
+    "runs/pro_tree/halted_before_busy_recovery.json",
+    "runs/pro_tree/manifest.json",
+    "leaf2_reopened_same_conversation.png",
+    "leaf2_reopened_tab_metadata.json"
+  ]
+}

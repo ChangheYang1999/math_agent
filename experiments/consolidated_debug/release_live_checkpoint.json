@@ -1,0 +1,70 @@
+{
+  "observed_at_utc": "2026-10-15T09:20:50.892263+00:00",
+  "source": "READ_ONLY_SQLITE_AND_LEDGER",
+  "calls": 7,
+  "hard_cap": 16,
+  "pairs": 2,
+  "rounds": [
+    {
+      "id": "n-dab935ae44d1-r000001",
+      "stage": "RESPONDED",
+      "prompt_version": 2,
+      "report_accepted": 1
+    },
+    {
+      "id": "n-3790f8503746-r000001",
+      "stage": "RESPONDED",
+      "prompt_version": 1,
+      "report_accepted": 1
+    },
+    {
+      "id": "n-3790f8503746-r000002",
+      "stage": "SOLVING",
+      "prompt_version": 1,
+      "report_accepted": 0
+    },
+    {
+      "id": "n-dab935ae44d1-r000002",
+      "stage": "SOLVING",
+      "prompt_version": 1,
+      "report_accepted": 0
+    }
+  ],
+  "turns": [
+    {
+      "id": "bootstrap:root:e0:a0",
+      "status": "COMPLETED",
+      "bridge_request_id": "mathagent_3059dba3dbc659f4b0b10463e3f9f02a"
+    },
+    {
+      "id": "leaf:n-3790f8503746-r000001:e0:a0",
+      "status": "INVALID",
+      "bridge_request_id": "mathagent_91fd67634c1b5ff3b107263f1fc529c6"
+    },
+    {
+      "id": "leaf:n-dab935ae44d1-r000001:e0:a0",
+      "status": "ERROR",
+      "bridge_request_id": "mathagent_4b6ed10cadb158698fb7fe1779f2b500"
+    },
+    {
+      "id": "parent:n-3790f8503746-r000001:e0:a0",
+      "status": "ERROR",
+      "bridge_request_id": "mathagent_015a1cec9fa451cab8ea343ccdc4a6fb"
+    },
+    {
+      "id": "leaf:n-3790f8503746-r000002:e0:a0",
+      "status": "SENT",
+      "bridge_request_id": "mathagent_ca1e13b077bb5369bbfd9a29ee7195c9"
+    },
+    {
+      "id": "parent:n-dab935ae44d1-r000001:e0:a0",
+      "status": "COMPLETED",
+      "bridge_request_id": "mathagent_3104dceca90d50859b93a63d2748aead"
+    },
+    {
+      "id": "leaf:n-dab935ae44d1-r000002:e0:a0",
+      "status": "ERROR",
+      "bridge_request_id": "mathagent_6cd06c11640154d38632fc3c3d45f535"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# Defaults for new projects; configuration is persisted in tree.db.
+projects_root: projects
+transport: manual  # fake, manual, or bridge
+manual_review_enabled: false
+# Upper limit only; unused capacity is normal. Old target_active_leaves is accepted.
+max_active_leaves: 8
+max_concurrent_pro_turns: 4
+format_retries: 2
+bridge_base_url: http://127.0.0.1:8080
+bridge_request_timeout: 20
+bridge_turn_timeout: 1800
+# Exact discovered labels or IDs; missing options must be resolved in the browser.
+bridge_pro_model: GPT-6 Pro
+bridge_parent_model: GPT-6 Thinking
+bridge_parent_effort: xhigh
+# Token is read only from MATHAGENT_BRIDGE_API_TOKEN; never save it here.

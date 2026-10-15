@@ -1,0 +1,53 @@
+- main:
+  - heading "研究树 Research Tree" [level=1]
+  - paragraph: project
+  - link "查看英文研究报告 ↗":
+    - /url: /report
+  - button "开启后台提醒"
+  - generic: 已暂停
+  - button "开始 / 继续"
+  - button "暂停新轮次"
+  - checkbox "人工审核（每轮提示词 + 报告）" [checked]
+  - text: 人工审核（每轮提示词 + 报告）
+  - button "审核收件箱 0"
+  - button "恢复检查点"
+  - text: 浏览器桥接尚未就绪；待发送任务和持久会话会保留。
+  - text: Bridge has not been diagnosed in this process.
+  - heading "已批准与等待执行" [level=2]
+  - paragraph: 人工批准仅接受一项精确内容；下一份报告或下一轮提示词仍需单独审核。批准不代表模型已经运行。
+  - generic "人工已批准 · 提示词 · n-10712a75c7a1-r000001 · 版本 1 已批准 / 等待调度":
+    - strong: 人工已批准 · 提示词
+    - text: · n-10712a75c7a1-r000001 · 版本 1
+    - text: 已批准 / 等待调度
+  - heading "持久研究树" [level=2]
+  - paragraph: 叶容量是允许使用的上限；空闲容量可以保留，不会自动生成研究任务。
+  - strong: root
+  - generic: Extra High internal
+  - generic: ACTIVE
+  - paragraph: Independently audit the sharp cyclic mean-zero Poincare inequality at N=4, its equality space, and its exact stability defect.
+  - generic: 绝对权重 1.0000 · 叶容量上限 1 · 活跃 1 · 可闲置容量 0 · 轮次 0
+  - strong: n-10712a75c7a1
+  - generic: Pro leaf
+  - generic: ACTIVE
+  - paragraph: Independently audit the sharp cyclic mean-zero Poincare inequality at N=4, its equality space, and its exact stability defect.
+  - generic: 绝对权重 1.0000 · 叶容量上限 1 · 活跃 1 · 可闲置容量 0 · 轮次 1
+  - heading "最近研究轮次" [level=2]
+  - generic "n-10712a75c7a1 · n-10712a75c7a1-r000001 · PROMPT_READY":
+    - strong: n-10712a75c7a1
+    - text: · n-10712a75c7a1-r000001 · PROMPT_READY
+  - heading "审核收件箱" [level=2]
+  - paragraph: 稍后处理会保留原文与审核状态。关闭弹窗不会批准。
+  - generic: 没有待处理审核
+  - heading "会话与连接" [level=2]
+  - paragraph:
+    - text: 模式：
+    - strong: bridge
+    - text: 自动网页运行：不可用
+    - text: 真实网页验证：尚未验证
+  - paragraph: Bridge has not been diagnosed in this process.
+  - generic "最近连接与模型检查详情"
+  - button "检查当前连接与模型"
+  - heading "需要处理的问题" [level=2]
+  - generic: 没有记录的错误
+  - heading "重要内部沟通与审核讨论历史" [level=2]
+  - generic: 没有重要内部消息；常规叶节点报告直接交给各自家长。

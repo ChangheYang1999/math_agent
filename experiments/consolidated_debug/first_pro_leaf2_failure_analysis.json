@@ -1,0 +1,149 @@
+{
+  "at": "2026-10-15T08:53:49.880901+00:00",
+  "scope": "Read-only own-request diagnostics; no Send/resend/reload/source edits",
+  "request_id": "mathagent_4b6ed10cadb158698fb7fe1779f2b500",
+  "source_client_id": "extension:tab:1707788897",
+  "terminal": "PRESERVED_CANONICAL_CONVERSATION_CHANGED",
+  "finding": "Normal new\u2192local-chatgpt UUID\u2192persistent UUID on same bound request/source/lease, but submitted user boundary remained absent because exact text verification failed. Existing canonicalization guard was not relaxed.",
+  "composer_input_length": 5102,
+  "expected_fnv_hash": "1hhopok",
+  "observed_user_length": 5100,
+  "observed_user_fnv_hash": "oyc2iw",
+  "inline_backtick_test": "Removing only the two backticks around json from immutable full input yields5100chars and exact observedFNV hashoyc2iw. This is strong recorded evidence; actual DOM/history equality remains root-owned validation.",
+  "history": [
+    {
+      "revision": 39,
+      "occurred_at": 1792054166631,
+      "conversation_id": "local-chatgpt%3A35e07163-9c58-41c7-8e82-18ab9c445049",
+      "request_id": "mathagent_4b6ed10cadb158698fb7fe1779f2b500",
+      "lease_id": "ff04bbe2-d8a9-4ca9-9191-37ab4e47c335",
+      "user_turn_key": "",
+      "observed_user_key": "",
+      "conversation_changed": false,
+      "canonicalized": false
+    },
+    {
+      "revision": 41,
+      "occurred_at": 1792054167383,
+      "conversation_id": "local-chatgpt%3A35e07163-9c58-41c7-8e82-18ab9c445049",
+      "request_id": "mathagent_4b6ed10cadb158698fb7fe1779f2b500",
+      "lease_id": "ff04bbe2-d8a9-4ca9-9191-37ab4e47c335",
+      "user_turn_key": "",
+      "observed_user_key": "",
+      "conversation_changed": false,
+      "canonicalized": false
+    },
+    {
+      "revision": 43,
+      "occurred_at": 1792054168015,
+      "conversation_id": "6ad09396-818c-83ea-8252-bb2f31c6afee",
+      "request_id": "mathagent_4b6ed10cadb158698fb7fe1779f2b500",
+      "lease_id": "ff04bbe2-d8a9-4ca9-9191-37ab4e47c335",
+      "user_turn_key": "",
+      "observed_user_key": "",
+      "conversation_changed": true,
+      "canonicalized": false
+    }
+  ],
+  "normal_postfix_main_run": "HALTED; root permits already-running Parent to finish. No retries by this agent.",
+  "eleventh_runtime_model_evidence": [
+    {
+      "at": "2026-10-15T08:48:28.898162+00:00",
+      "client_id": "extension:tab:1707788883",
+      "kind": "models",
+      "current": {
+        "label": "GPT-6",
+        "rawText": "GPT-6",
+        "selected": true,
+        "kind": "model",
+        "id": "model-gpt-6",
+        "value": "GPT-6",
+        "checked": true,
+        "index": 0,
+        "selectionSource": "submenu-check"
+      }
+    },
+    {
+      "at": "2026-10-15T08:48:29.689926+00:00",
+      "client_id": "extension:tab:1707788883",
+      "kind": "efforts",
+      "current": {
+        "label": "Extra High",
+        "rawText": "Extra High",
+        "selected": true,
+        "kind": "effort",
+        "id": "xhigh",
+        "value": "xhigh",
+        "checked": true,
+        "index": 3,
+        "observedOnly": true
+      }
+    },
+    {
+      "at": "2026-10-15T08:48:30.519482+00:00",
+      "client_id": "extension:tab:1707788894",
+      "kind": "models",
+      "current": {
+        "label": "GPT-6",
+        "rawText": "GPT-6",
+        "selected": true,
+        "kind": "model",
+        "id": "model-gpt-6",
+        "value": "GPT-6",
+        "checked": true,
+        "index": 0,
+        "selectionSource": "submenu-check"
+      }
+    },
+    {
+      "at": "2026-10-15T08:48:31.298218+00:00",
+      "client_id": "extension:tab:1707788894",
+      "kind": "efforts",
+      "current": {
+        "label": "Pro",
+        "rawText": "Pro",
+        "selected": true,
+        "kind": "effort",
+        "id": "effort-pro-pro",
+        "value": "effort-pro-pro",
+        "checked": true,
+        "index": 4,
+        "observedOnly": true
+      }
+    },
+    {
+      "at": "2026-10-15T08:48:32.121705+00:00",
+      "client_id": "extension:tab:1707788897",
+      "kind": "models",
+      "current": {
+        "label": "GPT-6",
+        "rawText": "GPT-6",
+        "selected": true,
+        "kind": "model",
+        "id": "model-gpt-6",
+        "value": "GPT-6",
+        "checked": true,
+        "index": 0,
+        "selectionSource": "submenu-check"
+      }
+    },
+    {
+      "at": "2026-10-15T08:48:32.994584+00:00",
+      "client_id": "extension:tab:1707788897",
+      "kind": "efforts",
+      "current": {
+        "label": "Pro",
+        "rawText": "Pro",
+        "selected": true,
+        "kind": "effort",
+        "id": "effort-pro-pro",
+        "value": "effort-pro-pro",
+        "checked": true,
+        "index": 4,
+        "observedOnly": true
+      }
+    }
+  ],
+  "reload_api_result": "HTTP500reconnecttimeout in eleventh_supported_reload.json; not a reload success and not a user confirmation. Own experimental page refreshes and later model-read success are independent evidence.",
+  "diagnostic_retention": "Latest1000debug buffer returned only13matching08:46+commands beginning08:49:25; earlier reload acceptance not recoverable from this snapshot. No conclusion invented from absence."
+}

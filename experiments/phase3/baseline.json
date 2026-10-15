@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-15T06:21:48.492649+00:00",
+  "sha256": {
+    "FIX_SUMMARY.md": "3e5100dedb58aea14c5eedc6a915bbedfb1a8e0e52e79cfadd9b0a3cdafaca0e",
+    "config.example.yaml": "d75cfa25f9bbf667d9b91beffbecf043e9b320a0bf34dfd7770d131ce81f6516",
+    "bridge/manifest.json": "57c1514d231cb86cba6c90105c6202b113a0bd89da24279565f0cc0cf30c2a59",
+    "bridge/patches/long_prompt_v2.patch": "75697838c4191b4b72a6c50299ad959765fedb53126c5cd98920ce36b746897b",
+    "bridge/patches/delivery_state.patch": "bb9098333f90fc2bf8b16735bf64907adc512d59605628dd1af4f8695ab42cb8",
+    "bridge/patches/conversation.patch": "b412ff43c0e5beca2d96ddcdaddd863ed0003104ca932ed39e5d65a0ea7ce965",
+    "bridge/patches/picker.patch": "931afdf266931d3b98ee9c66f312c48e1a4bb336021c1eb2c4b10e98139e6931",
+    "bridge/patches/observation_recovery.patch": "325234ba7f828ab8b4cf3e9539211b3b509dcec66fe9a90b27f494d03674f939",
+    "bridge/patches/math.patch": "ec918ac402fae6a77a98e678c32f6dd82614d8fc41c3797fe66f0806958178ec",
+    "bridge/patches/release.patch": "48905196a6c8b4722c36c5bdaf220b1c2fef9fcf13198e25380b760ce981983a",
+    "bridge/patches/code_lines.patch": "b2fd4b0748fab9a5e4b202d912d6f7dbf9b4359b36ca9fdfe8b62ecc430b0b0e",
+    "experiments/bridge_xhigh_live/RESULTS.md": "c859cec82eb1a573b2389c336468efd27db3563aed3742b6f39e0b6b33242f41",
+    "experiments/bridge_xhigh_live/RESULTS_LONG_PROMPT_FIX.md": "410383fdc683dde53f6aa7bd52de84aa1ad1144d0b4c58a14f9cd35f0f0a56dd",
+    "experiments/bridge_xhigh_live/tree_audit.json": "d12cf29faf7612e42c1a41b4c3d7fea0aa640f29f868f3842d457ed895aadffb",
+    "experiments/bridge_xhigh_live/runs/20261015-long-prompt/tree_final_audit.json": "38497e18e62e8b74168cefb57e2f2b0c434132e6f613ac4c3fa3564db1f19041",
+    "experiments/bridge_xhigh_live/runs/20261015-long-prompt/final_cleanup_recheck.json": "d7698e913e449ef102f397b368361df9e40f6b378da250a96ae20be06becd4b9"
+  },
+  "new_model_request_cap": 16,
+  "new_model_requests": 0
+}

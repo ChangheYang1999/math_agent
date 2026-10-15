@@ -1,0 +1,23 @@
+{
+  "status": "BLOCKED_INSUFFICIENT_TERMINAL_PROOF",
+  "reason": "Parent recovery refused: exact branch/assistant identity/terminal completion proof is missing",
+  "at": "2026-10-15T07:46:04.155911+00:00",
+  "read_only_database": true,
+  "committed": false,
+  "same_parent_json_values_despite_formatting": true,
+  "history_reconciliation": {
+    "source": "conversation-record",
+    "version": 1,
+    "status": "unavailable",
+    "reason": "http_404",
+    "conversationId": "6ad073a4-b6b0-83ea-8d27-eb898d8fc2c1",
+    "userMessageId": "c27f4451-1b2b-4d48-bbeb-3a35ee7daae0",
+    "assistantMessageId": "68955394-7547-4acc-8cb7-c4d80c20ae82"
+  },
+  "current_user_sha256": "bcc21af483ea8258fd188239ab8c7b5dc600182a41203dfbc3c846b066b60b48",
+  "source_files": [
+    "old_parent_bridge_readonly.json",
+    "old_parent_current_dom.json",
+    "old_parent_source_reconciliation_after_reload.json"
+  ]
+}

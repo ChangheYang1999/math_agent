@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-15T09:29:34.181616+00:00",
+  "acknowledgement": {
+    "turn_id": "leaf:n-dab935ae44d1-r000002:e0:a0",
+    "request_id": "mathagent_6cd06c11640154d38632fc3c3d45f535",
+    "status": "FAILED_NOT_SENT"
+  },
+  "only_local_change": "Exact new undelivered turn status ERROR\u2192FAILED_NOT_SENT; all other fields and all six other turns unchanged",
+  "upstream_unchanged": true,
+  "old_submitted_error_preserved": true,
+  "backup": "experiments/consolidated_debug/pro_tree_before_busy_ack.db",
+  "new_inference_requests": 0
+}

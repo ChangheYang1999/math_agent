@@ -1,0 +1,25 @@
+{
+  "scope": "Read-only local validation. No browser, bridge HTTP or model calls.",
+  "fresh_recipe_check": {
+    "checkout": "/private/tmp/mathagent-eight-patch-check-6pevzfl1/checkout",
+    "command": ".venv/bin/python scripts/setup_bridge.py --checkout /private/tmp/mathagent-eight-patch-check-6pevzfl1/checkout --check-only",
+    "exit_code": 0,
+    "result": "All eight accepted patches applied; exact pinned revision and accepted source chain verified."
+  },
+  "active_recipe_check": {
+    "checkout": "/private/tmp/mathagent-upstream-bridge",
+    "exit_code": 1,
+    "result": "Strict installer correctly refuses unreviewed tracked package-lock.json metadata; file preserved untouched. Accepted source hashes independently match."
+  },
+  "code_lines_fixture": {
+    "command": "node bridge/tests/code_lines.mjs /private/tmp/mathagent-eight-patch-check-6pevzfl1/checkout",
+    "exit_code": 0,
+    "result": "PASS: actual shared/content parser preserves CodeMirror physical lines, blank lines, indentation, literal whitespace and fences; ordinary code and source DOM remain unchanged.",
+    "classification": "OFFLINE_PASS"
+  },
+  "cli_help": {
+    "exit_code": 0,
+    "commands": ["init", "run", "dashboard", "status", "diagnose", "recover", "demo"],
+    "caution": "run is unbounded via CLI; dashboard also runs the scheduler. Internal Scheduler.run(max_rounds=...) bounds completed pairs but not all model requests."
+  }
+}

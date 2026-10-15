@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-15T10:15:25.224812+00:00",
+  "classification": "OFFLINE_PASS",
+  "scope": "Temporary synthetic SQLite publication fixture only; zero browser, bridge, inference or actual project writes",
+  "checks": [
+    "At six pairs, section jobs still defer until post-loop flush",
+    "Original rowid order wins over reverse alphabetical job IDs",
+    "Observed stale-current-section scenario repaired from exact saved owner payload",
+    "Immediate backup and append-only ordinary Store.update_section",
+    "Every prior section and parent response unchanged",
+    "Repeated repair returns already_current without another backup or event"
+  ],
+  "pytest": "1 passed in 0.26s",
+  "ruff": "PASS after focused style corrections",
+  "source_sha256": {
+    "run_live.py": "c37c496f11d66015db0252db81f24e5a1652cc4bfae8a6e8850741e34e69ab59",
+    "repair_sections.py": "1b6bc53261c7ba41ebd803b6058f292c8d48eab104bb07cd631dab9d32ca7c04",
+    "test_report_publication.py": "eec91f6b01105bb8735a390281c9dbe46a5ff23e55e63cec34019efcd6b473e3"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "at": "2026-10-15T00:51:14.158550+00:00",
+  "kind": "OFFLINE_FIXTURE_PASS_NOT_LIVE_INFERENCE",
+  "syntax_checks": [
+    {
+      "file": "tools/chrome-bridge-extension/content/composerCommands.js",
+      "passed": true
+    },
+    {
+      "file": "tools/chrome-bridge-extension/artifactCaptureMain.js",
+      "passed": true
+    },
+    {
+      "file": "tools/chrome-bridge-extension/content/requestEffectReconciliation.js",
+      "passed": true
+    },
+    {
+      "file": "src/bridge/coordinator/bridgeClientEventRouter.js",
+      "passed": true
+    },
+    {
+      "file": "src/bridge/coordinator/requestResultMaterializer.js",
+      "passed": true
+    },
+    {
+      "file": "src/bridge/state/requestEffectTransitions.js",
+      "passed": true
+    },
+    {
+      "file": "src/turnManager.js",
+      "passed": true
+    }
+  ],
+  "four_retained_patches_exactly_unchanged": {
+    "picker": true,
+    "conversation": true,
+    "release": true,
+    "math": true
+  },
+  "fixtures": [
+    {
+      "check": "picker",
+      "exit_code": 0,
+      "output": "PASS: exact Extra High/High and position, opaque unknown tier, hidden checked model changes, missing checked model rejected."
+    },
+    {
+      "check": "conversation",
+      "exit_code": 0,
+      "output": "PASS: encoded/plain temporary promotion with exact request/user anchors; mismatches, malformed IDs and real conversation changes rejected."
+    },
+    {
+      "check": "release",
+      "exit_code": 0,
+      "output": "PASS: exact reconciliation result command settled; real active work retained barrier; lease released only after every child finished."
+    },
+    {
+      "check": "math",
+      "exit_code": 0,
+      "output": "PASS: KaTeX radicals/fractions/exponents survive inline/display/list/table extraction; code and original DOM remain unchanged."
+    },
+    {
+      "check": "long_prompt_v2",
+      "exit_code": 0,
+      "output": "PASS: 14521-character actual MAIN/content handshake, full observed-user SHA256, async Show more/root-replacement acknowledgement with exactly one Send, strict uncertainty, semantic long-paste fallback and explicit NOT_SENT guards."
+    },
+    {
+      "check": "delivery_state",
+      "exit_code": 0,
+      "output": "PASS: exact pre-Send proof becomes durable failed + provenNotExecuted evidence; conflicting/uncertain state never retries; terminal identity reuse preserves the original failure."
+    }
+  ],
+  "upstream_selector_and_request_machine_tests": {
+    "passed": 14,
+    "failed": 0
+  },
+  "candidate_patch_live_status": "See live continuation run evidence; fixture results never establish live success.",
+  "old_failed_candidate_preserved": {
+    "path": "experiments/bridge_xhigh_live/upstream_composer.patch",
+    "sha256": "07219cfe56f9e7a1a4bc9e6df62dd6cd1be67896bd46f43f3cc88740b024fe7c"
+  },
+  "upstream_interaction_and_reconciliation_tests": {
+    "passed": 34,
+    "failed": 0,
+    "updated_obsolete_absence_only_non_submission_expectations": true
+  },
+  "observed_shape_coverage": [
+    "Literal-paste span with BRs preserves requested newlines and escaped HTML characters.",
+    "Collapsed 10240-character user payload is expanded only after Send, with one same-turn Show more action and no second Send.",
+    "Show more UI labels are excluded from actual user payload SHA256.",
+    "Asynchronous Show more expansion after React replaces the observed main is acknowledged through bounded read-only reinspection; final timeout inspection also handles throttled callbacks."
+  ],
+  "previous_validation_at": "2026-10-15T00:38:37.141822+00:00",
+  "bounded_ack_reinspection_validation": {
+    "kind": "OFFLINE_FIXTURE_PASS_NOT_LIVE_INFERENCE",
+    "inspection_interval_ms": 200,
+    "bounded_by_existing_ack_timeout": true,
+    "final_current_dom_inspection": true,
+    "timers_cleared_on_success_or_cancel": true,
+    "no_additional_send": true,
+    "upstream_interaction_tests": {
+      "passed": 13,
+      "failed": 0
+    },
+    "upstream_reconciliation_tests": {
+      "passed": 21,
+      "failed": 0
+    },
+    "paired_main_content_fixture": {
+      "passed": true,
+      "characters": 14521,
+      "exact_full_sha256_match": true,
+      "sends": 1,
+      "show_more_expansions": 1,
+      "stale_original_root": true,
+      "async_expansion": true
+    },
+    "patch_sha256": "75697838c4191b4b72a6c50299ad959765fedb53126c5cd98920ce36b746897b",
+    "composer_source_sha256": "2408e4065b75d107a68503ead51e19e51aa467af107c7889974e1a247915b842",
+    "fixture_sha256": "8b4292920fa34767153b47cb90aacd39baf309c330bfee8f43945207d7daae36"
+  }
+}

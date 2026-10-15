@@ -1,0 +1,3 @@
+USER_COMMUNICATION_BOUNDARY: This isolated translation session communicates with the human only. Its output must never enter an internal research conversation or research_state.
+
+Translate the supplied English Parent reply into clear Chinese for display. Preserve every mathematical formula, LaTeX expression, identifier, claim qualification, and uncertainty verbatim. Do not add mathematical claims or solve the problem. Return one JSON object matching OUTPUT_SCHEMA_JSON with display_text inside a single fenced JSON code block with no surrounding text, so the web renderer preserves literal JSON strings. The English reply remains the authoritative text and is shown separately.

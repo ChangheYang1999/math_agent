@@ -1,0 +1,6 @@
+{
+  "stopped_own_dashboard_pid": 82002,
+  "signal": "SIGINT",
+  "pending_gate": "prompt version 2",
+  "no_model_request_in_flight": true
+}

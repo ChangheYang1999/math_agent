@@ -1,0 +1,2401 @@
+{
+  "at": "2026-10-15T06:50:49.584764+00:00",
+  "bridge_health": {
+    "ok": true,
+    "transport": "extension:extension",
+    "clients": 7,
+    "selectedClientId": "extension:tab:1707788783",
+    "needsSelection": false,
+    "pendingRequests": 0,
+    "pendingCommands": 0,
+    "activeRequests": [],
+    "activeClient": {
+      "id": "extension:tab:1707788783",
+      "contentClientId": "ext-mv960f1g-7w5dv4qa",
+      "transport": "extension",
+      "runtime": "extension",
+      "ready": true,
+      "selected": true,
+      "url": "https://chatgpt.com/c/6ad075cb-4900-83ea-8233-273180550313",
+      "title": "Prove Sharp Poincare Inequality",
+      "browserTabId": 1707788783,
+      "launchToken": "bridge-mathagent-558a29f98bb65693ac6b2c8a146a4e67",
+      "requestedUrl": "https://chatgpt.com/",
+      "clientVersion": "4.4.8",
+      "extensionVersion": "2.4.8",
+      "extensionBundleId": "d7b2ea6f9a4c4bb78eb02a3e2b241661",
+      "extensionProtocolVersion": 5,
+      "backgroundEpoch": "background-mv8tyyad-3vwnzlk7",
+      "contentEpoch": "content-mv960f1d-uvjnvh4u",
+      "compatibility": {
+        "compatible": true,
+        "status": "compatible",
+        "message": "Extension 2.4.8 is compatible with bridge 6.4.1.",
+        "bridgeVersion": "6.4.1",
+        "protocolVersion": 5,
+        "minProtocolVersion": 5,
+        "maxProtocolVersion": 5,
+        "minExtensionVersion": "2.4.8",
+        "recommendedExtensionVersion": "2.4.8",
+        "minContentVersion": "4.4.8",
+        "extensionVersion": "2.4.8",
+        "contentVersion": "4.4.8",
+        "enforcement": "allowed"
+      },
+      "compatible": true,
+      "origin": "chrome-extension://dchijcgcljbehhihflegffnhkambmmjb",
+      "connectedAt": "2026-10-15T06:35:55.309Z",
+      "lastSeenAt": "2026-10-15T06:50:44.684Z",
+      "capabilities": {
+        "dom": true,
+        "network": false,
+        "promptInput": true,
+        "passivePromptSubmission": true,
+        "cancel": true,
+        "markdown": true,
+        "diagnostics": true,
+        "sessions": true,
+        "sessionDeletion": true,
+        "browserTabs": true,
+        "promptSteering": true,
+        "fileUpload": true,
+        "artifacts": true,
+        "artifactDownload": true,
+        "modelSelection": true,
+        "effortSelection": true,
+        "chunkedArtifactDownload": true,
+        "transferIntegrity": "sha256-v1",
+        "conversationRecordReconciliation": true,
+        "requestRecoveryStatus": true,
+        "extensionTransport": true,
+        "extensionDownloads": true
+      },
+      "transportHealth": {
+        "outbox": {
+          "size": 0,
+          "observationCoalesced": 0,
+          "outboxRejected": 0,
+          "outboxHighWater": 0,
+          "releaseBlocked": 0,
+          "releaseCompleted": 0,
+          "persistenceBytes": 916,
+          "stateCompactions": 0,
+          "stateCompactedBytes": 0
+        },
+        "tabQueue": {
+          "pending": 1,
+          "queued": 0,
+          "running": true,
+          "highWater": 1,
+          "rejected": 0,
+          "cancelled": 0,
+          "limit": 250,
+          "reservedCritical": 16,
+          "byPriority": {
+            "0": 1
+          }
+        }
+      },
+      "session": {
+        "id": "6ad075cb-4900-83ea-8233-273180550313",
+        "url": "https://chatgpt.com/c/6ad075cb-4900-83ea-8233-273180550313",
+        "title": "Prove Sharp Poincare Inequality",
+        "active": true
+      },
+      "tabObservation": {
+        "schemaVersion": 1,
+        "url": "https://chatgpt.com/c/6ad075cb-4900-83ea-8233-273180550313",
+        "title": "Prove Sharp Poincare Inequality",
+        "conversationId": "6ad075cb-4900-83ea-8233-273180550313",
+        "visibility": "visible",
+        "focused": true,
+        "document": {
+          "state": "ready",
+          "readyState": "complete",
+          "chatMainReady": true,
+          "pageReady": true
+        },
+        "composer": {
+          "state": "ready",
+          "ready": true
+        },
+        "turn": {
+          "state": "final",
+          "phase": "ASSISTANT_FINAL",
+          "key": "7bb44aad-6a84-461a-93b0-ea0aff1ee338::assistant",
+          "index": 1,
+          "messageId": "",
+          "modelSlug": "",
+          "count": 2,
+          "userKey": "7bb44aad-6a84-461a-93b0-ea0aff1ee338::user",
+          "userIndex": 0,
+          "userPrompt": "TEST_ONLY_EXTRA_HIGH_LEAF_OVERRIDE: This disposable experiment uses actual GPT-6 / Extra High for this leaf. It is not GPT-6 Pro inference. Preserve the research protocol and exact report IDs.\n\nENGLISH_ONLY: Write all internal research prose, fields, and messages in English. Preserve mathematical notation.\n\nYou are one persistent GPT-6 Extra High experimental research leaf. Perform exactly one round of the exact task your Extra High parent assigned to this node and round. Use the supplied durable research state when earlier conversation context is missing. State assumptions, pursue a proof, counterexample, or rigorous partial result, and distinguish evidence from conjecture. An unsuccessful attempt must still produce a report.\n\nReturn one JSON object matching OUTPUT_SCHEMA_JSON, without Markdown fences or surrounding text. Copy node_id and round_id exactly from CONTEXT_JSON. Include status (SOLVED, PARTIAL, or STUCK), summary, findings, evidence, obstacles, recommended_next_steps, split_suggestion, and important_update. Include rigorous mathematical details in evidence; do not claim independent verification merely because you produced a proof. Use empty lists when appropriate. A split_suggestion only proposes tasks; it cannot create children or change the tree.\n\nThis report is mandatory even when stuck, interrupted by a mathematical obstacle, or solved. The scheduler stores it and delivers it to your parent, with human review if enabled. Stop after this one report. Your parent must assess it and create a complete new prompt before you may research again. Never select or start your own next round, never treat human discussion as approval, and never bypass the stored prompt/report approval gates.\n\nCONTEXT_JSON\n{\"goal\": \"Elementary finite-sum investigation: establish sharpness through an independent algebraic proof, verify all endpoint terms and exceptional cases, and develop elementary stability bounds without relying on spectral decomposition.\", \"kind\": \"leaf\", \"node_id\": \"n-952ae628fa68\", \"research_state\": \"\", \"round_id\": \"n-952ae628fa68-r000001\", \"task\": \"ROUND 1 OF A PLANNED THREE-ROUND ELEMENTARY INVESTIGATION.\\n\\nAssumptions: N is an arbitrary integer N >= 2, and x_0,...,x_N are real with x_0 = x_N = 0. Write S(x) = sum_{j=1}^{N-1} x_j^2 and E(x) = sum_{j=0}^{N-1} (x_{j+1}-x_j)^2.\\n\\nObjective for this round: Find a rigorous elementary finite-sum proof of the optimal inequality S(x) <= C_N E(x), establish sharpness independently of a general matrix eigenvalue theorem, characterize equality, and verify the treatment of both boundaries and all exceptional small-N cases.\\n\\nSuggested concrete approach to investigate: Define w_j = sin(pi*j/N), positive for 1 <= j <= N-1 and zero at both endpoints. From elementary trigonometric identities, derive the second-difference relation for w. Attempt to prove the exact ground-state-transform identity\\n\\nE(x) - 4 sin^2(pi/(2*N)) S(x) = sum_{j=1}^{N-2} w_j*w_{j+1}*(x_{j+1}/w_{j+1}-x_j/w_j)^2.\\n\\nDo not assume this identity without proving it. Expand both sides and account explicitly for the endpoint edges (0,1) and (N-1,N). Avoid undefined ratios at j = 0 and j = N. Explain how positivity proves the proposed sharp constant, and separately verify sharpness by substituting the explicit sine sequence into the original finite sums. Determine every equality case, including N = 2, for which the displayed sum on the right is empty.\\n\\nIf the proposed transform cannot be established, pursue another elementary summation, completion-of-squares, or weighted Cauchy-Schwarz proof. Report any gap accurately rather than asserting the identity without justification.\\n\\nPlanned subsequent rounds: Round 2 will construct a quantitative stability estimate using only elementary weighted finite sums, telescoping, and Cauchy-Schwarz. One possible route is to set y_j = x_j/w_j and estimate its weighted variance by its weighted neighboring differences. Round 3 will audit the constants and all boundary conventions, compare the result with the spectral approach, and analyze possible equality or degeneracy in the stability estimate. Do not carry out those later rounds now.\\n\\nReport requirements: Produce one concise complete report, preferably below 1200 words, including assumptions, explicit algebraic derivations, equality and sharpness arguments, edge-case verification, obstacles if any, and specific next steps for Round 2. Clearly separate proof from conjecture. Do not use external data or execute software. Do not claim independent verification. Stop after this one round.\"}\nOUTPUT_SCHEMA_JSON\n{\"additionalProperties\": false, \"properties\": {\"evidence\": {\"minLength\": 1, \"title\": \"Evidence\", \"type\": \"string\"}, \"findings\": {\"items\": {\"type\": \"string\"}, \"title\": \"Findings\", \"type\": \"array\"}, \"important_update\": {\"default\": false, \"title\": \"Important Update\", \"type\": \"boolean\"}, \"node_id\": {\"minLength\": 1, \"title\": \"Node Id\", \"type\": \"string\"}, \"obstacles\": {\"items\": {\"type\": \"string\"}, \"title\": \"Obstacles\", \"type\": \"array\"}, \"recommended_next_steps\": {\"items\": {\"type\": \"string\"}, \"title\": \"Recommended Next Steps\", \"type\": \"array\"}, \"round_id\": {\"minLength\": 1, \"title\": \"Round Id\", \"type\": \"string\"}, \"split_suggestion\": {\"items\": {\"type\": \"string\"}, \"title\": \"Split Suggestion\", \"type\": \"array\"}, \"status\": {\"enum\": [\"SOLVED\", \"PARTIAL\", \"STUCK\"], \"title\": \"Status\", \"type\": \"string\"}, \"summary\": {\"minLength\": 1, \"title\": \"Summary\", \"type\": \"string\"}}, \"required\": [\"node_id\", \"round_id\", \"status\", \"summary\", \"findings\", \"evidence\", \"obstacles\", \"recommended_next_steps\"], \"title\": \"LeafRoundReport\", \"type\": \"object\"}",
+          "promptBoundary": null
+        },
+        "generation": {
+          "state": "stopped",
+          "stopVisible": false,
+          "streamingVisible": false,
+          "activeTool": false
+        },
+        "blocker": {
+          "state": "none",
+          "confirmation": false,
+          "continue": false
+        },
+        "output": {
+          "state": "final",
+          "answer": "{\n\"node_id\": \"n-952ae628fa68\",\n\"round_id\": \"n-952ae628fa68-r000001\",\n\"status\": \"SOLVED\",\n\"summary\": \"Established the sharp discrete Dirichlet Poincar\u00e9 inequality S(x) <= C_N E(x), with optimal constant C_N = 1/[4 sin\u00b2(\u03c0/(2N))], using an elementary ground-state-transform identity. The identity is proved by direct finite-sum expansion, including both boundary edges. Equality holds precisely for x_j = c sin(\u03c0j/N), where c is any real constant. Sharpness is independently confirmed by evaluating the original sums for the sine sequence. The exceptional cases N = 2 and N = 3 are verified explicitly. No spectral decomposition or general matrix eigenvalue theorem is used.\",\n\"findings\": [\n\"For every integer N >= 2, the optimal constant is C_N = 1/[2 - 2 cos(\u03c0/N)] = 1/[4 sin\u00b2(\u03c0/(2N))].\",\n\"Writing \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8, and w_j = sin(j\u03b8), the exact identity is E(x) - \u03bb S(x) = \u03a3_{j=1}^{N-2} w_j w_{j+1}(x_{j+1}/w_{j+1} - x_j/w_j)\u00b2.\",\n\"All terms on the right are nonnegative because w_j > 0 for 1 <= j <= N-1.\",\n\"Equality holds if and only if x_j = c w_j for all 1 <= j <= N-1, including c = 0.\",\n\"The sine sequence satisfies S(w) = N/2 and E(w) = 2N sin\u00b2(\u03c0/(2N)), proving optimality directly.\",\n\"For N = 2, the transformed sum is empty, the identity reduces to E(x) = 2S(x), and every admissible sequence is an equality case.\",\n\"For N = 3, the identity reduces to E(x) - S(x) = (x_2 - x_1)\u00b2, with equality precisely when x_1 = x_2.\"\n],\n\"evidence\": \"ASSUMPTIONS AND NOTATION.\\nLet N >= 2 be an integer, let x_0 = x_N = 0, and define S(x) = \u03a3_{j=1}^{N-1} x_j\u00b2 and E(x) = \u03a3_{j=0}^{N-1}(x_{j+1} - x_j)\u00b2. Set \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8 = 4 sin\u00b2(\u03b8/2), and w_j = sin(j\u03b8). Then w_0 = w_N = 0, while w_j > 0 for 1 <= j <= N-1. The elementary sine addition formula gives w_{j-1} + w_{j+1} = 2 cos \u03b8 \u00b7 w_j for every 1 <= j <= N-1, including the two boundary-adjacent indices.\\n\\nSTEP 1: DIRECT EXPANSION OF THE ORIGINAL ENERGY.\\nExpanding each square gives E(x) = \u03a3_{j=0}^{N-1}(x_j\u00b2 + x_{j+1}\u00b2 - 2x_j x_{j+1}) = 2\u03a3_{j=1}^{N-1}x_j\u00b2 - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}. The coefficient 2 at each interior vertex includes both adjacent edges. In particular, the boundary edges (0,1) and (N-1,N) contribute x_1\u00b2 and x_{N-1}\u00b2, respectively. When N = 2, these are distinct edges incident to the same interior vertex, producing E(x) = 2x_1\u00b2. Therefore E(x) - \u03bbS(x) = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}.\\n\\nSTEP 2: PROOF OF THE GROUND-STATE-TRANSFORM IDENTITY.\\nDefine y_j = x_j/w_j only for 1 <= j <= N-1. These ratios are well-defined; no ratio at j = 0 or j = N is introduced. Let R = \u03a3_{j=1}^{N-2}w_j w_{j+1}(y_{j+1} - y_j)\u00b2. Direct expansion yields R = \u03a3_{j=1}^{N-2}[(w_{j+1}/w_j)x_j\u00b2 + (w_j/w_{j+1})x_{j+1}\u00b2 - 2x_j x_{j+1}]. For a fixed k with 1 <= k <= N-1, the coefficient of x_k\u00b2 is (w_{k-1} + w_{k+1})/w_k, where the unavailable boundary-edge contributions are zero because w_0 = w_N = 0. This formula remains valid for N = 2: the sum is empty, and the coefficient equals (w_0 + w_2)/w_1 = 0. Applying the sine recurrence, each diagonal coefficient becomes 2 cos \u03b8. Consequently R = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1} = E(x) - \u03bbS(x). This proves the proposed exact identity for every N >= 2 without omitted endpoint terms.\\n\\nSTEP 3: INEQUALITY AND COMPLETE EQUALITY CHARACTERIZATION.\\nEvery weight w_j w_{j+1} in R is strictly positive, so R >= 0. Hence E(x) >= \u03bbS(x). Since \u03bb > 0, this is S(x) <= E(x)/\u03bb. When N >= 3, R = 0 exactly when y_{j+1} = y_j for every 1 <= j <= N-2. The interior indices form a connected chain, so y_1 = \u00b7\u00b7\u00b7 = y_{N-1} = c, implying x_j = c sin(j\u03b8). Conversely, every such sequence makes all the squared differences vanish. When N = 2, the chain has one vertex, so every admissible x_1 is automatically of the form c w_1 because w_1 = 1. Thus the same equality characterization holds for all N >= 2.\\n\\nSTEP 4: INDEPENDENT DIRECT SHARPNESS CHECK.\\nSubstitute x_j = w_j = sin(j\u03b8) into the original sums. The elementary identity 2 sin \u03b8 cos(2j\u03b8) = sin((2j+1)\u03b8) - sin((2j-1)\u03b8) telescopes over j = 0,...,N-1 to give \u03a3_{j=0}^{N-1}cos(2j\u03b8) = 0. Therefore S(w) = \u03a3_{j=1}^{N-1}sin\u00b2(j\u03b8) = N/2. Next, w_{j+1} - w_j = 2 sin(\u03b8/2) cos((j+1/2)\u03b8). The identity 2 sin \u03b8 cos((2j+1)\u03b8) = sin((2j+2)\u03b8) - sin(2j\u03b8) likewise telescopes to \u03a3_{j=0}^{N-1}cos((2j+1)\u03b8) = 0. Hence \u03a3_{j=0}^{N-1}cos\u00b2((j+1/2)\u03b8) = N/2, giving E(w) = 4 sin\u00b2(\u03b8/2)\u00b7N/2 = 2N sin\u00b2(\u03b8/2) = \u03bbN/2. Thus S(w)/E(w) = 1/\u03bb = C_N. Since w is nonzero, no smaller constant can work. This calculation uses only the original finite sums and elementary trigonometric identities.\\n\\nSTEP 5: SMALL-N AUDIT.\\nFor N = 2, \u03b8 = \u03c0/2, \u03bb = 2, w_1 = 1, S(x) = x_1\u00b2, and E(x) = (x_1 - 0)\u00b2 + (0 - x_1)\u00b2 = 2x_1\u00b2. The right side of the transform is the empty sum, hence zero, exactly as required. The optimal constant is 1/2, with equality for all x_1. For N = 3, \u03b8 = \u03c0/3, \u03bb = 1, and w_1 = w_2 = \u221a3/2. Directly, E(x) = x_1\u00b2 + (x_2 - x_1)\u00b2 + x_2\u00b2, so E(x) - S(x) = (x_2 - x_1)\u00b2. The single term of the transform equals w_1w_2(x_2/w_2 - x_1/w_1)\u00b2 = (x_2 - x_1)\u00b2. Equality means x_1 = x_2, exactly the sine-profile condition. All conventions are therefore consistent.\",\n\"obstacles\": [],\n\"recommended_next_steps\": [\n\"Round 2: Introduce y_j = x_j/w_j and the weighted mean m = [\u03a3_{j=1}^{N-1}w_j\u00b2y_j]/[\u03a3_{j=1}^{N-1}w_j\u00b2]. Establish an explicit elementary estimate \u03a3_{j=1}^{N-1}w_j\u00b2(y_j - m)\u00b2 <= K_N \u03a3_{j=1}^{N-2}w_jw_{j+1}(y_{j+1} - y_j)\u00b2 using telescoping and Cauchy-Schwarz.\",\n\"Express the resulting inequality as a stability estimate for the distance from x to the one-dimensional family c sin(\u03c0j/N), with a quantitative remainder controlled by E(x) - \u03bbS(x).\",\n\"Identify the N-dependence of the elementary stability constant K_N and establish finite bounds without invoking spectral decomposition.\",\n\"Treat N = 2 separately in the stability estimate, since every admissible vector is already an equality profile; examine N = 3 as the first nontrivial stability case.\",\n\"Reserve optimality of the stability coefficient, comparison with the spectral gap, and detailed boundary-convention audits for Round 3.\"\n],\n\"split_suggestion\": [],\n\"important_update\": true\n}",
+          "thinking": "",
+          "progress": "",
+          "progressItems": [],
+          "reasoningHistory": [],
+          "responseBlocks": [
+            {
+              "index": 0,
+              "type": "paragraph",
+              "tag": "p",
+              "markdown": "{\n\"node_id\": \"n-952ae628fa68\",\n\"round_id\": \"n-952ae628fa68-r000001\",\n\"status\": \"SOLVED\",\n\"summary\": \"Established the sharp discrete Dirichlet Poincar\u00e9 inequality S(x) <= C_N E(x), with optimal constant C_N = 1/[4 sin\u00b2(\u03c0/(2N))], using an elementary ground-state-transform identity. The identity is proved by direct finite-sum expansion, including both boundary edges. Equality holds precisely for x_j = c sin(\u03c0j/N), where c is any real constant. Sharpness is independently confirmed by evaluating the original sums for the sine sequence. The exceptional cases N = 2 and N = 3 are verified explicitly. No spectral decomposition or general matrix eigenvalue theorem is used.\",\n\"findings\": [\n\"For every integer N >= 2, the optimal constant is C_N = 1/[2 - 2 cos(\u03c0/N)] = 1/[4 sin\u00b2(\u03c0/(2N))].\",\n\"Writing \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8, and w_j = sin(j\u03b8), the exact identity is E(x) - \u03bb S(x) = \u03a3_{j=1}^{N-2} w_j w_{j+1}(x_{j+1}/w_{j+1} - x_j/w_j)\u00b2.\",\n\"All terms on the right are nonnegative because w_j > 0 for 1 <= j <= N-1.\",\n\"Equality holds if and only if x_j = c w_j for all 1 <= j <= N-1, including c = 0.\",\n\"The sine sequence satisfies S(w) = N/2 and E(w) = 2N sin\u00b2(\u03c0/(2N)), proving optimality directly.\",\n\"For N = 2, the transformed sum is empty, the identity reduces to E(x) = 2S(x), and every admissible sequence is an equality case.\",\n\"For N = 3, the identity reduces to E(x) - S(x) = (x_2 - x_1)\u00b2, with equality precisely when x_1 = x_2.\"\n],\n\"evidence\": \"ASSUMPTIONS AND NOTATION.\\nLet N >= 2 be an integer, let x_0 = x_N = 0, and define S(x) = \u03a3_{j=1}^{N-1} x_j\u00b2 and E(x) = \u03a3_{j=0}^{N-1}(x_{j+1} - x_j)\u00b2. Set \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8 = 4 sin\u00b2(\u03b8/2), and w_j = sin(j\u03b8). Then w_0 = w_N = 0, while w_j > 0 for 1 <= j <= N-1. The elementary sine addition formula gives w_{j-1} + w_{j+1} = 2 cos \u03b8 \u00b7 w_j for every 1 <= j <= N-1, including the two boundary-adjacent indices.\\n\\nSTEP 1: DIRECT EXPANSION OF THE ORIGINAL ENERGY.\\nExpanding each square gives E(x) = \u03a3_{j=0}^{N-1}(x_j\u00b2 + x_{j+1}\u00b2 - 2x_j x_{j+1}) = 2\u03a3_{j=1}^{N-1}x_j\u00b2 - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}. The coefficient 2 at each interior vertex includes both adjacent edges. In particular, the boundary edges (0,1) and (N-1,N) contribute x_1\u00b2 and x_{N-1}\u00b2, respectively. When N = 2, these are distinct edges incident to the same interior vertex, producing E(x) = 2x_1\u00b2. Therefore E(x) - \u03bbS(x) = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}.\\n\\nSTEP 2: PROOF OF THE GROUND-STATE-TRANSFORM IDENTITY.\\nDefine y_j = x_j/w_j only for 1 <= j <= N-1. These ratios are well-defined; no ratio at j = 0 or j = N is introduced. Let R = \u03a3_{j=1}^{N-2}w_j w_{j+1}(y_{j+1} - y_j)\u00b2. Direct expansion yields R = \u03a3_{j=1}^{N-2}[(w_{j+1}/w_j)x_j\u00b2 + (w_j/w_{j+1})x_{j+1}\u00b2 - 2x_j x_{j+1}]. For a fixed k with 1 <= k <= N-1, the coefficient of x_k\u00b2 is (w_{k-1} + w_{k+1})/w_k, where the unavailable boundary-edge contributions are zero because w_0 = w_N = 0. This formula remains valid for N = 2: the sum is empty, and the coefficient equals (w_0 + w_2)/w_1 = 0. Applying the sine recurrence, each diagonal coefficient becomes 2 cos \u03b8. Consequently R = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1} = E(x) - \u03bbS(x). This proves the proposed exact identity for every N >= 2 without omitted endpoint terms.\\n\\nSTEP 3: INEQUALITY AND COMPLETE EQUALITY CHARACTERIZATION.\\nEvery weight w_j w_{j+1} in R is strictly positive, so R >= 0. Hence E(x) >= \u03bbS(x). Since \u03bb > 0, this is S(x) <= E(x)/\u03bb. When N >= 3, R = 0 exactly when y_{j+1} = y_j for every 1 <= j <= N-2. The interior indices form a connected chain, so y_1 = \u00b7\u00b7\u00b7 = y_{N-1} = c, implying x_j = c sin(j\u03b8). Conversely, every such sequence makes all the squared differences vanish. When N = 2, the chain has one vertex, so every admissible x_1 is automatically of the form c w_1 because w_1 = 1. Thus the same equality characterization holds for all N >= 2.\\n\\nSTEP 4: INDEPENDENT DIRECT SHARPNESS CHECK.\\nSubstitute x_j = w_j = sin(j\u03b8) into the original sums. The elementary identity 2 sin \u03b8 cos(2j\u03b8) = sin((2j+1)\u03b8) - sin((2j-1)\u03b8) telescopes over j = 0,...,N-1 to give \u03a3_{j=0}^{N-1}cos(2j\u03b8) = 0. Therefore S(w) = \u03a3_{j=1}^{N-1}sin\u00b2(j\u03b8) = N/2. Next, w_{j+1} - w_j = 2 sin(\u03b8/2) cos((j+1/2)\u03b8). The identity 2 sin \u03b8 cos((2j+1)\u03b8) = sin((2j+2)\u03b8) - sin(2j\u03b8) likewise telescopes to \u03a3_{j=0}^{N-1}cos((2j+1)\u03b8) = 0. Hence \u03a3_{j=0}^{N-1}cos\u00b2((j+1/2)\u03b8) = N/2, giving E(w) = 4 sin\u00b2(\u03b8/2)\u00b7N/2 = 2N sin\u00b2(\u03b8/2) = \u03bbN/2. Thus S(w)/E(w) = 1/\u03bb = C_N. Since w is nonzero, no smaller constant can work. This calculation uses only the original finite sums and elementary trigonometric identities.\\n\\nSTEP 5: SMALL-N AUDIT.\\nFor N = 2, \u03b8 = \u03c0/2, \u03bb = 2, w_1 = 1, S(x) = x_1\u00b2, and E(x) = (x_1 - 0)\u00b2 + (0 - x_1)\u00b2 = 2x_1\u00b2. The right side of the transform is the empty sum, hence zero, exactly as required. The optimal constant is 1/2, with equality for all x_1. For N = 3, \u03b8 = \u03c0/3, \u03bb = 1, and w_1 = w_2 = \u221a3/2. Directly, E(x) = x_1\u00b2 + (x_2 - x_1)\u00b2 + x_2\u00b2, so E(x) - S(x) = (x_2 - x_1)\u00b2. The single term of the transform equals w_1w_2(x_2/w_2 - x_1/w_1)\u00b2 = (x_2 - x_1)\u00b2. Equality means x_1 = x_2, exactly the sine-profile condition. All conventions are therefore consistent.\",\n\"obstacles\": [],\n\"recommended_next_steps\": [\n\"Round 2: Introduce y_j = x_j/w_j and the weighted mean m = [\u03a3_{j=1}^{N-1}w_j\u00b2y_j]/[\u03a3_{j=1}^{N-1}w_j\u00b2]. Establish an explicit elementary estimate \u03a3_{j=1}^{N-1}w_j\u00b2(y_j - m)\u00b2 <= K_N \u03a3_{j=1}^{N-2}w_jw_{j+1}(y_{j+1} - y_j)\u00b2 using telescoping and Cauchy-Schwarz.\",\n\"Express the resulting inequality as a stability estimate for the distance from x to the one-dimensional family c sin(\u03c0j/N), with a quantitative remainder controlled by E(x) - \u03bbS(x).\",\n\"Identify the N-dependence of the elementary stability constant K_N and establish finite bounds without invoking spectral decomposition.\",\n\"Treat N = 2 separately in the stability estimate, since every admissible vector is already an equality profile; examine N = 3 as the first nontrivial stability case.\",\n\"Reserve optimality of the stability coefficient, comparison with the spectral gap, and detailed boundary-convention audits for Round 3.\"\n],\n\"split_suggestion\": [],\n\"important_update\": true\n}",
+              "text": "{\n\"node_id\": \"n-952ae628fa68\",\n\"round_id\": \"n-952ae628fa68-r000001\",\n\"status\": \"SOLVED\",\n\"summary\": \"Established the sharp discrete Dirichlet Poincar\u00e9 inequality S(x) <= C_N E(x), with optimal constant C_N = 1/[4 sin\u00b2(\u03c0/(2N))], using an elementary ground-state-transform identity. The identity is proved by direct finite-sum expansion, including both boundary edges. Equality holds precisely for x_j = c sin(\u03c0j/N), where c is any real constant. Sharpness is independently confirmed by evaluating the original sums for the sine sequence. The exceptional cases N = 2 and N = 3 are verified explicitly. No spectral decomposition or general matrix eigenvalue theorem is used.\",\n\"findings\": [\n\"For every integer N >= 2, the optimal constant is C_N = 1/[2 - 2 cos(\u03c0/N)] = 1/[4 sin\u00b2(\u03c0/(2N))].\",\n\"Writing \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8, and w_j = sin(j\u03b8), the exact identity is E(x) - \u03bb S(x) = \u03a3_{j=1}^{N-2} w_j w_{j+1}(x_{j+1}/w_{j+1} - x_j/w_j)\u00b2.\",\n\"All terms on the right are nonnegative because w_j > 0 for 1 <= j <= N-1.\",\n\"Equality holds if and only if x_j = c w_j for all 1 <= j <= N-1, including c = 0.\",\n\"The sine sequence satisfies S(w) = N/2 and E(w) = 2N sin\u00b2(\u03c0/(2N)), proving optimality directly.\",\n\"For N = 2, the transformed sum is empty, the identity reduces to E(x) = 2S(x), and every admissible sequence is an equality case.\",\n\"For N = 3, the identity reduces to E(x) - S(x) = (x_2 - x_1)\u00b2, with equality precisely when x_1 = x_2.\"\n],\n\"evidence\": \"ASSUMPTIONS AND NOTATION.\\nLet N >= 2 be an integer, let x_0 = x_N = 0, and define S(x) = \u03a3_{j=1}^{N-1} x_j\u00b2 and E(x) = \u03a3_{j=0}^{N-1}(x_{j+1} - x_j)\u00b2. Set \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8 = 4 sin\u00b2(\u03b8/2), and w_j = sin(j\u03b8). Then w_0 = w_N = 0, while w_j > 0 for 1 <= j <= N-1. The elementary sine addition formula gives w_{j-1} + w_{j+1} = 2 cos \u03b8 \u00b7 w_j for every 1 <= j <= N-1, including the two boundary-adjacent indices.\\n\\nSTEP 1: DIRECT EXPANSION OF THE ORIGINAL ENERGY.\\nExpanding each square gives E(x) = \u03a3_{j=0}^{N-1}(x_j\u00b2 + x_{j+1}\u00b2 - 2x_j x_{j+1}) = 2\u03a3_{j=1}^{N-1}x_j\u00b2 - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}. The coefficient 2 at each interior vertex includes both adjacent edges. In particular, the boundary edges (0,1) and (N-1,N) contribute x_1\u00b2 and x_{N-1}\u00b2, respectively. When N = 2, these are distinct edges incident to the same interior vertex, producing E(x) = 2x_1\u00b2. Therefore E(x) - \u03bbS(x) = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}.\\n\\nSTEP 2: PROOF OF THE GROUND-STATE-TRANSFORM IDENTITY.\\nDefine y_j = x_j/w_j only for 1 <= j <= N-1. These ratios are well-defined; no ratio at j = 0 or j = N is introduced. Let R = \u03a3_{j=1}^{N-2}w_j w_{j+1}(y_{j+1} - y_j)\u00b2. Direct expansion yields R = \u03a3_{j=1}^{N-2}[(w_{j+1}/w_j)x_j\u00b2 + (w_j/w_{j+1})x_{j+1}\u00b2 - 2x_j x_{j+1}]. For a fixed k with 1 <= k <= N-1, the coefficient of x_k\u00b2 is (w_{k-1} + w_{k+1})/w_k, where the unavailable boundary-edge contributions are zero because w_0 = w_N = 0. This formula remains valid for N = 2: the sum is empty, and the coefficient equals (w_0 + w_2)/w_1 = 0. Applying the sine recurrence, each diagonal coefficient becomes 2 cos \u03b8. Consequently R = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1} = E(x) - \u03bbS(x). This proves the proposed exact identity for every N >= 2 without omitted endpoint terms.\\n\\nSTEP 3: INEQUALITY AND COMPLETE EQUALITY CHARACTERIZATION.\\nEvery weight w_j w_{j+1} in R is strictly positive, so R >= 0. Hence E(x) >= \u03bbS(x). Since \u03bb > 0, this is S(x) <= E(x)/\u03bb. When N >= 3, R = 0 exactly when y_{j+1} = y_j for every 1 <= j <= N-2. The interior indices form a connected chain, so y_1 = \u00b7\u00b7\u00b7 = y_{N-1} = c, implying x_j = c sin(j\u03b8). Conversely, every such sequence makes all the squared differences vanish. When N = 2, the chain has one vertex, so every admissible x_1 is automatically of the form c w_1 because w_1 = 1. Thus the same equality characterization holds for all N >= 2.\\n\\nSTEP 4: INDEPENDENT DIRECT SHARPNESS CHECK.\\nSubstitute x_j = w_j = sin(j\u03b8) into the original sums. The elementary identity 2 sin \u03b8 cos(2j\u03b8) = sin((2j+1)\u03b8) - sin((2j-1)\u03b8) telescopes over j = 0,...,N-1 to give \u03a3_{j=0}^{N-1}cos(2j\u03b8) = 0. Therefore S(w) = \u03a3_{j=1}^{N-1}sin\u00b2(j\u03b8) = N/2. Next, w_{j+1} - w_j = 2 sin(\u03b8/2) cos((j+1/2)\u03b8). The identity 2 sin \u03b8 cos((2j+1)\u03b8) = sin((2j+2)\u03b8) - sin(2j\u03b8) likewise telescopes to \u03a3_{j=0}^{N-1}cos((2j+1)\u03b8) = 0. Hence \u03a3_{j=0}^{N-1}cos\u00b2((j+1/2)\u03b8) = N/2, giving E(w) = 4 sin\u00b2(\u03b8/2)\u00b7N/2 = 2N sin\u00b2(\u03b8/2) = \u03bbN/2. Thus S(w)/E(w) = 1/\u03bb = C_N. Since w is nonzero, no smaller constant can work. This calculation uses only the original finite sums and elementary trigonometric identities.\\n\\nSTEP 5: SMALL-N AUDIT.\\nFor N = 2, \u03b8 = \u03c0/2, \u03bb = 2, w_1 = 1, S(x) = x_1\u00b2, and E(x) = (x_1 - 0)\u00b2 + (0 - x_1)\u00b2 = 2x_1\u00b2. The right side of the transform is the empty sum, hence zero, exactly as required. The optimal constant is 1/2, with equality for all x_1. For N = 3, \u03b8 = \u03c0/3, \u03bb = 1, and w_1 = w_2 = \u221a3/2. Directly, E(x) = x_1\u00b2 + (x_2 - x_1)\u00b2 + x_2\u00b2, so E(x) - S(x) = (x_2 - x_1)\u00b2. The single term of the transform equals w_1w_2(x_2/w_2 - x_1/w_1)\u00b2 = (x_2 - x_1)\u00b2. Equality means x_1 = x_2, exactly the sine-profile condition. All conventions are therefore consistent.\",\n\"obstacles\": [],\n\"recommended_next_steps\": [\n\"Round 2: Introduce y_j = x_j/w_j and the weighted mean m = [\u03a3_{j=1}^{N-1}w_j\u00b2y_j]/[\u03a3_{j=1}^{N-1}w_j\u00b2]. Establish an explicit elementary estimate \u03a3_{j=1}^{N-1}w_j\u00b2(y_j - m)\u00b2 <= K_N \u03a3_{j=1}^{N-2}w_jw_{j+1}(y_{j+1} - y_j)\u00b2 using telescoping and Cauchy-Schwarz.\",\n\"Express the resulting inequality as a stability estimate for the distance from x to the one-dimensional family c sin(\u03c0j/N), with a quantitative remainder controlled by E(x) - \u03bbS(x).\",\n\"Identify the N-dependence of the elementary stability constant K_N and establish finite bounds without invoking spectral decomposition.\",\n\"Treat N = 2 separately in the stability estimate, since every admissible vector is already an equality profile; examine N = 3 as the first nontrivial stability case.\",\n\"Reserve optimality of the stability coefficient, comparison with the spectral gap, and detailed boundary-convention audits for Round 3.\"\n],\n\"split_suggestion\": [],\n\"important_update\": true\n}",
+              "inlineCode": [],
+              "diagnostic": {
+                "sourceRoot": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_",
+                "domContext": "<p class=\"TextBase-hXhSqg Text-lIMP0_\"><span>{\n  </span><span>\"node_id\": </span><span>\"n-952ae628fa68\",\n  </span><span>\"round_id\": </span><span>\"n-952ae628fa68-r000001\",\n  </span><span>\"status\": </span><span>\"SOLVED\",\n  </span><span>\"summary\": </span><span>\"Established </span><span>the </span><span>sharp </span><span>discrete </span><span>Dirichlet </span><span>Poincar\u00e9 </span><span>inequality </span><span>S(x) </span><span>&lt;= </span><span>C_N </span><span>E(x), </span><span>with </span><span>optimal </span><span>constant </span><span>C_N </span><span>= </span><span>1/[4 </span><span>sin\u00b2(\u03c0/(2N))], </span><span>using </span><span>an </span><span>elementary </span><span>ground-state-transform </span><span>identity. </span><span>The </span><span>identity </span><span>is </span><span>proved </span><span>by </span><span>direct </span><span>finite-sum </span><span>expansion, </span><span>including </span><span>both </span><span>boundary </span><span>edges. </span><span>Equality </span><span>holds </span><span>precisely </span><span>for </span><span>x_j </span><span>= </span><span>c </span><span>sin(\u03c0j/N), </span><span>where </span><span>c </span><span>is </span><span>any </span><span>real </span><span>constant. </span><span>Sharpness </span><span>is </span><span>independently </span><span>confirmed </span><span>by </span><span>evaluating </span><span>the </span><span>original </span><span>sums </span><span>for </span><span>the </span><span>sine </span><span>sequence. </span><span>The </span><span>exceptional </span><span>cases </span><span>N </span><span>= </span><span>2 </span><span>and </span><span>N </span><span>= </span><span>3 </span><span>are </span><span>verified </span><span>explicitly. </span><span>No </span><span>spectral </span><span>decomposition </span><span>or </span><span>general </span><span>matrix </span><span>eigenvalue </span><span>theorem </span><span>is </span><span>used.\",\n  </span><span>\"findings\": </span><span>[\n    </span><span>\"For </span><span>every </span><span>integer </span><span>N </span><span>&gt;= </span><span>2, </span><span>the </span><span>optimal </span><span>constant </span><span>is </span><span>C_N </span><span>= </span><span>1/[2 </span><span>- </span><span>2 </span><span>cos(\u03c0/N)] </span><span>= </span><span>1/[4 </span><span>sin\u00b2(\u03c0/(2N))].\",\n    </span><span>\"Writing </span><span>\u03b8 </span><span>= </span><span>\u03c0/N, </span><span>\u03bb </span><span>= </span><span>2 </span><span>- </span><span>2 </span><span>cos </span><span>\u03b8, </span><span>and </span><span>w_j </span><span>= </span><span>sin(j\u03b8), </span><span>the </span><span>exact </span><span>identity </span><span>is </span><span>E(x) </span><span>- </span><span>\u03bb </span><span>S(x) </span><span>= </span><span>\u03a3_{j=1}^{N-2} </span><span>w_j </span><span>w_{j+1}(x_{j+1}/w_{j+1} </span><span>- </span><span>x_j/w_j)\u00b2.\",\n    </span><span>\"All </span><span>terms </span><span>on </span><span>the </span><span>right </span><span>are </span><span>nonnegative </span><span>because </span><span>w_j </span><span>&gt; </span><span>0 </span><span>for </span><span>1 </span><span>&lt;= </span><span>j </span><span>&lt;= </span><span>N-1.\",\n    </span><span>\"Equality </span><span>holds </span><span>if </span><span>and </span><span>only </span><span>if </span><span>x_j </span><span>= </span><span>c </span><span>w_j </span><span>for </span><span>all </span><span>1 </span><span>&lt;= </span><span>j </span><span>&lt;= </span><span>N-1, </span><span>including </span><span>c </span><span>= </span><span>0.\",\n    </span><span>\"The </span><span>sine </span><span>sequence </span><span>satisfies </span><span>S(w) </span><span>= </span><span>N/2 </span><span>and </span><span>E(w) </span><span>= </span><span>2N </span><span>sin\u00b2(\u03c0/(2N)), </span><span>proving </span><span>optimality </span><span>directly.\",\n    </span><span>\"For </span><span>N </span><span>= </span><span>2, </span><span>the </span><span>transformed </span><span>sum </span><span>is </span><span>empty, </span><span>the </span><span>identity </span><span>reduces </span><span>to </span><span>E(x) </span><span>= </span><span>2S(x), </span><span>and </span><span>every </span><span>admissible </span><span>sequence </span><span>is </span><span>an </span><span>equality </span><span>case.\",\n    </span><span>\"For </span><span>N </span><span>= </span><span>3, </span><span>the </span><span>identity </span><span>reduces </span><span>to </span><span>E(x) </span><span>- </span><span>S(x) </span><span>= </span><span>(x_2 </span><span>- </span><span>x_1)\u00b2, </span><span>with </span><span>equality </span><span>precisely </span><span>when </span><span>x_1 </span><span>= </span><span>x_2.\"\n  </span><span>],\n  </span><span>\"evidence\": </span><span>\"ASSUMPTIONS </span><span>AND </span><span>NOTATION.\\nLet </span><span>N </span><span>&gt;= </span><span>2 </span><span>be </span><span>an </span><span>integer, </span><span>let </span><span>x_0 </span><span>= </span><span>x_N </span><span>= </span><span>0, </span><spa\u2026"
+              }
+            }
+          ],
+          "codeBlocks": [],
+          "codeBlockDiagnostics": [],
+          "parserAudit": {
+            "version": 1,
+            "coverage": {
+              "visibleTextLeaves": 1022,
+              "contentLeaves": 1022,
+              "interfaceLeaves": 0,
+              "artifactLeaves": 0,
+              "reasoningLeaves": 0,
+              "unknownLeaves": 0,
+              "unknownVisualElements": 0,
+              "duplicateLeaves": 0,
+              "classifiedLeaves": 1022,
+              "coveragePercent": 100
+            },
+            "blocks": [
+              {
+                "index": 0,
+                "type": "paragraph",
+                "tag": "p",
+                "sourceRoot": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_",
+                "language": "",
+                "languageSource": "",
+                "languageConfidence": "",
+                "unknownChildren": []
+              }
+            ],
+            "contentItems": [
+              {
+                "category": "content",
+                "text": "{",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(1)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"node_id\":",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(2)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"n-952ae628fa68\",",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(3)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"round_id\":",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(4)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"n-952ae628fa68-r000001\",",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(5)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"status\":",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(6)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"SOLVED\",",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(7)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"summary\":",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(8)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"Established",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(9)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "the",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(10)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sharp",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(11)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "discrete",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(12)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "Dirichlet",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(13)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "Poincar\u00e9",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(14)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "inequality",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(15)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "S(x)",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(16)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "<=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(17)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "C_N",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(18)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "E(x),",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(19)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "with",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(20)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "optimal",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(21)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "constant",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(22)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "C_N",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(23)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(24)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "1/[4",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(25)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sin\u00b2(\u03c0/(2N))],",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(26)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "using",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(27)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "an",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(28)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "elementary",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(29)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "ground-state-transform",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(30)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "identity.",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(31)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "The",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(32)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "identity",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(33)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "is",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(34)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "proved",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(35)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "by",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(36)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "direct",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(37)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "finite-sum",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(38)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "expansion,",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(39)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "including",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(40)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "both",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(41)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "boundary",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(42)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "edges.",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(43)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "Equality",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(44)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "holds",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(45)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "precisely",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(46)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "for",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(47)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "x_j",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(48)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(49)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "c",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(50)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sin(\u03c0j/N),",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(51)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "where",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(52)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "c",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(53)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "is",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(54)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "any",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(55)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "real",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(56)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "constant.",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(57)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "Sharpness",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(58)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "is",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(59)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "independently",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(60)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "confirmed",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(61)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "by",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(62)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "evaluating",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(63)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "the",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(64)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "original",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(65)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sums",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(66)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "for",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(67)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "the",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(68)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sine",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(69)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sequence.",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(70)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "The",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(71)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "exceptional",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(72)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "cases",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(73)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "N",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(74)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(75)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "2",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(76)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "and",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(77)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "N",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(78)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(79)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "3",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(80)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "are",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(81)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "verified",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(82)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "explicitly.",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(83)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "No",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(84)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "spectral",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(85)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "decomposition",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(86)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "or",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(87)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "general",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(88)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "matrix",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(89)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "eigenvalue",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(90)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "theorem",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(91)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "is",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(92)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "used.\",",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(93)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"findings\":",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(94)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "[",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(95)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"For",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(96)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "every",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(97)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "integer",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(98)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "N",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(99)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": ">=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(100)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "2,",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(101)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "the",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(102)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "optimal",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(103)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "constant",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(104)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "is",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(105)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "C_N",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(106)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(107)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "1/[2",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(108)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "-",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(109)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "2",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(110)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "cos(\u03c0/N)]",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(111)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(112)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "1/[4",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(113)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sin\u00b2(\u03c0/(2N))].\",",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(114)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"Writing",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(115)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\u03b8",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(116)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(117)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\u03c0/N,",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(118)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\u03bb",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(119)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(120)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "2",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(121)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "-",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(122)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "2",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(123)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "cos",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(124)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\u03b8,",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(125)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "and",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(126)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "w_j",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(127)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(128)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sin(j\u03b8),",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(129)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "the",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(130)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "exact",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(131)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "identity",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(132)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "is",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(133)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "E(x)",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(134)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "-",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(135)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\u03bb",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(136)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "S(x)",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(137)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(138)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\u03a3_{j=1}^{N-2}",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(139)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "w_j",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(140)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "w_{j+1}(x_{j+1}/w_{j+1}",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(141)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "-",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(142)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "x_j/w_j)\u00b2.\",",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(143)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"All",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(144)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "terms",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(145)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "on",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(146)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "the",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(147)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "right",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(148)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "are",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(149)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "nonnegative",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(150)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "because",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(151)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "w_j",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(152)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": ">",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(153)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "0",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(154)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "for",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(155)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "1",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(156)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "<=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(157)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "j",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(158)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "<=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(159)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "N-1.\",",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(160)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"Equality",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(161)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "holds",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(162)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "if",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(163)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "and",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(164)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "only",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(165)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "if",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(166)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "x_j",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(167)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(168)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "c",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(169)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "w_j",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(170)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "for",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(171)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "all",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(172)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "1",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(173)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "<=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(174)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "j",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(175)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "<=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(176)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "N-1,",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(177)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "including",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(178)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "c",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(179)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(180)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "0.\",",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(181)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"The",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(182)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sine",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(183)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sequence",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(184)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "satisfies",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(185)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "S(w)",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(186)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(187)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "N/2",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(188)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "and",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(189)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "E(w)",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(190)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(191)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "2N",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(192)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sin\u00b2(\u03c0/(2N)),",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(193)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "proving",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(194)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "optimality",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(195)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "directly.\",",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(196)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"For",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(197)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "N",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(198)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(199)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "2,",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(200)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "the",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(201)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "transformed",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(202)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sum",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(203)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "is",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(204)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "empty,",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(205)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "the",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(206)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "identity",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(207)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "reduces",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(208)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "to",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(209)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "E(x)",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(210)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(211)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "2S(x),",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(212)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "and",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(213)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "every",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(214)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "admissible",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(215)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sequence",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(216)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "is",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(217)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "an",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(218)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "equality",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(219)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "case.\",",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(220)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"For",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(221)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "N",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(222)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(223)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "3,",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(224)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "the",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(225)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "identity",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(226)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "reduces",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(227)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "to",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(228)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "E(x)",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(229)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "-",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(230)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "S(x)",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(231)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(232)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "(x_2",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(233)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "-",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(234)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "x_1)\u00b2,",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(235)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "with",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(236)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "equality",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(237)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "precisely",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(238)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "when",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(239)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "x_1",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(240)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(241)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "x_2.\"",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(242)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "],",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(243)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"evidence\":",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(244)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\"ASSUMPTIONS",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(245)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "AND",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(246)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "NOTATION.\\nLet",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(247)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "N",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(248)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": ">=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(249)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "2",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(250)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "be",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(251)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "an",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(252)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "integer,",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(253)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "let",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(254)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "x_0",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(255)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(256)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "x_N",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(257)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(258)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "0,",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(259)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "and",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(260)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "define",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(261)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "S(x)",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(262)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(263)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\u03a3_{j=1}^{N-1}",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(264)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "x_j\u00b2",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(265)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "and",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(266)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "E(x)",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(267)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(268)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\u03a3_{j=0}^{N-1}(x_{j+1}",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(269)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "-",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(270)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "x_j)\u00b2.",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(271)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "Set",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(272)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\u03b8",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(273)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(274)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\u03c0/N,",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(275)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\u03bb",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(276)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(277)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "2",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(278)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "-",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(279)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "2",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(280)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "cos",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(281)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "\u03b8",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(282)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(283)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "4",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(284)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sin\u00b2(\u03b8/2),",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(285)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "and",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(286)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "w_j",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(287)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(288)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "sin(j\u03b8).",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(289)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "Then",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(290)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "w_0",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(291)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(292)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "w_N",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(293)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "=",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(294)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "0,",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(295)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "while",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(296)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "w_j",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(297)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": ">",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(298)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "0",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(299)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              },
+              {
+                "category": "content",
+                "text": "for",
+                "domPath": "div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_ > span:nth-of-type(300)",
+                "blockIndex": 0,
+                "blockType": "paragraph"
+              }
+            ],
+            "interfaceItems": [],
+            "artifactItems": [],
+            "interfaceControls": [],
+            "unknownItems": [],
+            "duplicateItems": [],
+            "warnings": [],
+            "performance": {
+              "roots": 1,
+              "durationMs": 163.6,
+              "maxRootDurationMs": 163.6,
+              "computedStyleReads": 1067,
+              "visibilityChecks": 9279,
+              "visibilityCacheHits": 8211,
+              "leafWalks": 6,
+              "ownerCandidateChecks": 5,
+              "ownerCandidatesEnumerated": 0
+            },
+            "sourceDomPath": "div > div > div.group.flex > div.MarkdownRoot-rZKhxa"
+          },
+          "format": "markdown",
+          "raw": "ChatGPT said:\n\n{\n\"node_id\": \"n-952ae628fa68\",\n\"round_id\": \"n-952ae628fa68-r000001\",\n\"status\": \"SOLVED\",\n\"summary\": \"Established the sharp discrete Dirichlet Poincar\u00e9 inequality S(x) <= C_N E(x), with optimal constant C_N = 1/[4 sin\u00b2(\u03c0/(2N))], using an elementary ground-state-transform identity. The identity is proved by direct finite-sum expansion, including both boundary edges. Equality holds precisely for x_j = c sin(\u03c0j/N), where c is any real constant. Sharpness is independently confirmed by evaluating the original sums for the sine sequence. The exceptional cases N = 2 and N = 3 are verified explicitly. No spectral decomposition or general matrix eigenvalue theorem is used.\",\n\"findings\": [\n\"For every integer N >= 2, the optimal constant is C_N = 1/[2 - 2 cos(\u03c0/N)] = 1/[4 sin\u00b2(\u03c0/(2N))].\",\n\"Writing \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8, and w_j = sin(j\u03b8), the exact identity is E(x) - \u03bb S(x) = \u03a3_{j=1}^{N-2} w_j w_{j+1}(x_{j+1}/w_{j+1} - x_j/w_j)\u00b2.\",\n\"All terms on the right are nonnegative because w_j > 0 for 1 <= j <= N-1.\",\n\"Equality holds if and only if x_j = c w_j for all 1 <= j <= N-1, including c = 0.\",\n\"The sine sequence satisfies S(w) = N/2 and E(w) = 2N sin\u00b2(\u03c0/(2N)), proving optimality directly.\",\n\"For N = 2, the transformed sum is empty, the identity reduces to E(x) = 2S(x), and every admissible sequence is an equality case.\",\n\"For N = 3, the identity reduces to E(x) - S(x) = (x_2 - x_1)\u00b2, with equality precisely when x_1 = x_2.\"\n],\n\"evidence\": \"ASSUMPTIONS AND NOTATION.\\nLet N >= 2 be an integer, let x_0 = x_N = 0, and define S(x) = \u03a3_{j=1}^{N-1} x_j\u00b2 and E(x) = \u03a3_{j=0}^{N-1}(x_{j+1} - x_j)\u00b2. Set \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8 = 4 sin\u00b2(\u03b8/2), and w_j = sin(j\u03b8). Then w_0 = w_N = 0, while w_j > 0 for 1 <= j <= N-1. The elementary sine addition formula gives w_{j-1} + w_{j+1} = 2 cos \u03b8 \u00b7 w_j for every 1 <= j <= N-1, including the two boundary-adjacent indices.\\n\\nSTEP 1: DIRECT EXPANSION OF THE ORIGINAL ENERGY.\\nExpanding each square gives E(x) = \u03a3_{j=0}^{N-1}(x_j\u00b2 + x_{j+1}\u00b2 - 2x_j x_{j+1}) = 2\u03a3_{j=1}^{N-1}x_j\u00b2 - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}. The coefficient 2 at each interior vertex includes both adjacent edges. In particular, the boundary edges (0,1) and (N-1,N) contribute x_1\u00b2 and x_{N-1}\u00b2, respectively. When N = 2, these are distinct edges incident to the same interior vertex, producing E(x) = 2x_1\u00b2. Therefore E(x) - \u03bbS(x) = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}.\\n\\nSTEP 2: PROOF OF THE GROUND-STATE-TRANSFORM IDENTITY.\\nDefine y_j = x_j/w_j only for 1 <= j <= N-1. These ratios are well-defined; no ratio at j = 0 or j = N is introduced. Let R = \u03a3_{j=1}^{N-2}w_j w_{j+1}(y_{j+1} - y_j)\u00b2. Direct expansion yields R = \u03a3_{j=1}^{N-2}[(w_{j+1}/w_j)x_j\u00b2 + (w_j/w_{j+1})x_{j+1}\u00b2 - 2x_j x_{j+1}]. For a fixed k with 1 <= k <= N-1, the coefficient of x_k\u00b2 is (w_{k-1} + w_{k+1})/w_k, where the unavailable boundary-edge contributions are zero because w_0 = w_N = 0. This formula remains valid for N = 2: the sum is empty, and the coefficient equals (w_0 + w_2)/w_1 = 0. Applying the sine recurrence, each diagonal coefficient becomes 2 cos \u03b8. Consequently R = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1} = E(x) - \u03bbS(x). This proves the proposed exact identity for every N >= 2 without omitted endpoint terms.\\n\\nSTEP 3: INEQUALITY AND COMPLETE EQUALITY CHARACTERIZATION.\\nEvery weight w_j w_{j+1} in R is strictly positive, so R >= 0. Hence E(x) >= \u03bbS(x). Since \u03bb > 0, this is S(x) <= E(x)/\u03bb. When N >= 3, R = 0 exactly when y_{j+1} = y_j for every 1 <= j <= N-2. The interior indices form a connected chain, so y_1 = \u00b7\u00b7\u00b7 = y_{N-1} = c, implying x_j = c sin(j\u03b8). Conversely, every such sequence makes all the squared differences vanish. When N = 2, the chain has one vertex, so every admissible x_1 is automatically of the form c w_1 because w_1 = 1. Thus the same equality characterization holds for all N >= 2.\\n\\nSTEP 4: INDEPENDENT DIRECT SHARPNESS CHECK.\\nSubstitute x_j = w_j = sin(j\u03b8) into the original sums. The elementary identity 2 sin \u03b8 cos(2j\u03b8) = sin((2j+1)\u03b8) - sin((2j-1)\u03b8) telescopes over j = 0,...,N-1 to give \u03a3_{j=0}^{N-1}cos(2j\u03b8) = 0. Therefore S(w) = \u03a3_{j=1}^{N-1}sin\u00b2(j\u03b8) = N/2. Next, w_{j+1} - w_j = 2 sin(\u03b8/2) cos((j+1/2)\u03b8). The identity 2 sin \u03b8 cos((2j+1)\u03b8) = sin((2j+2)\u03b8) - sin(2j\u03b8) likewise telescopes to \u03a3_{j=0}^{N-1}cos((2j+1)\u03b8) = 0. Hence \u03a3_{j=0}^{N-1}cos\u00b2((j+1/2)\u03b8) = N/2, giving E(w) = 4 sin\u00b2(\u03b8/2)\u00b7N/2 = 2N sin\u00b2(\u03b8/2) = \u03bbN/2. Thus S(w)/E(w) = 1/\u03bb = C_N. Since w is nonzero, no smaller constant can work. This calculation uses only the original finite sums and elementary trigonometric identities.\\n\\nSTEP 5: SMALL-N AUDIT.\\nFor N = 2, \u03b8 = \u03c0/2, \u03bb = 2, w_1 = 1, S(x) = x_1\u00b2, and E(x) = (x_1 - 0)\u00b2 + (0 - x_1)\u00b2 = 2x_1\u00b2. The right side of the transform is the empty sum, hence zero, exactly as required. The optimal constant is 1/2, with equality for all x_1. For N = 3, \u03b8 = \u03c0/3, \u03bb = 1, and w_1 = w_2 = \u221a3/2. Directly, E(x) = x_1\u00b2 + (x_2 - x_1)\u00b2 + x_2\u00b2, so E(x) - S(x) = (x_2 - x_1)\u00b2. The single term of the transform equals w_1w_2(x_2/w_2 - x_1/w_1)\u00b2 = (x_2 - x_1)\u00b2. Equality means x_1 = x_2, exactly the sine-profile condition. All conventions are therefore consistent.\",\n\"obstacles\": [],\n\"recommended_next_steps\": [\n\"Round 2: Introduce y_j = x_j/w_j and the weighted mean m = [\u03a3_{j=1}^{N-1}w_j\u00b2y_j]/[\u03a3_{j=1}^{N-1}w_j\u00b2]. Establish an explicit elementary estimate \u03a3_{j=1}^{N-1}w_j\u00b2(y_j - m)\u00b2 <= K_N \u03a3_{j=1}^{N-2}w_jw_{j+1}(y_{j+1} - y_j)\u00b2 using telescoping and Cauchy-Schwarz.\",\n\"Express the resulting inequality as a stability estimate for the distance from x to the one-dimensional family c sin(\u03c0j/N), with a quantitative remainder controlled by E(x) - \u03bbS(x).\",\n\"Identify the N-dependence of the elementary stability constant K_N and establish finite bounds without invoking spectral decomposition.\",\n\"Treat N = 2 separately in the stability estimate, since every admissible vector is already an equality profile; examine N = 3 as the first nontrivial stability case.\",\n\"Reserve optimality of the stability coefficient, comparison with the spectral gap, and detailed boundary-convention audits for Round 3.\"\n],\n\"split_suggestion\": [],\n\"important_update\": true\n}",
+          "answerLength": 6102,
+          "thinkingLength": 0,
+          "progressLength": 0,
+          "finalMessage": true,
+          "actionBarVisible": false
+        },
+        "artifacts": [],
+        "artifact": {
+          "state": "none",
+          "count": 0
+        },
+        "error": {
+          "explicit": false,
+          "message": "",
+          "code": "",
+          "kind": "",
+          "retryable": false,
+          "userTurnKey": ""
+        },
+        "boundLeaseProjection": null,
+        "activeRequest": null,
+        "degraded": false,
+        "evidence": {
+          "snapshotReason": "latest_assistant_turn",
+          "unknownTestIds": [],
+          "assistantNodeCount": 1
+        },
+        "observerId": "tab-observer-mv960f1v-y1niuc",
+        "revision": 177,
+        "observedAt": 1792047040493,
+        "reason": "freshness.heartbeat",
+        "semanticChange": false,
+        "semanticSignature": "[\"https://chatgpt.com/c/6ad075cb-4900-83ea-8233-273180550313\",\"6ad075cb-4900-83ea-8233-273180550313\",\"visible\",true,\"ready\",\"complete\",true,true,\"ready\",\"final\",\"ASSISTANT_FINAL\",\"7bb44aad-6a84-461a-93b0-ea0aff1ee338::assistant\",\"7bb44aad-6a84-461a-93b0-ea0aff1ee338::user\",\"TEST_ONLY_EXTRA_HIGH_LEAF_OVERRIDE: This disposable experiment uses actual GPT-6 / Extra High for this leaf. It is not GPT-6 Pro inference. Preserve the research protocol and exact report IDs.\\n\\nENGLISH_ONLY: Write all internal research prose, fields, and messages in English. Preserve mathematical notation.\\n\\nYou are one persistent GPT-6 Extra High experimental research leaf. Perform exactly one round of the exact task your Extra High parent assigned to this node and round. Use the supplied durable research state when earlier conversation context is missing. State assumptions, pursue a proof, counterexample, or rigorous partial result, and distinguish evidence from conjecture. An unsuccessful attempt must still produce a report.\\n\\nReturn one JSON object matching OUTPUT_SCHEMA_JSON, without Markdown fences or surrounding text. Copy node_id and round_id exactly from CONTEXT_JSON. Include status (SOLVED, PARTIAL, or STUCK), summary, findings, evidence, obstacles, recommended_next_steps, split_suggestion, and important_update. Include rigorous mathematical details in evidence; do not claim independent verification merely because you produced a proof. Use empty lists when appropriate. A split_suggestion only proposes tasks; it cannot create children or change the tree.\\n\\nThis report is mandatory even when stuck, interrupted by a mathematical obstacle, or solved. The scheduler stores it and delivers it to your parent, with human review if enabled. Stop after this one report. Your parent must assess it and create a complete new prompt before you may research again. Never select or start your own next round, never treat human discussion as approval, and never bypass the stored prompt/report approval gates.\\n\\nCONTEXT_JSON\\n{\\\"goal\\\": \\\"Elementary finite-sum investigation: establish sharpness through an independent algebraic proof, verify all endpoint terms and exceptional cases, and develop elementary stability bounds without relying on spectral decomposition.\\\", \\\"kind\\\": \\\"leaf\\\", \\\"node_id\\\": \\\"n-952ae628fa68\\\", \\\"research_state\\\": \\\"\\\", \\\"round_id\\\": \\\"n-952ae628fa68-r000001\\\", \\\"task\\\": \\\"ROUND 1 OF A PLANNED THREE-ROUND ELEMENTARY INVESTIGATION.\\\\n\\\\nAssumptions: N is an arbitrary integer N >= 2, and x_0,...,x_N are real with x_0 = x_N = 0. Write S(x) = sum_{j=1}^{N-1} x_j^2 and E(x) = sum_{j=0}^{N-1} (x_{j+1}-x_j)^2.\\\\n\\\\nObjective for this round: Find a rigorous elementary finite-sum proof of the optimal inequality S(x) <= C_N E(x), establish sharpness independently of a general matrix eigenvalue theorem, characterize equality, and verify the treatment of both boundaries and all exceptional small-N cases.\\\\n\\\\nSuggested concrete approach to investigate: Define w_j = sin(pi*j/N), positive for 1 <= j <= N-1 and zero at both endpoints. From elementary trigonometric identities, derive the second-difference relation for w. Attempt to prove the exact ground-state-transform identity\\\\n\\\\nE(x) - 4 sin^2(pi/(2*N)) S(x) = sum_{j=1}^{N-2} w_j*w_{j+1}*(x_{j+1}/w_{j+1}-x_j/w_j)^2.\\\\n\\\\nDo not assume this identity without proving it. Expand both sides and account explicitly for the endpoint edges (0,1) and (N-1,N). Avoid undefined ratios at j = 0 and j = N. Explain how positivity proves the proposed sharp constant, and separately verify sharpness by substituting the explicit sine sequence into the original finite sums. Determine every equality case, including N = 2, for which the displayed sum on the right is empty.\\\\n\\\\nIf the proposed transform cannot be established, pursue another elementary summation, completion-of-squares, or weighted Cauchy-Schwarz proof. Report any gap accurately rather than asserting the identity without justification.\\\\n\\\\nPlanned subsequent rounds: Round 2 will construct a quantitative stability estimate using only elementary weighted finite sums, telescoping, and Cauchy-Schwarz. One possible route is to set y_j = x_j/w_j and estimate its weighted variance by its weighted neighboring differences. Round 3 will audit the constants and all boundary conventions, compare the result with the spectral approach, and analyze possible equality or degeneracy in the stability estimate. Do not carry out those later rounds now.\\\\n\\\\nReport requirements: Produce one concise complete report, preferably below 1200 words, including assumptions, explicit algebraic derivations, equality and sharpness arguments, edge-case verification, obstacles if any, and specific next steps for Round 2. Clearly separate proof from conjecture. Do not use external data or execute software. Do not claim independent verification. Stop after this one round.\\\"}\\nOUTPUT_SCHEMA_JSON\\n{\\\"additionalProperties\\\": false, \\\"properties\\\": {\\\"evidence\\\": {\\\"minLength\\\": 1, \\\"title\\\": \\\"Evidence\\\", \\\"type\\\": \\\"string\\\"}, \\\"findings\\\": {\\\"items\\\": {\\\"type\\\": \\\"string\\\"}, \\\"title\\\": \\\"Findings\\\", \\\"type\\\": \\\"array\\\"}, \\\"important_update\\\": {\\\"default\\\": false, \\\"title\\\": \\\"Important Update\\\", \\\"type\\\": \\\"boolean\\\"}, \\\"node_id\\\": {\\\"minLength\\\": 1, \\\"title\\\": \\\"Node Id\\\", \\\"type\\\": \\\"string\\\"}, \\\"obstacles\\\": {\\\"items\\\": {\\\"type\\\": \\\"string\\\"}, \\\"title\\\": \\\"Obstacles\\\", \\\"type\\\": \\\"array\\\"}, \\\"recommended_next_steps\\\": {\\\"items\\\": {\\\"type\\\": \\\"string\\\"}, \\\"title\\\": \\\"Recommended Next Steps\\\", \\\"type\\\": \\\"array\\\"}, \\\"round_id\\\": {\\\"minLength\\\": 1, \\\"title\\\": \\\"Round Id\\\", \\\"type\\\": \\\"string\\\"}, \\\"split_suggestion\\\": {\\\"items\\\": {\\\"type\\\": \\\"string\\\"}, \\\"title\\\": \\\"Split Suggestion\\\", \\\"type\\\": \\\"array\\\"}, \\\"status\\\": {\\\"enum\\\": [\\\"SOLVED\\\", \\\"PARTIAL\\\", \\\"STUCK\\\"], \\\"title\\\": \\\"Status\\\", \\\"type\\\": \\\"string\\\"}, \\\"summary\\\": {\\\"minLength\\\": 1, \\\"title\\\": \\\"Summary\\\", \\\"type\\\": \\\"string\\\"}}, \\\"required\\\": [\\\"node_id\\\", \\\"round_id\\\", \\\"status\\\", \\\"summary\\\", \\\"findings\\\", \\\"evidence\\\", \\\"obstacles\\\", \\\"recommended_next_steps\\\"], \\\"title\\\": \\\"LeafRoundReport\\\", \\\"type\\\": \\\"object\\\"}\",\"\",\"\",\"stopped\",false,false,false,\"none\",\"final\",\"{\\n\\\"node_id\\\": \\\"n-952ae628fa68\\\",\\n\\\"round_id\\\": \\\"n-952ae628fa68-r000001\\\",\\n\\\"status\\\": \\\"SOLVED\\\",\\n\\\"summary\\\": \\\"Established the sharp discrete Dirichlet Poincar\u00e9 inequality S(x) <= C_N E(x), with optimal constant C_N = 1/[4 sin\u00b2(\u03c0/(2N))], using an elementary ground-state-transform identity. The identity is proved by direct finite-sum expansion, including both boundary edges. Equality holds precisely for x_j = c sin(\u03c0j/N), where c is any real constant. Sharpness is independently confirmed by evaluating the original sums for the sine sequence. The exceptional cases N = 2 and N = 3 are verified explicitly. No spectral decomposition or general matrix eigenvalue theorem is used.\\\",\\n\\\"findings\\\": [\\n\\\"For every integer N >= 2, the optimal constant is C_N = 1/[2 - 2 cos(\u03c0/N)] = 1/[4 sin\u00b2(\u03c0/(2N))].\\\",\\n\\\"Writing \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8, and w_j = sin(j\u03b8), the exact identity is E(x) - \u03bb S(x) = \u03a3_{j=1}^{N-2} w_j w_{j+1}(x_{j+1}/w_{j+1} - x_j/w_j)\u00b2.\\\",\\n\\\"All terms on the right are nonnegative because w_j > 0 for 1 <= j <= N-1.\\\",\\n\\\"Equality holds if and only if x_j = c w_j for all 1 <= j <= N-1, including c = 0.\\\",\\n\\\"The sine sequence satisfies S(w) = N/2 and E(w) = 2N sin\u00b2(\u03c0/(2N)), proving optimality directly.\\\",\\n\\\"For N = 2, the transformed sum is empty, the identity reduces to E(x) = 2S(x), and every admissible sequence is an equality case.\\\",\\n\\\"For N = 3, the identity reduces to E(x) - S(x) = (x_2 - x_1)\u00b2, with equality precisely when x_1 = x_2.\\\"\\n],\\n\\\"evidence\\\": \\\"ASSUMPTIONS AND NOTATION.\\\\nLet N >= 2 be an integer, let x_0 = x_N = 0, and define S(x) = \u03a3_{j=1}^{N-1} x_j\u00b2 and E(x) = \u03a3_{j=0}^{N-1}(x_{j+1} - x_j)\u00b2. Set \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8 = 4 sin\u00b2(\u03b8/2), and w_j = sin(j\u03b8). Then w_0 = w_N = 0, while w_j > 0 for 1 <= j <= N-1. The elementary sine addition formula gives w_{j-1} + w_{j+1} = 2 cos \u03b8 \u00b7 w_j for every 1 <= j <= N-1, including the two boundary-adjacent indices.\\\\n\\\\nSTEP 1: DIRECT EXPANSION OF THE ORIGINAL ENERGY.\\\\nExpanding each square gives E(x) = \u03a3_{j=0}^{N-1}(x_j\u00b2 + x_{j+1}\u00b2 - 2x_j x_{j+1}) = 2\u03a3_{j=1}^{N-1}x_j\u00b2 - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}. The coefficient 2 at each interior vertex includes both adjacent edges. In particular, the boundary edges (0,1) and (N-1,N) contribute x_1\u00b2 and x_{N-1}\u00b2, respectively. When N = 2, these are distinct edges incident to the same interior vertex, producing E(x) = 2x_1\u00b2. Therefore E(x) - \u03bbS(x) = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}.\\\\n\\\\nSTEP 2: PROOF OF THE GROUND-STATE-TRANSFORM IDENTITY.\\\\nDefine y_j = x_j/w_j only for 1 <= j <= N-1. These ratios are well-defined; no ratio at j = 0 or j = N is introduced. Let R = \u03a3_{j=1}^{N-2}w_j w_{j+1}(y_{j+1} - y_j)\u00b2. Direct expansion yields R = \u03a3_{j=1}^{N-2}[(w_{j+1}/w_j)x_j\u00b2 + (w_j/w_{j+1})x_{j+1}\u00b2 - 2x_j x_{j+1}]. For a fixed k with 1 <= k <= N-1, the coefficient of x_k\u00b2 is (w_{k-1} + w_{k+1})/w_k, where the unavailable boundary-edge contributions are zero because w_0 = w_N = 0. This formula remains valid for N = 2: the sum is empty, and the coefficient equals (w_0 + w_2)/w_1 = 0. Applying the sine recurrence, each diagonal coefficient becomes 2 cos \u03b8. Consequently R = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1} = E(x) - \u03bbS(x). This proves the proposed exact identity for every N >= 2 without omitted endpoint terms.\\\\n\\\\nSTEP 3: INEQUALITY AND COMPLETE EQUALITY CHARACTERIZATION.\\\\nEvery weight w_j w_{j+1} in R is strictly positive, so R >= 0. Hence E(x) >= \u03bbS(x). Since \u03bb > 0, this is S(x) <= E(x)/\u03bb. When N >= 3, R = 0 exactly when y_{j+1} = y_j for every 1 <= j <= N-2. The interior indices form a connected chain, so y_1 = \u00b7\u00b7\u00b7 = y_{N-1} = c, implying x_j = c sin(j\u03b8). Conversely, every such sequence makes all the squared differences vanish. When N = 2, the chain has one vertex, so every admissible x_1 is automatically of the form c w_1 because w_1 = 1. Thus the same equality characterization holds for all N >= 2.\\\\n\\\\nSTEP 4: INDEPENDENT DIRECT SHARPNESS CHECK.\\\\nSubstitute x_j = w_j = sin(j\u03b8) into the original sums. The elementary identity 2 sin \u03b8 cos(2j\u03b8) = sin((2j+1)\u03b8) - sin((2j-1)\u03b8) telescopes over j = 0,...,N-1 to give \u03a3_{j=0}^{N-1}cos(2j\u03b8) = 0. Therefore S(w) = \u03a3_{j=1}^{N-1}sin\u00b2(j\u03b8) = N/2. Next, w_{j+1} - w_j = 2 sin(\u03b8/2) cos((j+1/2)\u03b8). The identity 2 sin \u03b8 cos((2j+1)\u03b8) = sin((2j+2)\u03b8) - sin(2j\u03b8) likewise telescopes to \u03a3_{j=0}^{N-1}cos((2j+1)\u03b8) = 0. Hence \u03a3_{j=0}^{N-1}cos\u00b2((j+1/2)\u03b8) = N/2, giving E(w) = 4 sin\u00b2(\u03b8/2)\u00b7N/2 = 2N sin\u00b2(\u03b8/2) = \u03bbN/2. Thus S(w)/E(w) = 1/\u03bb = C_N. Since w is nonzero, no smaller constant can work. This calculation uses only the original finite sums and elementary trigonometric identities.\\\\n\\\\nSTEP 5: SMALL-N AUDIT.\\\\nFor N = 2, \u03b8 = \u03c0/2, \u03bb = 2, w_1 = 1, S(x) = x_1\u00b2, and E(x) = (x_1 - 0)\u00b2 + (0 - x_1)\u00b2 = 2x_1\u00b2. The right side of the transform is the empty sum, hence zero, exactly as required. The optimal constant is 1/2, with equality for all x_1. For N = 3, \u03b8 = \u03c0/3, \u03bb = 1, and w_1 = w_2 = \u221a3/2. Directly, E(x) = x_1\u00b2 + (x_2 - x_1)\u00b2 + x_2\u00b2, so E(x) - S(x) = (x_2 - x_1)\u00b2. The single term of the transform equals w_1w_2(x_2/w_2 - x_1/w_1)\u00b2 = (x_2 - x_1)\u00b2. Equality means x_1 = x_2, exactly the sine-profile condition. All conventions are therefore consistent.\\\",\\n\\\"obstacles\\\": [],\\n\\\"recommended_next_steps\\\": [\\n\\\"Round 2: Introduce y_j = x_j/w_j and the weighted mean m = [\u03a3_{j=1}^{N-1}w_j\u00b2y_j]/[\u03a3_{j=1}^{N-1}w_j\u00b2]. Establish an explicit elementary estimate \u03a3_{j=1}^{N-1}w_j\u00b2(y_j - m)\u00b2 <= K_N \u03a3_{j=1}^{N-2}w_jw_{j+1}(y_{j+1} - y_j)\u00b2 using telescoping and Cauchy-Schwarz.\\\",\\n\\\"Express the resulting inequality as a stability estimate for the distance from x to the one-dimensional family c sin(\u03c0j/N), with a quantitative remainder controlled by E(x) - \u03bbS(x).\\\",\\n\\\"Identify the N-dependence of the elementary stability constant K_N and establish finite bounds without invoking spectral decomposition.\\\",\\n\\\"Treat N = 2 separately in the stability estimate, since every admissible vector is already an equality profile; examine N = 3 as the first nontrivial stability case.\\\",\\n\\\"Reserve optimality of the stability coefficient, comparison with the spectral gap, and detailed boundary-convention audits for Round 3.\\\"\\n],\\n\\\"split_suggestion\\\": [],\\n\\\"important_update\\\": true\\n}\",\"\",\"\",[],[],[{\"index\":0,\"type\":\"paragraph\",\"tag\":\"p\",\"markdown\":\"{\\n\\\"node_id\\\": \\\"n-952ae628fa68\\\",\\n\\\"round_id\\\": \\\"n-952ae628fa68-r000001\\\",\\n\\\"status\\\": \\\"SOLVED\\\",\\n\\\"summary\\\": \\\"Established the sharp discrete Dirichlet Poincar\u00e9 inequality S(x) <= C_N E(x), with optimal constant C_N = 1/[4 sin\u00b2(\u03c0/(2N))], using an elementary ground-state-transform identity. The identity is proved by direct finite-sum expansion, including both boundary edges. Equality holds precisely for x_j = c sin(\u03c0j/N), where c is any real constant. Sharpness is independently confirmed by evaluating the original sums for the sine sequence. The exceptional cases N = 2 and N = 3 are verified explicitly. No spectral decomposition or general matrix eigenvalue theorem is used.\\\",\\n\\\"findings\\\": [\\n\\\"For every integer N >= 2, the optimal constant is C_N = 1/[2 - 2 cos(\u03c0/N)] = 1/[4 sin\u00b2(\u03c0/(2N))].\\\",\\n\\\"Writing \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8, and w_j = sin(j\u03b8), the exact identity is E(x) - \u03bb S(x) = \u03a3_{j=1}^{N-2} w_j w_{j+1}(x_{j+1}/w_{j+1} - x_j/w_j)\u00b2.\\\",\\n\\\"All terms on the right are nonnegative because w_j > 0 for 1 <= j <= N-1.\\\",\\n\\\"Equality holds if and only if x_j = c w_j for all 1 <= j <= N-1, including c = 0.\\\",\\n\\\"The sine sequence satisfies S(w) = N/2 and E(w) = 2N sin\u00b2(\u03c0/(2N)), proving optimality directly.\\\",\\n\\\"For N = 2, the transformed sum is empty, the identity reduces to E(x) = 2S(x), and every admissible sequence is an equality case.\\\",\\n\\\"For N = 3, the identity reduces to E(x) - S(x) = (x_2 - x_1)\u00b2, with equality precisely when x_1 = x_2.\\\"\\n],\\n\\\"evidence\\\": \\\"ASSUMPTIONS AND NOTATION.\\\\nLet N >= 2 be an integer, let x_0 = x_N = 0, and define S(x) = \u03a3_{j=1}^{N-1} x_j\u00b2 and E(x) = \u03a3_{j=0}^{N-1}(x_{j+1} - x_j)\u00b2. Set \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8 = 4 sin\u00b2(\u03b8/2), and w_j = sin(j\u03b8). Then w_0 = w_N = 0, while w_j > 0 for 1 <= j <= N-1. The elementary sine addition formula gives w_{j-1} + w_{j+1} = 2 cos \u03b8 \u00b7 w_j for every 1 <= j <= N-1, including the two boundary-adjacent indices.\\\\n\\\\nSTEP 1: DIRECT EXPANSION OF THE ORIGINAL ENERGY.\\\\nExpanding each square gives E(x) = \u03a3_{j=0}^{N-1}(x_j\u00b2 + x_{j+1}\u00b2 - 2x_j x_{j+1}) = 2\u03a3_{j=1}^{N-1}x_j\u00b2 - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}. The coefficient 2 at each interior vertex includes both adjacent edges. In particular, the boundary edges (0,1) and (N-1,N) contribute x_1\u00b2 and x_{N-1}\u00b2, respectively. When N = 2, these are distinct edges incident to the same interior vertex, producing E(x) = 2x_1\u00b2. Therefore E(x) - \u03bbS(x) = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}.\\\\n\\\\nSTEP 2: PROOF OF THE GROUND-STATE-TRANSFORM IDENTITY.\\\\nDefine y_j = x_j/w_j only for 1 <= j <= N-1. These ratios are well-defined; no ratio at j = 0 or j = N is introduced. Let R = \u03a3_{j=1}^{N-2}w_j w_{j+1}(y_{j+1} - y_j)\u00b2. Direct expansion yields R = \u03a3_{j=1}^{N-2}[(w_{j+1}/w_j)x_j\u00b2 + (w_j/w_{j+1})x_{j+1}\u00b2 - 2x_j x_{j+1}]. For a fixed k with 1 <= k <= N-1, the coefficient of x_k\u00b2 is (w_{k-1} + w_{k+1})/w_k, where the unavailable boundary-edge contributions are zero because w_0 = w_N = 0. This formula remains valid for N = 2: the sum is empty, and the coefficient equals (w_0 + w_2)/w_1 = 0. Applying the sine recurrence, each diagonal coefficient becomes 2 cos \u03b8. Consequently R = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1} = E(x) - \u03bbS(x). This proves the proposed exact identity for every N >= 2 without omitted endpoint terms.\\\\n\\\\nSTEP 3: INEQUALITY AND COMPLETE EQUALITY CHARACTERIZATION.\\\\nEvery weight w_j w_{j+1} in R is strictly positive, so R >= 0. Hence E(x) >= \u03bbS(x). Since \u03bb > 0, this is S(x) <= E(x)/\u03bb. When N >= 3, R = 0 exactly when y_{j+1} = y_j for every 1 <= j <= N-2. The interior indices form a connected chain, so y_1 = \u00b7\u00b7\u00b7 = y_{N-1} = c, implying x_j = c sin(j\u03b8). Conversely, every such sequence makes all the squared differences vanish. When N = 2, the chain has one vertex, so every admissible x_1 is automatically of the form c w_1 because w_1 = 1. Thus the same equality characterization holds for all N >= 2.\\\\n\\\\nSTEP 4: INDEPENDENT DIRECT SHARPNESS CHECK.\\\\nSubstitute x_j = w_j = sin(j\u03b8) into the original sums. The elementary identity 2 sin \u03b8 cos(2j\u03b8) = sin((2j+1)\u03b8) - sin((2j-1)\u03b8) telescopes over j = 0,...,N-1 to give \u03a3_{j=0}^{N-1}cos(2j\u03b8) = 0. Therefore S(w) = \u03a3_{j=1}^{N-1}sin\u00b2(j\u03b8) = N/2. Next, w_{j+1} - w_j = 2 sin(\u03b8/2) cos((j+1/2)\u03b8). The identity 2 sin \u03b8 cos((2j+1)\u03b8) = sin((2j+2)\u03b8) - sin(2j\u03b8) likewise telescopes to \u03a3_{j=0}^{N-1}cos((2j+1)\u03b8) = 0. Hence \u03a3_{j=0}^{N-1}cos\u00b2((j+1/2)\u03b8) = N/2, giving E(w) = 4 sin\u00b2(\u03b8/2)\u00b7N/2 = 2N sin\u00b2(\u03b8/2) = \u03bbN/2. Thus S(w)/E(w) = 1/\u03bb = C_N. Since w is nonzero, no smaller constant can work. This calculation uses only the original finite sums and elementary trigonometric identities.\\\\n\\\\nSTEP 5: SMALL-N AUDIT.\\\\nFor N = 2, \u03b8 = \u03c0/2, \u03bb = 2, w_1 = 1, S(x) = x_1\u00b2, and E(x) = (x_1 - 0)\u00b2 + (0 - x_1)\u00b2 = 2x_1\u00b2. The right side of the transform is the empty sum, hence zero, exactly as required. The optimal constant is 1/2, with equality for all x_1. For N = 3, \u03b8 = \u03c0/3, \u03bb = 1, and w_1 = w_2 = \u221a3/2. Directly, E(x) = x_1\u00b2 + (x_2 - x_1)\u00b2 + x_2\u00b2, so E(x) - S(x) = (x_2 - x_1)\u00b2. The single term of the transform equals w_1w_2(x_2/w_2 - x_1/w_1)\u00b2 = (x_2 - x_1)\u00b2. Equality means x_1 = x_2, exactly the sine-profile condition. All conventions are therefore consistent.\\\",\\n\\\"obstacles\\\": [],\\n\\\"recommended_next_steps\\\": [\\n\\\"Round 2: Introduce y_j = x_j/w_j and the weighted mean m = [\u03a3_{j=1}^{N-1}w_j\u00b2y_j]/[\u03a3_{j=1}^{N-1}w_j\u00b2]. Establish an explicit elementary estimate \u03a3_{j=1}^{N-1}w_j\u00b2(y_j - m)\u00b2 <= K_N \u03a3_{j=1}^{N-2}w_jw_{j+1}(y_{j+1} - y_j)\u00b2 using telescoping and Cauchy-Schwarz.\\\",\\n\\\"Express the resulting inequality as a stability estimate for the distance from x to the one-dimensional family c sin(\u03c0j/N), with a quantitative remainder controlled by E(x) - \u03bbS(x).\\\",\\n\\\"Identify the N-dependence of the elementary stability constant K_N and establish finite bounds without invoking spectral decomposition.\\\",\\n\\\"Treat N = 2 separately in the stability estimate, since every admissible vector is already an equality profile; examine N = 3 as the first nontrivial stability case.\\\",\\n\\\"Reserve optimality of the stability coefficient, comparison with the spectral gap, and detailed boundary-convention audits for Round 3.\\\"\\n],\\n\\\"split_suggestion\\\": [],\\n\\\"important_update\\\": true\\n}\",\"text\":\"{\\n\\\"node_id\\\": \\\"n-952ae628fa68\\\",\\n\\\"round_id\\\": \\\"n-952ae628fa68-r000001\\\",\\n\\\"status\\\": \\\"SOLVED\\\",\\n\\\"summary\\\": \\\"Established the sharp discrete Dirichlet Poincar\u00e9 inequality S(x) <= C_N E(x), with optimal constant C_N = 1/[4 sin\u00b2(\u03c0/(2N))], using an elementary ground-state-transform identity. The identity is proved by direct finite-sum expansion, including both boundary edges. Equality holds precisely for x_j = c sin(\u03c0j/N), where c is any real constant. Sharpness is independently confirmed by evaluating the original sums for the sine sequence. The exceptional cases N = 2 and N = 3 are verified explicitly. No spectral decomposition or general matrix eigenvalue theorem is used.\\\",\\n\\\"findings\\\": [\\n\\\"For every integer N >= 2, the optimal constant is C_N = 1/[2 - 2 cos(\u03c0/N)] = 1/[4 sin\u00b2(\u03c0/(2N))].\\\",\\n\\\"Writing \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8, and w_j = sin(j\u03b8), the exact identity is E(x) - \u03bb S(x) = \u03a3_{j=1}^{N-2} w_j w_{j+1}(x_{j+1}/w_{j+1} - x_j/w_j)\u00b2.\\\",\\n\\\"All terms on the right are nonnegative because w_j > 0 for 1 <= j <= N-1.\\\",\\n\\\"Equality holds if and only if x_j = c w_j for all 1 <= j <= N-1, including c = 0.\\\",\\n\\\"The sine sequence satisfies S(w) = N/2 and E(w) = 2N sin\u00b2(\u03c0/(2N)), proving optimality directly.\\\",\\n\\\"For N = 2, the transformed sum is empty, the identity reduces to E(x) = 2S(x), and every admissible sequence is an equality case.\\\",\\n\\\"For N = 3, the identity reduces to E(x) - S(x) = (x_2 - x_1)\u00b2, with equality precisely when x_1 = x_2.\\\"\\n],\\n\\\"evidence\\\": \\\"ASSUMPTIONS AND NOTATION.\\\\nLet N >= 2 be an integer, let x_0 = x_N = 0, and define S(x) = \u03a3_{j=1}^{N-1} x_j\u00b2 and E(x) = \u03a3_{j=0}^{N-1}(x_{j+1} - x_j)\u00b2. Set \u03b8 = \u03c0/N, \u03bb = 2 - 2 cos \u03b8 = 4 sin\u00b2(\u03b8/2), and w_j = sin(j\u03b8). Then w_0 = w_N = 0, while w_j > 0 for 1 <= j <= N-1. The elementary sine addition formula gives w_{j-1} + w_{j+1} = 2 cos \u03b8 \u00b7 w_j for every 1 <= j <= N-1, including the two boundary-adjacent indices.\\\\n\\\\nSTEP 1: DIRECT EXPANSION OF THE ORIGINAL ENERGY.\\\\nExpanding each square gives E(x) = \u03a3_{j=0}^{N-1}(x_j\u00b2 + x_{j+1}\u00b2 - 2x_j x_{j+1}) = 2\u03a3_{j=1}^{N-1}x_j\u00b2 - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}. The coefficient 2 at each interior vertex includes both adjacent edges. In particular, the boundary edges (0,1) and (N-1,N) contribute x_1\u00b2 and x_{N-1}\u00b2, respectively. When N = 2, these are distinct edges incident to the same interior vertex, producing E(x) = 2x_1\u00b2. Therefore E(x) - \u03bbS(x) = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1}.\\\\n\\\\nSTEP 2: PROOF OF THE GROUND-STATE-TRANSFORM IDENTITY.\\\\nDefine y_j = x_j/w_j only for 1 <= j <= N-1. These ratios are well-defined; no ratio at j = 0 or j = N is introduced. Let R = \u03a3_{j=1}^{N-2}w_j w_{j+1}(y_{j+1} - y_j)\u00b2. Direct expansion yields R = \u03a3_{j=1}^{N-2}[(w_{j+1}/w_j)x_j\u00b2 + (w_j/w_{j+1})x_{j+1}\u00b2 - 2x_j x_{j+1}]. For a fixed k with 1 <= k <= N-1, the coefficient of x_k\u00b2 is (w_{k-1} + w_{k+1})/w_k, where the unavailable boundary-edge contributions are zero because w_0 = w_N = 0. This formula remains valid for N = 2: the sum is empty, and the coefficient equals (w_0 + w_2)/w_1 = 0. Applying the sine recurrence, each diagonal coefficient becomes 2 cos \u03b8. Consequently R = 2 cos \u03b8 \u00b7 S(x) - 2\u03a3_{j=1}^{N-2}x_j x_{j+1} = E(x) - \u03bbS(x). This proves the proposed exact identity for every N >= 2 without omitted endpoint terms.\\\\n\\\\nSTEP 3: INEQUALITY AND COMPLETE EQUALITY CHARACTERIZATION.\\\\nEvery weight w_j w_{j+1} in R is strictly positive, so R >= 0. Hence E(x) >= \u03bbS(x). Since \u03bb > 0, this is S(x) <= E(x)/\u03bb. When N >= 3, R = 0 exactly when y_{j+1} = y_j for every 1 <= j <= N-2. The interior indices form a connected chain, so y_1 = \u00b7\u00b7\u00b7 = y_{N-1} = c, implying x_j = c sin(j\u03b8). Conversely, every such sequence makes all the squared differences vanish. When N = 2, the chain has one vertex, so every admissible x_1 is automatically of the form c w_1 because w_1 = 1. Thus the same equality characterization holds for all N >= 2.\\\\n\\\\nSTEP 4: INDEPENDENT DIRECT SHARPNESS CHECK.\\\\nSubstitute x_j = w_j = sin(j\u03b8) into the original sums. The elementary identity 2 sin \u03b8 cos(2j\u03b8) = sin((2j+1)\u03b8) - sin((2j-1)\u03b8) telescopes over j = 0,...,N-1 to give \u03a3_{j=0}^{N-1}cos(2j\u03b8) = 0. Therefore S(w) = \u03a3_{j=1}^{N-1}sin\u00b2(j\u03b8) = N/2. Next, w_{j+1} - w_j = 2 sin(\u03b8/2) cos((j+1/2)\u03b8). The identity 2 sin \u03b8 cos((2j+1)\u03b8) = sin((2j+2)\u03b8) - sin(2j\u03b8) likewise telescopes to \u03a3_{j=0}^{N-1}cos((2j+1)\u03b8) = 0. Hence \u03a3_{j=0}^{N-1}cos\u00b2((j+1/2)\u03b8) = N/2, giving E(w) = 4 sin\u00b2(\u03b8/2)\u00b7N/2 = 2N sin\u00b2(\u03b8/2) = \u03bbN/2. Thus S(w)/E(w) = 1/\u03bb = C_N. Since w is nonzero, no smaller constant can work. This calculation uses only the original finite sums and elementary trigonometric identities.\\\\n\\\\nSTEP 5: SMALL-N AUDIT.\\\\nFor N = 2, \u03b8 = \u03c0/2, \u03bb = 2, w_1 = 1, S(x) = x_1\u00b2, and E(x) = (x_1 - 0)\u00b2 + (0 - x_1)\u00b2 = 2x_1\u00b2. The right side of the transform is the empty sum, hence zero, exactly as required. The optimal constant is 1/2, with equality for all x_1. For N = 3, \u03b8 = \u03c0/3, \u03bb = 1, and w_1 = w_2 = \u221a3/2. Directly, E(x) = x_1\u00b2 + (x_2 - x_1)\u00b2 + x_2\u00b2, so E(x) - S(x) = (x_2 - x_1)\u00b2. The single term of the transform equals w_1w_2(x_2/w_2 - x_1/w_1)\u00b2 = (x_2 - x_1)\u00b2. Equality means x_1 = x_2, exactly the sine-profile condition. All conventions are therefore consistent.\\\",\\n\\\"obstacles\\\": [],\\n\\\"recommended_next_steps\\\": [\\n\\\"Round 2: Introduce y_j = x_j/w_j and the weighted mean m = [\u03a3_{j=1}^{N-1}w_j\u00b2y_j]/[\u03a3_{j=1}^{N-1}w_j\u00b2]. Establish an explicit elementary estimate \u03a3_{j=1}^{N-1}w_j\u00b2(y_j - m)\u00b2 <= K_N \u03a3_{j=1}^{N-2}w_jw_{j+1}(y_{j+1} - y_j)\u00b2 using telescoping and Cauchy-Schwarz.\\\",\\n\\\"Express the resulting inequality as a stability estimate for the distance from x to the one-dimensional family c sin(\u03c0j/N), with a quantitative remainder controlled by E(x) - \u03bbS(x).\\\",\\n\\\"Identify the N-dependence of the elementary stability constant K_N and establish finite bounds without invoking spectral decomposition.\\\",\\n\\\"Treat N = 2 separately in the stability estimate, since every admissible vector is already an equality profile; examine N = 3 as the first nontrivial stability case.\\\",\\n\\\"Reserve optimality of the stability coefficient, comparison with the spectral gap, and detailed boundary-convention audits for Round 3.\\\"\\n],\\n\\\"split_suggestion\\\": [],\\n\\\"important_update\\\": true\\n}\",\"inlineCode\":[],\"diagnostic\":{\"sourceRoot\":\"div.my-4 > div > div.relative.PortalBoundary-TFj9W2:nth-of-type(2) > div.DilRenderer-tB76Jj.DilResponseRoot-HfQrEh > p.TextBase-hXhSqg.Text-lIMP0_\",\"domContext\":\"<p class=\\\"TextBase-hXhSqg Text-lIMP0_\\\"><span>{\\n  </span><span>\\\"node_id\\\": </span><span>\\\"n-952ae628fa68\\\",\\n  </span><span>\\\"round_id\\\": </span><span>\\\"n-952ae628fa68-r000001\\\",\\n  </span><span>\\\"status\\\": </span><span>\\\"SOLVED\\\",\\n  </span><span>\\\"summary\\\": </span><span>\\\"Established </span><span>the </span><span>sharp </span><span>discrete </span><span>Dirichlet </span><span>Poincar\u00e9 </span><span>inequality </span><span>S(x) </span><span>&lt;= </span><span>C_N </span><span>E(x), </span><span>with </span><span>optimal </span><span>constant </span><span>C_N </span><span>= </span><span>1/[4 </span><span>sin\u00b2(\u03c0/(2N))], </span><span>using </span><span>an </span><span>elementary </span><span>ground-state-transform </span><span>identity. </span><span>The </span><span>identity </span><span>is </span><span>proved </span><span>by </span><span>direct </span><span>finite-sum </span><span>expansion, </span><span>including </span><span>both </span><span>boundary </span><span>edges. </span><span>Equality </span><span>holds </span><span>precisely </span><span>for </span><span>x_j </span><span>= </span><span>c </span><span>sin(\u03c0j/N), </span><span>where </span><span>c </span><span>is </span><span>any </span><span>real </span><span>constant. </span><span>Sharpness </span><span>is </span><span>independently </span><span>confirmed </span><span>by </span><span>evaluating </span><span>the </span><span>original </span><span>sums </span><span>for </span><span>the </span><span>sine </span><span>sequence. </span><span>The </span><span>exceptional </span><span>cases </span><span>N </span><span>= </span><span>2 </span><span>and </span><span>N </span><span>= </span><span>3 </span><span>are </span><span>verified </span><span>explicitly. </span><span>No </span><span>spectral </span><span>decomposition </span><span>or </span><span>general </span><span>matrix </span><span>eigenvalue </span><span>theorem </span><span>is </span><span>used.\\\",\\n  </span><span>\\\"findings\\\": </span><span>[\\n    </span><span>\\\"For </span><span>every </span><span>integer </span><span>N </span><span>&gt;= </span><span>2, </span><span>the </span><span>optimal </span><span>constant </span><span>is </span><span>C_N </span><span>= </span><span>1/[2 </span><span>- </span><span>2 </span><span>cos(\u03c0/N)] </span><span>= </span><span>1/[4 </span><span>sin\u00b2(\u03c0/(2N))].\\\",\\n    </span><span>\\\"Writing </span><span>\u03b8 </span><span>= </span><span>\u03c0/N, </span><span>\u03bb </span><span>= </span><span>2 </span><span>- </span><span>2 </span><span>cos </span><span>\u03b8, </span><span>and </span><span>w_j </span><span>= </span><span>sin(j\u03b8), </span><span>the </span><span>exact </span><span>identity </span><span>is </span><span>E(x) </span><span>- </span><span>\u03bb </span><span>S(x) </span><span>= </span><span>\u03a3_{j=1}^{N-2} </span><span>w_j </span><span>w_{j+1}(x_{j+1}/w_{j+1} </span><span>- </span><span>x_j/w_j)\u00b2.\\\",\\n    </span><span>\\\"All </span><span>terms </span><span>on </span><span>the </span><span>right </span><span>are </span><span>nonnegative </span><span>because </span><span>w_j </span><span>&gt; </span><span>0 </span><span>for </span><span>1 </span><span>&lt;= </span><span>j </span><span>&lt;= </span><span>N-1.\\\",\\n    </span><span>\\\"Equality </span><span>holds </span><span>if </span><span>and </span><span>only </span><span>if </span><span>x_j </span><span>= </span><span>c </span><span>w_j </span><span>for </span><span>all </span><span>1 </span><span>&lt;= </span><span>j </span><span>&lt;= </span><span>N-1, </span><span>including </span><span>c </span><span>= </span><span>0.\\\",\\n    </span><span>\\\"The </span><span>sine </span><span>sequence </span><span>satisfies </span><span>S(w) </span><span>= </span><span>N/2 </span><span>and </span><span>E(w) </span><span>= </span><span>2N </span><span>sin\u00b2(\u03c0/(2N)), </span><span>proving </span><span>optimality </span><span>directly.\\\",\\n    </span><span>\\\"For </span><span>N </span><span>= </span><span>2, </span><span>the </span><span>transformed </span><span>sum </span><span>is </span><span>empty, </span><span>the </span><span>identity </span><span>reduces </span><span>to </span><span>E(x) </span><span>= </span><span>2S(x), </span><span>and </span><span>every </span><span>admissible </span><span>sequence </span><span>is </span><span>an </span><span>equality </span><span>case.\\\",\\n    </span><span>\\\"For </span><span>N </span><span>= </span><span>3, </span><span>the </span><span>identity </span><span>reduces </span><span>to </span><span>E(x) </span><span>- </span><span>S(x) </span><span>= </span><span>(x_2 </span><span>- </span><span>x_1)\u00b2, </span><span>with </span><span>equality </span><span>precisely </span><span>when </span><span>x_1 </span><span>= </span><span>x_2.\\\"\\n  </span><span>],\\n  </span><span>\\\"evidence\\\": </span><span>\\\"ASSUMPTIONS </span><span>AND </span><span>NOTATION.\\\\nLet </span><span>N </span><span>&gt;= </span><span>2 </span><span>be </span><span>an </span><span>integer, </span><span>let </span><span>x_0 </span><span>= </span><span>x_N </span><span>= </span><span>0, </span><spa\u2026\"}}],[],[],true,false,\"none\",[],false,\"\",\"\",\"\",false,\"\",\"\",\"\",0,false,[]]",
+        "stableSince": 1792046630139,
+        "stableForMs": 410353.60000002384
+      },
+      "visibilityState": "visible",
+      "focused": true,
+      "documentReadyState": "complete",
+      "chatMainReady": true,
+      "composerReady": true,
+      "pageReady": true,
+      "activeRequest": null,
+      "quarantined": false,
+      "quarantineReason": "",
+      "serverInstanceId": "c1607d53-b398-4d43-8cc7-6c98522e1c74",
+      "releasePending": false,
+      "releaseState": "idle"
+    },
+    "artifacts": 0
+  },
+  "zero_bridge_work": true,
+  "research_process": "Capped runner exited1 and halted; no automatic scheduler is running for liveproject",
+  "pending_mandatory_obligations": 2,
+  "unresolved_local_errors": [
+    {
+      "id": 1,
+      "node_id": "n-4360dde303ec",
+      "operation": "parent:n-4360dde303ec-r000001",
+      "message": "Bridge terminal error CANONICAL_RECOVERY_UNCERTAIN: The submitted user turn disappeared after content reload; repeating prompt.submit would be ambiguous and is forbidden.",
+      "resolved": 0,
+      "created_at": "2026-10-15 06:44:16"
+    }
+  ],
+  "real_model_requests": 4,
+  "review_server": "http://127.0.0.1:8766/ intentionally left running idle behind human promptgate",
+  "original_browser_process": "8492 Thu Oct  8 19:20:18 2026     /Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "bridge_process": "67555 Wed Oct 14 17:28:50 2026     /Users/changheyang/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+  "original_tab_preservation": {
+    "capturedAt": "2026-10-15T06:50:14.732Z",
+    "browserId": "1",
+    "originalTabPresent": true,
+    "originalTabContentRead": false,
+    "originalTabNavigated": false,
+    "retainedExperimentTabs": [
+      "1707788777",
+      "1707788780",
+      "1707788783"
+    ],
+    "reviewHandoffTab": "1707788774",
+    "closedOwnBlankProDiscoveryTab": "1707788771"
+  },
+  "candidate_parent_not_committed": true
+}

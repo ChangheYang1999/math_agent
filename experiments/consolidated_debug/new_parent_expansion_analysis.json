@@ -1,0 +1,8 @@
+{
+  "raw_chars": 15576,
+  "expanded_literal_chars": 15574,
+  "exact_after_removing_only_two_inline_backticks": true,
+  "raw_backticks": 2,
+  "collapsed_show_more": true,
+  "future_plain_JSON_wording": "No inline backticks; preserve existing strict prefix expander and exact Send guard"
+}

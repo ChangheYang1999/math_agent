@@ -1,0 +1,135 @@
+{
+  "audited_at_utc": "2026-10-14T09:08:43.658096+00:00",
+  "scope": "Only the disposable live-r2 tree database and its own bridge request IDs; no browser history or browser mutations",
+  "health": {
+    "ok": true,
+    "connected_client_count": 2,
+    "pending_request_count": 0,
+    "pending_command_count": 1,
+    "active_request_count": 0
+  },
+  "interrupted_upstream_turn": {
+    "id": "mathagent_87686d9cb28355e7a2dc631bfdd0e020",
+    "threadId": "thread_mv7vfwg7-5donuss5",
+    "status": "interrupted",
+    "createdAt": "2026-10-14T08:52:15.752Z",
+    "startedAt": "2026-10-14T08:52:15.753Z",
+    "completedAt": "2026-10-14T09:01:54.330Z",
+    "error": {
+      "code": "TURN_INTERRUPTED",
+      "message": "Browser generation was cancelled",
+      "recoverable": false
+    }
+  },
+  "interrupted_output_present": false,
+  "canonical_state": {
+    "lifecycle": "cancelled",
+    "displayPhase": "cancelled",
+    "submission": "accepted",
+    "generation": "stopped",
+    "blocker": "none",
+    "output": "none"
+  },
+  "canonical_terminal": {
+    "code": "cancelled",
+    "message": "Browser generation was cancelled",
+    "at": 1791968514328
+  },
+  "pre_submission_evidence": {
+    "response_user_turn_key": "",
+    "submitted_user_turn_key": "",
+    "assistant_turn_key": "",
+    "completion_candidate": false,
+    "response_boundary_established": false,
+    "recorded_pre_interrupt_effect": {
+      "type": "effect.uncertain",
+      "at_utc": "2026-10-14T08:52:24.156000+00:00",
+      "effectId": "mathagent_87686d9cb28355e7a2dc631bfdd0e020:prompt.submit:attempt:1",
+      "effectType": "prompt.submit",
+      "code": "BROWSER_EFFECT_UNCERTAIN",
+      "message": "COMPOSER_TEXT_VERIFY_FAILED: ChatGPT did not expose an enabled send control after bounded composer input attempts",
+      "recoverable": true,
+      "retryPolicy": "never"
+    },
+    "recorded_pre_interrupt_snapshot": {
+      "at_utc": "2026-10-14T08:55:45.905000+00:00",
+      "type": "request.snapshot",
+      "generating": false,
+      "phase": "prompt_accepted_by_content_script",
+      "active": true,
+      "sourceClientId": "extension:tab:1707788673"
+    },
+    "own_event_count": 274,
+    "confirmed_submission_or_result_event_counts": {
+      "prompt.submitted": 0,
+      "diagnostic.prompt.submit.attempt": 0,
+      "diagnostic.chat.prompt.submit.confirmed": 0,
+      "request.done": 0
+    }
+  },
+  "local_turn": {
+    "id": "parent:n-e615a92f81c6-r000002:e0:a0",
+    "session_id": "S-f481ff1b458658559739595d0d74e736",
+    "status": "FAILED_NOT_SENT",
+    "bridge_request_id": "mathagent_87686d9cb28355e7a2dc631bfdd0e020",
+    "error": "Bridge terminal error TURN_INTERRUPTED: Bounded experiment repair: input was converted to a pasted-text attachment; COMPOSER_TEXT_VERIFY_FAILED occurred before any confirmed submission. Stop this original request before changing extension code.",
+    "raw_response_present": false
+  },
+  "tree_protocol_counts": {
+    "saved_parent_responses": 2,
+    "accepted_round2_reports": 2
+  },
+  "own_upstream_tree_turns": [
+    {
+      "id": "mathagent_36827d7b34c1528197fd5566bccdd8a6",
+      "status": "completed",
+      "startedAt": "2026-10-14T08:48:08.662Z",
+      "completedAt": "2026-10-14T08:48:36.662Z"
+    },
+    {
+      "id": "mathagent_fbf55ac943ce54c78d2a9dd6f0d3bf52",
+      "status": "completed",
+      "startedAt": "2026-10-14T08:48:10.298Z",
+      "completedAt": "2026-10-14T08:48:47.469Z"
+    },
+    {
+      "id": "mathagent_a6fb321e31cf5211a3cc024c7d8a7776",
+      "status": "completed",
+      "startedAt": "2026-10-14T08:48:39.937Z",
+      "completedAt": "2026-10-14T08:49:35.027Z"
+    },
+    {
+      "id": "mathagent_ebcac79eee9057a6af8e4950c623fd22",
+      "status": "completed",
+      "startedAt": "2026-10-14T08:49:38.404Z",
+      "completedAt": "2026-10-14T08:50:56.997Z"
+    },
+    {
+      "id": "mathagent_42cc27947fd05927b55da66397218f39",
+      "status": "completed",
+      "startedAt": "2026-10-14T08:51:00.519Z",
+      "completedAt": "2026-10-14T08:52:11.944Z"
+    },
+    {
+      "id": "mathagent_b77ede1feda35eeeaac3b6dc2213694e",
+      "status": "completed",
+      "startedAt": "2026-10-14T08:51:02.267Z",
+      "completedAt": "2026-10-14T08:53:14.273Z"
+    },
+    {
+      "id": "mathagent_87686d9cb28355e7a2dc631bfdd0e020",
+      "status": "interrupted",
+      "startedAt": "2026-10-14T08:52:15.753Z",
+      "completedAt": "2026-10-14T09:01:54.330Z"
+    }
+  ],
+  "proposed_experiment_only_retry": {
+    "setting_key": "retry:parent:n-e615a92f81c6-r000002",
+    "new_epoch": 1,
+    "new_local_turn_id": "parent:n-e615a92f81c6-r000002:e1:a0",
+    "new_upstream_request_id": "mathagent_c3b62eaee6945f11a6b807f2b92521ba",
+    "note": "Auditor performed no database mutation or resend. Parent agent owns any explicit evidence-preserving retry decision."
+  },
+  "browser_actions_performed": false,
+  "prompts_sent": 0
+}

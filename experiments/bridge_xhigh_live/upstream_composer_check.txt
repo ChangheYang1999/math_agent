@@ -1,0 +1,1 @@
+PASS: verified plain-text insertion skips paste; truncated insertion falls through safely; asynchronous own-paste unwrap/full text/replaced editor/untouched Send; pre-existing/ambiguous/wrong-tail/incomplete refusal

@@ -1,0 +1,9 @@
+{
+  "tools/chrome-bridge-extension/content/composerCommands.js": "2408e4065b75d107a68503ead51e19e51aa467af107c7889974e1a247915b842",
+  "tools/chrome-bridge-extension/artifactCaptureMain.js": "540a729dc96606e77dddea1f182b6c8bc7ec00415e38d802dd01af480cbc40b5",
+  "tools/chrome-bridge-extension/content/requestEffectReconciliation.js": "4d3f1b8bf1948a6a47a01ca3a8d7449b4043d0209307832693c3abd02752b274",
+  "src/bridge/coordinator/bridgeClientEventRouter.js": "49f754dfd490eeab1246b1be9478738f7c4136a61a5fca1995a9bc792ca814ac",
+  "src/bridge/coordinator/requestResultMaterializer.js": "9b8178b2cce80b8d35ae258035c515bb632203af376791dcd98d280a3ef9c01f",
+  "src/bridge/state/requestEffectTransitions.js": "375d3ba134b06a811ff5cec19dbae64e52f1bd94a263ce8076c8fbbba9289feb",
+  "src/turnManager.js": "ed1c0218203bc4039669dd76b119229949d786dd7ef742cd886478ca52f84af0"
+}

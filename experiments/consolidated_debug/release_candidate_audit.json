@@ -1,0 +1,22 @@
+{
+  "archive": "/private/tmp/math-agent-consolidated-review-candidate.zip",
+  "sha256": "8402ec9be4cc2ec781b71dc951fb3fd127fe0179f2fe9a557b37195b7bf89770",
+  "bytes": 176310,
+  "files": 58,
+  "integrity": true,
+  "current_source_mismatches": [],
+  "missing_local": [],
+  "accepted_patch_count": 11,
+  "missing_accepted_patches": [],
+  "patch_checksum_errors": [],
+  "forbidden_entries": [],
+  "credential_pattern_hits": [],
+  "latest_busy_ack_included": true,
+  "explicit_js_fixtures": [
+    "math-agent/bridge/tests/code_lines.mjs",
+    "math-agent/bridge/tests/final_answer.mjs",
+    "math-agent/bridge/tests/picker_activation.mjs",
+    "math-agent/bridge/tests/resume_roles.mjs",
+    "math-agent/tests/dashboard_review_fixture.mjs"
+  ]
+}

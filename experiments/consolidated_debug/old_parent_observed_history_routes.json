@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-10-15T07:49:00.313Z",
+  "scope": "OWN_PARENT_TAB_READ_ONLY_NETWORK_METADATA_NO_HEADERS",
+  "events": [
+    {
+      "requestId": "82230.1376",
+      "url": "https://chatgpt.com/backend-api/conversation/6ad073a4-b6b0-83ea-8d27-eb898d8fc2c1",
+      "status": 200,
+      "mime": "application/json"
+    },
+    {
+      "requestId": "82230.1454",
+      "url": "https://chatgpt.com/backend-api/conversation/init",
+      "status": 200,
+      "mime": "application/json"
+    }
+  ],
+  "cursor": 1247,
+  "truncated": true
+}

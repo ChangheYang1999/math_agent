@@ -1,0 +1,514 @@
+diff --git a/tools/chrome-bridge-extension/artifactCaptureMain.js b/tools/chrome-bridge-extension/artifactCaptureMain.js
+index 3acb809..0aa0c12 100644
+--- a/tools/chrome-bridge-extension/artifactCaptureMain.js
++++ b/tools/chrome-bridge-extension/artifactCaptureMain.js
+@@ -275,10 +275,33 @@
+   }
+ 
+   function comparableText(element) {
+-    return String(element?.value ?? element?.innerText ?? element?.textContent ?? '')
+-      .replace(/\u00a0/g, ' ')
+-      .replace(/\s+/g, ' ')
+-      .trim();
++    const read = (node) => {
++      if (node?.nodeType === 3) return String(node.textContent || '');
++      if (node?.tagName === 'BR') return node.classList?.contains?.('ProseMirror-trailingBreak') ? '' : '\n';
++      const children = Array.from(node?.childNodes || []);
++      if (!children.length) return String(node?.innerText ?? node?.textContent ?? '');
++      const block = (child) => /^(P|DIV)$/.test(child?.tagName || '');
++      return children.map((child, index) => (index && (block(child) || block(children[index - 1])) ? '\n' : '') + read(child)).join('');
++    };
++    const value = /^(TEXTAREA|INPUT)$/.test(element?.tagName || '') ? element.value : read(element);
++    return String(value ?? '').replace(/\r\n?/g, '\n').replace(/\n$/, '');
++  }
++
++  function textShape(element, expected) {
++    const logical = comparableText(element);
++    const inner = String(element?.innerText || '');
++    const raw = String(element?.textContent || '');
++    let mismatch = 0;
++    while (mismatch < Math.min(logical.length, expected.length) && logical[mismatch] === expected[mismatch]) mismatch++;
++    return { logicalLength: logical.length, innerLength: inner.length, rawLength: raw.length,
++      expectedNewlines: (expected.match(/\n/g) || []).length,
++      logicalNewlines: (logical.match(/\n/g) || []).length,
++      innerNewlines: (inner.match(/\n/g) || []).length,
++      rawNewlines: (raw.match(/\n/g) || []).length,
++      firstMismatchIndex: logical === expected ? null : mismatch,
++      expectedCodepoint: logical === expected ? null : expected.codePointAt(mismatch) ?? null,
++      observedCodepoint: logical === expected ? null : logical.codePointAt(mismatch) ?? null,
++      childKinds: Array.from(element?.childNodes || []).slice(0, 8).map((node) => node.tagName || '#text') };
+   }
+ 
+   function selectAll(element) {
+@@ -293,32 +316,34 @@
+   }
+ 
+   function setText(element, text) {
+-    const expected = String(text || '').trim();
++    const expected = String(text || '').replace(/\r\n?/g, '\n').replace(/\n$/, '');
+     if (!selectAll(element)) throw new Error('Composer selection is unavailable');
+     let execResult = false;
++    let setMethod = 'insertText';
+     if (typeof document.execCommand === 'function') {
+-      execResult = Boolean(document.execCommand('insertText', false, text));
++      // Observed ChatGPT multiline input uses this literal span with BRs.
++      // HTML escaping preserves arbitrary prompt text through native editing.
++      const multiline = /\n/.test(text) && !/^(TEXTAREA|INPUT)$/.test(element.tagName);
++      setMethod = multiline ? 'insertHTML' : 'insertText';
++      const escaped = String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
++        .replace(/\r\n?/g, '\n').replace(/\n/g, '<br>');
++      execResult = Boolean(document.execCommand(setMethod, false,
++        multiline ? `<span data-prompt-literal-paste="">${escaped}</span>` : text));
+     }
+     let actual = comparableText(element);
+-    if (!actual.includes(expected.slice(0, Math.min(expected.length, 200)))) {
+-      if (element.tagName === 'TEXTAREA' || element.tagName === 'INPUT') {
+-        const proto = element.tagName === 'TEXTAREA' ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype;
+-        const descriptor = Object.getOwnPropertyDescriptor(proto, 'value');
+-        descriptor?.set?.call(element, text);
+-      } else {
+-        let paragraph = element.querySelector?.('p');
+-        if (!paragraph) {
+-          paragraph = document.createElement('p');
+-          element.replaceChildren(paragraph);
+-        }
+-        paragraph.textContent = text;
+-      }
++    const beforeFallback = textShape(element, expected);
++    if (actual !== expected && /^(TEXTAREA|INPUT)$/.test(element.tagName)) {
++      const proto = element.tagName === 'TEXTAREA' ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype;
++      const descriptor = Object.getOwnPropertyDescriptor(proto, 'value');
++      descriptor?.set?.call(element, text);
+       element.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'insertText', data: text }));
+       actual = comparableText(element);
+     }
+     return {
+-      ok: Boolean(expected ? actual.includes(expected.slice(0, Math.min(expected.length, 200))) : true),
++      ok: actual === expected,
+       execResult,
++      setMethod,
++      beforeFallback,
+       textLength: actual.length,
+       childCount: Number(element.children?.length || 0),
+     };
+diff --git a/tools/chrome-bridge-extension/content/composerCommands.js b/tools/chrome-bridge-extension/content/composerCommands.js
+index 6dac793..6210ea5 100644
+--- a/tools/chrome-bridge-extension/content/composerCommands.js
++++ b/tools/chrome-bridge-extension/content/composerCommands.js
+@@ -26,7 +26,6 @@
+     } = deps;
+ 
+ function promptSubmissionEvidence(request, baselineTurnKeys, message, composerBefore, options = {}) {
+-  const requireUserTurn = options.requireUserTurn === true;
+   const turns = getTurnNodes();
+   const newUserTurns = turns
+     .map((turn, index) => ({
+@@ -34,10 +33,27 @@ function promptSubmissionEvidence(request, baselineTurnKeys, message, composerBe
+       index,
+       key: turnKey(turn, index),
+       role: turnRole(turn),
+-      text: visibleText(turn),
++      text: submittedUserText(turn),
+     }))
+     .filter((item) => item.role === 'user' && item.key && !baselineTurnKeys.has(item.key));
+-  const newUserTurn = newUserTurns.findLast((item) => DOM_PARSER.userTurnMatchesExpectedText(item.text, message));
++  if (options.allowExpand === true) {
++    for (const item of newUserTurns) {
++      // The editor already proved the complete prompt before this Send. Only
++      // expand a new turn whose literal body is its exact truncated prefix.
++      if (!item.text || item.text.length >= message.length || !message.startsWith(item.text)
++        || options.expandedTurnKeys?.has(item.key)) continue;
++      const bubble = item.turn.querySelector?.('[data-user-message-bubble="true"]') || item.turn;
++      const buttons = scopedQueryAll([bubble], 'button, [role="button"]').filter((button) =>
++        controlName(button) === 'Show more' && isPrimaryChatSurfaceElement(button) && isUsableButton(button));
++      if (buttons.length !== 1) continue;
++      options.expandedTurnKeys?.add(item.key);
++      buttons[0].click();
++      diagnostic('prompt.user_turn_expanded', { requestId: request.requestId, turnKey: item.key,
++        observedCharactersBefore: item.text.length, expectedCharacters: message.length });
++      item.text = submittedUserText(item.turn);
++    }
++  }
++  const newUserTurn = newUserTurns.findLast((item) => submittedTextMatches(item.text, message));
+   if (newUserTurn) return { confirmed: true, reason: 'new_user_turn', turnKey: newUserTurn.key, turnIndex: newUserTurn.index };
+   if (newUserTurns.length) {
+     return {
+@@ -48,22 +64,58 @@ function promptSubmissionEvidence(request, baselineTurnKeys, message, composerBe
+     };
+   }
+ 
+-  const currentComposer = findComposer();
+-  if (!requireUserTurn && message.trim() && composerBefore && (!currentComposer || !composerContainsText(currentComposer, message))) {
+-    return { confirmed: true, reason: 'composer_cleared' };
+-  }
+-
+-  if (!requireUserTurn && !baselineTurnKeys.size && (findStopButton() || isGenerating())) {
+-    return { confirmed: true, reason: 'generation_started' };
+-  }
++  // Extension acceptance, a cleared editor, and generation flags alone never
++  // prove Send. Bind success to a new user turn containing the full prompt.
+   return { confirmed: false, reason: 'no_submission_evidence' };
+ }
+ 
++function submittedTextMatches(actual, expected) {
++  const observed = submittedTextValue(actual);
++  const desired = submittedTextValue(expected);
++  return desired ? observed === desired || observed.startsWith(`${desired}\n`)
++    || observed.endsWith(`\n${desired}`) || observed.includes(`\n${desired}\n`) : observed === '';
++}
++
++function submittedTextValue(text) {
++  return String(text || '').replace(/\r\n?/g, '\n').replace(/\u00a0/g, ' ')
++    .replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
++}
++
++function submittedUserText(turn) {
++  // Current ChatGPT keeps the complete literal user payload in this bubble;
++  // exclude surrounding turn controls/headings from its delivery checksum.
++  const bubble = turn?.querySelector?.('[data-user-message-bubble="true"]') || turn;
++  const payloads = Array.from(bubble?.querySelectorAll?.('.whitespace-pre-wrap[dir="auto"]') || []);
++  return visibleText(payloads.length === 1 ? payloads[0] : bubble);
++}
++
++async function textSha256(text) {
++  if (!globalThis.crypto?.subtle || typeof TextEncoder !== 'function') return null;
++  const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(String(text)));
++  return Array.from(new Uint8Array(bytes), (byte) => byte.toString(16).padStart(2, '0')).join('');
++}
++
++async function submissionTextEvidence(evidence, message) {
++  if (!evidence.confirmed || !evidence.turnKey) return evidence;
++  const turn = findTurnByKey(evidence.turnKey, evidence.turnIndex);
++  const observed = turn ? submittedUserText(turn) : null;
++  return {
++    ...evidence,
++    expectedCharacters: message.length,
++    expectedSha256: await textSha256(message),
++    observedCharacters: observed === null ? null : observed.length,
++    observedSha256: observed === null ? null : await textSha256(observed),
++    fullPromptTextMatch: observed === null ? null : submittedTextMatches(observed, message),
++    verification: 'full_prompt_in_new_user_turn',
++  };
++}
++
+ function createPromptSubmissionEvidenceWaiter(request, baselineTurnKeys, message, composerBefore, timeoutMs, options = {}) {
+   const started = Date.now();
+   const target = findChatMain() || document.body || document.documentElement;
+   let observer = null;
+   let timer = null;
++  let inspectionTimer = null;
+   let settled = false;
+   let lastEvidence = promptSubmissionEvidence(request, baselineTurnKeys, message, composerBefore, options);
+   let resolvePromise = null;
+@@ -74,6 +126,7 @@ function createPromptSubmissionEvidenceWaiter(request, baselineTurnKeys, message
+     settled = true;
+     observer?.disconnect?.();
+     if (timer) clearTimeout(timer);
++    if (inspectionTimer) clearTimeout(inspectionTimer);
+     resolvePromise({ ...evidence, waitedMs: Date.now() - started });
+   };
+ 
+@@ -95,11 +148,25 @@ function createPromptSubmissionEvidenceWaiter(request, baselineTurnKeys, message
+     });
+   }
+ 
+-  timer = setTimeout(() => finish({
+-    confirmed: false,
+-    reason: 'submission_ack_timeout',
+-    lastReason: lastEvidence?.reason || 'no_submission_evidence',
+-  }), timeoutMs);
++  // React can replace the observed main after Send, and Show more expands its
++  // payload asynchronously. Re-read the current DOM within the same bounded
++  // acknowledgement window; this path never edits or submits the composer.
++  const scheduleInspection = () => {
++    inspectionTimer = setTimeout(() => {
++      inspectionTimer = null;
++      inspect();
++      if (!settled) scheduleInspection();
++    }, Math.min(200, Math.max(1, timeoutMs)));
++  };
++  scheduleInspection();
++  timer = setTimeout(() => {
++    const evidence = inspect();
++    if (!settled) finish({
++      confirmed: false,
++      reason: 'submission_ack_timeout',
++      lastReason: evidence?.reason || 'no_submission_evidence',
++    });
++  }, timeoutMs);
+ 
+   return Object.freeze({
+     async wait() {
+@@ -112,6 +179,7 @@ function createPromptSubmissionEvidenceWaiter(request, baselineTurnKeys, message
+       settled = true;
+       observer?.disconnect?.();
+       if (timer) clearTimeout(timer);
++      if (inspectionTimer) clearTimeout(inspectionTimer);
+       resolvePromise({ confirmed: false, reason: 'submission_evidence_wait_cancelled', waitedMs: Date.now() - started });
+     },
+   });
+@@ -134,7 +202,16 @@ function resolveSteerSubmitReadyTimeoutMs(request) {
+ 
+ function composerTextValue(element) {
+   if (!element) return '';
+-  return String(element.value ?? element.innerText ?? element.textContent ?? '');
++  if (/^(TEXTAREA|INPUT)$/.test(element.tagName || '')) return String(element.value || '');
++  const read = (node) => {
++    if (node?.nodeType === 3) return String(node.textContent || '');
++    if (node?.tagName === 'BR') return node.classList?.contains?.('ProseMirror-trailingBreak') ? '' : '\n';
++    const children = Array.from(node?.childNodes || []);
++    if (!children.length) return String(node?.innerText ?? node?.textContent ?? '');
++    const block = (child) => /^(P|DIV)$/.test(child?.tagName || '');
++    return children.map((child, index) => (index && (block(child) || block(children[index - 1])) ? '\n' : '') + read(child)).join('');
++  };
++  return read(element);
+ }
+ 
+ function restoreComposerText(element, value = '') {
+@@ -294,22 +371,29 @@ async function enterPrompt(message, request, options = {}) {
+   // Passive wakes must be proved by a new user turn. A cleared composer alone
+   // is not enough: the modern ChatGPT form can clear itself after a no-op
+   // submit while no message was actually posted.
+-  const evidenceOptions = kind === 'passive' ? { requireUserTurn: true } : {};
++  const evidenceOptions = { requireUserTurn: true, allowExpand: false, expandedTurnKeys: new Set() };
++  const onSubmissionBoundary = () => {
++    evidenceOptions.allowExpand = true;
++    options.onSubmissionBoundary?.();
++  };
+   const existingEvidence = promptSubmissionEvidence(request, baselineTurnKeys, message, null, evidenceOptions);
+   if (existingEvidence.confirmed) {
+-    diagnostic('prompt.submit.already_confirmed', { requestId: request.requestId, kind, ...existingEvidence });
+-    return existingEvidence;
++    const verified = await submissionTextEvidence(existingEvidence, message);
++    diagnostic('prompt.submit.already_confirmed', { requestId: request.requestId, kind, ...verified });
++    return verified;
+   }
+ 
+   await waitForChatPageReady(request, { stage: `${kind}.submit`, settleMs: 350 });
+-  const composer = await waitForComposer(request);
++  let composer = await waitForComposer(request);
+   const composerBeforeText = composerTextValue(composer);
+   if (!findChatMain()) {
+     throw new Error('DOM_SCHEMA_CHANGED: Chat conversation root is missing. Refusing to submit without a scoped DOM observation root.');
+   }
+   let preparedSubmitButton = null;
+   if (message.trim()) {
+-    preparedSubmitButton = (await focusAndSetComposerText(composer, message, request, { requireSendReady: kind !== 'steer' }))?.button || null;
++    const prepared = await focusAndSetComposerText(composer, message, request, { requireSendReady: kind !== 'steer' });
++    composer = prepared.element;
++    preparedSubmitButton = prepared.button || null;
+     diagnostic('composer.filled', { requestId: request.requestId, kind, length: message.length });
+   } else {
+     composer.focus();
+@@ -322,7 +406,7 @@ async function enterPrompt(message, request, options = {}) {
+     if (kind === 'steer') {
+       const ready = await waitForSteerSubmitButton(request);
+       evidenceWaiter = createPromptSubmissionEvidenceWaiter(request, baselineTurnKeys, message, composer, ackTimeoutMs, evidenceOptions);
+-      method = submitComposer(composer, request, { kind, attempt: 1, button: ready.button });
++      method = submitComposer(composer, request, { kind, attempt: 1, button: ready.button, onSubmissionBoundary });
+     } else {
+       evidenceWaiter = createPromptSubmissionEvidenceWaiter(request, baselineTurnKeys, message, composer, ackTimeoutMs, evidenceOptions);
+       // ChatGPT's current ProseMirror composer updates its submit control
+@@ -338,7 +422,7 @@ async function enterPrompt(message, request, options = {}) {
+         kind,
+         attempt: 1,
+         button: readyButton || undefined,
+-        onSubmissionBoundary: options.onSubmissionBoundary,
++        onSubmissionBoundary,
+       });
+     }
+   } catch (error) {
+@@ -353,32 +437,15 @@ async function enterPrompt(message, request, options = {}) {
+     }
+     throw error;
+   }
+-  const evidence = await evidenceWaiter.wait();
++  const evidence = await submissionTextEvidence(await evidenceWaiter.wait(), message);
+   diagnostic('prompt.submit.attempt', { requestId: request.requestId, kind, attempt: 1, method, ...evidence });
+   emitChatEvent(request, evidence.confirmed ? 'prompt.submit.confirmed' : 'prompt.submit.uncertain', {
+     kind, attempt: 1, method, ...evidence,
+   });
+   if (evidence.confirmed) return evidence;
+ 
+-  const currentComposer = findComposer();
+-  const textStillPresent = Boolean(message.trim() && currentComposer && composerContainsText(currentComposer, message));
+-  const generationActive = Boolean(findStopButton() || isGenerating());
+-  if (textStillPresent && !generationActive) {
+-    try { restoreComposerText(currentComposer, composerBeforeText); } catch {}
+-    diagnostic('prompt.submit.rolled_back', {
+-      requestId: request?.requestId || '',
+-      kind,
+-      code: 'PROMPT_SUBMIT_NOT_EXECUTED',
+-      restoredLength: composerBeforeText.length,
+-    });
+-    const error = new Error(`PROMPT_SUBMIT_NOT_EXECUTED: ChatGPT kept the ${kind} text in the composer and did not start generation`);
+-    error.code = 'PROMPT_SUBMIT_NOT_EXECUTED';
+-    error.retryable = true;
+-    error.provenNotExecuted = true;
+-    error.cancellationEvidence = { source: 'composer', reason: 'submitted_text_remained_without_generation' };
+-    throw error;
+-  }
+-
++  // After invoking a submission boundary, text remaining/no generation is not
++  // positive proof of non-execution. Preserve the draft and require recovery.
+   const error = new Error(`PROMPT_SUBMIT_UNCERTAIN: ChatGPT did not expose proof for the ${kind} submission; automatic retry is forbidden`);
+   error.code = 'PROMPT_SUBMIT_UNCERTAIN';
+   error.retryable = false;
+@@ -490,13 +557,19 @@ function findComposer() {
+ }
+ 
+ async function focusAndSetComposerText(element, text, request, options = {}) {
++  // Do not absorb an attachment left by another request/user into this prompt.
++  // Only a pasted-text chip created by one of the setters below is ours.
++  const initialControls = pastedTextControls(findComposerRootStrict());
++  if (initialControls.remove.length || initialControls.show.length) {
++    throw composerPreparationError(`A pre-existing pasted-text attachment must be cleared before preparing this prompt (remove=${initialControls.remove.length}, show=${initialControls.show.length})`);
++  }
+   element.focus();
+   await delay(20);
+ 
+   const attempts = [
+     { name: 'page_main', apply: () => setComposerTextByPageMain(element, text, request) },
+-    { name: 'paste', apply: () => setComposerTextByPaste(element, text) },
+     { name: 'exec_command', apply: () => setComposerTextByExecCommand(element, text) },
++    { name: 'paste', apply: () => setComposerTextByPaste(element, text) },
+     { name: 'text_content', apply: () => setComposerTextByTextContent(element, text) },
+     { name: 'native_value', apply: () => setComposerTextByNativeValue(element, text) },
+   ];
+@@ -512,7 +585,48 @@ async function focusAndSetComposerText(element, text, request, options = {}) {
+       });
+       continue;
+     }
+-    if (result && result.ok === false) {
++    await delay(80);
++    if (attempt.name === 'page_main') {
++      diagnostic('composer.main_result', { requestId: request.requestId, ok: result?.ok === true,
++        setMethod: result?.setMethod || '', execResult: result?.execResult === true,
++        textShape: result?.beforeFallback || null });
++    }
++    let controls = pastedTextControls(findComposerRootStrict());
++    if (controls.remove.length || controls.show.length) {
++      // React can render the chip and its hover action in separate commits.
++      // Wait for the unique pair; multiple real controls remain ambiguous.
++      const controlsStarted = Date.now();
++      while (controls.remove.length !== 1 || controls.show.length !== 1) {
++        if (controls.remove.length > 1 || controls.show.length > 1 || Date.now() - controlsStarted >= 900) break;
++        await delay(50);
++        controls = pastedTextControls(findComposerRootStrict());
++      }
++      diagnostic('composer.pasted_text_controls', {
++        requestId: request.requestId, method: attempt.name,
++        removeCount: controls.remove.length, showCount: controls.show.length,
++        candidates: controls.diagnostics,
++        waitedMs: Date.now() - controlsStarted,
++      });
++      if (controls.remove.length !== 1 || controls.show.length !== 1) {
++        throw composerPreparationError(`Pasted-text attachment controls are ambiguous or did not settle (remove=${controls.remove.length}, show=${controls.show.length})`);
++      }
++      // ChatGPT converts long paste events into a text attachment. Expand the
++      // one created by this setter, then verify its full contents before Send.
++      controls.show[0].click();
++      diagnostic('composer.pasted_text_expanded', { requestId: request.requestId, method: attempt.name });
++      const started = Date.now();
++      do {
++        await delay(50);
++        element = findComposer() || element;
++        if (!pastedTextControls(findComposerRootStrict()).remove.length && composerTextEquals(element, text)) break;
++      } while (Date.now() - started < 900);
++      if (pastedTextControls(findComposerRootStrict()).remove.length || !composerTextEquals(element, text)) {
++        throw composerPreparationError('Expanded pasted text did not exactly match the approved prompt');
++      }
++    } else {
++      element = findComposer() || element;
++    }
++    if (result && result.ok === false && !composerTextEquals(element, text)) {
+       diagnostic('composer.text_method_failed', {
+         requestId: request.requestId,
+         method: attempt.name,
+@@ -520,14 +634,14 @@ async function focusAndSetComposerText(element, text, request, options = {}) {
+       });
+       continue;
+     }
+-    await delay(80);
+-    if (composerContainsText(element, text)) {
++    if (composerTextEquals(element, text)) {
+       const button = await waitForPromptSendButton(request, options.requireSendReady === false ? 250 : 900);
+       if (button || options.requireSendReady === false) {
+         diagnostic('composer.text_verified', {
+           requestId: request.requestId, method: attempt.name, length: text.length, sendReady: Boolean(button),
++          verification: 'full_text_equal',
+         });
+-        return { button: button || null, method: attempt.name };
++        return { element, button: button || null, method: attempt.name };
+       }
+       diagnostic('composer.text_not_submit_ready', {
+         requestId: request.requestId, method: attempt.name, length: text.length, sendReady: false,
+@@ -541,8 +655,52 @@ async function focusAndSetComposerText(element, text, request, options = {}) {
+     expectedLength: text.length,
+     actualLength: visibleText(element).length,
+     reason: 'send_control_not_ready_after_bounded_setter_attempts',
++    candidates: pastedTextControls(findComposerRootStrict()).diagnostics,
+   });
+-  throw new Error('COMPOSER_TEXT_VERIFY_FAILED: ChatGPT did not expose an enabled send control after bounded composer input attempts');
++  throw composerPreparationError('ChatGPT did not expose the exact prompt and an enabled send control after bounded composer input attempts');
++}
++
++function composerPreparationError(message) {
++  const error = new Error(`COMPOSER_TEXT_VERIFY_FAILED: ${message}`);
++  error.code = 'COMPOSER_TEXT_VERIFY_FAILED';
++  error.provenNotExecuted = true;
++  error.cancellationEvidence = { source: 'composer_preparation', reason: 'submission_boundary_not_entered' };
++  return error;
++}
++
++function controlName(button) {
++  const explicit = button.getAttribute?.('aria-label') || button.getAttribute?.('title');
++  if (explicit) return String(explicit).replace(/\s+/g, ' ').trim();
++  const clone = button.cloneNode?.(true);
++  clone?.querySelectorAll?.('svg, [aria-hidden="true"], script, style').forEach((node) => node.remove());
++  return String(clone?.textContent ?? button.innerText ?? button.textContent ?? '').replace(/\s+/g, ' ').trim();
++}
++
++function pastedTextControls(root) {
++  const buttons = scopedQueryAll(root ? [root] : [], 'button, [role="button"]');
++  const classified = buttons.map((button) => ({ button, name: controlName(button), visible: isVisible(button),
++    primary: isPrimaryChatSurfaceElement(button), enabled: !button.disabled && button.getAttribute('aria-disabled') !== 'true' }));
++  const named = (item, desired) => item.name === desired && item.visible && item.primary && item.enabled;
++  return {
++    remove: classified.filter((item) => named(item, 'Remove pasted text attachment')).map((item) => item.button),
++    show: classified.filter((item) => named(item, 'Show in text field')).map((item) => item.button),
++    // Only control classifications, never arbitrary button text or prompt text.
++    diagnostics: classified.filter((item) => /pasted text|text field/i.test(item.name)).slice(0, 8).map((item) => ({
++      kind: item.name === 'Show in text field' ? 'show' : item.name === 'Remove pasted text attachment' ? 'remove' : 'unmatched',
++      visible: item.visible, primary: item.primary, enabled: item.enabled,
++      connected: item.button.isConnected !== false,
++      rawTextLength: String(item.button.textContent || '').length,
++      semanticNameLength: item.name.length,
++      rawTextExact: String(item.button.textContent || '').trim() === item.name,
++    })),
++  };
++}
++
++function composerTextEquals(element, text) {
++  // innerText may append a final block newline. Preserve all other whitespace,
++  // case, punctuation, and the entire tail; prefix matching can send truncation.
++  const canonical = (value) => String(value ?? '').replace(/\r\n?/g, '\n').replace(/\n$/, '');
++  return canonical(composerTextValue(element)) === canonical(text);
+ }
+ 
+ function setComposerTextByPaste(element, text) {
+@@ -607,12 +765,12 @@ function setComposerTextByPageMain(element, text, request) {
+       resolve(result && typeof result === 'object' ? result : { ok: false, error: 'invalid_main_world_result' });
+     };
+     const onMessage = (event) => {
+-      if (event.source !== window || event.data?.source !== 'chatgpt-bridge-composer-main-v1' || event.data?.type !== 'composer.set.result' || String(event.data.requestId || '') !== requestId) return;
++      if (event.source !== window || event.data?.source !== 'chatgpt-browser-bridge-composer-main-v1' || event.data?.type !== 'composer.set.result' || String(event.data.requestId || '') !== requestId) return;
+       finish(event.data.result);
+     };
+     const timer = setTimeout(() => finish({ ok: false, error: 'main_world_composer_timeout' }), 1_200);
+     window.addEventListener('message', onMessage);
+-    window.postMessage({ source: 'chatgpt-bridge-composer-content-v1', type: 'composer.set', requestId, text: String(text || ''), diagnosticRequestId: request?.requestId || '' }, '*');
++    window.postMessage({ source: 'chatgpt-browser-bridge-composer-content-v1', type: 'composer.set', requestId, text: String(text || ''), diagnosticRequestId: request?.requestId || '' }, '*');
+   });
+ }
+ 

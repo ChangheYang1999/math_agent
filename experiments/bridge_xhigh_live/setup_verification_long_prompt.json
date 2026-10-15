@@ -1,0 +1,52 @@
+{
+  "verified_at_utc": "2026-10-15T00:55:06.490394+00:00",
+  "revision": "0ffdae90239988f253058c05253226152acd55d2",
+  "accepted_patch_sets": [
+    {
+      "name": "picker",
+      "exact_installed_source_matches": true,
+      "patch_sha256": "931afdf266931d3b98ee9c66f312c48e1a4bb336021c1eb2c4b10e98139e6931"
+    },
+    {
+      "name": "conversation",
+      "exact_installed_source_matches": true,
+      "patch_sha256": "b412ff43c0e5beca2d96ddcdaddd863ed0003104ca932ed39e5d65a0ea7ce965"
+    },
+    {
+      "name": "release",
+      "exact_installed_source_matches": true,
+      "patch_sha256": "48905196a6c8b4722c36c5bdaf220b1c2fef9fcf13198e25380b760ce981983a"
+    },
+    {
+      "name": "math",
+      "exact_installed_source_matches": true,
+      "patch_sha256": "ec918ac402fae6a77a98e678c32f6dd82614d8fc41c3797fe66f0806958178ec"
+    },
+    {
+      "name": "long_prompt_v2",
+      "exact_installed_source_matches": true,
+      "patch_sha256": "75697838c4191b4b72a6c50299ad959765fedb53126c5cd98920ce36b746897b"
+    },
+    {
+      "name": "delivery_state",
+      "exact_installed_source_matches": true,
+      "patch_sha256": "bb9098333f90fc2bf8b16735bf64907adc512d59605628dd1af4f8695ab42cb8"
+    },
+    {
+      "name": "observation_recovery",
+      "exact_installed_source_matches": true,
+      "patch_sha256": "325234ba7f828ab8b4cf3e9539211b3b509dcec66fe9a90b27f494d03674f939"
+    }
+  ],
+  "baseline_four_byte_identical": true,
+  "composer_sha256": "2408e4065b75d107a68503ead51e19e51aa467af107c7889974e1a247915b842",
+  "fresh_install_applied_all_seven": true,
+  "idempotent_second_run": true,
+  "npm_ci": true,
+  "upstream_syntax_checked_files": 605,
+  "upstream_packaged_runtime_files": 340,
+  "focused_upstream_regressions_passed": 34,
+  "failed_historical_composer_excluded": true,
+  "browser_or_server_actions": false,
+  "source_package_status": "Provisional until compact FIX_SUMMARY.md is written; regenerate with the documented source packager."
+}

@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-15T08:18:44.124695+00:00",
+  "scope": "OFFLINE comparison of captured DOM parser output to authenticated current_node final JSON; no string normalization",
+  "assistant_id": "dbd70ab8-6085-44dd-9919-c5837a2855dd",
+  "channel": "final",
+  "content_type": "text",
+  "string_count": 10,
+  "all_json_values_exactly_equal": false,
+  "differences": [
+    {
+      "path": "$.evidence",
+      "expected_length": 3235,
+      "actual_length": 3235,
+      "first_difference": 1480,
+      "expected_excerpt": "'y)\u22650 and supplies the explicit certificate\\nQ(x)=(1/(2N))\u2211\u1d63 \u2211_{j: s\u2c7c^(r)s_{j+1}^(r)>0} s\u2c7c^(r)s_{j+1}^(r)(t_{j+1}^(r)\u2212t\u2c7c^(r))\u00b2\u22650.\\nAll cyclic edges, including j=N\u22121, are included.\\n\\nCO'",
+      "actual_excerpt": "'y)\u22650 and supplies the explicit certificate\\nQ(x)=(1/(2N))\u2211\u1d63 \u2211*{j: s\u2c7c^(r)s_{j+1}^(r)>0} s\u2c7c^(r)s*{j+1}^(r)(t_{j+1}^(r)\u2212t\u2c7c^(r))\u00b2\u22650.\\nAll cyclic edges, including j=N\u22121, are included.\\n\\nCO'"
+    }
+  ]
+}

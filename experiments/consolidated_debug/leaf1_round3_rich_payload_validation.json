@@ -1,0 +1,8 @@
+{
+  "status": "LIVE_READ_ONLY_FULL_USER_PAYLOAD_MATCH_AFTER_DISPLAY_EXPANSION",
+  "request_id": "mathagent_31d119ebc02256399ac75510fc63ab2e",
+  "exact_raw_equal": true,
+  "characters": 19178,
+  "sha256": "8bd02405ec9671195856cdb3d2102b6c9d3e436d01fa85ff96bdc29d56c36724",
+  "scope": "Read-only rich payload excludes sibling UI controls; no canonical confirmation invented; no Send/reload; original request remains pending"
+}

@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-15T06:50:01.120236+00:00",
+  "classification": "HALTED_DURABLE_CHECKPOINT_NO_REPLAY",
+  "backup": "halted_state.db",
+  "sha256": "5a0bc0d2ee75bf2fa64a34c349153864da781eaf45e0c7d68030359b0e7b6334",
+  "preserved_request_id": "mathagent_8dead57559845377aa96cac3e5f68d83",
+  "bridge_status": "failed",
+  "local_status": "ERROR",
+  "candidate_commit": false
+}

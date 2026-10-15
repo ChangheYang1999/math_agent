@@ -1,0 +1,78 @@
+{
+  "at": "2026-10-15T10:03:24.734254+00:00",
+  "request_id": "mathagent_0164b078f5f05b2985dfd64c1a31c40a",
+  "conversation_id": "6ad087b7-b0dc-83ea-82f2-b587762d8345",
+  "characters": 23768,
+  "sha256": "36bbc4c418759d8488898ab4e49f6f0be8e14d934f405af3aecec08cccaa6346",
+  "matches_reservation_exactly": true,
+  "actual_rich_root_count": 1,
+  "source": "twelfth_live_parent_rich_dom.json",
+  "read_only": true,
+  "expanded_events": [
+    {
+      "id": 16581,
+      "time": "2026-10-15T10:00:49.186Z",
+      "type": "diagnostic.prompt.user_turn_expanded",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.prompt.user_turn_expanded",
+        "time": "2026-10-15T10:00:49.186Z",
+        "requestId": "mathagent_0164b078f5f05b2985dfd64c1a31c40a",
+        "clientId": "extension:tab:1707788883",
+        "payload": {
+          "name": "prompt.user_turn_expanded",
+          "requestId": "mathagent_0164b078f5f05b2985dfd64c1a31c40a",
+          "url": "https://chatgpt.com/c/6ad087b7-b0dc-83ea-82f2-b587762d8345",
+          "title": "Coordinate Poincare Proof Tasks",
+          "time": 1792058449184,
+          "turnKey": "2572ebba-8748-467b-ba39-7d5584d47ade::user",
+          "observedCharactersBefore": 10207,
+          "expectedCharacters": 23768,
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    }
+  ],
+  "confirmation_events": [
+    {
+      "id": 16586,
+      "time": "2026-10-15T10:00:49.236Z",
+      "type": "diagnostic.chat.prompt.submit.confirmed",
+      "level": "info",
+      "data": {
+        "type": "diagnostic.chat.prompt.submit.confirmed",
+        "time": "2026-10-15T10:00:49.236Z",
+        "requestId": "mathagent_0164b078f5f05b2985dfd64c1a31c40a",
+        "clientId": "extension:tab:1707788883",
+        "payload": {
+          "name": "chat.prompt.submit.confirmed",
+          "requestId": "mathagent_0164b078f5f05b2985dfd64c1a31c40a",
+          "url": "https://chatgpt.com/c/6ad087b7-b0dc-83ea-82f2-b587762d8345",
+          "title": "Coordinate Poincare Proof Tasks",
+          "time": 1792058449234,
+          "eventType": "prompt.submit.confirmed",
+          "kind": "prompt",
+          "attempt": 1,
+          "method": "button",
+          "confirmed": true,
+          "reason": "new_user_turn",
+          "turnKey": "2572ebba-8748-467b-ba39-7d5584d47ade::user",
+          "turnIndex": 6,
+          "waitedMs": 103,
+          "expectedCharacters": 23768,
+          "expectedSha256": "36bbc4c418759d8488898ab4e49f6f0be8e14d934f405af3aecec08cccaa6346",
+          "observedCharacters": 23768,
+          "observedSha256": "36bbc4c418759d8488898ab4e49f6f0be8e14d934f405af3aecec08cccaa6346",
+          "fullPromptTextMatch": true,
+          "verification": "full_prompt_in_new_user_turn",
+          "diagnosticType": "diagnostic",
+          "type": "diagnostic"
+        }
+      }
+    }
+  ],
+  "terminal_status": "completed",
+  "mismatch_events": [],
+  "scope": "Actual new rich user container, single confirmed Send, automatic exact full expansion and normal terminal"
+}

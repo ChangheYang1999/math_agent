@@ -1,0 +1,49 @@
+diff --git a/tools/chrome-bridge-extension/content/requestMonitor.js b/tools/chrome-bridge-extension/content/requestMonitor.js
+index add8a16..f7e8c34 100644
+--- a/tools/chrome-bridge-extension/content/requestMonitor.js
++++ b/tools/chrome-bridge-extension/content/requestMonitor.js
+@@ -66,7 +66,13 @@
+       observationSubscription = subscribeTabObservation?.((observation) => {
+         const request = getActiveRequest();
+         if (!request) return;
++        if (observation?.activeRequest?.requestId && observation.activeRequest.requestId !== request.requestId) return;
++        const previousUserKey = request.submittedUserTurnKey;
++        if (request.turnCaptureArmed && !previousUserKey) refreshRequestTurnAnchors(request);
+         syncExecutionProjection(request, observation);
++        if (!previousUserKey && request.submittedUserTurnKey) {
++          scheduleTabObservation('request.user_turn_reconciled', 0);
++        }
+       }) || null;
+     }
+ 
+diff --git a/tools/chrome-bridge-extension/content/turnSnapshots.js b/tools/chrome-bridge-extension/content/turnSnapshots.js
+index 2d8edc6..94126da 100644
+--- a/tools/chrome-bridge-extension/content/turnSnapshots.js
++++ b/tools/chrome-bridge-extension/content/turnSnapshots.js
+@@ -154,7 +154,11 @@ function adoptSubmittedUserTurn(request, baselineTurnKeys, { kind = 'prompt', re
+   const records = requestTurnRecords({ includeText: true });
+   const baseline = baselineTurnKeys instanceof Set ? baselineTurnKeys : new Set(baselineTurnKeys || []);
+   const expectedText = String(request.pendingSubmittedTurnExpectedText || '');
+-  const candidate = DOM_PARSER.selectLatestMatchingNewTurnRecord(records, baseline, 'user', expectedText);
++  // Delayed/reloaded observation may prove an earlier uncertain Send. Require
++  // the complete literal payload and the original saved new-turn boundary.
++  const expected = normalizeText(expectedText);
++  const candidate = expected ? records.filter((record) => record.role === 'user' && record.key
++    && !baseline.has(record.key) && normalizeText(record.text) === expected).at(-1) : null;
+   if (!candidate) {
+     const unmatched = records.filter((record) => record?.key && record.role === 'user' && !baseline.has(record.key));
+     if (unmatched.length && expectedText) {
+diff --git a/tools/chrome-bridge-extension/content/userTurnState.js b/tools/chrome-bridge-extension/content/userTurnState.js
+index 246eea4..b6d715d 100644
+--- a/tools/chrome-bridge-extension/content/userTurnState.js
++++ b/tools/chrome-bridge-extension/content/userTurnState.js
+@@ -22,6 +22,9 @@
+     function userPromptRoot(turn) {
+       const root = userMessageRoot(turn);
+       if (!root?.querySelector) return null;
++      const bubble = root.querySelector('[data-user-message-bubble="true"]');
++      const literal = Array.from(bubble?.querySelectorAll?.('.whitespace-pre-wrap[dir="auto"]') || []);
++      if (literal.length === 1) return literal[0];
+       return root.querySelector('.user-message-bubble-color, [data-testid="user-message"], [data-testid="user-message-content"]')
+         || Array.from(root.children || []).find((child) => {
+           if (!isVisible(child)) return false;

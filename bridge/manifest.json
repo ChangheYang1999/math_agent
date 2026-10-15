@@ -1,0 +1,217 @@
+{
+  "upstream_url": "https://github.com/DrA1ex/chatgpt-bridge.git",
+  "revision": "0ffdae90239988f253058c05253226152acd55d2",
+  "bridge_version": "6.4.1",
+  "extension_version": "2.4.8",
+  "accepted_patches": [
+    {
+      "name": "picker",
+      "patch": "patches/picker.patch",
+      "sha256": "931afdf266931d3b98ee9c66f312c48e1a4bb336021c1eb2c4b10e98139e6931",
+      "files": [
+        {
+          "path": "tools/chrome-bridge-extension/content/intelligenceCommands.js",
+          "base_sha256": "8b6280aa68e673a9d190700c0c9123e009f48010b3cffd386bf1b69445df8334",
+          "patched_sha256": "09a0bb6d030d385dace6783441bca96b8576c543677cbf4fa597c93f2688d4fe"
+        }
+      ]
+    },
+    {
+      "name": "conversation",
+      "patch": "patches/conversation.patch",
+      "sha256": "b412ff43c0e5beca2d96ddcdaddd863ed0003104ca932ed39e5d65a0ea7ce965",
+      "files": [
+        {
+          "path": "src/bridge/adapters/tabObservationAdapter.js",
+          "base_sha256": "04ff37109ffd8e791aee6a9af2d8d4ec154d8c4eeda309b98be2358b363ddc78",
+          "patched_sha256": "545a8de1f78c12a756a6af839c8b2a14a8c9f0d2f00d1872978240b9f390ef13"
+        }
+      ]
+    },
+    {
+      "name": "release",
+      "patch": "patches/release.patch",
+      "sha256": "48905196a6c8b4722c36c5bdaf220b1c2fef9fcf13198e25380b760ce981983a",
+      "files": [
+        {
+          "path": "tools/chrome-bridge-extension/background/portRouter.js",
+          "base_sha256": "d56e3c14659f5801afef0995e106bacd03a8231f79a22c6c112a5b8e644cbf73",
+          "patched_sha256": "ba393cc48e9c93fb1d13ff6241c63f4b678451305299ee16398970e3301b7a5f"
+        }
+      ]
+    },
+    {
+      "name": "math",
+      "patch": "patches/math.patch",
+      "sha256": "ec918ac402fae6a77a98e678c32f6dd82614d8fc41c3797fe66f0806958178ec",
+      "files": [
+        {
+          "path": "tools/chrome-bridge-extension/content/responseDom.js",
+          "base_sha256": "addc4712c39ef9ededfd5b91d3e0ca32c173ecd52bf23e66dfd4292980a3605a",
+          "patched_sha256": "530d976d16b7f72a7ee2002cc0d7b4b18c5bf282a87a92fe664ac9127c8eb0b6"
+        }
+      ]
+    },
+    {
+      "name": "long_prompt_v2",
+      "patch": "patches/long_prompt_v2.patch",
+      "sha256": "75697838c4191b4b72a6c50299ad959765fedb53126c5cd98920ce36b746897b",
+      "files": [
+        {
+          "path": "tools/chrome-bridge-extension/artifactCaptureMain.js",
+          "base_sha256": "a17f7fa8905057d7e5d260fa89b5659b174364355101fd853035d910bf4a745b",
+          "patched_sha256": "540a729dc96606e77dddea1f182b6c8bc7ec00415e38d802dd01af480cbc40b5"
+        },
+        {
+          "path": "tools/chrome-bridge-extension/content/composerCommands.js",
+          "base_sha256": "e67402439036c31b5ccd81495d82a59fb20ba4967e8033733deb7e9116f7d5db",
+          "patched_sha256": "2408e4065b75d107a68503ead51e19e51aa467af107c7889974e1a247915b842"
+        }
+      ]
+    },
+    {
+      "name": "delivery_state",
+      "patch": "patches/delivery_state.patch",
+      "sha256": "bb9098333f90fc2bf8b16735bf64907adc512d59605628dd1af4f8695ab42cb8",
+      "files": [
+        {
+          "path": "src/bridge/coordinator/bridgeClientEventRouter.js",
+          "base_sha256": "6c0f7ce8d24b881cbefec79792d51092661e0080382b6cd9744f6cdcbb61d6b3",
+          "patched_sha256": "49f754dfd490eeab1246b1be9478738f7c4136a61a5fca1995a9bc792ca814ac"
+        },
+        {
+          "path": "src/bridge/coordinator/requestResultMaterializer.js",
+          "base_sha256": "6c09d5c4661c4be70cada54435b05689191d6ef8c366b9b8b2fcf3866c3cbde0",
+          "patched_sha256": "9b8178b2cce80b8d35ae258035c515bb632203af376791dcd98d280a3ef9c01f"
+        },
+        {
+          "path": "src/bridge/state/requestEffectTransitions.js",
+          "base_sha256": "bbee6b6cca2f813714d31ee570dd3a1831f55575a646a9515847f5e77ced7fcb",
+          "patched_sha256": "375d3ba134b06a811ff5cec19dbae64e52f1bd94a263ce8076c8fbbba9289feb"
+        },
+        {
+          "path": "src/turnManager.js",
+          "base_sha256": "28582daf798d1f4d7582cf557517e0c5f616c4398f8172391c16fa41a25fc6f0",
+          "patched_sha256": "ed1c0218203bc4039669dd76b119229949d786dd7ef742cd886478ca52f84af0"
+        },
+        {
+          "path": "tools/chrome-bridge-extension/content/requestEffectReconciliation.js",
+          "base_sha256": "f3611068849eebc5605f62237281f14a3f81de40845c58ebab3ff857fddc0af0",
+          "patched_sha256": "4d3f1b8bf1948a6a47a01ca3a8d7449b4043d0209307832693c3abd02752b274"
+        },
+        {
+          "path": "test/browserEffectReconciliationMatrix.test.js",
+          "base_sha256": "f0574d6167c1bb46200ec4402ef50c0c49611c1e16512e69478fbd7c9af3ad8f",
+          "patched_sha256": "275c0268e3e2aaa27f60af68e5c9401fc636c9bd466e48f0604d4c75ff130550"
+        },
+        {
+          "path": "test/extensionInteractionRegression.test.js",
+          "base_sha256": "f4004ce0aed72c5152720af258fef69734d46db4966814c7e5241d7badbbe750",
+          "patched_sha256": "5d6aa431be0d65f1f8d8ad437737f7eea08020f745b07f9725de8b6dd32e7fdd"
+        }
+      ]
+    },
+    {
+      "name": "observation_recovery",
+      "patch": "patches/observation_recovery.patch",
+      "sha256": "325234ba7f828ab8b4cf3e9539211b3b509dcec66fe9a90b27f494d03674f939",
+      "files": [
+        {
+          "path": "tools/chrome-bridge-extension/content/requestMonitor.js",
+          "base_sha256": "3baa7c7bed56db0ee0bcf98ecbccb6335d78cfdb06d1acf0c1af94d1a8905462",
+          "patched_sha256": "d9c509a772dd64d7c8166bee75dcce0e6eece2594da11381734ab6f8366312ef"
+        },
+        {
+          "path": "tools/chrome-bridge-extension/content/turnSnapshots.js",
+          "base_sha256": "e3244208ea49a789a40db7610f624aa88c36a0a4ef7457e94f64d5073397a524",
+          "patched_sha256": "35cefe20cdca408e10bdc7bd24c3f3fa88ecc179100dda1364b97c82651ad63e"
+        },
+        {
+          "path": "tools/chrome-bridge-extension/content/userTurnState.js",
+          "base_sha256": "d202418cf3a87b9a07119d3a8520f81897791d689f912b1e00383f4f5a2f2bad",
+          "patched_sha256": "b718f38795653abe03cc75273fe2e18d0e98ab663a736095a1f618d24fd410cd"
+        }
+      ]
+    },
+    {
+      "name": "code_lines",
+      "patch": "patches/code_lines.patch",
+      "sha256": "b2fd4b0748fab9a5e4b202d912d6f7dbf9b4359b36ca9fdfe8b62ecc430b0b0e",
+      "files": [
+        {
+          "path": "tools/chrome-bridge-extension/responseParserCore.js",
+          "base_sha256": "8e0a90a8e4bc3377b6e6a03e95c28f763982f58089c2519a25133769f00f1087",
+          "patched_sha256": "faf262d4c9e4882b068ff7dd69ed01ff72d8b39b0eb248ce06dbe47753f442fa"
+        },
+        {
+          "path": "tools/chrome-bridge-extension/content/responseDom.js",
+          "base_sha256": "530d976d16b7f72a7ee2002cc0d7b4b18c5bf282a87a92fe664ac9127c8eb0b6",
+          "patched_sha256": "66d24a8cd7b9168eafb1d4ebffd6ebaca4c4358edc584f3130ac4a46c8f99d9a"
+        }
+      ]
+    },
+    {
+      "name": "resume_roles",
+      "patch": "patches/resume_roles.patch",
+      "sha256": "6048dbe51830117e43f27a2f5197eb744fc47322a56ece0e53d39837e827a441",
+      "verification": "Phase 3 offline regression passed; consolidated debugging installs this source through the pinned recipe. Runtime/live recovery evidence is recorded separately.",
+      "files": [
+        {
+          "path": "tools/chrome-bridge-extension/content/requestResumeCommands.js",
+          "base_sha256": "bcde9a79a7168d1bae84e44f387a2865bed97e87a84e1f0af5dddacc563916ef",
+          "patched_sha256": "b4c0034347eff4fc3667bbc24535c977721c7e4ed18b1151ce5606271c31e9e5"
+        }
+      ]
+    },
+    {
+      "name": "final_answer",
+      "patch": "patches/final_answer.patch",
+      "sha256": "87ed75edb547a0f0d1b6176b2dbfd4ea98b272406658a476ca5b4d9e1540b52a",
+      "verification": "Offline final-node selector fixtures passed. After the user reloaded the installed extension, a live read-only recovery of the completed owned Pro Leaf returned the final 4,426-character JSON instead of the 17-character recap: LIVE_SELECTOR_RECOVERY_PASS. Plain-Markdown JSON fidelity remains KNOWN_FAIL (underscore emphasis becomes stars). This does not establish lossless content, normal post-fix new inference, or ninth request.resume handler execution.",
+      "files": [
+        {
+          "path": "tools/chrome-bridge-extension/content/currentTurnDom.js",
+          "base_sha256": "a72647f42655d14077d0b6f2c722fec16df5ff3347b27b919a0f93019afbf9ef",
+          "patched_sha256": "6de208cb406a6a6c31d4673d952c6beeb01321f089ee185b33dcf3a43c4c1cb3"
+        }
+      ]
+    },
+    {
+      "name": "picker_activation",
+      "patch": "patches/picker_activation.patch",
+      "sha256": "7b0b928a6c9393ab4fcd2e4c0ed20748833cd2327f028d9c39b8338332e57d8e",
+      "verification": "Offline own-tab activation/cancellation fixture and26 essential upstream tests passed; strict pinned recipe installed same extension folder. Supported maintenance API returnedHTTP500reconnecttimeout, not success or third user confirmation. After root refreshed only3owned idle pages, all6exact family/tier reads passed08:48:28–08:48:32UTC. Normal full research-cycle success is not claimed.",
+      "files": [
+        {
+          "path": "tools/chrome-bridge-extension/background/serverEnvelopeRouter.js",
+          "base_sha256": "e1009006814a26bc080ba7df68730b7a47e59c747b200d84784324dc0262dc14",
+          "patched_sha256": "6083dd6a8649dad240761005de9cb6501c04e49d34d00071b9681b4a90543fd1"
+        },
+        {
+          "path": "tools/chrome-bridge-extension/content/intelligenceCommands.js",
+          "base_sha256": "09a0bb6d030d385dace6783441bca96b8576c543677cbf4fa597c93f2688d4fe",
+          "patched_sha256": "623ef068e5e8eeb9cbd4328dd6c3f7dd901752236ac212925629c50b4121c65d"
+        }
+      ]
+    },
+    {
+      "name": "user_payload",
+      "patch": "patches/user_payload.patch",
+      "sha256": "9d0e49e9dff5872fe904bda3502d0d8ceaa1350d4533e08c8a2612627c9a1663",
+      "verification": "Offline exact captured rich-user DOM replay and41 focused regressions PASS; strict pinned installer deployed all12 to the same existing extension folder. Supported idle maintenance reload HTTP200; subsequent actual23768-character rich-user prompt auto-expanded, confirmed one Send with exact fullSHA256, and completed normally: LIVE_RICH_PAYLOAD_DELIVERY_PASS. Historical failed terminal unchanged; ninth request.resume live handler remains NOT_RUN.",
+      "files": [
+        {
+          "path": "tools/chrome-bridge-extension/content/composerCommands.js",
+          "base_sha256": "2408e4065b75d107a68503ead51e19e51aa467af107c7889974e1a247915b842",
+          "patched_sha256": "243fc09488b9170eeca05a52d576e361a98a1870ce095f80ebf5c4b015525150"
+        },
+        {
+          "path": "tools/chrome-bridge-extension/content/userTurnState.js",
+          "base_sha256": "b718f38795653abe03cc75273fe2e18d0e98ab663a736095a1f618d24fd410cd",
+          "patched_sha256": "f6fb616beff71c868946cfb60a8c5886cb0624a42fe014ba8e8513f8f536a73e"
+        }
+      ]
+    }
+  ],
+  "acceptance_note": "Eight previously live-verified patch sets and ninth resume_roles patch bytes remain unchanged. The ninth was installed through the pinned recipe during consolidated debugging; request.resume handler execution remains NOT_RUN. The tenth final_answer selector fix passed offline fixtures and actual post-reload read-only final extraction. Plain-Markdown content fidelity remains KNOWN_FAIL. Historical failed/sent requests and original terminals remain immutable. The eleventh picker_activation patch is an explicit overlay on the unchanged historical picker source plus the existing background forwarding path; it was offline verified and installed, with actual reload/live verification reported separately."
+}

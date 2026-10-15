@@ -1,0 +1,682 @@
+{
+  "observed_at": "2026-10-14T09:21:42.706505+00:00",
+  "run_id": "20261014-live-r2",
+  "scope": "Read-only snapshot of actual saved tree records; historical selection proof uses each durable turn sourceClientId, not mutable current bindings. No browser or live endpoint calls.",
+  "counts": {
+    "rounds": 4,
+    "parent_responses": 2,
+    "sessions": 3,
+    "turns": 10,
+    "events": 44,
+    "errors": 4
+  },
+  "reports": [
+    {
+      "round_id": "n-e615a92f81c6-r000001",
+      "node_id": "n-e615a92f81c6",
+      "number": 1,
+      "stage": "RESPONDED",
+      "report_accepted": true,
+      "schema_and_ids_valid": true,
+      "status": "SOLVED",
+      "summary": "Proved by mathematical induction that for every integer n >= 1, the sum of the first n positive odd integers equals n squared: 1 + 3 + ... + (2n - 1) = n^2. The proof establishes the base case n = 1 and rigorously derives the result for n = k + 1 from the induction hypothesis at n = k."
+    },
+    {
+      "round_id": "n-f9b4c78a7858-r000001",
+      "node_id": "n-f9b4c78a7858",
+      "number": 1,
+      "stage": "RESPONDED",
+      "report_accepted": true,
+      "schema_and_ids_valid": true,
+      "status": "SOLVED",
+      "summary": "Proved by contradiction that sqrt(2) is irrational. Assuming sqrt(2) = p/q for coprime integers p and q with q nonzero forces both p and q to be even, contradicting coprimality."
+    },
+    {
+      "round_id": "n-e615a92f81c6-r000002",
+      "node_id": "n-e615a92f81c6",
+      "number": 2,
+      "stage": "AWAITING_PARENT_RESPONSE",
+      "report_accepted": true,
+      "schema_and_ids_valid": true,
+      "status": "SOLVED",
+      "summary": "Established a complete telescoping-sum proof, independent of mathematical induction, that the sum of the first n positive odd integers equals n^2 for every integer n >= 0. Proved the stronger interval identity sum_{j=a+1}^b (2j - 1) = b^2 - a^2 for arbitrary integers 0 <= a <= b, including empty-sum boundary cases. Also established the equivalent zero-indexed formulation."
+    },
+    {
+      "round_id": "n-f9b4c78a7858-r000002",
+      "node_id": "n-f9b4c78a7858",
+      "number": 2,
+      "stage": "AWAITING_PARENT_RESPONSE",
+      "report_accepted": true,
+      "schema_and_ids_valid": true,
+      "status": "SOLVED",
+      "summary": "Completed all five required mathematical tasks. Established the irrationality of sqrt(2) by infinite descent without assuming an initially reduced fraction; proved the prime-divisibility lemma and irrationality of sqrt(l) for every prime l; and proved that sqrt(m) is rational for a nonnegative integer m if and only if m is a perfect square. Verified boundary cases and clarified the logical relationships among the arguments. The proofs are mathematically complete as written, conditional only on the explicitly identified standard results invoked."
+    }
+  ],
+  "parent_response_links": [
+    {
+      "round_id": "n-e615a92f81c6-r000001",
+      "parent_id": "root",
+      "next_round_id": "n-e615a92f81c6-r000002",
+      "valid_schema_ids_and_saved_report_link": true
+    },
+    {
+      "round_id": "n-f9b4c78a7858-r000001",
+      "parent_id": "root",
+      "next_round_id": "n-f9b4c78a7858-r000002",
+      "valid_schema_ids_and_saved_report_link": true
+    }
+  ],
+  "round2_dispatch_order": [
+    {
+      "round_id": "n-e615a92f81c6-r000002",
+      "previous_report_event": 10,
+      "parent_response_saved_event": 17,
+      "round2_dispatched_event": 23,
+      "correct_order": true
+    },
+    {
+      "round_id": "n-f9b4c78a7858-r000002",
+      "previous_report_event": 13,
+      "parent_response_saved_event": 21,
+      "round2_dispatched_event": 25,
+      "correct_order": true
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "leaf:n-e615a92f81c6-r000001:e0:a0",
+      "request_id": "mathagent_36827d7b34c1528197fd5566bccdd8a6",
+      "node_id": "n-e615a92f81c6",
+      "local_status": "COMPLETED",
+      "upstream_status": "completed",
+      "original_client_id": "extension:tab:1707788676",
+      "conversation_id": "6acf41cd-3fe8-83e9-b8b3-0ddddf0e91db",
+      "prompt_characters": 2902,
+      "selection": {
+        "models": {
+          "pre": {
+            "at": "2026-10-14T08:48:07.836830+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          },
+          "post": {
+            "at": "2026-10-14T08:48:37.483437+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          }
+        },
+        "efforts": {
+          "pre": {
+            "at": "2026-10-14T08:48:08.621239+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          },
+          "post": {
+            "at": "2026-10-14T08:48:38.254803+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          }
+        }
+      },
+      "delivered_to_extension_event": true,
+      "confirmed_chatgpt_submission_event": true,
+      "authoritative_completed_at": "2026-10-14T08:48:36.662Z",
+      "error": null,
+      "pre_submission_diagnostics": []
+    },
+    {
+      "turn_id": "leaf:n-f9b4c78a7858-r000001:e0:a0",
+      "request_id": "mathagent_fbf55ac943ce54c78d2a9dd6f0d3bf52",
+      "node_id": "n-f9b4c78a7858",
+      "local_status": "COMPLETED",
+      "upstream_status": "completed",
+      "original_client_id": "extension:tab:1707788679",
+      "conversation_id": "6acf41ce-d5d0-83ea-b396-3f3f8dd6b444",
+      "prompt_characters": 2932,
+      "selection": {
+        "models": {
+          "pre": {
+            "at": "2026-10-14T08:48:09.467516+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          },
+          "post": {
+            "at": "2026-10-14T08:48:48.375421+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          }
+        },
+        "efforts": {
+          "pre": {
+            "at": "2026-10-14T08:48:10.270709+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          },
+          "post": {
+            "at": "2026-10-14T08:48:49.179557+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          }
+        }
+      },
+      "delivered_to_extension_event": true,
+      "confirmed_chatgpt_submission_event": true,
+      "authoritative_completed_at": "2026-10-14T08:48:47.469Z",
+      "error": null,
+      "pre_submission_diagnostics": []
+    },
+    {
+      "turn_id": "parent:n-e615a92f81c6-r000001:e0:a0",
+      "request_id": "mathagent_a6fb321e31cf5211a3cc024c7d8a7776",
+      "node_id": "root",
+      "local_status": "COMPLETED",
+      "upstream_status": "completed",
+      "original_client_id": "extension:tab:1707788673",
+      "conversation_id": "6acf41ec-72f8-83ea-a670-bfd46819ef79",
+      "prompt_characters": 8261,
+      "selection": {
+        "models": {
+          "pre": {
+            "at": "2026-10-14T08:48:39.114663+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          },
+          "post": {
+            "at": "2026-10-14T08:49:35.866474+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          }
+        },
+        "efforts": {
+          "pre": {
+            "at": "2026-10-14T08:48:39.892695+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          },
+          "post": {
+            "at": "2026-10-14T08:49:36.708340+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          }
+        }
+      },
+      "delivered_to_extension_event": true,
+      "confirmed_chatgpt_submission_event": true,
+      "authoritative_completed_at": "2026-10-14T08:49:35.027Z",
+      "error": null,
+      "pre_submission_diagnostics": []
+    },
+    {
+      "turn_id": "parent:n-f9b4c78a7858-r000001:e0:a0",
+      "request_id": "mathagent_ebcac79eee9057a6af8e4950c623fd22",
+      "node_id": "root",
+      "local_status": "COMPLETED",
+      "upstream_status": "completed",
+      "original_client_id": "extension:tab:1707788673",
+      "conversation_id": "6acf41ec-72f8-83ea-a670-bfd46819ef79",
+      "prompt_characters": 8281,
+      "selection": {
+        "models": {
+          "pre": {
+            "at": "2026-10-14T08:49:37.570605+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          },
+          "post": {
+            "at": "2026-10-14T08:50:57.928564+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          }
+        },
+        "efforts": {
+          "pre": {
+            "at": "2026-10-14T08:49:38.366643+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          },
+          "post": {
+            "at": "2026-10-14T08:50:58.728195+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          }
+        }
+      },
+      "delivered_to_extension_event": true,
+      "confirmed_chatgpt_submission_event": true,
+      "authoritative_completed_at": "2026-10-14T08:50:56.997Z",
+      "error": null,
+      "pre_submission_diagnostics": []
+    },
+    {
+      "turn_id": "leaf:n-e615a92f81c6-r000002:e0:a0",
+      "request_id": "mathagent_42cc27947fd05927b55da66397218f39",
+      "node_id": "n-e615a92f81c6",
+      "local_status": "COMPLETED",
+      "upstream_status": "completed",
+      "original_client_id": "extension:tab:1707788676",
+      "conversation_id": "6acf41cd-3fe8-83e9-b8b3-0ddddf0e91db",
+      "prompt_characters": 6533,
+      "selection": {
+        "models": {
+          "pre": {
+            "at": "2026-10-14T08:50:59.611605+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          },
+          "post": {
+            "at": "2026-10-14T08:52:12.923670+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          }
+        },
+        "efforts": {
+          "pre": {
+            "at": "2026-10-14T08:51:00.427983+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          },
+          "post": {
+            "at": "2026-10-14T08:52:13.757607+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          }
+        }
+      },
+      "delivered_to_extension_event": true,
+      "confirmed_chatgpt_submission_event": true,
+      "authoritative_completed_at": "2026-10-14T08:52:11.944Z",
+      "error": null,
+      "pre_submission_diagnostics": []
+    },
+    {
+      "turn_id": "leaf:n-f9b4c78a7858-r000002:e0:a0",
+      "request_id": "mathagent_b77ede1feda35eeeaac3b6dc2213694e",
+      "node_id": "n-f9b4c78a7858",
+      "local_status": "COMPLETED",
+      "upstream_status": "completed",
+      "original_client_id": "extension:tab:1707788679",
+      "conversation_id": "6acf41ce-d5d0-83ea-b396-3f3f8dd6b444",
+      "prompt_characters": 8237,
+      "selection": {
+        "models": {
+          "pre": {
+            "at": "2026-10-14T08:51:01.380916+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          },
+          "post": {
+            "at": "2026-10-14T08:53:16.267374+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          }
+        },
+        "efforts": {
+          "pre": {
+            "at": "2026-10-14T08:51:02.200122+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          },
+          "post": {
+            "at": "2026-10-14T08:53:17.889692+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          }
+        }
+      },
+      "delivered_to_extension_event": true,
+      "confirmed_chatgpt_submission_event": true,
+      "authoritative_completed_at": "2026-10-14T08:53:14.273Z",
+      "error": null,
+      "pre_submission_diagnostics": []
+    },
+    {
+      "turn_id": "parent:n-e615a92f81c6-r000002:e0:a0",
+      "request_id": "mathagent_87686d9cb28355e7a2dc631bfdd0e020",
+      "node_id": "root",
+      "local_status": "FAILED_NOT_SENT",
+      "upstream_status": "interrupted",
+      "original_client_id": "extension:tab:1707788673",
+      "conversation_id": "6acf41ec-72f8-83ea-a670-bfd46819ef79",
+      "prompt_characters": 13065,
+      "selection": {
+        "models": {
+          "pre": {
+            "at": "2026-10-14T08:52:14.798951+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          },
+          "post": null
+        },
+        "efforts": {
+          "pre": {
+            "at": "2026-10-14T08:52:15.688433+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          },
+          "post": null
+        }
+      },
+      "delivered_to_extension_event": true,
+      "confirmed_chatgpt_submission_event": false,
+      "authoritative_completed_at": "2026-10-14T09:01:54.330Z",
+      "error": {
+        "code": "TURN_INTERRUPTED",
+        "message": "Browser generation was cancelled",
+        "recoverable": false
+      },
+      "pre_submission_diagnostics": [
+        {
+          "at": "2026-10-14T08:52:24.153Z",
+          "type": "diagnostic.composer.text_verify_failed",
+          "reason": "send_control_not_ready_after_bounded_setter_attempts",
+          "expectedLength": 13065,
+          "actualLength": 0
+        },
+        {
+          "at": "2026-10-14T09:01:54.299Z",
+          "type": "turn/interrupted",
+          "reason": "Bounded experiment repair: input was converted to a pasted-text attachment; COMPOSER_TEXT_VERIFY_FAILED occurred before any confirmed submission. Stop this original request before changing extension code."
+        }
+      ]
+    },
+    {
+      "turn_id": "parent:n-e615a92f81c6-r000002:e1:a0",
+      "request_id": "mathagent_c3b62eaee6945f11a6b807f2b92521ba",
+      "node_id": "root",
+      "local_status": "FAILED_NOT_SENT",
+      "upstream_status": "interrupted",
+      "original_client_id": "extension:tab:1707788673",
+      "conversation_id": "6acf41ec-72f8-83ea-a670-bfd46819ef79",
+      "prompt_characters": 13065,
+      "selection": {
+        "models": {
+          "pre": {
+            "at": "2026-10-14T09:11:12.480690+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          },
+          "post": null
+        },
+        "efforts": {
+          "pre": {
+            "at": "2026-10-14T09:11:13.310530+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          },
+          "post": null
+        }
+      },
+      "delivered_to_extension_event": true,
+      "confirmed_chatgpt_submission_event": false,
+      "authoritative_completed_at": "2026-10-14T09:12:00.329Z",
+      "error": {
+        "code": "TURN_INTERRUPTED",
+        "message": "Browser generation was cancelled",
+        "recoverable": false
+      },
+      "pre_submission_diagnostics": [
+        {
+          "at": "2026-10-14T09:12:00.304Z",
+          "type": "turn/interrupted",
+          "reason": "Bounded experiment repair: exact long-paste attachment is present, but preparation refused its control pair before Send. Stop this original request before targeted selector correction."
+        }
+      ]
+    },
+    {
+      "turn_id": "parent:n-e615a92f81c6-r000002:e2:a0",
+      "request_id": "mathagent_bd996b71a2295575853a8d3dd1e1896d",
+      "node_id": "root",
+      "local_status": "FAILED_NOT_SENT",
+      "upstream_status": "interrupted",
+      "original_client_id": "extension:tab:1707788673",
+      "conversation_id": "6acf41ec-72f8-83ea-a670-bfd46819ef79",
+      "prompt_characters": 13065,
+      "selection": {
+        "models": {
+          "pre": {
+            "at": "2026-10-14T09:15:05.238818+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          },
+          "post": null
+        },
+        "efforts": {
+          "pre": {
+            "at": "2026-10-14T09:15:06.072127+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          },
+          "post": null
+        }
+      },
+      "delivered_to_extension_event": true,
+      "confirmed_chatgpt_submission_event": false,
+      "authoritative_completed_at": "2026-10-14T09:16:27.579Z",
+      "error": {
+        "code": "TURN_INTERRUPTED",
+        "message": "Browser generation was cancelled",
+        "recoverable": false
+      },
+      "pre_submission_diagnostics": [
+        {
+          "at": "2026-10-14T09:15:12.655Z",
+          "type": "diagnostic.composer.pasted_text_controls",
+          "method": "paste",
+          "removeCount": 1,
+          "showCount": 0,
+          "waitedMs": 930
+        }
+      ]
+    },
+    {
+      "turn_id": "parent:n-e615a92f81c6-r000002:e3:a0",
+      "request_id": "mathagent_f5277c2710ed570d9b3e238a14ef7255",
+      "node_id": "root",
+      "local_status": "ERROR",
+      "upstream_status": "interrupted",
+      "original_client_id": "extension:tab:1707788673",
+      "conversation_id": "6acf41ec-72f8-83ea-a670-bfd46819ef79",
+      "prompt_characters": 13065,
+      "selection": {
+        "models": {
+          "pre": {
+            "at": "2026-10-14T09:18:23.498221+00:00",
+            "label": "GPT-6",
+            "id": "model-gpt-6"
+          },
+          "post": null
+        },
+        "efforts": {
+          "pre": {
+            "at": "2026-10-14T09:18:24.335163+00:00",
+            "label": "Extra High",
+            "id": "xhigh"
+          },
+          "post": null
+        }
+      },
+      "delivered_to_extension_event": true,
+      "confirmed_chatgpt_submission_event": false,
+      "authoritative_completed_at": "2026-10-14T09:19:52.653Z",
+      "error": {
+        "code": "TURN_INTERRUPTED",
+        "message": "Browser generation was cancelled",
+        "recoverable": false
+      },
+      "pre_submission_diagnostics": [
+        {
+          "at": "2026-10-14T09:18:31.011Z",
+          "type": "diagnostic.composer.pasted_text_controls",
+          "method": "paste",
+          "removeCount": 1,
+          "showCount": 0,
+          "waitedMs": 910
+        },
+        {
+          "at": "2026-10-14T09:19:52.629Z",
+          "type": "turn/interrupted",
+          "reason": "Bounded experiment stop: required two full tree pairs are saved; extended four-pair target remains blocked at long-prompt preparation. Source proved this attempt did not cross submission boundary. No further retries or inference."
+        }
+      ]
+    }
+  ],
+  "concerns": [
+    {
+      "turn_id": "parent:n-e615a92f81c6-r000002:e0:a0",
+      "status": "FAILED_NOT_SENT",
+      "detail": "Authoritatively interrupted; no complete output or confirmed ChatGPT submission event. Extension delivery/implicit acceptance is not a ChatGPT Send confirmation. Long-prompt preparation remained unresolved."
+    },
+    {
+      "turn_id": "parent:n-e615a92f81c6-r000002:e1:a0",
+      "status": "FAILED_NOT_SENT",
+      "detail": "Authoritatively interrupted; no complete output or confirmed ChatGPT submission event. Extension delivery/implicit acceptance is not a ChatGPT Send confirmation. Long-prompt preparation remained unresolved."
+    },
+    {
+      "turn_id": "parent:n-e615a92f81c6-r000002:e2:a0",
+      "status": "FAILED_NOT_SENT",
+      "detail": "Authoritatively interrupted; no complete output or confirmed ChatGPT submission event. Extension delivery/implicit acceptance is not a ChatGPT Send confirmation. Long-prompt preparation remained unresolved."
+    },
+    {
+      "turn_id": "parent:n-e615a92f81c6-r000002:e3:a0",
+      "status": "ERROR",
+      "detail": "Authoritatively interrupted; no complete output or confirmed ChatGPT submission event. Extension delivery/implicit acceptance is not a ChatGPT Send confirmation. Long-prompt preparation remained unresolved."
+    }
+  ],
+  "leaf_overlap_by_round": {
+    "1": {
+      "in_flight_overlap_seconds": 26.413961041,
+      "generation_evidence": {
+        "request_ids": [
+          "mathagent_36827d7b34c1528197fd5566bccdd8a6",
+          "mathagent_fbf55ac943ce54c78d2a9dd6f0d3bf52"
+        ],
+        "activity_intervals_epoch_seconds": {
+          "mathagent_36827d7b34c1528197fd5566bccdd8a6": [
+            [
+              1791967693.594,
+              1791967713.688
+            ]
+          ],
+          "mathagent_fbf55ac943ce54c78d2a9dd6f0d3bf52": [
+            [
+              1791967695.275,
+              1791967698.389
+            ],
+            [
+              1791967707.062,
+              1791967724.752
+            ]
+          ]
+        },
+        "shared_intervals_epoch_seconds": [
+          [
+            1791967695.275,
+            1791967698.389
+          ],
+          [
+            1791967707.062,
+            1791967713.688
+          ]
+        ],
+        "observed_overlap_seconds": 9.739999771118164,
+        "limitation": "Activity between consecutive active observations is inferred at <=2s resolution. Cached single observations, >2s gaps, and observations outside dispatch/terminal bounds do not establish concurrency. Brief transitions between samples remain unobservable."
+      }
+    },
+    "2": {
+      "in_flight_overlap_seconds": 69.709857458,
+      "generation_evidence": {
+        "request_ids": [
+          "mathagent_42cc27947fd05927b55da66397218f39",
+          "mathagent_b77ede1feda35eeeaac3b6dc2213694e"
+        ],
+        "activity_intervals_epoch_seconds": {
+          "mathagent_42cc27947fd05927b55da66397218f39": [
+            [
+              1791967866.483,
+              1791967868.488
+            ],
+            [
+              1791967889.339,
+              1791967929.079
+            ]
+          ],
+          "mathagent_b77ede1feda35eeeaac3b6dc2213694e": [
+            [
+              1791967868.24,
+              1791967870.252
+            ],
+            [
+              1791967894.411,
+              1791967896.418
+            ],
+            [
+              1791967899.028,
+              1791967900.03
+            ],
+            [
+              1791967903.029,
+              1791967904.03
+            ],
+            [
+              1791967907.086,
+              1791967991.053
+            ]
+          ]
+        },
+        "shared_intervals_epoch_seconds": [
+          [
+            1791967868.24,
+            1791967868.488
+          ],
+          [
+            1791967894.411,
+            1791967896.418
+          ],
+          [
+            1791967899.028,
+            1791967900.03
+          ],
+          [
+            1791967903.029,
+            1791967904.03
+          ],
+          [
+            1791967907.086,
+            1791967929.079
+          ]
+        ],
+        "observed_overlap_seconds": 26.250999689102173,
+        "limitation": "Activity between consecutive active observations is inferred at <=2s resolution. Cached single observations, >2s gaps, and observations outside dispatch/terminal bounds do not establish concurrency. Brief transitions between samples remain unobservable."
+      }
+    }
+  },
+  "conversation_isolation": {
+    "node_count": 3,
+    "distinct_current_conversation_ids": 3,
+    "completed_leaf_rounds_reuse_each_own_session": true,
+    "parent_separate": true
+  },
+  "mathematical_review": "All four actual JSON leaf reports are mathematically sound on inspection: induction and telescoping/empty-sum generalization; parity contradiction and infinite descent/prime-factorization characterization of integer square roots. Explicit standard lemmas are stated. ASCII formulas are intact.",
+  "status": "MINIMUM_TREE_PASS_EXTENDED_INCOMPLETE",
+  "minimum_target_pairs": 2,
+  "minimum_tree_pass": true,
+  "extended_target_pairs": 4,
+  "extended_completed_pairs": 2,
+  "extended_remaining_pairs": 2,
+  "remaining_round_ids": [
+    "n-e615a92f81c6-r000002",
+    "n-f9b4c78a7858-r000002"
+  ],
+  "terminal_counts": {
+    "completed": 6,
+    "interrupted": 4
+  },
+  "limits": [
+    "The required two complete leaf-report/parent-response pairs passed; the extended four-pair target did not complete.",
+    "All four second-round parent attempts concerned the same 13,065-character prompt and were interrupted before confirmed ChatGPT submission; no answers were fabricated.",
+    "prompt.delivered and implicit prompt.accepted events indicate extension receipt, not successful Send or inference.",
+    "The proposed composer workaround did not pass the live extended test; candidate deployment/rollback status must be taken from final cleanup notes.",
+    "No further prompt retry was performed by this auditor. Missing second-round parent responses remain visible.",
+    "Generation intervals retain the recorded <=2-second observation inference limits."
+  ]
+}

@@ -1,0 +1,22 @@
+diff --git a/src/bridge/adapters/tabObservationAdapter.js b/src/bridge/adapters/tabObservationAdapter.js
+index 97cc593..a9878fa 100644
+--- a/src/bridge/adapters/tabObservationAdapter.js
++++ b/src/bridge/adapters/tabObservationAdapter.js
+@@ -40,12 +40,15 @@ function enumValue(values, value) {
+ }
+ 
+ function normalizedConversationId(value = '') {
+-  const id = String(value || '').trim();
++  let id = String(value || '').trim();
++  try { id = decodeURIComponent(id); } catch { /* Keep malformed identifiers opaque. */ }
+   return id === 'new' ? '' : id;
+ }
+ 
+ function isTemporaryConversationId(value = '') {
+-  return /^WEB:/i.test(normalizedConversationId(value));
++  const id = String(value || '').trim(); // Callers have already normalized once.
++  return /^WEB:/i.test(id)
++    || /^local-chatgpt:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
+ }
+ 
+ function conversationBoundaryMatches({

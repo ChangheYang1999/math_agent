@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-15T06:34:34.030Z",
+  "readOnly": true,
+  "newPermissionRequested": false,
+  "result": {
+    "result": {
+      "type": "object",
+      "value": {
+        "pendingInbox": "审核收件箱 1",
+        "permission": "default",
+        "supported": true,
+        "visibility": "visible"
+      }
+    }
+  }
+}

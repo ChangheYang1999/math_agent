@@ -1,0 +1,109 @@
+{
+  "at": "2026-10-15T08:37:04.834258+00:00",
+  "status": "OFFLINE_PASS",
+  "patch": {
+    "name": "picker_activation",
+    "patch": "patches/picker_activation.patch",
+    "sha256": "7b0b928a6c9393ab4fcd2e4c0ed20748833cd2327f028d9c39b8338332e57d8e",
+    "verification": "Offline own-tab activation and picker cancellation fixtures passed. Deployment/live verification pending.",
+    "files": [
+      {
+        "path": "tools/chrome-bridge-extension/background/serverEnvelopeRouter.js",
+        "base_sha256": "e1009006814a26bc080ba7df68730b7a47e59c747b200d84784324dc0262dc14",
+        "patched_sha256": "6083dd6a8649dad240761005de9cb6501c04e49d34d00071b9681b4a90543fd1"
+      },
+      {
+        "path": "tools/chrome-bridge-extension/content/intelligenceCommands.js",
+        "base_sha256": "09a0bb6d030d385dace6783441bca96b8576c543677cbf4fa597c93f2688d4fe",
+        "patched_sha256": "623ef068e5e8eeb9cbd4328dd6c3f7dd901752236ac212925629c50b4121c65d"
+      }
+    ]
+  },
+  "root_cause_evidence": "intelligence_owned_diagnostics_analysis.json",
+  "focused_fixture": {
+    "command": [
+      "node",
+      "bridge/tests/picker_activation.mjs",
+      "/private/tmp/mathagent-consolidated-picker-activation"
+    ],
+    "result": "PASS before/after real-handler activation and abortable-wait regression. Both models/efforts; missing candidate and picker-open states; no post-abort UI actions; no new tabs, URL changes, reloads, prompts or inference."
+  },
+  "upstream_essential_regressions": {
+    "command": [
+      "node",
+      "--test",
+      "test/intelligenceSelection.test.js",
+      "test/intelligenceSurfaceSelection.test.js",
+      "test/extensionInteractionRegression.test.js"
+    ],
+    "tests": 26,
+    "passed": 26,
+    "failed": 0,
+    "duration_ms": 1514.8455
+  },
+  "existing_fixtures": {
+    "final_answer": "PASS including captured currentPro DOM",
+    "resume_roles": "PASS",
+    "code_lines": "PASS"
+  },
+  "strict_source_only": "PASS; all11 applied in separate pinned checkout",
+  "managed_check_only_before_publication": "PASS; first10 applied, picker_activation unapplied, no unexpected tracked changes",
+  "historical_ten_patch_hashes": {
+    "patches/picker.patch": {
+      "expected": "931afdf266931d3b98ee9c66f312c48e1a4bb336021c1eb2c4b10e98139e6931",
+      "actual": "931afdf266931d3b98ee9c66f312c48e1a4bb336021c1eb2c4b10e98139e6931",
+      "matches": true
+    },
+    "patches/conversation.patch": {
+      "expected": "b412ff43c0e5beca2d96ddcdaddd863ed0003104ca932ed39e5d65a0ea7ce965",
+      "actual": "b412ff43c0e5beca2d96ddcdaddd863ed0003104ca932ed39e5d65a0ea7ce965",
+      "matches": true
+    },
+    "patches/release.patch": {
+      "expected": "48905196a6c8b4722c36c5bdaf220b1c2fef9fcf13198e25380b760ce981983a",
+      "actual": "48905196a6c8b4722c36c5bdaf220b1c2fef9fcf13198e25380b760ce981983a",
+      "matches": true
+    },
+    "patches/math.patch": {
+      "expected": "ec918ac402fae6a77a98e678c32f6dd82614d8fc41c3797fe66f0806958178ec",
+      "actual": "ec918ac402fae6a77a98e678c32f6dd82614d8fc41c3797fe66f0806958178ec",
+      "matches": true
+    },
+    "patches/long_prompt_v2.patch": {
+      "expected": "75697838c4191b4b72a6c50299ad959765fedb53126c5cd98920ce36b746897b",
+      "actual": "75697838c4191b4b72a6c50299ad959765fedb53126c5cd98920ce36b746897b",
+      "matches": true
+    },
+    "patches/delivery_state.patch": {
+      "expected": "bb9098333f90fc2bf8b16735bf64907adc512d59605628dd1af4f8695ab42cb8",
+      "actual": "bb9098333f90fc2bf8b16735bf64907adc512d59605628dd1af4f8695ab42cb8",
+      "matches": true
+    },
+    "patches/observation_recovery.patch": {
+      "expected": "325234ba7f828ab8b4cf3e9539211b3b509dcec66fe9a90b27f494d03674f939",
+      "actual": "325234ba7f828ab8b4cf3e9539211b3b509dcec66fe9a90b27f494d03674f939",
+      "matches": true
+    },
+    "patches/code_lines.patch": {
+      "expected": "b2fd4b0748fab9a5e4b202d912d6f7dbf9b4359b36ca9fdfe8b62ecc430b0b0e",
+      "actual": "b2fd4b0748fab9a5e4b202d912d6f7dbf9b4359b36ca9fdfe8b62ecc430b0b0e",
+      "matches": true
+    },
+    "patches/resume_roles.patch": {
+      "expected": "6048dbe51830117e43f27a2f5197eb744fc47322a56ece0e53d39837e827a441",
+      "actual": "6048dbe51830117e43f27a2f5197eb744fc47322a56ece0e53d39837e827a441",
+      "matches": true
+    },
+    "patches/final_answer.patch": {
+      "expected": "87ed75edb547a0f0d1b6176b2dbfd4ea98b272406658a476ca5b4d9e1540b52a",
+      "actual": "87ed75edb547a0f0d1b6176b2dbfd4ea98b272406658a476ca5b4d9e1540b52a",
+      "matches": true
+    }
+  },
+  "deployment": "Root reviewed full patch; strict pinned installer atomically published same existing extension folder; see picker_activation_install.json",
+  "live_model_verification": "PASS six recorded model/effort reads on ownParent8883 and ownLeaves8894/8897 after own-page refreshes; no third user confirmation or maintenance API success claimed.",
+  "inference_requests_by_this_agent": 0,
+  "production_project_data_changes": 0,
+  "strict_managed_check_only_after_publication": "PASS; all11 applied",
+  "managed_picker_fixture_after_publication": "PASS"
+}

@@ -1,0 +1,60 @@
+diff --git a/tools/chrome-bridge-extension/background/portRouter.js b/tools/chrome-bridge-extension/background/portRouter.js
+index 8d36b77..d6bb5fc 100644
+--- a/tools/chrome-bridge-extension/background/portRouter.js
++++ b/tools/chrome-bridge-extension/background/portRouter.js
+@@ -1,5 +1,6 @@
+ import { MessageType } from './protocolV5.js';
+ import { contentMessageQueueOptions } from './operationPriorityPolicy.js';
++import { matchingPersistedRequestIdentity } from './stateV6Core.js';
+ import {
+   beginReloadCommandReconciliation,
+   isReloadManagedCommand,
+@@ -194,7 +195,23 @@ export async function handleReleaseCleanupSettlement(deps, state, message) {
+ 
+ export async function handleEffectReconciliationSettlement(deps, state, message) {
+   const runtime = await deps.backgroundState.read(state.tabId);
++  const command = runtime.commands?.[String(message.commandId || '')] || null;
++  if (!command || command.commandType !== 'request.effect.reconcile'
++    || command.scope !== 'request' || command.mode !== 'result') {
++    throw new Error('Effect reconciliation settlement did not match its persisted result command');
++  }
++  if (command.status === 'succeeded') {
++    await deps.flushCriticalOutbox(state);
++    return { persisted: true, duplicate: true };
++  }
++  if (command.status !== 'dispatched'
++    || !matchingPersistedRequestIdentity(command, runtime.lease, { requireResponseEpoch: true })) {
++    throw new Error('Effect reconciliation command does not match the active request lease');
++  }
+   const effect = runtime.effects?.[String(message.effectId || '')] || null;
++  if (effect && !matchingPersistedRequestIdentity(command, effect, { requireResponseEpoch: true })) {
++    throw new Error('Effect reconciliation target belongs to another request lease');
++  }
+   const recorded = await deps.backgroundState.transition(state.tabId, {
+     type: 'effect.reconciliation_recorded', effectId: String(message.effectId || ''), ...(effect ? requestIdentity(effect) : {}),
+     idempotencyKey: String(message.idempotencyKey || effect?.idempotencyKey || ''),
+@@ -208,6 +225,24 @@ export async function handleEffectReconciliationSettlement(deps, state, message)
+     contentEpoch: state.contentEpoch,
+   });
+   if (!recorded.accepted && recorded.reason !== 'effect_missing') throw new Error(`Browser effect reconciliation evidence rejected: ${recorded.reason}`);
++  // The enclosing read command is a release-barrier child too. Persisting only
++  // the target effect's evidence leaves that command dispatched indefinitely.
++  const body = {
++    commandId: command.commandId, requestId: command.requestId,
++    resultType: 'request.effect.reconciled', effectId: String(message.effectId || ''),
++    effectType: String(message.effectType || ''),
++    reconciliationOutcome: String(message.reconciliationOutcome || 'unknown'),
++    reconciliationReason: String(message.reconciliationReason || ''), evidence: message.evidence || {},
++  };
++  const terminalEnvelope = deps.createEnvelopeDraft(state, MessageType.COMMAND_RESULT, body, {
++    commandId: command.commandId, lease: requestIdentity(command),
++  });
++  const completed = await deps.backgroundState.transition(state.tabId, {
++    type: 'command.succeeded', commandId: command.commandId, ...requestIdentity(command),
++    resultType: body.resultType, resultPayload: body, terminalEnvelope, contentEpoch: state.contentEpoch,
++  });
++  if (!completed.accepted) throw new Error(`Effect reconciliation command completion rejected: ${completed.reason}`);
++  await deps.flushCriticalOutbox(state);
+   return { persisted: recorded.accepted, effect: recorded.state?.effects?.[String(message.effectId || '')] || null };
+ }
+ 

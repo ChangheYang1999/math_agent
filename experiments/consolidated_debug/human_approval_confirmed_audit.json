@@ -1,0 +1,131 @@
+{
+  "audited_at_utc": "2026-10-15T15:23:28.620222+00:00",
+  "classification": "ACTUAL_HUMAN_APPROVAL_PERSISTED_APPROVED_WAITING_FOR_DISPATCH_NO_INFERENCE",
+  "project": "experiments/consolidated_debug/runs/human_review/project",
+  "url": "http://127.0.0.1:8767/",
+  "read_method": "Direct SQLite SELECT only; URI mode=ro&immutable=1 after confirming no WAL/SHM/journal sidecars. Main database SHA-256 unchanged before/after. Plain mode=ro could not open the checkpointed WAL-mode database without sidecars; no write-mode connection or source APIs used.",
+  "database_sha256_before": "c769a3c1c01dc8c96f765d9c4fe9b439d35047538c6aae9e323fe38c8f772409",
+  "database_sha256_after": "c769a3c1c01dc8c96f765d9c4fe9b439d35047538c6aae9e323fe38c8f772409",
+  "sqlite_sidecars_before": {
+    "-wal": false,
+    "-shm": false,
+    "-journal": false
+  },
+  "sqlite_sidecars_after": {
+    "-wal": false,
+    "-shm": false,
+    "-journal": false
+  },
+  "approval_row": {
+    "id": "n-10712a75c7a1-r000001:prompt:1",
+    "node_id": "n-10712a75c7a1",
+    "round_id": "n-10712a75c7a1-r000001",
+    "artifact_type": "prompt",
+    "payload": "ENGLISH_ONLY: Write all internal research prose, fields, and messages in English. Preserve mathematical notation.\n\nYou are one persistent GPT-6 Pro research leaf. Perform exactly one round of the exact task your Extra High parent assigned to this node and round. Use the supplied durable research state when earlier conversation context is missing. State assumptions, pursue a proof, counterexample, or rigorous partial result, and distinguish evidence from conjecture. An unsuccessful attempt must still produce a report.\n\nReturn one JSON object matching OUTPUT_SCHEMA_JSON, inside a single fenced JSON code block with no surrounding text, so the web renderer preserves literal JSON strings. Copy node_id and round_id exactly from CONTEXT_JSON. Include status (SOLVED, PARTIAL, or STUCK), summary, findings, evidence, obstacles, recommended_next_steps, split_suggestion, and important_update. Include rigorous mathematical details in evidence; do not claim independent verification merely because you produced a proof. Use empty lists when appropriate. A split_suggestion only proposes tasks; it cannot create children or change the tree.\n\nThis report is mandatory even when stuck, interrupted by a mathematical obstacle, or solved. The scheduler stores it and delivers it to your parent, with human review if enabled. Stop after this one report. Your parent must assess it and create a complete new prompt before you may research again. Never select or start your own next round, never treat human discussion as approval, and never bypass the stored prompt/report approval gates.\n\nCONTEXT_JSON\n{\"goal\": \"Independently audit the sharp cyclic mean-zero Poincare inequality at N=4, its equality space, and its exact stability defect.\", \"kind\": \"leaf\", \"node_id\": \"n-10712a75c7a1\", \"research_state\": \"\", \"round_id\": \"n-10712a75c7a1-r000001\", \"task\": \"Perform one independent, self-contained audit of the N=4 boundary case of the cyclic mean-zero Poincare inequality.\\n\\nLet x=(x_0,x_1,x_2,x_3) be a real vector with x_0+x_1+x_2+x_3=0, and set x_4=x_0, M(x)=sum_{j=0}^3 x_j^2, and E(x)=sum_{j=0}^3 (x_{j+1}-x_j)^2. Existing model-generated reports propose that E(x)>=2 M(x), that 2 is optimal, and that equality holds exactly for x=(A,B,-A,-B). Treat these as claims to check, not independently verified facts.\\n\\n1. Prove or refute each claim by explicit elementary algebra. Give an exact identity for E-2M using the mean-zero constraint, prove both directions of the equality characterization, and exhibit nonzero extremizers showing sharpness.\\n2. Independently expand the cyclic 4-by-4 Laplacian and check its action on the constant, two equality, and alternating directions. Explain dimensions and orthogonality without assuming the general-N Fourier argument.\\n3. Derive the orthogonal projection P onto H={(A,B,-A,-B):A,B real}. Determine the exact relation between E-2M and ||x-Px||^2, including the zero vector and normalized M=1 case. State what this proves about near equality and what it does not prove for other N.\\n4. Evaluate x=(1,0,-1,0) and x=(1,-1,1,-1) directly. Check cyclic edge counting, index conventions, real-valuedness, the mean-zero hypothesis and every zero denominator or normalization exception.\\n\\nReturn exactly one LeafRoundReport for the supplied node_id and round_id in the prescribed fenced JSON format. Include the complete algebra and matrix checks in evidence, list any gap, and distinguish your generated proof from independent external verification. Stop after this single report; your assigned Parent must assess it before any later round.\\n\\nPROVENANCE: This proposed audit is based on the two actual GPT-6 Pro report claims identified below. It is a new operator-prepared prompt candidate awaiting human approval, not an already-executed Pro turn or a new Parent model decision.\\n[{\\\"claim_status\\\": \\\"MODEL_PROPOSED_NOT_INDEPENDENTLY_VERIFIED\\\", \\\"node_id\\\": \\\"n-dab935ae44d1\\\", \\\"project\\\": \\\"experiments/consolidated_debug/runs/pro_tree/project\\\", \\\"report_sha256\\\": \\\"fefdbdc6cff60b56754f19dd2ababf5345e6e1957e190c28d2d15be341206a71\\\", \\\"round_id\\\": \\\"n-dab935ae44d1-r000001\\\"}, {\\\"claim_status\\\": \\\"MODEL_PROPOSED_NOT_INDEPENDENTLY_VERIFIED\\\", \\\"node_id\\\": \\\"n-3790f8503746\\\", \\\"project\\\": \\\"experiments/consolidated_debug/runs/pro_tree/project\\\", \\\"report_sha256\\\": \\\"fa222ba584c3b3faa9e6f6d248a5f74e62ade98cc1194bcda97ab6e01a85b76f\\\", \\\"round_id\\\": \\\"n-3790f8503746-r000001\\\"}]\"}\nOUTPUT_SCHEMA_JSON\n{\"additionalProperties\": false, \"properties\": {\"evidence\": {\"minLength\": 1, \"title\": \"Evidence\", \"type\": \"string\"}, \"findings\": {\"items\": {\"type\": \"string\"}, \"title\": \"Findings\", \"type\": \"array\"}, \"important_update\": {\"default\": false, \"title\": \"Important Update\", \"type\": \"boolean\"}, \"node_id\": {\"minLength\": 1, \"title\": \"Node Id\", \"type\": \"string\"}, \"obstacles\": {\"items\": {\"type\": \"string\"}, \"title\": \"Obstacles\", \"type\": \"array\"}, \"recommended_next_steps\": {\"items\": {\"type\": \"string\"}, \"title\": \"Recommended Next Steps\", \"type\": \"array\"}, \"round_id\": {\"minLength\": 1, \"title\": \"Round Id\", \"type\": \"string\"}, \"split_suggestion\": {\"items\": {\"type\": \"string\"}, \"title\": \"Split Suggestion\", \"type\": \"array\"}, \"status\": {\"enum\": [\"SOLVED\", \"PARTIAL\", \"STUCK\"], \"title\": \"Status\", \"type\": \"string\"}, \"summary\": {\"minLength\": 1, \"title\": \"Summary\", \"type\": \"string\"}}, \"required\": [\"node_id\", \"round_id\", \"status\", \"summary\", \"findings\", \"evidence\", \"obstacles\", \"recommended_next_steps\"], \"title\": \"LeafRoundReport\", \"type\": \"object\"}",
+    "content_hash": "1b9e4c081c998f4d1bf9f67c6718a4f04e2b0178bce4a8d5b71931f18b7c8f71",
+    "version": 1,
+    "status": "APPROVED",
+    "deferred": 0,
+    "decision": "approve",
+    "decided_at": "2026-10-15 15:21:26",
+    "created_at": "2026-10-15 09:17:41"
+  },
+  "round": {
+    "id": "n-10712a75c7a1-r000001",
+    "node_id": "n-10712a75c7a1",
+    "number": 1,
+    "previous_round_id": null,
+    "kind": "research",
+    "prompt_version": 1,
+    "stage": "PROMPT_READY",
+    "report": null,
+    "report_accepted": 0,
+    "created_at": "2026-10-15 09:17:41",
+    "updated_at": "2026-10-15 09:17:41"
+  },
+  "settings": {
+    "config": {
+      "bridge_base_url": "http://127.0.0.1:8080",
+      "bridge_parent_effort": "xhigh",
+      "bridge_parent_model": "GPT-6 Thinking",
+      "bridge_pro_model": "GPT-6 Pro",
+      "bridge_request_timeout": 20.0,
+      "bridge_turn_timeout": 1800.0,
+      "format_retries": 2,
+      "manual_review_enabled": true,
+      "max_concurrent_pro_turns": 1,
+      "projects_root": "experiments/consolidated_debug/runs/human_review",
+      "target_active_leaves": 1,
+      "transport": "bridge"
+    },
+    "manual_review_enabled": true,
+    "project_status": "PAUSED"
+  },
+  "events": [
+    {
+      "id": 4,
+      "type": "human_decision",
+      "payload": "{\"actor\": \"human\", \"approval_id\": \"n-10712a75c7a1-r000001:prompt:1\", \"artifact_type\": \"prompt\", \"content_hash\": \"1b9e4c081c998f4d1bf9f67c6718a4f04e2b0178bce4a8d5b71931f18b7c8f71\", \"decision\": \"approve\", \"node_id\": \"n-10712a75c7a1\", \"round_id\": \"n-10712a75c7a1-r000001\", \"source\": \"HUMAN_APPROVED\", \"version\": 1}",
+      "created_at": "2026-10-15 15:21:26",
+      "decoded_payload": {
+        "actor": "human",
+        "approval_id": "n-10712a75c7a1-r000001:prompt:1",
+        "artifact_type": "prompt",
+        "content_hash": "1b9e4c081c998f4d1bf9f67c6718a4f04e2b0178bce4a8d5b71931f18b7c8f71",
+        "decision": "approve",
+        "node_id": "n-10712a75c7a1",
+        "round_id": "n-10712a75c7a1-r000001",
+        "source": "HUMAN_APPROVED",
+        "version": 1
+      }
+    },
+    {
+      "id": 5,
+      "type": "gate_crossed",
+      "payload": "{\"artifact_type\": \"prompt\", \"round_id\": \"n-10712a75c7a1-r000001\"}",
+      "created_at": "2026-10-15 15:21:26",
+      "decoded_payload": {
+        "artifact_type": "prompt",
+        "round_id": "n-10712a75c7a1-r000001"
+      }
+    }
+  ],
+  "counts": {
+    "sessions": 0,
+    "turns": 0,
+    "parent_responses": 0,
+    "review_messages": 0,
+    "feedback": 0,
+    "pending_approvals": 0,
+    "approved_approvals": 1,
+    "reports": 0,
+    "human_decision_events": 1,
+    "leaf_dispatched_events": 0
+  },
+  "checks": {
+    "exact_original_approval_id": true,
+    "exact_original_version": true,
+    "approval_payload_sha256_matches": true,
+    "round_prompt_byte_value_matches_approved_payload": true,
+    "persisted_human_approval": true,
+    "exact_single_human_event": true,
+    "event_and_approval_timestamps_match": true,
+    "approved_waiting_dispatch": true,
+    "project_still_paused": true,
+    "manual_review_still_enabled": true,
+    "genuine_bridge_provider_configured": true,
+    "no_sessions_turns_reports_pairs_or_pending_items": true,
+    "database_main_file_unchanged_during_read": true,
+    "no_sqlite_sidecars_before_or_after": true
+  },
+  "outcome": "PASS: exact v1 prompt accepted by the human at 2026-10-15 15:21:26 UTC and retained as APPROVED / PROMPT_READY. No browser session or inference has started.",
+  "limits": "This verifies a real human Prompt approval on a genuine bridge-configured project only. A genuine Pro turn, Parent discussion, Report approval and completed manual-review research cycle remain NOT_RUN. The separate original 8766 fake-provider demo is unchanged and is not this approval.",
+  "operator_actions_by_this_audit": {
+    "approval_submissions": 0,
+    "database_mutations": 0,
+    "source_or_report_edits": 0,
+    "browser_actions": 0,
+    "worker_starts": 0,
+    "inference_calls": 0
+  }
+}

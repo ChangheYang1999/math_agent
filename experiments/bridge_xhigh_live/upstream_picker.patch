@@ -1,0 +1,124 @@
+diff --git a/tools/chrome-bridge-extension/content/intelligenceCommands.js b/tools/chrome-bridge-extension/content/intelligenceCommands.js
+index 9707142..6b57702 100644
+--- a/tools/chrome-bridge-extension/content/intelligenceCommands.js
++++ b/tools/chrome-bridge-extension/content/intelligenceCommands.js
+@@ -82,10 +82,10 @@ function visibleIntelligencePickerContent() {
+     }) || null;
+ }
+ 
+-function intelligenceOptionFromElement(element) {
++function intelligenceOptionFromElement(element, { visibleOnly = true } = {}) {
+   const fallbackText = normalizeText(element?.innerText || element?.textContent || element?.getAttribute?.('aria-label') || '');
+   const leafTexts = Array.from(element?.querySelectorAll?.('*') || [])
+-    .filter((node) => !node.children?.length && isVisible(node))
++    .filter((node) => !node.children?.length && (!visibleOnly || isVisible(node)))
+     .map((node) => normalizeText(node.innerText || node.textContent || ''))
+     .filter(Boolean);
+   const uniqueLeafTexts = unique(leafTexts);
+@@ -96,7 +96,9 @@ function intelligenceOptionFromElement(element) {
+   return {
+     label,
+     rawText,
+-    selected: element?.getAttribute?.('aria-checked') === 'true' || element?.getAttribute?.('data-state') === 'checked',
++    selected: element?.getAttribute?.('aria-checked') === 'true'
++      || element?.getAttribute?.('data-state') === 'checked'
++      || element?.getAttribute?.('data-model-selected') === 'true',
+     ...(annotation ? { annotation } : {}),
+   };
+ }
+@@ -284,6 +286,9 @@ async function openIntelligencePicker() {
+ }
+ 
+ function modelSubmenuOpener(pickerContent) {
++  const viewToggle = Array.from(pickerContent?.querySelectorAll?.('[data-model-picker-view-toggle="true"]') || [])
++    .find(isVisible);
++  if (viewToggle) return viewToggle;
+   const embeddedModelView = pickerContent?.querySelector?.('[data-testid="composer-model-picker-slider-advanced-view"]') || null;
+   const candidates = Array.from(pickerContent?.querySelectorAll?.('[role="menuitem"]') || []).filter(isVisible);
+   if (embeddedModelView) {
+@@ -307,7 +312,15 @@ function effortOptionsRoot(pickerContent) {
+ }
+ 
+ function mountedEmbeddedModelView(pickerContent) {
+-  const view = pickerContent?.querySelector?.('[data-testid="composer-model-picker-slider-advanced-view"]') || null;
++  const view = pickerContent?.querySelector?.('[data-testid="composer-model-picker-slider-advanced-view"]')
++    || Array.from(pickerContent?.querySelectorAll?.('[data-model-picker-view]') || [])
++      .find((candidate) => candidate.getAttribute('data-model-picker-view') !== 'simple'
++        && candidate.querySelector?.('[role="menuitemradio"]'))
++    // In the power picker the view attribute belongs to the shared root;
++    // its inactive/inert model track has explicit current-model radios.
++    || (pickerContent?.querySelector?.('[data-model-picker-power-slider]')
++      && pickerContent?.querySelector?.('[role="menuitemradio"]') ? pickerContent : null)
++    || null;
+   if (!view) return null;
+   return view.querySelector?.('[role="menuitemradio"]') ? view : null;
+ }
+@@ -320,10 +333,11 @@ function visibleEmbeddedModelView(pickerContent) {
+ }
+ 
+ function effortSliderSurface(pickerContent) {
+-  const panel = pickerContent?.querySelector?.('[data-testid="composer-model-picker-slider-simple-view"]') || null;
++  const panel = pickerContent?.querySelector?.('[data-model-picker-power-slider]')
++    || pickerContent?.querySelector?.('[data-testid="composer-model-picker-slider-simple-view"]') || null;
+   const slider = panel?.querySelector?.('[role="slider"]') || null;
+   if (!panel || !slider) return null;
+-  const control = slider.closest?.('[role="menuitem"]') || panel;
++  const control = slider.closest?.('[data-reasoning-slider="true"]') || slider.closest?.('[role="menuitem"]') || panel;
+   const root = slider.closest?.('[aria-disabled]') || slider.parentElement || control;
+   const toggle = modelSubmenuOpener(pickerContent);
+   return { panel, slider, control, root, toggle };
+@@ -355,6 +369,25 @@ function effortSliderTickPoints(surface) {
+ function effortSliderOptions(pickerContent) {
+   const surface = effortSliderSurface(pickerContent);
+   if (!surface) return { surface: null, options: [] };
++  // The five-position power picker exposes an exact current label and slider
++  // position, but not labels for every position. Report observed state only;
++  // never guess a tier from its position or conflate High with Extra High.
++  if (surface.panel.hasAttribute?.('data-model-picker-power-slider')) {
++    const min = surface.slider.getAttribute('aria-valuemin');
++    const max = surface.slider.getAttribute('aria-valuemax');
++    const now = surface.slider.getAttribute('aria-valuenow');
++    if (![min, max, now].every((value) => /^\d+$/.test(String(value)))) return { surface, options: [] };
++    const statuses = Array.from(pickerContent.querySelectorAll('[role="status"]'));
++    const current = statuses.map((element) => normalizeText(element.textContent || element.innerText || ''))
++      .map((text) => text.match(/^(.+?),\s*(\d+)\s+of\s+(\d+)\.?$/i))
++      .find((match) => match && Number(match[2]) === Number(now) - Number(min) + 1
++        && Number(match[3]) === Number(max) - Number(min) + 1);
++    if (!current || Number(now) < Number(min) || Number(now) > Number(max)) return { surface, options: [] };
++    const label = current[1].trim();
++    const options = DOM_PARSER.normalizeIntelligenceOptions('effort', [{ label, rawText: label, selected: true }])
++      .map((option) => ({ ...option, element: surface.control, index: Number(now) - Number(min), observedOnly: true }));
++    return { surface, options };
++  }
+   const trigger = intelligencePickerTriggerForContent(pickerContent);
+   const triggerDescriptor = trigger ? intelligenceOptionFromElement(trigger) : null;
+   const toggleDescriptor = surface.toggle ? intelligenceOptionFromElement(surface.toggle) : null;
+@@ -530,7 +563,7 @@ function collectRadioOptions(root, kind, { visibleOnly = true } = {}) {
+   const descriptors = [];
+   const candidates = Array.from(root.querySelectorAll('[role="menuitemradio"]'));
+   for (const element of visibleOnly ? candidates.filter(isVisible) : candidates) {
+-    const descriptor = intelligenceOptionFromElement(element);
++    const descriptor = intelligenceOptionFromElement(element, { visibleOnly });
+     const key = normalizeComparable(descriptor.rawText || descriptor.label);
+     if (!key || seen.has(key)) continue;
+     seen.add(key);
+@@ -602,7 +635,7 @@ async function readIntelligenceState({ includeModels = true } = {}) {
+     if (!effortsWithElements.length) throw new Error('DOM_SCHEMA_CHANGED: intelligence effort options were not found.');
+     const opener = modelSubmenuOpener(pickerContent);
+     const triggerDescriptor = opener && !sliderEfforts.surface ? intelligenceOptionFromElement(opener) : null;
+-    if (includeModels && !opener) throw new Error('DOM_SCHEMA_CHANGED: current model submenu trigger was not found.');
++    if (includeModels && !opener && !mountedEmbeddedModelView(pickerContent)) throw new Error('DOM_SCHEMA_CHANGED: current model submenu trigger was not found.');
+ 
+     let modelsWithElements = [];
+     if (includeModels) {
+@@ -641,6 +674,10 @@ async function readIntelligenceState({ includeModels = true } = {}) {
+ 
+     const efforts = effortsWithElements.map(({ element, point, ...option }) => option);
+     const rawModels = modelsWithElements.map(({ element, ...option }) => option);
++    if (includeModels && pickerContent.querySelector('[data-model-picker-power-slider]')
++      && !rawModels.some((option) => option.selected)) {
++      throw new Error('DOM_SCHEMA_CHANGED: current model has no explicit checked selection.');
++    }
+     const modelState = DOM_PARSER.resolveCurrentModel(rawModels, triggerDescriptor);
+     const selectedEffort = efforts.find((option) => option.selected) || null;
+     diagnostic('intelligence.state.read', {
