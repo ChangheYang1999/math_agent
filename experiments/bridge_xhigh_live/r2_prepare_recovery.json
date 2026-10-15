@@ -1,8 +1,0 @@
-{
-  "at": "2026-10-14T08:30:04.277671+00:00",
-  "action": "Cleared unconfirmed CREATING state only after server rejection and browser inventory proved no new tab was created. Selected empty idle seed tab for setup.",
-  "rejected_client": "extension:tab:1707788658",
-  "selected_seed_client": "extension:tab:1707788652",
-  "research_prompts_sent": 0,
-  "database": "experiments/bridge_xhigh_live/runs/20261014-live-r2/projects/bridge-test/tree.db"
-}

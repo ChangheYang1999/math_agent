@@ -1,5 +1,0 @@
-{
-  "tools/chrome-bridge-extension/content/requestMonitor.js": "d9c509a772dd64d7c8166bee75dcce0e6eece2594da11381734ab6f8366312ef",
-  "tools/chrome-bridge-extension/content/userTurnState.js": "b718f38795653abe03cc75273fe2e18d0e98ab663a736095a1f618d24fd410cd",
-  "tools/chrome-bridge-extension/content/turnSnapshots.js": "35cefe20cdca408e10bdc7bd24c3f3fa88ecc179100dda1364b97c82651ad63e"
-}

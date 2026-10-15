@@ -1,9 +1,0 @@
-{
-  "classification": "OFFLINE_REGRESSION_TESTS",
-  "command": ".venv/bin/python -m pytest -q tests/test_review_dashboard.py tests/test_tree_dynamics.py tests/test_research_tree.py tests/test_parent_prompt.py tests/test_bridge_transport.py",
-  "passed": 35,
-  "failed": 0,
-  "exit_code": 0,
-  "duration_seconds": 7.01,
-  "real_model_requests": 0
-}

@@ -1,21 +1,67 @@
+# Local credentials (keep shareable templates)
 .env
 .env.*
 !.env.example
+!.env.*.example
+
+# Dependencies, Python caches and test output
 .venv*/
-__MACOSX/
-.DS_Store
+venv/
+node_modules/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
+.mypy_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
 *.egg-info/
-dist/
-build/
-projects/
+
+# Build and release output
+/dist/
+/build/
+*.whl
+
+# Local research projects and SQLite state
+/projects/
 *.db
 *.db-wal
 *.db-shm
-*.whl
-*.zip
-*.tar.gz
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+
+# Generated experiment evidence; keep scripts, patches and written reports
+/experiments/**/runs/
+/experiments/**/projects/
+/experiments/**/*.json
+/experiments/**/*.jsonl
+/experiments/**/*.png
+/experiments/**/*.xml
+/experiments/**/*.txt
+/experiments/**/*.diff
+/experiments/**/*.zip
+/experiments/**/*.tar.gz
+/experiments/**/report_publication_stale.md
+.runner.lock
+.command.lock
+.request-budget.lock
+
+# Logs, temporary files and machine-local metadata
+*.log
+/logs/
+/tmp/
+/temp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+__MACOSX/
 .superpowers/
